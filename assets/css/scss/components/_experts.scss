@@ -1,0 +1,49 @@
+.c-experts{
+    height: 30.43rem;
+    margin-bottom: 9rem;
+    background: #262626;
+    &__item{
+        &__bg{
+            position: relative;
+            height: 100%;
+            width: 64%;
+            background-size: cover;
+            img{
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                top: 0;
+                left: 0;
+                mix-blend-mode: multiply;
+            }
+        }
+        &__content{
+            padding: 0 9.6rem;
+            width: 36%;
+            height: 100%;
+            a {
+                svg{
+                    margin-left: .93rem;
+                    transition-duration: .3s;
+                    transition-timing-function: ease-out;
+                }
+                &:hover{
+                   svg{
+                        transform: translateX(10px);
+                    }
+                }
+            }
+        }
+    }
+    &__controls{
+        width: 64%;
+        margin-top: -6.1rem;
+        nav{
+            margin: 0 calc((100vw - 1640px) / 2);
+            .nav-tabs .nav-link::before{
+                background: #fff;
+            }
+        }
+    }
+}
+

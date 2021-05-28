@@ -1,0 +1,27 @@
+.c-destaque{
+    height: 37.8rem;
+    background-size: cover;
+    background-position: center;
+    &__link{
+        margin-top: 3.8rem;
+        letter-spacing: .12rem;
+        svg{
+            margin-left: .93rem;
+            transition-duration: .3s;
+            transition-timing-function: ease-out;
+        }
+    }
+    a{
+        &:hover{
+            .c-destaque__link{
+                svg{
+                    transform: translateX(10px);
+                }
+            }
+         }
+    }
+    .carousel-item{
+        background-size: cover;
+        background-position: center;
+    }
+}

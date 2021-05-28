@@ -1,0 +1,40 @@
+.c-hotel{
+    padding-top: 7.37rem;
+    &__banner{
+        height: 46.56rem;
+        .swiper-slide{
+            height: 100%;
+            & > div {
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+            
+            a img{
+                display: none;
+            }
+
+            &:nth-child(odd) {
+                width: 63.95%;
+                div{
+                    height: 100%;
+                }
+            }
+            &:nth-child(even) {
+                width: 28.43%;
+                div{
+                    height: 48.86%;
+                    &:first-of-type{
+                        margin-bottom: 16px;
+                    }
+                }
+            }
+
+        }
+    }
+    &__price{
+        padding: 2.87rem 3.6rem 3.5rem 3.6rem;
+        border-radius: 3.31rem;
+   
+    }
+}

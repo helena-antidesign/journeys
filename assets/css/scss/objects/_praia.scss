@@ -1,0 +1,17 @@
+.o-praia{
+    width: 29.43rem!important;
+    &__image{
+        height: 28.56rem;
+        background-size: cover;
+        background-position: center;
+    }
+    .icon-arrow-right{
+        transition-duration: .2s;
+        transition-timing-function: ease-out;
+    }
+    &:hover{
+        .icon-arrow-right{
+            transform: translateX(8px);
+        }
+    }
+}

@@ -1,0 +1,84 @@
+.login-input{
+    outline: none;
+    color: #656565;
+    border: 0;
+    border-bottom: 1px solid #C8C8C8;
+    padding: .37rem 0 .75rem;
+    /* do not group these rules */
+    &::-webkit-input-placeholder {
+        color: #D7D7D7;
+    }
+    &:-moz-placeholder {
+        /* FF 4-18 */
+        color: #D7D7D7;
+        opacity: 1;
+    }
+    &::-moz-placeholder {
+        /* FF 19+ */
+        color: #D7D7D7;
+        opacity: 1;
+    }
+    &:-ms-input-placeholder {
+        /* IE 10+ */
+        color: #D7D7D7;
+    }
+    &::-ms-input-placeholder {
+        /* Microsoft Edge */
+        color: #D7D7D7;
+    }
+    &::placeholder {
+        /* modern browser */
+        color: #D7D7D7;
+    }
+}
+
+.o-data-picker{
+    position: relative;
+    input{
+        background: transparent;
+        position: relative;
+        z-index: 2;
+        &:focus{
+            background: transparent;
+        }
+    }
+    .icon-calendar{
+        position: absolute;
+        right: 12px;
+        top: 48px;
+        font-size: 26px;
+        color: #E0E0E0;
+    }
+}
+
+.input-number{
+    display: flex;
+    
+    .button-minus, .button-plus{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 1;
+        height: 2rem;
+        width: 2rem;
+        border-radius: 100%;
+        border: 1px solid #656565;
+        cursor: pointer;
+        background: transparent;
+        color: #656565;
+    }
+    input[type="number"]{
+        -moz-appearance: textfield;
+        border: 0;
+        height: 2rem;
+        width: 2rem;
+        text-align: center;
+        font-size: 14px;
+        margin: 0 4px;
+        outline: none;
+    }
+}
+
+

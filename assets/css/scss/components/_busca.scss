@@ -1,0 +1,30 @@
+.c-busca{
+    &__container{
+        padding: 3.75rem 0 6.18rem;
+        &__title{
+            margin-bottom: 4.18rem;
+        }
+    }
+    // &__controls{
+
+    // }
+    &__advertisement{
+        & > nav{
+            margin-bottom: 5rem;
+        }
+        
+        .nav-tabs .nav-link{
+            transition: 0.15s ease-in-out;
+            svg{
+                stroke: #656565;
+            }
+        }
+        .nav-tabs .nav-link.active::before,
+        .nav-tabs .nav-link:hover::before {
+            display: none;
+        }
+        .nav-tabs .nav-link:hover svg{
+            stroke:#0F6B7B ;
+        }
+    }
+}

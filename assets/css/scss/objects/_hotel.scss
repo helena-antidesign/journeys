@@ -1,0 +1,56 @@
+.o-hotel{
+    border-radius: 1.25rem;
+    overflow: hidden;
+    position: relative;
+    &__img{
+        position: relative;
+        height: 12.37rem;
+        background-size: cover;
+        background-position: center;
+        padding: 1.18rem;
+        display: flex;
+        align-items: end;
+        img{            
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+            height: 100%;
+        }
+        &__item{
+            color: #656565;
+            border-radius: 10px;
+            position: relative
+        }
+    }
+    &__content{
+        background-color: #fff;
+        padding: .62rem .62rem .62rem 1rem;
+        &__header{
+            font-size: .62rem;
+            padding-bottom: .48rem;
+            &__title{
+                border-right: 1px solid #E3E3E3;
+                padding-right: 2rem;
+            }
+            &__icons{
+                font-size: 1.5rem;
+                padding-left: 1rem;
+                span{
+                    margin: 0 .4rem;
+                }
+            }
+        }
+        &__button{
+            display: flex;
+            justify-content: flex-end;
+            .btn{
+                width: 7.28rem;
+                height: 2.77rem;
+                border-radius: 12px;
+            }
+        }
+    }
+}
+
+

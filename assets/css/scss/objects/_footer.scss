@@ -1,0 +1,47 @@
+.o-footer{
+    background: #FBFBFB;
+    padding-top: 6.25rem;
+    &__links{
+        padding-bottom: 4.9rem;
+        border-color: #A2A2A2!important;
+        &__title{
+            font-weight: 500;
+        }
+    }
+    &__copyright{
+        svg{
+            fill: #525252;
+        }
+        &__facebook{
+            margin-right: 1.4rem;
+        }
+        &__instagram{
+            margin-right: 2.18rem;
+        }
+        &__language{
+            .icon-translate{
+                font-size: 1.75rem;
+                margin-right: .87rem;
+            }
+            &__name{
+                border-bottom: 1px solid $secondary;
+                font-weight: 500;
+                margin-left: .87rem;
+            }
+        }
+    }
+    a{
+        transition-duration: .3s;
+        transition-timing-function: ease-out;
+        svg{
+            transition: all 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        &:hover{
+            color: #0F6B7B !important;
+            // text-decoration: underline;
+            svg{
+                fill: #0F6B7B;
+            }
+        }
+    }
+}

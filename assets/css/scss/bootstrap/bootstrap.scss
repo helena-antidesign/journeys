@@ -1,0 +1,271 @@
+/*!
+ * Bootstrap v5.0.0-beta3 (https://getbootstrap.com/)
+ * Copyright 2011-2021 The Bootstrap Authors
+ * Copyright 2011-2021 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+ */
+
+
+ // scss-docs-start grid-breakpoints
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1800px
+  ) !default;
+
+$grid-gutter-width: 1rem;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1640px
+) !default;
+
+
+//fonts
+$font-family-sans-serif: 'Rubik';
+$font-size-base: 1rem !default;
+$h1-font-size:                $font-size-base * 3 !default;
+$h2-font-size:                $font-size-base * 2.37 !default;
+$h3-font-size:                $font-size-base * 2.25 !default;
+$h4-font-size:                $font-size-base * 1.12 !default;
+$h5-font-size:                $font-size-base * 1 !default;
+$h6-font-size:                $font-size-base * .87!default;
+
+
+// scss-docs-start color-variables
+$purple:  #9843DB !default;
+$pink:    #F876F8 !default;
+$red:     #F15375 !default;
+$orange:  #FAA528 !default;
+$green:   #A6DD2B !default;
+$cyan:    #47D6F8 !default;
+
+$primary:    #0F6B7B !default;
+$secondary:    #3B3B3B!default;
+$success:   #17CB00!default;
+$danger:     #FF6262 !default;
+$info:    #47D6F8 !default;
+$dark:    #262626 !default;
+$warning: #FFA700!default;  
+
+$body-color: #656565!default;
+
+
+// Form
+$input-btn-padding-y:         1.02rem;
+$input-btn-padding-x:         1rem;
+$input-btn-font-size:         .75rem;
+$input-btn-line-height:       1;
+
+
+// scss-docs-start border-radius-variables
+$border-radius:               .93rem !default;
+$border-radius-sm:            .31rem !default;
+// $border-radius-lg:            .3rem !default;
+// $border-radius-pill:          50rem !default;
+
+
+// Table
+$table-cell-padding-y:        .9rem !default;
+$table-color: #656565!default;
+$table-striped-bg: #FBFBFB!default;
+$table-border-color: transparent!default;
+
+//Accordion
+$accordion-padding-y:                     1.12rem;
+$accordion-padding-x:                     .68rem;
+$accordion-border-radius: 0;
+$accordion-border-color:  #252525;
+$accordion-button-active-bg: #fff;
+
+
+//Carousel
+$carousel-indicator-width:           5px;
+$carousel-indicator-height:          5px;
+$carousel-indicator-spacer:          6px;
+$carousel-indicator-active-bg:       #fff;
+
+
+$form-select-indicator-color:       $primary;
+$form-select-bg-size:               16px 16px; // In pixels because image dimensions
+
+
+// scss-docs-start import-stack
+// Configuration
+@import "functions";
+@import "variables";
+@import "mixins";
+@import "utilities";
+
+// Layout & components
+@import "root";
+@import "reboot";
+@import "type";
+@import "images";
+@import "containers";
+@import "grid";
+@import "tables";
+@import "forms";
+@import "buttons";
+@import "transitions";
+@import "dropdown";
+@import "button-group";
+@import "nav";
+@import "navbar";
+@import "card";
+@import "accordion";
+@import "breadcrumb";
+@import "pagination";
+@import "badge";
+@import "alert";
+@import "progress";
+@import "list-group";
+@import "close";
+@import "toasts";
+@import "modal";
+@import "tooltip";
+@import "popover";
+@import "carousel";
+@import "spinners";
+@import "offcanvas";
+
+
+// Helpers
+@import "helpers";
+
+// Utilities
+@import "utilities/api";
+
+
+/* 
+* JOURNEY'S CUSTOM BOOTSTRAP 
+*/
+
+// scss-docs-end import-stack
+.btn-link {
+    color: #0F6B7B;
+    font-weight: 400;
+    text-decoration: none;
+    border-bottom: 1px solid #0F6B7B;
+    border-radius: 0;
+    padding: .375rem 0;
+}
+
+.form-label,
+.form-check-label{
+    color: #474153;
+    font-weight: 500;
+    font-size: .75rem;
+    margin-bottom: .87rem;
+}
+
+.form-switch .form-check-label{
+  color: #474153;
+  font-size: .75rem;
+  font-weight: 400;
+  -webkit-transition: 0.15s ease-in-out;
+  transition: 0.15s ease-in-out;
+  margin-left: .25rem;
+}
+
+.form-switch .form-check-input:checked + .form-check-label {
+  font-weight: 500;
+}
+
+.form-switch .form-check-input{
+  height: 1.25rem;
+  width: 2rem;
+}
+
+.text-black-50{
+  color: rgba(101, 101, 101, .5)!important;
+}
+
+.text-reset{
+    text-decoration: none;
+}
+
+.table-striped{
+  border-collapse: separate;
+  border-spacing: 0 .75rem;
+}
+
+.table>:not(:last-child)>:last-child>*{
+  border-bottom-color: #EAEAEA;
+}
+
+.table tr th{
+  border-radius: 0;
+}
+
+.table tbody tr td:first-of-type{
+  border-radius: .93rem 0 0 .93rem;
+}
+
+
+.table tbody tr td:last-of-type{
+  border-radius: 0 .93rem .93rem 0;
+}
+
+.nav-tabs{
+  overflow: hidden;
+  .nav-link{
+    display: flex;
+    font-weight: 400;
+    align-items: center;
+    color: $secondary;
+    position: relative;
+    padding-bottom: 1.5rem;
+    outline: none;
+    border: 0;
+    cursor: pointer;
+    &:before{
+      content: "";
+      position: absolute;
+      z-index: 2;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: $primary;
+      height: 7px;
+      transform: translateY(7px);
+      transition-property: transform;
+      transition-duration: .2s;
+      transition-timing-function: ease-out;
+    }
+    &.active{
+      color: $primary;
+      background: transparent;
+      border: 0;
+      &:before{
+        transform: translateY(0);
+      }
+    }
+    &:hover,&:focus,&:focus-visible{
+      border: 0;
+      outline: none;
+    }
+    &:hover{
+      color: $primary;
+      background: transparent;
+      border: 0;
+      &:before{
+          transform: translateY(0);
+      }
+    }
+  }
+  .icon{
+    font-size: 1.5rem;
+    margin-right: .4rem;
+  }
+}
+
+.carousel-indicators [data-bs-target]{
+  border-radius: 100%;
+}

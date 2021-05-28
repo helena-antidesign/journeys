@@ -1,0 +1,31 @@
+.c-experiencias{
+    &__filtros{
+        padding: 3.06rem 0 3.25rem;
+    }
+    &__content{
+        padding: 3.78rem 0 8.87rem;
+        &__item{
+            width: 16.25rem;
+            margin-bottom: 4rem;
+            margin: 0 1.75rem 4rem;
+            &__img{
+                background-size: cover;
+                background-position: center;
+                border-radius: 20px 20px 0 0;
+                width: 100%;
+                height: 180px;
+                margin-bottom: 1.25rem;
+            }
+            .icon-arrow-right{
+                transition-duration: .2s;
+                transition-timing-function: ease-out;
+            }
+            &:hover{
+                .icon-arrow-right{
+                    transform: translateX(8px);
+                }
+            }
+        }
+    }
+   
+}

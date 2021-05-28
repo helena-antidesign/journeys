@@ -1,0 +1,44 @@
+.c-cards-carousel{
+    padding: 11.8rem 0;
+    &__title{
+        margin-left: calc((100vw - 1640px) / 2);
+        width: 552px;
+        padding-right: 154px;
+    }
+    &__content{
+        width: calc(100% - ((100vw - 1640px) / 2 + 552px));
+    }
+    .JS-cards__pagination{
+        width: 142px;
+        padding-top: 110px;
+        .swiper-button-prev{
+            svg{
+                transform: rotate(180deg);
+            }
+        }
+        .swiper-button-prev,
+        .swiper-button-next{
+            height: 3rem;
+            width: 3rem;
+            &:after{
+                content:'';
+            }
+        }
+    }
+    .o-hotel{
+        width: 46.3rem;
+    }
+}
+
+@media (max-width: 1800px){
+    .c-cards-carousel{
+        &__title{   
+            margin-left: calc((100vw - 1140px) / 2);
+        }
+        &__content{
+            width: calc(100% - ((100vw - 1140px) / 2 + 552px));
+        }
+    }
+}
+
+

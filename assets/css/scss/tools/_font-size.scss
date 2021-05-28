@@ -1,0 +1,29 @@
+
+@mixin fz($size, $suffix) {
+  @if $suffix=='sm' {
+    .a-fz--#{$size}\@#{$suffix} {
+      font-size: $size;
+    }
+  }
+  @else if $suffix == 'md' {
+    @include breakpoint($md) {
+      .a-fz--#{$size}\@#{$suffix} {
+        font-size: $size;
+      }
+    }
+  }
+  @else if $suffix == 'lg' {
+    @include breakpoint($lg) {
+      .a-fz--#{$size}\@#{$suffix} {
+        font-size: $size;
+      }
+    }
+  }
+  @else if $suffix == 'xl' {
+    @include breakpoint($xl) {
+      .a-fz--#{$size}\@#{$suffix} {
+        font-size: $size;
+      }
+    }
+  }
+} 

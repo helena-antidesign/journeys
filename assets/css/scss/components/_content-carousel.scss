@@ -1,0 +1,42 @@
+.c-content-carousel{
+    margin: 7.62rem 0 9.12rem;
+    &__img{
+        height: 46.6vw;
+        width: 42%;
+        position: absolute;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    &__content{
+        height: 47.3vw;
+        width: 71.1%;
+        margin-left: auto;
+        margin-top: 6.6rem;
+        padding-left: 26.5rem;
+        padding-top: 9.68rem;
+    }
+    &__buttons{
+        width: 71.1%;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        .swiper-button-next,
+        .swiper-button-prev{
+            font-size: 2.12rem;
+            color: #fff;
+            position: inherit;
+            &:after{
+                content:'';
+            }
+        }
+        &__container{
+            width: 18.4%;
+            height: 5.8vw;
+            position: relative;
+            z-index: 999;
+            display: flex;
+            justify-content: space-around;
+        }
+    }
+}

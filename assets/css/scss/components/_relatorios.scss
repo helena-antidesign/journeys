@@ -1,0 +1,28 @@
+.c-relatorios{
+    &__bg{
+        min-height: 100vh;
+        width: 43.2%;
+        background-color: #fff;
+    }
+    &__container{
+        padding: 9.56rem 0 7rem;
+        min-height: 100vh;
+        background-color: #FBFBFB;
+        &__form{
+            position: relative;
+            z-index: 2;
+        }
+        &__result{
+            .table{
+                border-collapse: separate;
+                border-spacing: 0 .5rem;
+                & > tbody > tr{
+                    background: #fff;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    
+}
+

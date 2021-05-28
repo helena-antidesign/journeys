@@ -1,0 +1,19 @@
+/*
+Settings
+Essas são as configurações básicas da sua arquitetura. Em geral, são as variáveis globais que vão definir cores, espaçamentos e outras configurações desejadas para o funcionamento do seu framework em si. Perceba que nada aqui será gerado como CSS final, sendo somente utilizado na criação.
+*/
+
+// scss-docs-start color-variables
+$purple:  #9843DB !default;
+$pink:    #F876F8 !default;
+$red:     #F15375 !default;
+$orange:  #FAA528 !default;
+$green:   #A6DD2B !default;
+$cyan:    #47D6F8 !default;
+
+$primary:    #0F6B7B !default;
+$secondary:    #3B3B3B!default;
+$danger:     #FF6262 !default;
+$info:    #47D6F8 !default;
+$dark:    #262626 !default;
+

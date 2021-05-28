@@ -1,0 +1,23 @@
+@mixin breakpoint($point) {
+    @if $point==md {
+      @media (min-width: $md) {
+        @content;
+      } // 768 px
+    }
+    @else if $point==lg {
+      @media (min-width: $lg) {
+        @content;
+      } // 1280 px
+    }
+    @else if $point==xl {
+      @media (min-width: $xl) {
+        @content;
+      } // 1440 px
+    }
+    @else {
+      @media (min-width: $point) {
+        @content;
+        // For personal breakpoint
+      }
+    }
+}

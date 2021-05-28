@@ -1,0 +1,328 @@
+.o-search-box{
+    border-radius: 40px;
+    height: 11.5rem;
+    width: 68rem;
+    padding: 1.5rem 2rem 1.68rem;
+    font-size: .75rem;
+    z-index: 99;
+    box-shadow: 5px 13px 15px 5px rgba(0,0,0,0.16);
+    &__radios{
+        width: 46rem;
+        .form-check-label{
+            font-weight: 400;
+            cursor: pointer;
+            span{
+                font-size: 22px;
+                margin-right: 12px;
+                color: #676767;
+                &.icon-suitcase{
+                    font-size: 24px;
+                }
+                &.icon-suitcase{
+                    font-size: 24px;
+                }
+            }
+            svg{
+                margin-right: 12px;
+            }
+        }
+        .form-check-input {
+            cursor: pointer;
+            width: 15px;
+            height: 15px;
+            margin-right: 13px;
+        }
+    }
+    &__title{
+        color: $primary;
+        font-weight: bold;
+        font-size: 1.13rem;
+        line-height: 1.37rem;
+        margin-bottom: 1.15rem;
+    }
+    &__form{
+        padding-top: 1.15rem;
+        border-top: 1px solid #EAEAEA;
+        &__item{
+            display: none;
+            width: 25.96rem;
+            position: absolute;
+            background: #fff;
+            z-index: 99;
+            &.show{
+                display: block;
+            }
+        }
+        &__destino{
+            width: 13rem;
+        }
+        &__hotel{
+            width: 12rem;
+            position: relative;
+        }
+        &__regime{
+            display: none;
+            width: 12rem;
+            background: #fff;
+            left: 13.95rem;
+            background: #fff;
+            .form-select{
+                padding: 1.02rem 3rem 1.14rem 1rem;
+            }
+            &.show{
+                display: block;
+            }
+        }
+        &__passageiros{
+            width: 16rem;
+            &__input{
+                position: relative;
+                .form-control{
+                    padding: 1.02rem 1rem 1.02rem 3.7rem;
+                    cursor: pointer;
+                }
+            }
+            &__icon{
+                position: absolute;
+                font-size: 1.75rem;
+                top: 1.87rem;
+                left: 1rem;
+            }
+            &__content{
+                top: 8.5rem;
+                left: 0;
+                height: 5rem;
+                width: 100%;
+                padding: .75rem .31rem .75rem .31rem;
+                border-radius: 1.8rem;
+                opacity: 0;
+                box-shadow: 5px 13px 15px 5px rgba(0,0,0,0.16);
+
+                visibility: hidden;
+                &__item{
+                    border-right: 1px solid #E3E3E3;
+                    padding: 0 2.44rem 0 1.5rem;
+                    &:last-of-type{
+                        border-right: 0;
+                    }
+                }
+                &.show{
+                    animation: fpFadeInDown 300ms cubic-bezier(.23,1,.32,1);
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+        &__data{
+            width: 25.3%;
+            position: relative;
+
+            &__icon{
+                position: absolute;
+                font-size: 1.75rem;
+                top: 1.87rem;
+                right: .68rem;
+            }
+            input{
+                position: relative;
+                z-index: 99;
+                background: transparent;
+                &:focus{
+                    background: transparent;
+                }
+            }
+
+        }
+        &__submit{
+            width: 3rem;
+            .btn{
+                height: 3rem;
+                width: 3rem;
+                padding: 0;
+                span{
+                    font-size: 1.75rem;
+                    top: 2px;
+                }
+            }
+        }
+        .form-label{
+            margin-bottom: .4rem;
+        }
+    }
+}
+
+
+
+
+.o-search-box--reduced{
+    height: 4rem;
+    border-radius: 40px;
+    height: 4rem;
+    width: 68rem;
+    padding: 1rem .52rem 1rem 2rem;
+    font-size: .75rem;
+    z-index: 99;
+    box-shadow: 5px 13px 15px 5px rgba(0,0,0,0.16);
+    &__form{
+        .form-label{
+            display: block;
+            margin-bottom: 0;
+            line-height: 1;
+        }
+        &__input{
+            font-size: .87rem;
+            border: 0;
+            outline: none;
+        }
+        &__options{
+            width: 8.1rem;
+            &__icon{
+                margin-right: 3.6rem;
+            }
+        }
+        &__item{
+            display: none;
+            width: 25.92rem;
+            position: absolute;
+            background: #fff;
+            z-index: 99;
+            &.show{
+                display: block;
+            }
+        }
+        &__destino{
+            width: 13.6rem;
+            padding-right: 1rem;
+        }
+        &__hotel{
+            width: 12.5rem;
+            position: relative;
+            padding-right: 1rem;
+        }
+        &__regime{
+            display: none;
+            // width: 12rem;
+            background: #fff;
+            left: 13.95rem;
+            background: #fff;
+            .form-select{
+                padding: 1.02rem 3rem 1.14rem 1rem;
+            }
+            &.show{
+                display: block;
+            }
+        }
+        &__passageiros{
+            width: 15.6rem;
+            padding-right: 1rem;
+            &__input{
+                position: relative;
+                .form-control{
+                    padding: 1.02rem 1rem 1.02rem 3.7rem;
+                }
+            }
+            &__content{
+                top: 14rem;
+                left: 0;
+                height: 5rem;
+                width: 100%;
+                padding: .75rem .31rem .75rem .31rem;
+                border-radius: 1.8rem;
+                transition: .15s;
+                box-shadow: 5px 13px 15px 5px rgba(0,0,0,0.16);
+                
+                
+                opacity: 0;
+                transform:translate3d(0,-20px,0);
+                visibility: hidden;
+
+                &__item{
+                    border-right: 1px solid #E3E3E3;
+                    padding: 0 2.44rem 0 1.5rem;
+                    &:last-of-type{
+                        border-right: 0;
+                    }
+                }
+                &.show{
+                    animation: fpFadeInDown 300ms cubic-bezier(.23,1,.32,1);
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+        &__checkin{
+            border-right: 1px solid #EAEAEA;
+            width: 7.5rem;
+            padding-right: 1rem;
+        }
+        &__checkout{
+            padding-left: 1.5rem;
+            width: 15.9rem;
+            padding-right: 1rem;
+        }
+        &__submit{
+            width: 3rem;
+            position: absolute;
+            top: -8px;
+            right: .5rem;
+            top: .5rem;
+            .btn{
+                height: 3rem;
+                width: 3rem;
+                padding: 0;
+                border-radius: 100%;
+                span{
+                    font-size: 1.75rem;
+                    top: 2px;
+                }
+            }
+        }
+        .o-search-box__form__passageiros__content{
+            top: 6.5rem;
+        }
+    }
+    
+    &__radios{
+        top: 17.6rem;
+        left: 0;
+        height: 4rem;
+        width: 100%;
+        padding: 1rem .52rem 1rem 2rem;
+        border-radius: 1.8rem;
+        transition: .15s;
+        box-shadow: 5px 13px 15px 5px rgba(0,0,0,0.16);
+        z-index: 99;
+        width: 68rem;
+
+        position: absolute;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+        
+        // opacity: 0;
+        // transform:translate3d(0,-20px,0);
+        // visibility: hidden;
+
+        
+    }
+}
+
+
+@-webkit-keyframes fpFadeInDown{
+    from{ 
+        opacity:0;
+        -webkit-transform:translate3d(0,-20px,0);
+        transform:translate3d(0,-20px,0)
+    }
+    to{
+        opacity:1;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)
+    }
+}
+@keyframes fpFadeInDown{
+    from{
+        opacity:0;-webkit-transform:translate3d(0,-20px,0);transform:translate3d(0,-20px,0)
+    }
+    to{
+        opacity:1;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)
+    }
+}
