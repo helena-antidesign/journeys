@@ -1,0 +1,87 @@
+/* 
+
+	The file structure that we're using here is the ITCSS with the BEMIT
+
+  ---- ITCSS ----
+  For more details:
+  https://willianjusten.com.br/organizando-seu-css-com-itcss/
+	---------------
+	
+
+  ----- BEMIT -----
+  For more details:
+  https://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/
+  https://www.jamesturneronline.net/blog/bemit-naming-convention.html
+  https://codepen.io/clindsey/post/bem-and-itcss-for-css-architecture
+  -----------------
+
+
+  -------------------
+  Folders structure :
+  -------------------
+  - Settings/   - global variables
+  - Tools/      - mixins and functions
+  - Generic/    - resets and normalizes, no styles here
+  - Base/       - basic styles in tags elements, nothing of classes here
+  - Objects/ - styles of interface layouts and big pieces, every object has your own file
+  - Components/ - styles of interface components, every component has your own file
+	- Utility, Trumps, Hacks../     - helpers classes like 
+
+*/
+
+// Imports in order of the inverted triangle of ITCSS
+// @import 'settings/**/*.scss';
+// @import 'tools/**/*.scss';
+// @import 'generic/**/*.scss';
+// @import 'base/**/*.scss';
+// @import 'objects/**/*.scss';
+// @import 'components/**/*.scss';
+// @import 'utility/**/*.scss';
+
+
+@import 'settings/_breakpoints.scss';
+@import 'settings/_colors.scss';
+
+@import 'tools/_breakpoints.scss';
+@import 'tools/_font-size.scss';
+
+
+@import 'base/_base.scss';
+
+@import 'objects/_header.scss';
+@import 'objects/_footer.scss';
+@import 'objects/_search-box.scss';
+@import 'objects/_tab.scss';
+@import 'objects/_hotel.scss';
+@import 'objects/_form.scss';
+@import 'objects/_card.scss';
+@import 'objects/_praia.scss';
+@import 'objects/_daterange.scss';
+@import 'objects/_reserva.scss';
+@import 'objects/_comments.scss';
+@import 'objects/_upload.scss';
+@import 'objects/_video.scss';
+
+@import 'components/_banner.scss';
+@import 'components/_cards-carousel.scss';
+@import 'components/_destaque.scss';
+@import 'components/_page.scss';
+@import 'components/_reservas.scss';
+@import 'components/_busca.scss';
+@import 'components/_experts.scss';
+@import 'components/_content-carousel.scss';
+@import 'components/_hotel.scss';
+@import 'components/_brasil-secreto.scss';
+@import 'components/_experiencias.scss';
+@import 'components/_relatorios.scss';
+@import 'components/_eventos.scss';
+@import 'components/_single-experiencia.scss';
+@import 'components/_destinos.scss';
+
+
+@import 'components/_home.scss';
+
+// @import 'utility/_background.scss';
+@import 'utility/_colors.scss';
+@import 'utility/_helpers.scss';
+@import 'utility/_sizes.scss'; 

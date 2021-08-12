@@ -1,0 +1,138 @@
+.login-input{
+    outline: none;
+    color: #656565;
+    border: 0;
+    border-bottom: 1px solid #C8C8C8;
+    padding: .37rem 0 .75rem;
+    /* do not group these rules */
+    &::-webkit-input-placeholder {
+        color: #D7D7D7;
+    }
+    &:-moz-placeholder {
+        /* FF 4-18 */
+        color: #D7D7D7;
+        opacity: 1;
+    }
+    &::-moz-placeholder {
+        /* FF 19+ */
+        color: #D7D7D7;
+        opacity: 1;
+    }
+    &:-ms-input-placeholder {
+        /* IE 10+ */
+        color: #D7D7D7;
+    }
+    &::-ms-input-placeholder {
+        /* Microsoft Edge */
+        color: #D7D7D7;
+    }
+    &::placeholder {
+        /* modern browser */
+        color: #D7D7D7;
+    }
+}
+
+.dot{
+    display: block;
+    height: 5px;
+    width: 5px;
+    border-radius: 100%;
+    margin-right: 2px;
+}
+
+.o-data-picker{
+    position: relative;
+    input{
+        background: transparent;
+        position: relative;
+        z-index: 2;
+        &:focus{
+            background: transparent;
+        }
+    }
+    .icon-calendar{
+        position: absolute;
+        right: 12px;
+        top: 40px;
+        font-size: 26px;
+        color: #E0E0E0;
+    }
+}
+
+.input-number{
+    display: flex;
+    .button-minus, .button-plus{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 1;
+        height: 2rem;
+        width: 2rem;
+        border-radius: 100%;
+        border: 1px solid #656565;
+        cursor: pointer;
+        background: transparent;
+        color: #656565;
+    }
+    input[type="number"]{
+        -webkit-appearance: none;
+        -webkit-appearance: textfield;
+        -moz-appearance: textfield;
+        appearance: textfield;
+        border: 0;
+        height: 2rem;
+        width: 2rem;
+        text-align: center;
+        font-size: 14px;
+        margin: 0 4px;
+        outline: none;
+    }
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button { 
+        -webkit-appearance: none; 
+        margin: 0; 
+    }
+}
+
+
+.input-search{
+    .icon-search{
+        font-size: 26px;
+        color: #222222;
+        position: relative;
+        top: 14px;
+        left: 23px;
+    }
+    input{
+        border: 1px solid #707070;
+        color: #707070;
+        font-size: .87rem;
+        padding: 1.08rem 1.12rem 1.08rem 4rem;
+        border-radius: 26px;
+        width: 100%;
+        display: inline;
+        font-size: 12px;
+    }
+    &--tarifarios{
+        input{
+            margin-bottom: 1.12rem;
+            width: 19.8rem;
+        }
+        @include breakpoint(lg){
+            width: 100%;
+            .input-search{
+                margin-right: 0!important;
+                input{
+                    width: 100%;
+                    margin-right: 0!important;
+                }
+            }
+            .separator{
+                display: none;
+            }
+        }
+    }
+}
+

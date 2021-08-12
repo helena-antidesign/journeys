@@ -1,0 +1,78 @@
+.c-cards-carousel{
+    padding: 9.1rem 0 9.56rem;
+    @include breakpoint(xl){
+        position: relative;
+        overflow: hidden;
+        .swiper-container{
+            overflow: initial;
+        }
+    }
+    &__title{
+        margin-left: calc((100vw - 1640px) / 2);
+        width: 552px;
+        padding-right: 154px;
+        @media (max-width: 1679px){
+            margin-left: calc((100vw - 1140px) / 2);
+        }
+        @include breakpoint(xl){
+            width: 100%;
+            padding: 0 0 3rem;
+            max-width: 960px;
+            margin: 0 auto;
+            .c-cards-carousel__pagination{
+                position: absolute!important;
+                bottom: 36px;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+            }
+        }
+        @include breakpoint(lg){
+            max-width: 720px;
+        }
+        @include breakpoint(md){
+            max-width: 540px;
+        }
+    }
+    &__content{
+        width: calc(100% - ((100vw - 1640px) / 2 + 552px));
+        @media (max-width: 1679px){
+            width: calc(100% - ((100vw - 1140px) / 2 + 552px));
+        }
+        @include breakpoint(xl){
+            width: 100%;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        @include breakpoint(lg){
+            max-width: 720px;
+        }
+        @include breakpoint(md){
+            max-width: 540px;
+        }
+    }
+}
+
+.c-cards-carousel__pagination{
+    width: 142px;
+    padding-top: 110px;
+    @include breakpoint(xl){
+        margin: 0 auto;
+    }
+    .swiper-button-prev{
+        svg{
+            transform: rotate(180deg);
+        }
+    }
+    .swiper-button-prev,
+    .swiper-button-next{
+        height: 3rem;
+        width: 3rem;
+        &:after{
+            content:'';
+        }
+    }
+}
+
+
+

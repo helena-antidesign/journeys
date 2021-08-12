@@ -1,0 +1,78 @@
+.c-relatorios{
+    &__bg{
+        min-height: 100vh;
+        width: 43.2%;
+        background-color: #fff;
+        position: absolute;
+        height: 100%;
+        @include breakpoint(xl){
+            width: 100%;
+            height: auto;
+            min-height: initial;
+        }
+    }
+    &__container{
+        padding: 9.56rem 0 7rem;
+        min-height: 100vh;
+        background-color: #FBFBFB;
+        @include breakpoint(xxl){
+            .fs-5{
+                font-size: 12px!important;
+            }
+        }
+        &__left{
+            position: relative;
+            z-index: 2;
+        }
+        &__form{
+            height: 682px;
+            border-radius: 1.37rem;
+            padding: 1.5rem 3rem;
+            .btn{
+                padding: 1.83rem 0;
+            }
+            @include breakpoint(xxl){
+                padding: 1.5rem 2rem;
+            }
+        }
+        &__result{
+            .row{
+                max-width: 100%;
+                overflow-x: auto;
+            }
+            .table{
+                border-collapse: separate;
+                border-spacing: 0 .5rem;
+                & > tbody > tr{
+                    background: #fff;
+                    cursor: pointer;
+                }
+            }
+            @include breakpoint(xl){
+                padding-top: 80px;
+            }
+            @include breakpoint(lg){
+                svg{
+                    display: none;
+                }
+            }
+        }
+        input{
+            outline: none;
+            &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+                color: #E0E0E0;
+                opacity: 1; /* Firefox */
+            }
+            
+            &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+                color: #E0E0E0;
+            }
+            
+            &::-ms-input-placeholder { /* Microsoft Edge */
+                color: #E0E0E0;
+            }
+        }
+    }
+    
+}
+

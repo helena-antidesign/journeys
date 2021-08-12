@@ -1,0 +1,42 @@
+.o-footer{
+    background: #FBFBFB;
+    padding-top: 6.25rem;
+    &__links{
+        padding-bottom: 2rem;
+        border-color: #A2A2A2!important;
+        &__title{
+            font-weight: 500;
+        }
+        @include breakpoint(lg){
+            text-align: center;
+        }
+    }
+    &__copyright{
+        svg{
+            fill: #525252;
+        }
+        @include breakpoint(lg){
+            text-align: center;
+        }
+    }
+    a{
+        transition-duration: .3s;
+        transition-timing-function: ease-out;
+        svg{
+            transition: all 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        &:hover{
+            color: #0F6B7B !important;
+            // text-decoration: underline;
+            svg{
+                fill: #0F6B7B;
+            }
+        }
+    }
+
+    &__social{
+        @include breakpoint(lg){
+            margin: 20px auto;
+        }
+    }
+}

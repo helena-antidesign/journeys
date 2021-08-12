@@ -1,0 +1,120 @@
+.o-hotel{
+    border-radius: 1.25rem;
+    overflow: hidden;
+    position: relative;
+    max-height: 19.6rem;
+    transition: .3s;
+    @include breakpoint(xxl){
+        .fs-6{
+            font-size: .75rem!important;
+        }
+    }
+    @include breakpoint(lg){
+        width: 100%;
+    }
+    &.open{
+        max-height: 100vh;
+    }
+    &__more-button{
+        position: absolute;
+        z-index: 9999;
+        padding-right: .62rem;
+        right: 0;
+        .btn{
+            position: relative;
+            top: 259.4px;
+            width: auto !important;
+            padding-top: 14px;
+            height: 2.77rem;
+        }
+    }
+    &__img{
+        position: relative;
+        height: 12.37rem;
+        background-size: cover;
+        background-position: center;
+        padding: 1.18rem;
+        display: flex;
+        align-items: end;
+        img{            
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+            height: 100%;
+        }
+        &__item{
+            color: #656565;
+            border-radius: 10px;
+            position: relative
+        }
+    }
+    &__content{
+        background-color: #fff;
+        padding: .62rem .62rem .62rem 1rem;
+        &__header{
+            font-size: .62rem;
+            padding-bottom: .48rem;
+            @include breakpoint(md){
+                flex-wrap: wrap;
+            }
+            &__title{
+                border-right: 1px solid #E3E3E3;
+                padding-right: 2rem;
+                @include breakpoint(md){
+                    width: 100%;
+                    border-right: 0;
+                    padding-right: 0;
+                    margin-bottom: .5rem;   
+                }
+            }
+            &__icons{
+                font-size: 1.5rem;
+                padding-left: 1rem;
+                span{
+                    margin: 0 .4rem;
+                    @include breakpoint(md){
+                        &:first-of-type{
+                            margin-left: 0;
+                        }
+                    }
+                }
+                @include breakpoint(md){
+                    padding-left: 0;
+                }
+            }
+            .btn-close{
+                font-size: 15px;
+                position: absolute;
+                right: 21px;
+            }
+        }
+        &__button{
+            display: flex;
+            justify-content: flex-end;
+            .btn{
+                width: 7.28rem;
+                height: 2.77rem;
+                border-radius: 12px;
+                padding-top: 14px;
+                @include breakpoint(md){
+                    width: 100%;
+                }
+            }
+        }
+        &__list{
+            @include breakpoint(md){
+                li > div{
+                    width: 100%;
+                }
+            }
+        }
+        &__option{
+            @include breakpoint(md){
+                display: none!important;
+            }
+        }
+    }
+}
+
+

@@ -1,0 +1,29 @@
+.o-praia{
+    width: 29.43rem!important;
+    @include breakpoint(xl){
+        width: 23.5rem!important;
+    }
+    @include breakpoint(lg){
+        width: 18.5rem!important;
+    }
+    &__image{
+        height: 28.56rem;
+        background-size: cover;
+        background-position: center;
+        @include breakpoint(xl){
+            height: 23rem;
+        }
+        @include breakpoint(lg){
+            height: 18rem;
+        }
+    }
+    .icon-arrow-right{
+        transition-duration: .2s;
+        transition-timing-function: ease-out;
+    }
+    &:hover{
+        .icon-arrow-right{
+            transform: translateX(8px);
+        }
+    }
+}

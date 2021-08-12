@@ -1,0 +1,85 @@
+.c-experiencias{
+    &__filtros{
+        padding: 3.06rem 0 3.25rem;
+        @include breakpoint(xxl){
+            .nav-pills .nav-item{
+                margin-right: .5rem;
+            }
+        }
+        @include breakpoint(xl){
+            .input-search--tarifarios{
+                margin: 0!important;
+            }
+            &__search{
+                width: 100%;
+                margin-bottom: 2rem;
+                input{
+                    width: 100%;
+                    margin: 0!important;
+                }
+                &__border{
+                    display: none;
+                }
+            }
+        }
+    }
+    &__content{
+        padding: 3.78rem 0 8.87rem;
+        display: grid !important;
+        grid-template-columns: repeat(5, 1fr);
+        @include breakpoint(xxl){
+            grid-template-columns: repeat(4, 1fr);
+        }
+        @include breakpoint(xl){
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @include breakpoint(md){
+            display: flex!important;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        &__item{
+            width: 16.25rem;
+            margin-bottom: 4rem;
+            margin: 0 5rem 4rem 0;
+            @include breakpoint(xxl){
+                margin-right: 29px;
+            }
+            @include breakpoint(xl){
+                margin: 0 5rem 4rem 0;
+            }
+            @include breakpoint(lg){
+                width: 13.5rem;
+                margin: 0 1.5rem 3rem 0;
+            }
+            @include breakpoint(md){
+                width: calc(50% - .5rem);
+                margin: 0 0 3rem 0;
+                .fs-4{
+                    font-size: 1rem!important;
+                }
+            }
+            &__img{
+                background-size: cover;
+                background-position: center;
+                border-radius: 20px 20px 0 0;
+                width: 100%;
+                height: 180px;
+                margin-bottom: 1.25rem;
+                @include breakpoint(md){
+                    height: 109px;
+                }
+            }
+            .icon-arrow-right{
+                transition-duration: .2s;
+                transition-timing-function: ease-out;
+            }
+            &:hover{
+                .icon-arrow-right{
+                    transform: translateX(8px);
+                }
+            }
+        }
+    }
+   
+}

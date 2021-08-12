@@ -1,0 +1,41 @@
+.c-page{
+    padding-top: 99px;
+    &__img{
+        background-size: cover;
+        background-position: center;
+        height: calc(100vh - 99px);
+        width: 43.2%;
+        position: fixed;
+        z-index: -1;
+        @include breakpoint(lg){
+            width: 100%;
+            height: calc(52vh - 99px);
+            position: initial;
+        }
+    }
+    &__container{
+        padding: 8rem 0 7rem;
+        min-height: 100vh;
+        // height: calc(100vh - 99px);
+        overflow: auto;
+        @include breakpoint(lg){
+            padding-top: 6rem;
+            min-height: initial;
+        }
+    }
+    @include breakpoint(lg){
+        & > .container-fluid.d-flex{
+            flex-wrap: wrap;
+        }
+    }
+
+    &__sap{
+        p{
+            margin-bottom: 0;
+        }
+        b, strong{
+            font-weight: 500;
+        }
+    }
+
+}

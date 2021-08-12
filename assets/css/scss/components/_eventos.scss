@@ -1,0 +1,22 @@
+.c-eventos{
+    &__medidas{
+        padding-top: 7.6rem;
+    }
+    &__datas{
+        padding: 2.15rem 0 11.25rem;
+        &__item{
+            width: fit-content;
+            border-radius: 1.18rem;
+            margin-bottom: 1.68rem;
+            margin: 1.15rem .5rem;
+            padding: 1.5rem;
+            -webkit-box-shadow: 5px 5px 16px 8px rgba(0,0,0,0.06); 
+            box-shadow: 5px 5px 16px 8px rgba(0,0,0,0.06);
+            @include breakpoint(md){
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+}
+

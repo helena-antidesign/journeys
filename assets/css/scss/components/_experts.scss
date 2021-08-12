@@ -1,0 +1,96 @@
+.c-experts{
+    height: 30.43rem;
+    margin-bottom: 9rem;
+    background: #262626;
+    .tab-content{
+        height: 100%;
+    }
+    @include breakpoint(xl){
+        height: auto;
+        .tab-content{
+            height: auto;
+        }
+    }
+    &__item{
+        height: 100%;
+        &__bg{
+            position: relative;
+            height: 100%;
+            width: 64%;
+            background-size: cover;
+            @include breakpoint(xl){
+                width: 100%;
+                height: 24rem;
+            }
+            img{
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                top: 0;
+                left: 0;
+                mix-blend-mode: multiply;
+            }
+        }
+        &__content{
+            padding: 0 9.6rem;
+            width: 36%;
+            height: 100%;
+            @include breakpoint(xxl){
+                padding: 0 5rem;
+            }
+            @include breakpoint(xl){
+                width: 100%;
+                padding: 5rem;
+            }
+            a {
+                svg{
+                    margin-left: .93rem;
+                    transition-duration: .3s;
+                    transition-timing-function: ease-out;
+                }
+                &:hover{
+                   svg{
+                        transform: translateX(10px);
+                    }
+                }
+            }
+        }
+        &__container{
+            @include breakpoint(xl){
+                flex-wrap: wrap;
+            }
+            display: flex;
+            height: 100%;
+        }
+    }
+    &__controls{
+        width: 64%;
+        margin-top: -6.1rem;
+        position: relative;
+        @include breakpoint(xl){
+            width: 100%;
+            margin: 0;
+            position: absolute;
+            top: 18rem;
+        }
+        nav{
+            margin: 0 calc((100vw - 1640px) / 2);
+            
+            @include breakpoint(xxl){
+                margin: 0;
+
+                .nav-tabs{
+                    margin: 0 auto;
+                    width: max-content;
+                }
+
+            }
+
+            .nav-tabs .nav-link::before{
+                background: #fff;
+            }
+
+        }
+    }
+}
+

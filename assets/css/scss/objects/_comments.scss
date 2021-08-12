@@ -1,0 +1,38 @@
+.comments{
+    list-style-type: none;
+    padding: 0;
+    li{
+        position: relative;
+        &:before{
+            content: '';
+            height: 28px;
+            width: 1px;
+            display: block;
+            border-left: 1px solid #A0A0A0;
+            margin: 12px 0;
+        }
+        &:after{
+            content: "\e915";
+            font-family: 'icomoon' !important;
+            font-size: 18px;
+            color: #A0A0A0;
+            position: absolute;
+            bottom: 12px;
+            left: -27px;
+        }
+        &:first-of-type{
+            &:before{
+                display: none;
+            }
+        }
+        &.level-2{
+            &:before{
+                border-left: 1px dashed #A0A0A0;
+                height: 38px;
+            }
+            &:after{
+                display: none;
+            }
+        }
+    }
+}

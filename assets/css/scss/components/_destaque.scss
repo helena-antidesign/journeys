@@ -1,0 +1,54 @@
+.c-destaque{
+    height: 37.8rem;
+    background-size: cover;
+    background-position: center;
+    a{
+        &:hover{
+            .c-destaque__link{
+                svg{
+                    transform: translateX(10px);
+                }
+            }
+         }
+    }
+    &__link{
+        margin-top: 3.8rem;
+        letter-spacing: .12rem;
+        svg{
+            margin-left: .93rem;
+            transition-duration: .3s;
+            transition-timing-function: ease-out;
+        }
+    }
+
+    &--reduced{
+        height: 47.68rem;
+        margin-bottom: 138px;
+        .container {
+            padding: 0 4rem;
+            @include breakpoint(md){
+                padding: 0 1rem;
+            }
+        }
+    }
+
+    .swiper-pagination{
+        text-align: left;
+        position: relative;
+        bottom: 91px;
+    }
+    .swiper-pagination-bullet{
+        background: #fff;
+        opacity: 1;
+        height: 5px;
+        width: 5px;
+        margin: 0 13px 0 0!important;
+    }
+    .swiper-pagination-bullet-active{
+        background: #0E6A7A;
+    }
+    .swiper-slide{
+        background-position: center;
+        background-size: cover;
+    }
+}

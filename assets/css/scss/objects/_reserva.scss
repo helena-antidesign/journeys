@@ -1,0 +1,340 @@
+.c-reserva-single{
+    display: none;
+    &__bg{
+        background: #000;
+        position: fixed;
+        height: 100vw;
+        width: 100vw;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        opacity: 0;
+        visibility: hidden;
+        transition: 300ms ease-in-out;
+    }
+
+    &__close{
+        position: absolute;
+        top: 61px;
+        left: 58px;
+    }
+
+    &__box{
+        background: #fff;
+        border-radius: 4.5rem 4.5rem 0 0;
+        position: fixed;
+        bottom: 0;
+        max-height: 81.85vh;
+        z-index: 9999;
+        left: 0;
+        right: 0;
+        padding-bottom: 2.62rem;
+        transition: .3s;
+        overflow: auto;
+        /* width */
+        &::-webkit-scrollbar {
+            width: 4px;
+            height: 60vh;
+        }
+        
+        /* Track */
+        &::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+            background: #888; 
+        }
+        
+        /* Handle on hover */
+        &::-webkit-scrollbar-thumb:hover {
+            background: #555; 
+        }
+        &__container{
+            width: 85.25rem;
+            margin: 0 auto;
+            padding-top: 3.37rem;
+            display: none!important;
+            opacity: 0;
+            visibility: hidden;
+            @include breakpoint(xxl){
+                width: 80%;
+            }
+            &.show{
+                display: flex!important;
+                opacity: 1;
+                visibility: visible;
+            }
+            
+        }
+        &__col-1{
+            width: 19.5rem;
+            padding-bottom: 4.12rem;
+        }
+        &__col-2{
+            width: 62.8rem;
+            padding-bottom: 4.12rem;
+        }
+        &__container--check{
+            width: 94.93rem;
+            margin: 0 auto;
+            padding-top: 3.37rem;
+            opacity: 0;
+            visibility: hidden;
+            @include breakpoint(xxl){
+                width: 90%;
+            }
+            &.show{
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+
+    &__box__container--check{
+        table.table{
+            width: 56.5rem;
+        }
+        table.table th{
+            border-bottom: 0!important;
+            padding-bottom: 0;
+        }
+        &__button{
+            height: 1.37rem;
+        }
+    }
+
+
+    &.open{
+        display: block;
+        .c-reserva-single__bg{
+            opacity: .2;
+            visibility: visible;
+        }
+        .c-reserva-single__box{
+            animation: fpFadeInUp 300ms cubic-bezier(0.23, 1, 0.32, 1);
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+
+
+.c-reservas__menu{
+    display: none;
+    position: relative;    
+    &.open{
+        opacity: 1;
+        visibility: visible;
+        display: block;
+        .c-reservas__menu__bg{
+            opacity: .3;
+            visibility: visible;
+        }
+        .c-reservas__menu__content{
+            animation: fpFadeInRight 300ms cubic-bezier(0.23, 1, 0.32, 1);
+            opacity: 1;
+        }
+    }
+    &__close{
+       width: 100%;
+       left: 44px;
+    }
+    &__bg{
+        background: #000;
+        position: fixed;
+        height: 100vw;
+        width: 100vw;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        opacity: 0;
+        visibility: hidden;
+        transition: .3s ease-in-out;
+        cursor: pointer;
+    }
+    &__content{
+        height: 100vh;
+        background: #fff;
+        position: fixed;
+        z-index: 99999999;
+        top: 0;
+        right: 0;
+        display: flex;
+        transition: .3s;
+        opacity: 0;
+        overflow: hidden;
+        .tab-content{
+            overflow: auto;
+        }
+        .tab-pane{
+            border-left: 1px solid #EAEAEA;
+        }
+    }
+    &__icons{
+        width: 7.1rem;
+        padding-top: 4rem;
+        .nav-item{
+            button{
+                position: relative;
+                &:before{
+                    content: '';
+                    background: #0F6B7B;
+                    display: block;
+                    height: 100%;
+                    width: 7px;
+                    left: 0;
+                    top: 0;
+                    position: absolute;
+                    transition: .2s ease-out;
+                    transform: translateX(-7px);
+                }
+                &.active, &:hover{
+                    color: $primary;
+                    &:before{
+                        transform: translateX(0px);
+                    }
+                }
+            }
+            
+        }
+        .nav-link{
+            border: 0;
+            background: #fff;
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    &__container{
+        padding: 4rem 3.68rem 4rem 5rem;
+        width: 30.31rem;
+        h3{
+            font-size: .86rem;
+            color: $primary;
+            font-weight: 500;
+            padding-top: .75rem;
+        }
+    }
+    #log-tabContent{ 
+        .c-reservas__menu__container{
+            width: 939px;
+        }
+        table.table{
+            thead th{
+                border: 0;
+                font-weight: 400;
+                padding: 0;
+                opacity: .34;
+            }
+            tbody {
+                &:before{
+                    display: none;
+                }
+                td{
+                    border-radius: 0;
+                    border-color: #dee2e6;
+                    padding: .4rem 0;
+                }
+            }
+        }
+    }
+    #comentarios-tabContent{
+        .add-comment{
+            position: relative;
+            display: block;
+            span{
+                position: absolute;
+                top: 11px;
+                left: 15px;
+            }
+            input#add-comment{
+                padding-left: 3rem;
+            }
+        }
+    }
+}
+
+
+
+.c-reservas__voucher{
+    .qnty{
+        width: 6.5rem;
+    }
+    &__passageiro{
+        width: 12.37rem;
+    }
+    &__idioma{
+        width: 11.5rem;
+    }
+    &__comentarios{
+
+    }
+
+}
+
+.c-reservas__invoice{
+    &__input{
+        width: 16.76rem;
+    }
+
+}
+
+.c-reservas__doc{
+    &__col1{
+        width: 34rem;
+        table{
+            max-width: 100%;
+        }
+    }
+    &__table{
+        width: 47.62rem;
+        margin-left: 6.18rem;   
+    }
+}
+
+
+
+@-webkit-keyframes fpFadeInRight{
+    from{ 
+        opacity:0;
+        -webkit-transform:translate3d(0,0,0);
+        transform:translate3d(0,0,0)
+    }
+    to{
+        opacity:1;
+        -webkit-transform:translate3d(20px,0,0);
+        transform:translate3d(0,0,0)
+    }
+}
+@keyframes fpFadeInRight{
+    from{
+        opacity:0;-webkit-transform:translate3d(0,-0,0);
+        transform:translate3d(20px,0,0)
+    }
+    to{
+        opacity:1;-webkit-transform:translate3d(20px,0,0);transform:translate3d(0,0,0)
+    }
+}
+
+
+@-webkit-keyframes fpFadeInUp{
+    from{ 
+        opacity:0;
+        -webkit-transform:translate3d(0,0,0);
+        transform:translate3d(0,0,0)
+    }
+    to{
+        opacity:1;-webkit-transform:translate3d(0,20px,0);transform:translate3d(0,0,0)
+    }
+}
+@keyframes fpFadeInUp{
+    from{
+        opacity:0;-webkit-transform:translate3d(0,-0,0);transform:translate3d(0,20px,0)
+    }
+    to{
+        opacity:1;-webkit-transform:translate3d(0,20px,0);transform:translate3d(0,0,0)
+    }
+}

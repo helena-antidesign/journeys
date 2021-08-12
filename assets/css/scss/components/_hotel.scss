@@ -1,0 +1,221 @@
+.c-hotel{
+    padding-top: 7.37rem;
+    &__banner{
+        height: calc(77vh - 118px);
+
+        &__img{
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100%;
+            display: block;
+            position: relative;
+           &__lightbox{
+                position: absolute;
+                top: 27px;
+                right: 32px;
+                svg{
+                    fill: #fff;
+                    transition: .3s;
+                }
+                &:hover{
+                    svg{
+                        fill: $primary;
+                    }
+                }
+            }
+        }
+
+        .swiper-slide{
+            height: 100%; 
+            width: 93.2vw;
+            display: flex;
+            justify-content: space-between;
+            div:first-of-type {
+                width: 63.95vw;
+                height: 100%;
+                margin-right: 16px;
+                a{
+                    height: 100%;
+                }
+            }
+            div:nth-child(2n) {
+                width: 28.43vw;
+                height: 100%;
+                .c-hotel__banner__img{
+                    height: 48.86%;
+                    width: 100%;
+                    &:first-of-type{
+                        margin-bottom: 16px;
+                    }
+                }
+            }
+
+        }
+        .swiper-pagination{
+            left: 0;
+            right: 0;
+            text-align: left;
+            &-bullet{
+                background: #fff;
+                opacity: 1;
+                height: 5px;
+                width: 5px;
+                margin: 0 12px 0 0;
+                &-active{
+                    background-color: $primary;
+                }
+            }
+        }
+        &__buttons{
+            width: 63.95vw;
+            z-index: 9999;
+            display: block;
+            position: relative;
+            .swiper-button{
+                &-prev,
+                &-next{
+                    height: 19px;
+                    width: 10px;
+                    top: inherit;
+                    bottom: 40px;
+                    background-image: url('../img/arrow-right-white.png');
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    &:after{
+                        display: none;
+                    }
+                }
+                &-prev{
+                    transform: rotate(-180deg);
+                    right: 82px;
+                    left: inherit;
+                    position: absolute;
+                }
+                &-next{
+                    right: 32px;
+                }
+            }
+        }
+    }
+   
+    &__price{
+        padding: 2.87rem 3.6rem 3.5rem 3.6rem;
+        border-radius: 3.31rem;
+        position: absolute;
+        width: 33.5rem;
+        @include breakpoint(xxl){
+            width: 23.18rem;
+        }
+        @include breakpoint(xl){
+            width: 100%;
+            position: inherit;
+            margin: 5rem 0 0;
+        }
+        &.fixed {position: fixed;}
+
+        &__date{
+            overflow: hidden;
+            &__close{
+                position: fixed;
+                height: 100vh;
+                width: 100vw;
+                z-index: 999999;
+            }
+            &__checkin{
+                width: 210px;
+            }
+            &__checkout{
+                max-width: 120px;
+            }
+            
+            &__checkin, 
+            &__checkout{
+                .flatpickr-calendar{
+                    max-height: 0;
+                    overflow: hidden;
+                    transition: 0s;
+                }
+                &.open{
+                    .flatpickr-calendar{
+                        max-height: 338px;
+                    height: 338px;
+                    transition: .3s;
+                    }
+                }
+            }
+
+            position: relative;
+        }
+
+        &__passageiros{
+            &__content{
+                max-height: 0;
+                overflow: hidden;
+                padding-top: 60px;
+                &.open{
+                    max-height: 546px;
+                    transition: .3s;
+                }
+            }
+        }
+
+        .flatpickr-calendar{
+            padding: 0;
+            box-shadow: none;
+            position: absolute; 
+        }
+        
+        .flatpickr-calendar.inline{
+            padding: 0;
+            box-shadow: none;
+            position: absolute;
+            width: 420px;
+            border-radius: 0;
+            padding: 26px 0 0;
+            position: inherit;
+            overflow: hidden;
+            
+        }
+        .flatpickr-innerContainer,
+        .flatpickr-weekdaycontainer,
+        .dayContainer{
+            width: 420px;
+            max-width: 420px;
+        }
+        .flatpickr-monthDropdown-months{
+            font-weight: bold;
+        }
+        .numInputWrapper{
+            display: none;
+        }
+        .flatpickr-day{
+            margin: 0 11px;
+        }
+        .flatpickr-months{
+            position: relative;
+            .flatpickr-next-month.flatpickr-next-month,
+            .flatpickr-prev-month{
+                top: 0;
+            }
+        }
+        .flatpickr-day.selected, .flatpickr-day.startRange, .flatpickr-day.endRange, .flatpickr-day.selected.inRange, .flatpickr-day.startRange.inRange, .flatpickr-day.endRange.inRange, .flatpickr-day.selected:focus, .flatpickr-day.startRange:focus, .flatpickr-day.endRange:focus, .flatpickr-day.selected:hover, .flatpickr-day.startRange:hover, .flatpickr-day.endRange:hover, .flatpickr-day.selected.prevMonthDay, .flatpickr-day.startRange.prevMonthDay, .flatpickr-day.endRange.prevMonthDay, .flatpickr-day.selected.nextMonthDay, .flatpickr-day.startRange.nextMonthDay, .flatpickr-day.endRange.nextMonthDay{
+            background: $primary;
+        }
+
+    }
+    &__carousel{
+        padding: 10.8rem 0 11rem;
+        .o-hotel{
+            width: 46.3rem;
+        }
+        @include breakpoint(xl){
+            .o-hotel{
+                width: 100%;
+            }
+            .c-cards-carousel__pagination{
+                position: inherit!important;
+            }
+        }
+    }
+}

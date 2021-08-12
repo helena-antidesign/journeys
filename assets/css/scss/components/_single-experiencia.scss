@@ -1,0 +1,78 @@
+.c-single-experiencia{
+    .c-banner{
+        min-height: 53.8rem;
+    }
+    &__galeria{
+        padding: 9.6rem 0 12.9rem;
+        @include breakpoint(lg){
+            padding: 9rem 0;
+        }
+        &__swiper{
+            .swiper-slide{
+                height: 30rem;
+            }
+            &__controls{
+                padding-top: 2.25rem;
+                width: 4.68rem;
+                display: flex;
+                justify-content: space-between;
+                .swiper-button-next,
+                .swiper-button-prev{
+                    font-size: 1.5rem;
+                    width: 10px;
+                    color: $primary;
+                    position: inherit;
+                    margin: 0;
+                    height: auto;
+                    &:after{
+                        content:'';
+                    }
+                    span{
+                        font-weight: bold;
+                    }
+                }
+            }
+            .swiper-pagination{
+                left: inherit;
+                right: 0;
+                width: auto;
+                .swiper-pagination-bullet{
+                    height: 5px;
+                    width: 5px;
+                    background: $secondary;
+                    opacity: 1;
+                }
+                .swiper-pagination-bullet-active{
+                    background: $primary;
+                }
+            }
+        }
+    }
+    &__explorar{
+        &__item{
+            &__img{
+                height: 186px;
+                width: 398px;
+                border-radius: 20px;
+                position: relative;
+                background-size: cover;
+                overflow: hidden;
+                &:after{
+                    content: '';
+                    background-image: url('../img/single-experiencia/experiencia-carousel-bg.png');
+                    display: block;
+                    height: 100%;
+                    width: 100%;
+                    position: absolute;
+                    mix-blend-mode: darken;
+                    border-radius: 20px;
+                    left: 0;
+
+                }
+            }
+            &__content{
+                padding-right: 20px;
+            }
+        }
+    }
+}
