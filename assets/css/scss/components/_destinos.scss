@@ -10,7 +10,7 @@
         }
         @include breakpoint(xl){
             width: 100%;
-            height: 46.5rem!important;
+            height: 43rem!important;
             min-height: initial;
         }
         @include breakpoint(lg){
@@ -34,6 +34,7 @@
         &__left{
             position: relative;
             z-index: 2;
+            
             @include breakpoint(xl){
                 display: flex;
                 justify-content: space-between;
@@ -46,6 +47,9 @@
                 & > div{
                     width: 100% !important;
                 }
+            }
+            @include breakpoint(md){
+                padding: 0;
             }
         }
         &__form{
@@ -60,6 +64,9 @@
             }
         }
         &__result{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             h2{
                 margin-bottom: 6.18rem;
             }
@@ -70,9 +77,14 @@
             .table{
                 border-collapse: separate;
                 border-spacing: 0 .5rem;
-                & > tbody > tr{
-                    background: #fff;
-                    cursor: pointer;
+                & > tbody {
+                    tr{
+                        cursor: pointer;
+                    }
+                    td{
+                        background: #fff;
+                        padding: .8rem 1.07rem .4rem;
+                    }
                 }
             }
             @include breakpoint(xl){
@@ -105,19 +117,20 @@
             box-shadow: none;
             width: 100%;
             max-height: none;
-            padding: 1.75rem 0;
+            padding: 0;
             margin-left: -11px;
             @include breakpoint(xxl){
                 margin-left: 0;
             }
         }
         .flatpickr-innerContainer{
-            margin-left: -22px;
+            max-width: none;
+            width: calc(100% + 16px);
+            margin-left: -16px;
             @include breakpoint(xxl){
                 margin-left: 0;
             }
         }
-        .flatpickr-innerContainer,  
         .flatpickr-weekdaycontainer,
         .dayContainer{
             width: 100%;
@@ -131,14 +144,13 @@
         }
         .flatpickr-day{
             border-radius: 100%;            
-            margin: 0 calc((100% / 7 - 32px)/2) 52px;
-
-            @include breakpoint(xxl){
-                margin: 0 calc((100% / 7 - 32px)/2) 26px;
-            }
+            margin: 0 calc((100% / 7 - 32px)/2) 28px;
+        }
+        .flatpickr-months{
+            margin-bottom: 56px;
+            height: 34px;
         }
         .flatpickr-month{
-            margin-bottom: 56px;
             .flatpickr-current-month{
                 font-size: 28px;
                 margin: 0;
@@ -146,6 +158,7 @@
                 padding: 0;
                 text-align: left;
                 display: flex;
+                color: $secondary;
                 .flatpickr-monthDropdown-months{
                     font-weight: bold;
                     &:hover{
@@ -161,22 +174,32 @@
         }
         .flatpickr-months .flatpickr-prev-month.flatpickr-prev-month{
             left: inherit;
-            right: 50px;
+            right: 80px;
+            top: 4px;
+            padding: 0;
            svg{
                 width: 18px;
                 height: 19px;
                 stroke: $primary;
            }
+           @include breakpoint(xxl){
+                right: 40px;
+            }
         }
         .flatpickr-day.selected, .flatpickr-day.startRange, .flatpickr-day.endRange, .flatpickr-day.selected.inRange, .flatpickr-day.startRange.inRange, .flatpickr-day.endRange.inRange, .flatpickr-day.selected:focus, .flatpickr-day.startRange:focus, .flatpickr-day.endRange:focus, .flatpickr-day.selected:hover, .flatpickr-day.startRange:hover, .flatpickr-day.endRange:hover, .flatpickr-day.selected.prevMonthDay, .flatpickr-day.startRange.prevMonthDay, .flatpickr-day.endRange.prevMonthDay, .flatpickr-day.selected.nextMonthDay, .flatpickr-day.startRange.nextMonthDay, .flatpickr-day.endRange.nextMonthDay{
             background: $primary;
         }
         .flatpickr-months .flatpickr-next-month.flatpickr-next-month{
-            right: 0;
+            right: 30px;
+            top: 4px;
+            padding: 0;
             svg{
                  width: 18px;
                  height: 19px;
                  stroke: $primary;
+            }
+            @include breakpoint(xxl){
+                right: 0;
             }
         }
         &__dots{
@@ -204,6 +227,9 @@
     &__table{
         overflow-x: auto;
         table tbody tr {
+            td{
+                width: 100%;
+            }
             td:nth-child(2){
                 min-width: 173px;
             }
@@ -241,7 +267,6 @@
         }
         &__content{
             font-size: 1.12rem;
-            overflow: auto;
             min-height: 31rem;
             height: auto;
             padding: 11.2rem 0 5rem;
@@ -321,14 +346,29 @@
         }
     }
     &__cambio{
+        overflow: hidden;
+        padding-top: 10.6rem;
         .input-search input{
             width: 16.5rem;
             margin-bottom: 1.12rem;
         }
         &__item{
+            
+            @include breakpoint(xl){
+                width: calc(100% / 3 - 1rem);
+                justify-content: center;
+            }
+            @include breakpoint(xl){
+                width: calc(100% / 2 - 1.5rem);
+            }
             @include breakpoint(md){
                 width: 100%;
-                justify-content: center;
+            }   
+        }
+        &__divisor{
+            
+            @include breakpoint(md){
+                display: none;   
             }
         }
     } 

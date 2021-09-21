@@ -8,23 +8,22 @@ document.addEventListener("DOMContentLoaded", function (event) {
       slidesPerView: 1,
       
       pagination: {
-        el: ".swiper-pagination",
+        el: ".JS__brasil-tour .swiper-pagination",
         clickable: true
       },
       scrollbar: {
-        el: ".swiper-scrollbar",
+        el: ".JS__brasil-tour .swiper-scrollbar",
         draggable: true,
       },
       
       breakpoints: {
-        // when window width is >= 320px
+        // when window width is >= 992px
         992: {
           slidesPerView: 3,
           spaceBetween: 22,
         }
 
       }
-
 
     });
   }

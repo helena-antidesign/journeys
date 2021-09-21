@@ -51,7 +51,7 @@
                     </div>
                 </div>
 
-                <div class="col-xl-7 offset-xl-1">
+                <div class="col-xl-7 offset-xl-1 position-relative">
                     <div class="swiper-container c-single-experiencia__galeria__swiper JS__experiencia-galeria">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide" style="background-image:url('assets/img/buzios.jpg');"></div>
@@ -77,143 +77,133 @@
     </section>
     
     
-    <section class="c-cards-carousel pt-0">
+    <section class="c-cards-carousel pt-0 JS__cards-carousel c-single-experiencia__filtro">
 
         <div class="container mb-5 pb-5">
             <div class="row">
                 <div class="col">
                     <ul class="nav nav-pills nav-fill">
-                        <li>
-                            <div class="me-5 position-relative input-search input-search--tarifarios">
-                                <span class="icon-search position-absolute"></span>
-                                <input type="text" placeholder="Busque por lugares em Búzios" class="form-control me-5">
-                                <span class="text-black-50">|</span>
-                            </div>
+                        <li class="nav-item">
+                            <button class="nav-link filter-button active" data-filter="all">Tudo</button>
                         </li>
                         <li class="nav-item">
-                            <button class="nav-link active" id="classificacao-tab-1" data-bs-toggle="tab" data-bs-target="#classificacao-tabContent-1" type="button" role="tab" aria-controls="classificacao-tabContent-1" aria-selected="true">Centro e Morro do Humaitá</button>
+                            <button class="nav-link filter-button" data-filter="centro-e-morro-do-humaita">Centro e Morro do Humaitá</button>
                         </li>
                         <li class="nav-item">
-                            <button class="nav-link" id="classificacao-tab-2" data-bs-toggle="tab" data-bs-target="#classificacao-tabContent-2" type="button" role="tab" aria-controls="classificacao-tabContent-2" aria-selected="false">Praia dos Ossos</button>
+                            <button class="nav-link filter-button" data-filter="praia-dos-ossos">Praia dos Ossos</button>
                         </li>
                         <li class="nav-item">
-                            <button class="nav-link" id="classificacao-tab-3" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Praia da Ferradura</button>
+                            <button class="nav-link filter-button" data-filter="praia-de-joao-fernandes" data-filter="all">Praia de João Fernandes</button>
                         </li>
                         <li class="nav-item">
-                            <button class="nav-link" id="classificacao-tab-4" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Praia de João Fernandes</button>
+                            <button class="nav-link filter-button" data-filter="praia-de-geriba">Praia de Geribá</button>
                         </li>
                         <li class="nav-item">
-                            <button class="nav-link" id="classificacao-tab-5" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Praia de Geribá</button>
-                        </li>
-                        <li class="nav-item">
-                            <button class="nav-link" id="classificacao-tab-6" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Praias Brava e Forno</button>
+                            <button class="nav-link filter-button" data-filter="praias-brava-e-forno">Praias Brava e Forno</button>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
 
-        <div id="classificacao-tabContent" class="tab-content mt-5">
-            <div class="tab-pane fade active show" id="classificacao-tabContent-1" role="tabpanel" aria-labelledby="classificacao-tab-1">
-                
-                <div class="container-fluid">
-                    <div class="row h-100 d-flex align-items-center">
+        <div>
+            <div class="container-fluid">
+                <div class="row h-100 d-flex align-items-center">
 
-                        <div class="col-xl-3 c-cards-carousel__title text-gray-200">
-                            <h2 class="d-inline-block fs-5 text-primary p-2 px-0 mb-3">Classificação</h2>
-                            <h3 class="mb-4 fs-3 fw-bold text-secondary">Encontre a experiencia perfeita com nossa seleção de hotéis</h3>
-                            <p>Explore os diversos hotéis com classificações desde a gastronomia até a decoração</p>
+                    <div class="col-xl-3 c-cards-carousel__title text-gray-200">
+                        <h2 class="d-inline-block fs-5 text-primary p-2 px-0 mb-3">Classificação</h2>
+                        <h3 class="mb-4 fs-3 fw-bold text-secondary">Encontre a experiencia perfeita com nossa seleção de hotéis</h3>
+                        <p>Explore os diversos hotéis com classificações desde a gastronomia até a decoração</p>
 
-                            <div class="position-relative JS__classificacao__pagination c-cards-carousel__pagination">
-                                <!-- If we need navigation buttons -->
-                                <div class="swiper-button-prev fs-4 shadow rounded-circle">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="8.397" height="14.73"><path data-name="Caminho 4" d="M8.396 7.365a1.029 1.029 0 01-.3.729l-6.337 6.337A1.032 1.032 0 01.3 12.972l5.6-5.6-5.6-5.6A1.036 1.036 0 111.759.302l6.336 6.329a1.029 1.029 0 01.301.734z" fill="#0e6a7a"/></svg>
-                                </div>
-                                <div class="swiper-button-next fs-4 shadow rounded-circle">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="8.397" height="14.73"><path data-name="Caminho 4" d="M8.396 7.365a1.029 1.029 0 01-.3.729l-6.337 6.337A1.032 1.032 0 01.3 12.972l5.6-5.6-5.6-5.6A1.036 1.036 0 111.759.302l6.336 6.329a1.029 1.029 0 01.301.734z" fill="#0e6a7a"/></svg>
-                                </div>
+                        <div class="position-relative c-cards-carousel__pagination">
+                            <!-- If we need navigation buttons -->
+                            <div class="swiper-button-prev fs-4 shadow rounded-circle">
+                                <span class="icon-arrow-left fw-bold text-primary"></span>
                             </div>
-
+                            <div class="swiper-button-next fs-4 shadow rounded-circle">
+                                <span class="icon-arrow-right fw-bold text-primary"></span>
+                            </div>
                         </div>
 
-                        <div class="c-cards-carousel__content">
-                        
-                            <div class="swiper-container JS__classificacao">
-                            <!-- Additional required wrapper -->
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide o-card d-flex align-items-end" style="background-image: url('assets/img/card-barra-de-sao-miguel.jpg');">
+                    </div>
 
-                                        <img src="assets/img/card-bg.png" alt="" class="o-card__bg">
+                    <div class="c-cards-carousel__content">
+                    
+                        <div class="swiper-container">
+                        <!-- Additional required wrapper -->
+                            <div class="swiper-wrapper">
 
-                                        <a href="hotel.php" class="text-reset text-white h-100 d-flex flex-wrap align-items-start justify-content-between flex-column">
-                                            <span></span>
-                                            <div class="o-card__content">
-                                                <span class="fs-4 text-white fw-500 mb-2 d-block">Pousada do Centro Oeste</span>
-                                                <p class="fs-6">Pousada turistica, localizada no centro.</p>
-                                            </div>
-                                        </a>
+                                <div class="swiper-slide o-card d-flex align-items-end filter all centro-e-morro-do-humaita" style="background-image: url('assets/img/card-barra-de-sao-miguel.jpg');">
 
-                                    </div>
-                                    <div class="swiper-slide o-card d-flex align-items-end" style="background-image: url('assets/img/card-marau.jpg');">
+                                    <img src="assets/img/card-bg.png" alt="" class="o-card__bg">
 
-                                        <img src="assets/img/card-bg.png" alt="" class="o-card__bg">
-                                        
-                                        <a href="hotel.php"" class="text-reset text-white h-100 d-flex flex-wrap align-items-start justify-content-between flex-column">
-                                            <span></span>
-                                            <div>
-                                                <span class="fs-4 text-white fw-500 mb-2 d-block">Barla Inn</span>
-                                                <p class="fs-6">Pousada turistica, localizada no centro.</span></p>
-                                            </div>
-                                        </a>
+                                    <a href="hotel.php" class="text-reset text-white h-100 d-flex flex-wrap align-items-start justify-content-between flex-column">
+                                        <span></span>
+                                        <div class="o-card__content">
+                                            <span class="fs-4 text-white fw-500 mb-2 d-block">Pousada do Centro Oeste</span>
+                                            <p class="fs-6">Pousada turistica, localizada no centro.</p>
+                                        </div>
+                                    </a>
 
-                                    </div>
-                                    <div class="swiper-slide o-card d-flex align-items-end" style="background-image: url('assets/img/card-maragogi.jpg');">
+                                </div>
+                                <div class="swiper-slide o-card d-flex align-items-end filter all centro-e-morro-do-humaita praia-dos-ossos" style="background-image: url('assets/img/card-marau.jpg');">
 
-                                        <img src="assets/img/card-bg.png" alt="" class="o-card__bg">
-
-                                        <a href="hotel.php"" class="text-reset text-white h-100 d-flex flex-wrap align-items-start justify-content-between flex-column">
-                                            <span></span>
-                                            <div>
-                                                <span class="fs-4 text-white fw-500 mb-2 d-block">Pousada Centro Norte</span>
-                                                <p class="fs-6">Pousada turistica, localizada no centro.</p>
-                                            </div>
-                                        </a>
-
-                                    </div>
-                                    <div class="swiper-slide o-card d-flex align-items-end" style="background-image: url('assets/img/card-trancoso2.jpg');">
-
-                                        <img src="assets/img/card-bg.png" alt="" class="o-card__bg">
-
-                                        <a href="hotel.php"" class="text-reset text-white h-100 d-flex flex-wrap align-items-start justify-content-between flex-column">
-                                            <span></span>
-                                            <div>
-                                                <span class="fs-4 text-white fw-500 mb-2 d-block">Doce Mar</span>
-                                                <p class="fs-6">Pousada turistica, localizada no centro.</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="swiper-slide o-card d-flex align-items-end" style="background-image: url('assets/img/card-buzios.jpg');">
-
-                                        <img src="assets/img/card-bg.png" alt="" class="o-card__bg">
-
-                                        <a href="hotel.php" class="text-reset text-white h-100 d-flex flex-wrap align-items-start justify-content-between flex-column">
-                                            <span></span>
-                                            <div>
-                                                <span class="fs-4 text-white fw-500 mb-2 d-block">Água Mar</span>
-                                                <p class="fs-6">Pousada turistica, localizada no centro.</p>
-                                            </div>
-                                        </a>
-
-                                    </div>
+                                    <img src="assets/img/card-bg.png" alt="" class="o-card__bg">
                                     
-                                </div>
-                                </div>
-                            </div>
+                                    <a href="hotel.php"" class="text-reset text-white h-100 d-flex flex-wrap align-items-start justify-content-between flex-column">
+                                        <span></span>
+                                        <div>
+                                            <span class="fs-4 text-white fw-500 mb-2 d-block">Barla Inn</span>
+                                            <p class="fs-6">Pousada turistica, localizada no centro.</span></p>
+                                        </div>
+                                    </a>
 
+                                </div>
+                                <div class="swiper-slide o-card d-flex align-items-end filter ll centro-e-morro-do-humaita praia-de-joao-fernandes" style="background-image: url('assets/img/card-maragogi.jpg');">
+
+                                    <img src="assets/img/card-bg.png" alt="" class="o-card__bg">
+
+                                    <a href="hotel.php"" class="text-reset text-white h-100 d-flex flex-wrap align-items-start justify-content-between flex-column">
+                                        <span></span>
+                                        <div>
+                                            <span class="fs-4 text-white fw-500 mb-2 d-block">Pousada Centro Norte</span>
+                                            <p class="fs-6">Pousada turistica, localizada no centro.</p>
+                                        </div>
+                                    </a>
+
+                                </div>
+                                <div class="swiper-slide o-card d-flex align-items-end filter all praia-de-geriba" style="background-image: url('assets/img/card-trancoso2.jpg');">
+
+                                    <img src="assets/img/card-bg.png" alt="" class="o-card__bg">
+
+                                    <a href="hotel.php"" class="text-reset text-white h-100 d-flex flex-wrap align-items-start justify-content-between flex-column">
+                                        <span></span>
+                                        <div>
+                                            <span class="fs-4 text-white fw-500 mb-2 d-block">Doce Mar</span>
+                                            <p class="fs-6">Pousada turistica, localizada no centro.</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide o-card d-flex align-items-end filter all praias-brava-e-forno" style="background-image: url('assets/img/card-buzios.jpg');">
+
+                                    <img src="assets/img/card-bg.png" alt="" class="o-card__bg">
+
+                                    <a href="hotel.php" class="text-reset text-white h-100 d-flex flex-wrap align-items-start justify-content-between flex-column">
+                                        <span></span>
+                                        <div>
+                                            <span class="fs-4 text-white fw-500 mb-2 d-block">Água Mar</span>
+                                            <p class="fs-6">Pousada turistica, localizada no centro.</p>
+                                        </div>
+                                    </a>
+
+                                </div>
+                                
+                            </div>
+                            </div>
                         </div>
+
                     </div>
                 </div>
-
             </div>
         </div>
 
@@ -225,7 +215,7 @@
     <?php include('includes/destaque.php') ?>
 
 
-    <section class="c-cards-carousel">
+    <section class="c-cards-carousel overflow-hidden JS__cards-carousel">
         <div class="container">
             <div class="row">
                 <div class="col-xxl-4 col-xl-5 col-lg-6 col-md-8 col-sm-11 mb-5">
@@ -234,112 +224,83 @@
                     <p class="fs-4">Consulte as restrições com base no Covid-19 <a href="juntos-somos-mais-fortes.php" class="ms-3 btn-link fs-6 text-secondary border-secondary py-0">Leia mais</a></p>
                 </div>
             </div>
-            <div class="row">
-                <div class="col">
-                    <ul class="nav nav-pills nav-fill">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Centro e Morro do Humaitá</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Praia dos Ossos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Praia da Ferradura</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Praia de João Fernandes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Praia de João Fernandes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Praias Brava e Forno</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
 
-            <div id="nav-tabContent" class="tab-content mt-5">
-                <div class="tab-pane fade active show" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                    <div class="swiper-container JS__experiencias-swiper">
-                        <div class="swiper-wrapper">
+            <div class="mt-5">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
 
-                            <div class="swiper-slide col-xl-3 col-lg-4 col-md-5 c-single-experiencia__explorar__item">
-                                <a href="#" class="text-reset text-white h-100 d-flex flex-wrap align-items-start justify-content-between flex-column">
-                                    <div class="w-100 c-single-experiencia__explorar__item__img" style="background-image: url('assets/img/single-experiencia/aventuras-buzios01.png');"></div>
-                                    <div class="mt-4 fs-6 c-single-experiencia__explorar__item__content">
-                                        <span class="icon-transfer fs-28 my-2"></span>
-                                        <span class="fs-4 text-secondary mb-2 d-block fw-500">Trolley</span>
-                                        <p class="text-primary">Centro e Morro do Humaitá</p>
-                                        <p>Um lindo passeio por 12 praias e 2 mirantes  que proporciona uma vista incrível!</p>
-                                        <a href="experiencia.php" class="btn-link">Explorar</a>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="swiper-slide col-xl-3 col-lg-4 col-md-5 c-single-experiencia__explorar__item">
-                                <a href="#" class="text-reset text-white h-100 d-flex flex-wrap align-items-start justify-content-between flex-column">
-                                    <div class="w-100 c-single-experiencia__explorar__item__img" style="background-image: url('assets/img/single-experiencia/aventuras-buzios02.png');"></div>
-                                    <div class="mt-4 fs-6 c-single-experiencia__explorar__item__content">
-                                        <span class="icon-sail fs-28 my-2"></span>
-                                        <span class="fs-4 text-secondary mb-2 d-block fw-500">Passeio em Arraial do Cabo</span>
-                                        <p class="text-primary">Centro e Morro do Humaitá</p>
-                                        <p>Com praias de areia branca e águas cristalinas, há um passeio de escuna e três paradas para banho de mar</p>
-                                        <a href="experiencia.php" class="btn-link">Explorar</a>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="swiper-slide col-xl-3 col-lg-4 col-md-5 c-single-experiencia__explorar__item">
-                                <a href="#" class="text-reset text-white h-100 d-flex flex-wrap align-items-start justify-content-between flex-column">
-                                    <div class="w-100 c-single-experiencia__explorar__item__img" style="background-image: url('assets/img/single-experiencia/aventuras-buzios03.png');"></div>
-                                    <div class="mt-4 fs-6 c-single-experiencia__explorar__item__content">
-                                        <span class="icon-fish fs-28 my-2"></span>
-                                        <span class="fs-4 text-secondary mb-2 d-block fw-500">Fishing Tour</span>
-                                        <p class="text-primary">Centro e Morro do Humaitá</p>
-                                        <p>Com praias de areia branca e águas cristalinas, há um passeio de escuna e três paradas para banho de mar</p>
-                                        <a href="experiencia.php" class="btn-link">Explorar</a>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="swiper-slide col-xl-3 col-lg-4 col-md-5 c-single-experiencia__explorar__item">
-                                <a href="#" class="text-reset text-white h-100 d-flex flex-wrap align-items-start justify-content-between flex-column">
-                                    <div class="w-100 c-single-experiencia__explorar__item__img" style="background-image: url('assets/img/single-experiencia/aventuras-buzios04.png');"></div>
-                                    <div class="mt-4 fs-6 c-single-experiencia__explorar__item__content">
-                                        <span class="icon-surf fs-28 my-2"></span>
-                                        <span class="fs-4 text-secondary mb-2 d-block fw-500">Surf</span>
-                                        <p class="text-primary">Centro e Morro do Humaitá</p>
-                                        <p>Oportunidade imperdível de surf com os surfistas mais experientes de Búzios! </p>
-                                        <a href="experiencia.php" class="btn-link">Explorar</a>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="swiper-slide col-xl-3 col-lg-4 col-md-5 c-single-experiencia__explorar__item">
-                                <a href="#" class="text-reset text-white h-100 d-flex flex-wrap align-items-start justify-content-between flex-column">
-                                    <div class="w-100 c-single-experiencia__explorar__item__img" style="background-image: url('assets/img/single-experiencia/aventuras-buzios05.png');"></div>
-                                    <div class="mt-4 fs-6 c-single-experiencia__explorar__item__content">
-                                        <span class="icon-surf fs-28 my-2"></span>
-                                        <span class="fs-4 text-secondary mb-2 d-block fw-500">Mergulho</span>
-                                        <p class="text-primary">Centro e Morro do Humaitá</p>
-                                        <p>Neste passeio há um instrutor que dará todas as instruções</p>
-                                        <a href="experiencia.php" class="btn-link">Explorar</a>
-                                    </div>
-                                </a>
-                            </div>
-    
+                        <div class="swiper-slide col-xl-3 col-lg-4 col-md-5 c-single-experiencia__explorar__item">
+                            <a href="experiencia.php" class="text-reset text-white h-100 d-flex flex-wrap align-items-start justify-content-between flex-column">
+                                <div class="w-100 c-single-experiencia__explorar__item__img" style="background-image: url('assets/img/single-experiencia/aventuras-buzios01.png');"></div>
+                                <div class="mt-4 fs-6 c-single-experiencia__explorar__item__content">
+                                    <span class="icon-transfer fs-28 my-2"></span>
+                                    <span class="fs-4 text-secondary mb-2 d-block fw-500">Trolley</span>
+                                    <p class="text-primary">Centro e Morro do Humaitá</p>
+                                    <p>Um lindo passeio por 12 praias e 2 mirantes  que proporciona uma vista incrível!</p>
+                                    <span class="btn-link">Explorar</span>
+                                </div>
+                            </a>
                         </div>
-
-                        <div class="position-relative JS__experiencias-swiper__pagination c-cards-carousel__pagination mt-4">
-                            <!-- If we need navigation buttons -->
-                            <div class="swiper-button-prev fs-4 shadow rounded-circle">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="8.397" height="14.73"><path data-name="Caminho 4" d="M8.396 7.365a1.029 1.029 0 01-.3.729l-6.337 6.337A1.032 1.032 0 01.3 12.972l5.6-5.6-5.6-5.6A1.036 1.036 0 111.759.302l6.336 6.329a1.029 1.029 0 01.301.734z" fill="#0e6a7a"/></svg>
-                            </div>
-                            <div class="swiper-button-next fs-4 shadow rounded-circle">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="8.397" height="14.73"><path data-name="Caminho 4" d="M8.396 7.365a1.029 1.029 0 01-.3.729l-6.337 6.337A1.032 1.032 0 01.3 12.972l5.6-5.6-5.6-5.6A1.036 1.036 0 111.759.302l6.336 6.329a1.029 1.029 0 01.301.734z" fill="#0e6a7a"/></svg>
-                            </div>
+                        <div class="swiper-slide col-xl-3 col-lg-4 col-md-5 c-single-experiencia__explorar__item">
+                            <a href="experiencia.php" class="text-reset text-white h-100 d-flex flex-wrap align-items-start justify-content-between flex-column">
+                                <div class="w-100 c-single-experiencia__explorar__item__img" style="background-image: url('assets/img/single-experiencia/aventuras-buzios02.png');"></div>
+                                <div class="mt-4 fs-6 c-single-experiencia__explorar__item__content">
+                                    <span class="icon-sail fs-28 my-2"></span>
+                                    <span class="fs-4 text-secondary mb-2 d-block fw-500">Passeio em Arraial do Cabo</span>
+                                    <p class="text-primary">Centro e Morro do Humaitá</p>
+                                    <p>Com praias de areia branca e águas cristalinas, há um passeio de escuna e três paradas para banho de mar</p>
+                                    <span class="btn-link">Explorar</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide col-xl-3 col-lg-4 col-md-5 c-single-experiencia__explorar__item">
+                            <a href="experiencia.php" class="text-reset text-white h-100 d-flex flex-wrap align-items-start justify-content-between flex-column">
+                                <div class="w-100 c-single-experiencia__explorar__item__img" style="background-image: url('assets/img/single-experiencia/aventuras-buzios03.png');"></div>
+                                <div class="mt-4 fs-6 c-single-experiencia__explorar__item__content">
+                                    <span class="icon-fish fs-28 my-2"></span>
+                                    <span class="fs-4 text-secondary mb-2 d-block fw-500">Fishing Tour</span>
+                                    <p class="text-primary">Centro e Morro do Humaitá</p>
+                                    <p>Com praias de areia branca e águas cristalinas, há um passeio de escuna e três paradas para banho de mar</p>
+                                    <span class="btn-link">Explorar</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide col-xl-3 col-lg-4 col-md-5 c-single-experiencia__explorar__item">
+                            <a href="experiencia.php" class="text-reset text-white h-100 d-flex flex-wrap align-items-start justify-content-between flex-column">
+                                <div class="w-100 c-single-experiencia__explorar__item__img" style="background-image: url('assets/img/single-experiencia/aventuras-buzios04.png');"></div>
+                                <div class="mt-4 fs-6 c-single-experiencia__explorar__item__content">
+                                    <span class="icon-surf fs-28 my-2"></span>
+                                    <span class="fs-4 text-secondary mb-2 d-block fw-500">Surf</span>
+                                    <p class="text-primary">Centro e Morro do Humaitá</p>
+                                    <p>Oportunidade imperdível de surf com os surfistas mais experientes de Búzios! </p>
+                                    <span class="btn-link">Explorar</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide col-xl-3 col-lg-4 col-md-5 c-single-experiencia__explorar__item">
+                            <a href="experiencia.php" class="text-reset text-white h-100 d-flex flex-wrap align-items-start justify-content-between flex-column">
+                                <div class="w-100 c-single-experiencia__explorar__item__img" style="background-image: url('assets/img/single-experiencia/aventuras-buzios05.png');"></div>
+                                <div class="mt-4 fs-6 c-single-experiencia__explorar__item__content">
+                                    <span class="icon-diwe fs-28 my-2"></span>
+                                    <span class="fs-4 text-secondary mb-2 d-block fw-500">Mergulho</span>
+                                    <p class="text-primary">Centro e Morro do Humaitá</p>
+                                    <p>Neste passeio há um instrutor que dará todas as instruções</p>
+                                    <a href="experiencia.php" class="btn-link">Explorar</a>
+                                </div>
+                            </a>
                         </div>
 
                     </div>
-                </div>
-                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+
+                    <div class="position-relative c-cards-carousel__pagination mt-4">
+                        <!-- If we need navigation buttons -->
+                        <div class="swiper-button-prev fs-4 shadow rounded-circle">
+                            <span class="icon-arrow-left fw-bold text-primary"></span>
+                        </div>
+                        <div class="swiper-button-next fs-4 shadow rounded-circle">
+                            <span class="icon-arrow-right fw-bold text-primary"></span>
+                        </div>
+                    </div>
 
                 </div>
             </div>
@@ -348,7 +309,7 @@
     </section>
 
 
-    <section class="c-cards-carousel pt-3">
+    <section class="c-cards-carousel pt-3  JS__cards-carousel">
         <div class="container-fluid h-100">
             <div class="row h-100 ">
 
@@ -357,13 +318,13 @@
                     <h3 class="mb-4 fs-3 fw-bold text-secondary">Conheça praias incríveis espalhadas por Búzios</h3>
                     <p>Desfrutes de lugares incríveis escondidos que você só vai encontrar em Búzios!</p>
 
-                    <div class="position-relative JS__praias__pagination c-cards-carousel__pagination">
+                    <div class="position-relative c-cards-carousel__pagination">
                         <!-- If we need navigation buttons -->
                         <div class="swiper-button-prev fs-4 shadow rounded-circle">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="8.397" height="14.73"><path data-name="Caminho 4" d="M8.396 7.365a1.029 1.029 0 01-.3.729l-6.337 6.337A1.032 1.032 0 01.3 12.972l5.6-5.6-5.6-5.6A1.036 1.036 0 111.759.302l6.336 6.329a1.029 1.029 0 01.301.734z" fill="#0e6a7a"/></svg>
+                            <span class="icon-arrow-left fw-bold text-primary"></span>
                         </div>
                         <div class="swiper-button-next fs-4 shadow rounded-circle">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="8.397" height="14.73"><path data-name="Caminho 4" d="M8.396 7.365a1.029 1.029 0 01-.3.729l-6.337 6.337A1.032 1.032 0 01.3 12.972l5.6-5.6-5.6-5.6A1.036 1.036 0 111.759.302l6.336 6.329a1.029 1.029 0 01.301.734z" fill="#0e6a7a"/></svg>
+                            <span class="icon-arrow-right fw-bold text-primary"></span>
                         </div>
                     </div>
 
@@ -371,7 +332,7 @@
 
                 <div class="c-cards-carousel__content">
                 
-                    <div class="swiper-container JS__praias">
+                    <div class="swiper-container">
                     <!-- Additional required wrapper -->
                         <div class="swiper-wrapper">
                             
@@ -419,13 +380,13 @@
         </div>
     </section>
 
-    <section class="c-cards-carousel pt-0">
+    <section class="c-cards-carousel pt-0 JS__cards-carousel">
         <div class="container-fluid overflow-hidden">
             <div class="c-cards-carousel__title w-100 p-0">
                 <h2 class="d-inline-block fs-5 text-primary p-2 px-0 mb-0">Gastronomia</h2>
                 <h3 class="mb-4 fs-3 fw-bold text-secondary">Bares & Música</h3>
                
-                <div class="swiper-container JS-cards">
+                <div class="swiper-container">
                
                     <div class="swiper-wrapper">
                         <div class="swiper-slide o-card d-flex align-items-end" style="background-image: url('assets/img/buzios-bares_anexo-praia-buzios.jpg');">
@@ -520,13 +481,13 @@
                         </div>
                     </div>
 
-                    <div class="position-relative JS-cards__pagination c-cards-carousel__pagination mt-4">
+                    <div class="position-relative c-cards-carousel__pagination mt-4">
                         <!-- If we need navigation buttons -->
                         <div class="swiper-button-prev fs-4 shadow rounded-circle">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="8.397" height="14.73"><path data-name="Caminho 4" d="M8.396 7.365a1.029 1.029 0 01-.3.729l-6.337 6.337A1.032 1.032 0 01.3 12.972l5.6-5.6-5.6-5.6A1.036 1.036 0 111.759.302l6.336 6.329a1.029 1.029 0 01.301.734z" fill="#0e6a7a"/></svg>
+                            <span class="icon-arrow-left     fw-bold text-primary"></span>
                         </div>
                         <div class="swiper-button-next fs-4 shadow rounded-circle">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="8.397" height="14.73"><path data-name="Caminho 4" d="M8.396 7.365a1.029 1.029 0 01-.3.729l-6.337 6.337A1.032 1.032 0 01.3 12.972l5.6-5.6-5.6-5.6A1.036 1.036 0 111.759.302l6.336 6.329a1.029 1.029 0 01.301.734z" fill="#0e6a7a"/></svg>
+                            <span class="icon-arrow-right fw-bold text-primary"></span>
                         </div>
                     </div>
 

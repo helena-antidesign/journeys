@@ -2,7 +2,8 @@
     padding-top: 7.37rem;
     &__banner{
         height: calc(77vh - 118px);
-
+        position: relative;
+        overflow: hidden;
         &__img{
             background-size: cover;
             background-position: center;
@@ -55,6 +56,7 @@
         .swiper-pagination{
             left: 0;
             right: 0;
+            bottom: 47px;
             text-align: left;
             &-bullet{
                 background: #fff;
@@ -98,8 +100,12 @@
             }
         }
     }
+
+    &__content{
+        min-height: 55rem;
+    }
    
-    &__price{
+    &__reservar{
         padding: 2.87rem 3.6rem 3.5rem 3.6rem;
         border-radius: 3.31rem;
         position: absolute;
@@ -124,6 +130,7 @@
             }
             &__checkin{
                 width: 210px;
+                border-right: 1px solid #EAEAEA;
             }
             &__checkout{
                 max-width: 120px;
@@ -139,8 +146,8 @@
                 &.open{
                     .flatpickr-calendar{
                         max-height: 338px;
-                    height: 338px;
-                    transition: .3s;
+                        height: 338px;
+                        transition: .3s;
                     }
                 }
             }

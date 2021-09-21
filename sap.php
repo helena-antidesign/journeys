@@ -2,7 +2,7 @@
 
     <main class="c-page">
        <div class="container-fluid p-0 d-flex">
-            <div class="c-page__img natural" style="background-image: url('assets/img/sap-banner.jpg');"></div>
+            <div class="c-page__img" style="background-image: url('assets/img/sap-banner.jpg');"></div>
 
             <div class="w-100 d-flex c-page__container">
 
@@ -29,17 +29,9 @@
 
                                     <div class="row c-page__sap fs-6">
 
-                                    <?php /*
-                                        <div class="col-xxl-4 col-lg-6 col-md-6">
-                                            <div class="fs-28 mb-4 icon-hotel-2"></div>
-                                            <h3 class="mb-4 fs-5 fw-500 text-primary">Para passageiros de reservas individuais:</h3>
-                                            <p class="fs-6"><span class="fw-500">Tel. Sap:</span> +55 21 99609 8118
-                                            <span class="fw-500">Email:</span> sap@journeys.com.br</p>
-                                        </div>
-                                        */
-                                        ?>
+                                   
 
-                                        <div class="col-xxl-4 col-lg-6 col-md-6">
+                                        <div class="col-xxl-4 col-lg-6 col-md-6 mb-5">
 
                                             <div class="fs-28 mb-4 icon-hotel-2"></div>
 
@@ -58,7 +50,7 @@
 
                                         </div>
 
-                                        <div class="col-xxl-4 col-lg-6 col-md-6">
+                                        <div class="col-xxl-4 col-lg-6 col-md-6 mb-5">
 
                                             <div class="fs-28 mb-4 icon-passenger"></div>
 

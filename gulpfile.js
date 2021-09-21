@@ -50,7 +50,6 @@ function pluginJS() {
     'node_modules/swiper/swiper-bundle.min.js',
     'node_modules/moment/moment.js',
     'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
-    'node_modules/country-select-js/src/js/countrySelect.js',
     'node_modules/lightbox2/dist/js/lightbox-plus-jquery.min.js',
     'node_modules/video.js/dist/video.js',
     'node_modules/videojs-youtube/dist/youtube.min.js',

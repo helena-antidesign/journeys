@@ -3,9 +3,23 @@
 }
 
 body{
-    font-size: 16px;
+    overflow-x: hidden;
 }
 
 th{
     font-weight: 400;
 }
+
+select, option {
+    -webkit-appearance: none;
+  }
+
+// table{
+//     display: block;
+//     overflow-x: auto;
+//     white-space: nowrap;
+//     td{
+//         width: 100%;
+//     }
+// }
+

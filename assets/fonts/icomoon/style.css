@@ -1,10 +1,10 @@
 @font-face {
-  font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?d6vphi');
-  src:  url('fonts/icomoon.eot?d6vphi#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?d6vphi') format('truetype'),
-    url('fonts/icomoon.woff?d6vphi') format('woff'),
-    url('fonts/icomoon.svg?d6vphi#icomoon') format('svg');
+  font-family: 'journeys';
+  src:  url('fonts/journeys.eot?mn98xz');
+  src:  url('fonts/journeys.eot?mn98xz#iefix') format('embedded-opentype'),
+    url('fonts/journeys.ttf?mn98xz') format('truetype'),
+    url('fonts/journeys.woff?mn98xz') format('woff'),
+    url('fonts/journeys.svg?mn98xz#journeys') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -12,7 +12,7 @@
 
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
+  font-family: 'journeys' !important;
   speak: never;
   font-style: normal;
   font-weight: normal;
@@ -25,270 +25,504 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-download:before {
-  content: "\e950";
-}
-.icon-atraction:before {
-  content: "\e94f";
-}
-.icon-estrutura:before {
-  content: "\e951";
-}
-.icon-extra:before {
-  content: "\e952";
-}
-.icon-food:before {
-  content: "\e953";
-}
-.icon-hotel-3:before {
-  content: "\e954";
-}
-.icon-map:before {
-  content: "\e955";
-}
-.icon-percent:before {
-  content: "\e956";
-}
-.icon-suport:before {
-  content: "\e957";
-}
-.icon-kitchen-Iten:before {
-  content: "\e958";
-}
-.icon-airport:before {
-  content: "\e901";
-}
-.icon-ajust:before {
-  content: "\e902";
-}
-.icon-arrow-down:before {
-  content: "\e903";
-}
-.icon-arrow-right:before {
-  content: "\e904";
-}
-.icon-arrow-top:before {
-  content: "\e905";
-}
-.icon-arrow-left:before {
-  content: "\e906";
-}
-.icon-atencion:before {
-  content: "\e907";
-}
-.icon-avaliations:before {
-  content: "\e908";
-}
-.icon-baby:before {
-  content: "\e909";
-}
-.icon-bad:before {
-  content: "\e90a";
-}
-.icon-basic-itens:before {
-  content: "\e90b";
-}
-.icon-beach-view:before {
-  content: "\e90c";
-}
-.icon-beach:before {
-  content: "\e90d";
-}
-.icon-calendar:before {
-  content: "\e90e";
-}
-.icon-camera:before {
-  content: "\e90f";
-}
-.icon-car:before {
-  content: "\e910";
-}
-.icon-case:before {
-  content: "\e911";
-}
-.icon-category:before {
-  content: "\e912";
-}
-.icon-change-log:before {
-  content: "\e913";
-}
-.icon-close:before {
-  content: "\e914";
-}
-.icon-comment:before {
-  content: "\e915";
-}
-.icon-commission:before {
+.icon-Egg:before {
   content: "\e900";
 }
-.icon-cost:before {
+.icon-stripes:before {
+  content: "\e900";
+}
+.icon-Circus:before {
+  content: "\e901";
+}
+.icon-tent:before {
+  content: "\e901";
+}
+.icon-Barrel:before {
+  content: "\e902";
+}
+.icon-keg:before {
+  content: "\e902";
+}
+.icon-beer:before {
+  content: "\e902";
+}
+.icon-Pumpkin:before {
+  content: "\e903";
+}
+.icon-halloween:before {
+  content: "\e903";
+}
+.icon-Ferris-wheel:before {
+  content: "\e904";
+}
+.icon-attraction:before {
+  content: "\e904";
+}
+.icon-Bbq:before {
+  content: "\e905";
+}
+.icon-grill:before {
+  content: "\e905";
+}
+.icon-Horseshoe:before {
+  content: "\e906";
+}
+.icon-luck:before {
+  content: "\e906";
+}
+.icon-Bones:before {
+  content: "\e907";
+}
+.icon-Bat:before {
+  content: "\e908";
+}
+.icon-Cotton-candy:before {
+  content: "\e909";
+}
+.icon-Sledge:before {
+  content: "\e90a";
+}
+.icon-Coffin:before {
+  content: "\e90b";
+}
+.icon-Easter-egg:before {
+  content: "\e90c";
+}
+.icon-pattern:before {
+  content: "\e90c";
+}
+.icon-b:before {
+  content: "\e90c";
+}
+.icon-Ferris-wheel1:before {
+  content: "\e90d";
+}
+.icon-attraction2:before {
+  content: "\e90d";
+}
+.icon-b1:before {
+  content: "\e90d";
+}
+.icon-Christmas-tree:before {
+  content: "\e90e";
+}
+.icon-Beard:before {
+  content: "\e90f";
+}
+.icon-Cross:before {
+  content: "\e910";
+}
+.icon-religion:before {
+  content: "\e910";
+}
+.icon-Christmas-tree-toy1:before {
+  content: "\e911";
+}
+.icon-ball1:before {
+  content: "\e911";
+}
+.icon-Guitar:before {
+  content: "\e912";
+}
+.icon-neck:before {
+  content: "\e912";
+}
+.icon-Christmas-tree-toy:before {
+  content: "\e913";
+}
+.icon-ball-2:before {
+  content: "\e913";
+}
+.icon-Leprechaun:before {
+  content: "\e914";
+}
+.icon-Carousel:before {
+  content: "\e915";
+}
+.icon-attraction1:before {
+  content: "\e915";
+}
+.icon-Cemetery:before {
   content: "\e916";
 }
-.icon-customer-notes:before {
+.icon-tombstone:before {
+  content: "\e916";
+}
+.icon-cross:before {
+  content: "\e916";
+}
+.icon-Fence:before {
   content: "\e917";
 }
-.icon-descont:before {
+.icon-Bell:before {
   content: "\e918";
 }
-.icon-diwe:before {
+.icon-Cookie:before {
   content: "\e919";
 }
-.icon-doc-digital:before {
+.icon-gingerbread:before {
+  content: "\e919";
+}
+.icon-Clover:before {
   content: "\e91a";
 }
-.icon-document:before {
+.icon-luck1:before {
+  content: "\e91a";
+}
+.icon-Souvenir:before {
   content: "\e91b";
 }
-.icon-edit-values:before {
+.icon-ball:before {
+  content: "\e91b";
+}
+.icon-Microphone:before {
   content: "\e91c";
 }
-.icon-exchange:before {
+.icon-karaoke:before {
+  content: "\e91c";
+}
+.icon-songs:before {
+  content: "\e91c";
+}
+.icon-Air-balloon:before {
   content: "\e91d";
 }
-.icon-firepith:before {
+.icon-Easter:before {
   content: "\e91e";
 }
-.icon-fish:before {
+.icon-eggs:before {
+  content: "\e91e";
+}
+.icon-Coloring:before {
   content: "\e91f";
 }
-.icon-group:before {
+.icon-egg:before {
+  content: "\e91f";
+}
+.icon-Christmas-tree-toy2:before {
   content: "\e920";
 }
-.icon-home-office:before {
+.icon-candy:before {
+  content: "\e920";
+}
+.icon-Caldron:before {
   content: "\e921";
 }
-.icon-key:before {
+.icon-witchcraft:before {
+  content: "\e921";
+}
+.icon-Ghost:before {
   content: "\e922";
 }
-.icon-hotel:before {
+.icon-Icon_sales-channel:before {
   content: "\e923";
 }
-.icon-hotel1:before {
+.icon-info:before {
   content: "\e924";
 }
-.icon-hotel-2:before {
+.icon-invoice:before {
   content: "\e925";
 }
-.icon-info:before {
+.icon-kitchen:before {
   content: "\e926";
 }
-.icon-invoice:before {
+.icon-language:before {
   content: "\e927";
 }
-.icon-language:before {
+.icon-markup:before {
   content: "\e928";
 }
-.icon-location:before {
+.icon-new-product:before {
   content: "\e929";
 }
-.icon-map1:before {
+.icon-passenger:before {
   content: "\e92a";
 }
-.icon-markup:before {
+.icon-printer:before {
   content: "\e92b";
 }
-.icon-new-product:before {
+.icon-privacy-policy:before {
   content: "\e92c";
 }
-.icon-pacifier:before {
+.icon-product:before {
   content: "\e92d";
 }
-.icon-parking:before {
+.icon-room-service:before {
   content: "\e92e";
 }
-.icon-passenger:before {
+.icon-save:before {
   content: "\e92f";
 }
-.icon-paw:before {
+.icon-search:before {
   content: "\e930";
 }
-.icon-pickup:before {
+.icon-star-full:before {
   content: "\e931";
 }
-.icon-printer:before {
+.icon-star:before {
   content: "\e932";
 }
-.icon-privacy-policy:before {
+.icon-suitcase:before {
   content: "\e933";
 }
-.icon-product:before {
+.icon-surf:before {
   content: "\e934";
 }
-.icon-pwd:before {
+.icon-tax-decrese:before {
   content: "\e935";
 }
-.icon-room-service:before {
+.icon-tax-increace:before {
   content: "\e936";
 }
-.icon-sail:before {
+.icon-total:before {
   content: "\e937";
 }
-.icon-Icon_Sales-Channel:before {
+.icon-pickup:before {
   content: "\e938";
 }
-.icon-save:before {
+.icon-transfer:before {
   content: "\e939";
 }
-.icon-save-1:before {
+.icon-user:before {
   content: "\e93a";
 }
-.icon-search:before {
+.icon-value:before {
   content: "\e93b";
 }
-.icon-status:before {
+.icon-descont:before {
   content: "\e93c";
 }
-.icon-suitcase:before {
+.icon-edit-values:before {
   content: "\e93d";
 }
-.icon-sun:before {
+.icon-entrada-saida:before {
   content: "\e93e";
 }
-.icon-suporter:before {
+.icon-exchange:before {
   content: "\e93f";
 }
-.icon-surf:before {
+.icon-firepith:before {
   content: "\e940";
 }
-.icon-tax-decrese:before {
+.icon-hotel-2:before {
   content: "\e941";
 }
-.icon-tax-increace:before {
+.icon-doc-digital:before {
   content: "\e942";
 }
-.icon-total:before {
+.icon-document:before {
   content: "\e943";
 }
-.icon-tour:before {
+.icon-baby:before {
   content: "\e944";
 }
-.icon-transfer:before {
+.icon-bad:before {
   content: "\e945";
 }
-.icon-translate:before {
+.icon-basic-itens:before {
   content: "\e946";
 }
-.icon-trash:before {
+.icon-beach-view:before {
   content: "\e947";
 }
-.icon-under-construction:before {
+.icon-beach:before {
   content: "\e948";
 }
-.icon-user-add:before {
+.icon-calendar:before {
   content: "\e949";
 }
-.icon-user:before {
+.icon-camera:before {
   content: "\e94a";
 }
-.icon-value:before {
+.icon-car:before {
   content: "\e94b";
 }
-.icon-voucher:before {
+.icon-case:before {
   content: "\e94c";
 }
-.icon-wifi:before {
+.icon-change-log:before {
   content: "\e94d";
 }
-.icon-kitchen:before {
+.icon-children:before {
   content: "\e94e";
+}
+.icon-comment:before {
+  content: "\e94f";
+}
+.icon-commission:before {
+  content: "\e950";
+}
+.icon-cost:before {
+  content: "\e951";
+}
+.icon-customer-notes:before {
+  content: "\e952";
+}
+.icon-category:before {
+  content: "\e953";
+}
+.icon-atencion:before {
+  content: "\e954";
+}
+.icon-avaliations:before {
+  content: "\e955";
+}
+.icon-ajust:before {
+  content: "\e956";
+}
+.icon-youtube:before {
+  content: "\e957";
+}
+.icon-wifi:before {
+  content: "\e958";
+}
+.icon-whatsapp:before {
+  content: "\e959";
+}
+.icon-voucher:before {
+  content: "\e95a";
+}
+.icon-user-add:before {
+  content: "\e95b";
+}
+.icon-under-construction:before {
+  content: "\e95c";
+}
+.icon-twitter:before {
+  content: "\e95d";
+}
+.icon-trash:before {
+  content: "\e95e";
+}
+.icon-translate:before {
+  content: "\e95f";
+}
+.icon-tour:before {
+  content: "\e960";
+}
+.icon-telegram:before {
+  content: "\e961";
+}
+.icon-suporter:before {
+  content: "\e962";
+}
+.icon-suport:before {
+  content: "\e963";
+}
+.icon-sun-2:before {
+  content: "\e964";
+}
+.icon-status:before {
+  content: "\e965";
+}
+.icon-spotify:before {
+  content: "\e966";
+}
+.icon-sail:before {
+  content: "\e967";
+}
+.icon-resize:before {
+  content: "\e968";
+}
+.icon-pwd:before {
+  content: "\e969";
+}
+.icon-pinterest:before {
+  content: "\e96a";
+}
+.icon-pin:before {
+  content: "\e96b";
+}
+.icon-percent:before {
+  content: "\e96c";
+}
+.icon-paw:before {
+  content: "\e96d";
+}
+.icon-pass-show:before {
+  content: "\e96e";
+}
+.icon-pass-hidden:before {
+  content: "\e96f";
+}
+.icon-parking:before {
+  content: "\e970";
+}
+.icon-pacifier:before {
+  content: "\e971";
+}
+.icon-map:before {
+  content: "\e972";
+}
+.icon-lock:before {
+  content: "\e973";
+}
+.icon-location:before {
+  content: "\e974";
+}
+.icon-linkedin:before {
+  content: "\e975";
+}
+.icon-landscape:before {
+  content: "\e976";
+}
+.icon-key:before {
+  content: "\e977";
+}
+.icon-instagram:before {
+  content: "\e978";
+}
+.icon-hotel:before {
+  content: "\e979";
+}
+.icon-home-office:before {
+  content: "\e97a";
+}
+.icon-group:before {
+  content: "\e97b";
+}
+.icon-food:before {
+  content: "\e97c";
+}
+.icon-fish:before {
+  content: "\e97d";
+}
+.icon-facebook:before {
+  content: "\e97e";
+}
+.icon-extra:before {
+  content: "\e97f";
+}
+.icon-download:before {
+  content: "\e980";
+}
+.icon-diwe:before {
+  content: "\e981";
+}
+.icon-close:before {
+  content: "\e982";
+}
+.icon-brasil:before {
+  content: "\e983";
+}
+.icon-bags:before {
+  content: "\e984";
+}
+.icon-atraction:before {
+  content: "\e985";
+}
+.icon-arrow-top:before {
+  content: "\e986";
+}
+.icon-arrow-right:before {
+  content: "\e987";
+}
+.icon-arrow-left:before {
+  content: "\e988";
+}
+.icon-arrow-down:before {
+  content: "\e989";
+}
+.icon-airport:before {
+  content: "\e98a";
 }

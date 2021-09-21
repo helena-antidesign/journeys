@@ -1,7 +1,7 @@
 <?php include('includes/header--white.php'); ?>
 
     <main class="c-page c-eventos">
-       <section class="container-fluid p-0 d-flex">
+       <section class="container-fluid p-0 d-flex position-relative">
             <div class="c-page__img position-absolute" id="banner" style="background-image: url('assets/img/datas-especiais-banner.jpg');"></div>
 
             <div class="w-100 d-flex c-page__container">
@@ -34,7 +34,7 @@
                                     ou informação específica não for detalhada, por favor consulte.</p>
 
                                     
-                                    <a href="#todos-eventos" class="text-primary fw-500 d-flex align-items-center text-decoration-none mt-5">Veja todos os eventos <span class="icon-arrow-right fs-4 fw-bold ms-2"></span></a>
+                                    <a href="#todos-eventos" class="text-primary fw-500 d-flex align-items-center text-decoration-none mt-5">Veja todos os eventos <span class="icon-arrow-right fw-bold ms-2"></span></a>
                                 </div>
                             </div>
                         </div>
@@ -57,29 +57,30 @@
                             <p class="text-black-50">Alguns exemplos das medidas que serão tomadas quando as atividades voltarem gradualmente</p>
                         </div>
                         
-                        <ul class="nav nav-tabs d-flex justify-content-between mt-5">
-                            <li class="nav-item">
-                                <button class="nav-link active" id="natal-tab" data-bs-toggle="tab" data-bs-target="#natal" type="button" role="tab" aria-controls="natal" aria-selected="true">
-                                    <span class="icon icon-hotel"></span>Natal
-                                </button>
-                            </li>
-                            <li class="nav-item">
-                                <button class="nav-link" id="carnaval-tab" data-bs-toggle="tab" data-bs-target="#carnaval" type="button" role="tab" aria-controls="carnaval" aria-selected="false">
-                                    <span class="icon icon-hotel"></span>Carnaval
-                                </button>
-                            </li>
-                            <li class="nav-item">
-                                <button class="nav-link" id="reveillon-tab" data-bs-toggle="tab" data-bs-target="#reveillon" type="button" role="tab" aria-controls="reveillon" aria-selected="false">
-                                    <span class="icon icon-transfer"></span>Reveillon
-                                </button>
-                            </li>
-                            <li class="nav-item">
-                                <button class="nav-link" id="eventos-tab" data-bs-toggle="tab" data-bs-target="#eventos" type="button" role="tab" aria-controls="eventos" aria-selected="false">
-                                    <span class="icon icon-map"></span>Eventos & Congressos
-                                </button>
-                            </li>
-                        </ul>
-                    
+                        <div class="overflow-x">
+                            <ul class="nav nav-tabs d-flex justify-content-between mt-5 JS__tabsFlex">
+                                <li class="nav-item">
+                                    <button class="nav-link active" id="natal-tab" data-bs-toggle="tab" data-bs-target="#natal" type="button" role="tab" aria-controls="natal" aria-selected="true">
+                                        <span class="icon icon-lock"></span>Natal
+                                    </button>
+                                </li>
+                                <li class="nav-item">
+                                    <button class="nav-link" id="carnaval-tab" data-bs-toggle="tab" data-bs-target="#carnaval" type="button" role="tab" aria-controls="carnaval" aria-selected="false">
+                                        <span class="icon icon-lock"></span>Carnaval
+                                    </button>
+                                </li>
+                                <li class="nav-item">
+                                    <button class="nav-link" id="reveillon-tab" data-bs-toggle="tab" data-bs-target="#reveillon" type="button" role="tab" aria-controls="reveillon" aria-selected="false">
+                                        <span class="icon icon-transfer"></span>Reveillon
+                                    </button>
+                                </li>
+                                <li class="nav-item">
+                                    <button class="nav-link" id="eventos-tab" data-bs-toggle="tab" data-bs-target="#eventos" type="button" role="tab" aria-controls="eventos" aria-selected="false">
+                                        <span class="icon icon-brasil"></span>Eventos & Congressos
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -203,6 +204,7 @@
 
         </section>  
 
+        
         <section class="c-eventos__datas" id="todos-eventos">
 
             <div class="container">
@@ -292,8 +294,8 @@
 
         </section>
 
-        <section class="container-fluid p-0 d-flex">
-            <div class="c-page__img position-absolute" style="background-image: url('assets/img/datas-especiais-banner2.jpg');"></div>
+        <section class="container-fluid p-0 d-flex position-relative">
+            <div class="c-page__img c-page__img--absolute" style="background-image: url('assets/img/datas-especiais-banner2.jpg');"></div>
 
             <div class="w-100 d-flex c-page__container pt-5">
 

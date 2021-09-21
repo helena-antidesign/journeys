@@ -2,7 +2,7 @@
 
     <main class="c-page">
        <div class="container-fluid p-0 d-flex">
-            <div class="c-page__img natural" style="background-image: url('assets/img/vouchers-banner.jpg');"></div>
+            <div class="c-page__img" style="background-image: url('assets/img/vouchers-banner.jpg');"></div>
 
             <div class="w-100 d-flex c-page__container">
 

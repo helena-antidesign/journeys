@@ -5,7 +5,7 @@
 
         <div class="c-experts__item tab-pane fade" id="experts-fernando" role="tabpanel" aria-labelledby="experts-fernando-tab">
             <div class="c-experts__item__container">
-                <div class="c-experts__item__bg" style="background-image: url('assets/img/home-banner.jpg');">
+                <div class="c-experts__item__bg" style="background-image: url('assets/img/home/home-banner.jpg');">
                     <img src="assets/img/experts-item-bg.png" alt="">
                 </div>
                 <div class="c-experts__item__content text-white d-flex align-items-center ">
@@ -43,33 +43,32 @@
 
     <div class="c-experts__controls border-bottom">
 
-        <nav>
-            <div class="nav nav-tabs text-white d-flex justify-content-between border-0" id="experts-tab" role="tablist">
+        <div class="overflow-x">
+            <nav>
+                <div class="nav nav-tabs text-white d-flex justify-content-between border-0" id="experts-tab" role="tablist">
 
-                
+                    <button class="nav-link text-white" id="experts-fernando-tab" data-bs-toggle="tab" data-bs-target="#experts-fernando" type="button" role="tab" aria-controls="experts-fernando" aria-selected="false">
+                        Fernando de Noronha
+                    </button>
 
-                <button class="nav-link text-white" id="experts-fernando-tab" data-bs-toggle="tab" data-bs-target="#experts-fernando" type="button" role="tab" aria-controls="experts-fernando" aria-selected="false">
-                    Fernando de Noronha
-                </button>
-
-                <button class="nav-link text-white active" id="experts-buzios-tab" data-bs-toggle="tab" data-bs-target="#experts-buzios" type="button" role="tab" aria-controls="experts-buzios" aria-selected="true">
-                    Búzios
-                </button>
-                <button class="nav-link text-white" id="experts-amazonia-tab" data-bs-toggle="tab" data-bs-target="#experts-amazonia" type="button" role="tab" aria-controls="experts-amazonia" aria-selected="true">
-                    Amazônia
-                </button>
-                <button class="nav-link text-white" id="experts-sp-tab" data-bs-toggle="tab" data-bs-target="#experts-sp" type="button" role="tab" aria-controls="experts-sp" aria-selected="true">
-                    São Paulo
-                </button>
-                <button class="nav-link text-white" id="experts-ceara-tab" data-bs-toggle="tab" data-bs-target="#experts-ceara" type="button" role="tab" aria-controls="experts-ceara" aria-selected="true">
-                    Ceará
-                </button>
-                <button class="nav-link text-white" id="experts-tijuca-tab" data-bs-toggle="tab" data-bs-target="#experts-tijuca" type="button" role="tab" aria-controls="experts-tijuca" aria-selected="true">
-                    Barra da Tijuca
-                </button>
-            </div>
-        </nav>    
-
+                    <button class="nav-link text-white active" id="experts-buzios-tab" data-bs-toggle="tab" data-bs-target="#experts-buzios" type="button" role="tab" aria-controls="experts-buzios" aria-selected="true">
+                        Búzios
+                    </button>
+                    <button class="nav-link text-white" id="experts-amazonia-tab" data-bs-toggle="tab" data-bs-target="#experts-amazonia" type="button" role="tab" aria-controls="experts-amazonia" aria-selected="true">
+                        Amazônia
+                    </button>
+                    <button class="nav-link text-white" id="experts-sp-tab" data-bs-toggle="tab" data-bs-target="#experts-sp" type="button" role="tab" aria-controls="experts-sp" aria-selected="true">
+                        São Paulo
+                    </button>
+                    <button class="nav-link text-white" id="experts-ceara-tab" data-bs-toggle="tab" data-bs-target="#experts-ceara" type="button" role="tab" aria-controls="experts-ceara" aria-selected="true">
+                        Ceará
+                    </button>
+                    <button class="nav-link text-white" id="experts-tijuca-tab" data-bs-toggle="tab" data-bs-target="#experts-tijuca" type="button" role="tab" aria-controls="experts-tijuca" aria-selected="true">
+                        Barra da Tijuca
+                    </button>
+                </div>
+            </nav>    
+        </div>
 
     </div>
 

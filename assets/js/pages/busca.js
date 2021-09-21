@@ -1,45 +1,19 @@
-var hotelButtons = document.querySelectorAll('.JS__hotel-button-more');
+document.addEventListener("DOMContentLoaded", function (event) {
 
-hotelButtons.forEach(function(item) {
-  
-  item.addEventListener('click', function(){
+    $('.JS__pickup-tipo').change(function(){
+        if($(this).val() == '1'){ // or this.value == 'volvo'
 
-    item.parentElement.parentElement.classList.add('open');
-    item.style.display = "none";
+            $('.JS__pickup-tipo-opt2').addClass('d-none');
+            $('.JS__pickup-tipo-opt1').removeClass('d-none');
 
-  });
+        }
+        else if($(this).val() == '2'){ // or this.value == 'volvo'
 
-});
-
-
-
-
-//-----JS for Price Range slider-----
-
-$(function() {
-  $( "#slider-range" ).slider({
-    range: true,
-    min: 0,
-    max: 3000,
-    values: [ 0, 3000 ],
-    slide: function( event, ui ) {
-    $( "#min" ).val( "R$ " + ui.values[ 0 ] );
-    $( "#max" ).val( "R$ " + ui.values[ 1 ] );
-    }
-  });
-
-    
-  $( "#min" ).val( "R$ " + $( "#slider-range" ).slider( "values", 0 ));
-  
-  $( "#max" ).val( "R$ " + $( "#slider-range" ).slider( "values", 1 ));
-    
-});
+            $('.JS__pickup-tipo-opt1').addClass('d-none');
+            $('.JS__pickup-tipo-opt2').removeClass('d-none');
+            
+        }
+    });
 
 
-
-// Sliding radio
-
-$('.radio-macro span').click(function(){
-  $('.radio-macro span').toggleClass( 'active' );
-  $('.radio-macro .sliding-bubble').toggleClass( 'switch' );
 });

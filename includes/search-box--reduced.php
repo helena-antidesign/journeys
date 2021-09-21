@@ -1,136 +1,440 @@
-
-
 <div class="o-search-box--reduced bg-white JS__search-box">
 
-    <div class="o-search-box--reduced__form">
+    <div class="o-search-box--reduced__form d-flex align-items-center h-100">
 
-        <div class="d-flex">
 
-            <div class="o-search-box--reduced__form__options d-flex align-items-center" onclick="openSearchboxReducedRadios()">
-                <div class="o-search-box--reduced__form__options__icon d-inline">
-                    
-                    <div class="icon o-search-box--reduced__form__options__icon__hotel">
-                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><defs/><g data-name="Icon | Hotel"><path fill="#676767" d="M19.859 24H19.2c-.059-.019-.117-.039-.176-.056a2.1 2.1 0 01-1.539-1.493 2.2 2.2 0 01.027-1.254h-11a.125.125 0 00-.006.033c.007.038.015.075.024.112a2.023 2.023 0 01-.724 2.177 4.912 4.912 0 01-1 .481h-.664a.832.832 0 00-.108-.043 2.047 2.047 0 01-1.645-1.716 6.088 6.088 0 01-.01-1.054H.739a.692.692 0 01-.737-.731v-2.765a.691.691 0 01.723-.721h.688v-.307c0-2.8-.007-5.608.007-8.412a7.833 7.833 0 01.144-1.462 6.816 6.816 0 015.88-5.341.379.379 0 00.253-.182 2.1 2.1 0 012-1.264h4.587a2.107 2.107 0 012.02 1.27.392.392 0 00.234.176c.47.114.958.168 1.414.319a6.779 6.779 0 014.634 6.42v8.784h.671a.689.689 0 01.74.727v2.765a.69.69 0 01-.742.726h-1.506c-.065 0-.13.011-.2.017a2.059 2.059 0 01-.672 2.3 4.958 4.958 0 01-1.018.494zM5.178 16.958v-.286-6.586a1.63 1.63 0 011.653-1.649h2.112V7.251a1.623 1.623 0 011.623-1.626c.667 0 1.336.037 2-.007 1.941-.13 2.637.578 2.5 2.481-.008.106 0 .213 0 .311a.331.331 0 00.069.024h2a1.627 1.627 0 011.7 1.7v6.819h2.346c0-.06.007-.106.007-.152 0-2.875.01-5.75-.01-8.624a5.033 5.033 0 00-.217-1.45 5.317 5.317 0 00-4.426-3.86c-.147-.027-.2.035-.26.154a2.046 2.046 0 01-1.921 1.2q-2.364.012-4.729 0a2.039 2.039 0 01-1.777-1.007c-.242-.376-.233-.382-.68-.282a5.4 5.4 0 00-4.329 5.366v8.666zm-3.759 2.81h21.15v-1.372H1.419zm8-2.815h5.147v-4.284H9.423zM7.987 9.844h-.99c-.349 0-.411.061-.411.405v6.701h1.4zm8.025 7.112h1.4v-.195-5.384c0-.406.013-.812-.009-1.217-.006-.106-.115-.29-.188-.3-.4-.029-.805-.014-1.2-.014zM11.987 2.813h2.3a.725.725 0 00.766-.694.723.723 0 00-.773-.708H9.717a.978.978 0 00-.463.129.642.642 0 00-.277.752.7.7 0 00.7.516c.773.008 1.541.005 2.31.005zm2.6 7.046H9.429v1.374h5.154zm-.936-1.429V7.307a.253.253 0 00-.282-.274h-2.727c-.154 0-.271.075-.276.229-.013.387 0 .774 0 1.169zM5.18 21.9a.728.728 0 00-.7-.711.729.729 0 00-.707.681.729.729 0 00.689.723.728.728 0 00.714-.694zm14.356.693a.728.728 0 00.7-.709.73.73 0 00-.724-.693.723.723 0 00-.689.7.729.729 0 00.709.701z" data-name="Caminho 5"/></g></svg>
-                    </div>
-                    <div class="icon o-search-box--reduced__form__options__icon__translado">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="21.646" height="21.488"><g data-name="Icon | Translado" fill="none" stroke="#676767" stroke-width="1.5"><g data-name="Retângulo 22" transform="translate(2.678)" stroke-linecap="round" stroke-linejoin="round"><rect width="16.292" height="19.154" rx="4" stroke="none"/><rect x=".75" y=".75" width="14.792" height="17.654" rx="3.25"/></g><path data-name="Caminho 7" d="M.75 9.001V5.019h20.146v3.982" stroke-linecap="round" stroke-linejoin="round"/><path data-name="Linha 3" stroke-linecap="round" d="M3.633 11.084h14.379"/><path data-name="Linha 4" stroke-linecap="round" d="M5.289 15.063h2.55"/><path data-name="Linha 5" stroke-linecap="round" d="M13.809 15.063h2.55"/><path data-name="Caminho 17" d="M7.872 17.781v1.882a1.062 1.062 0 01-1.049 1.075H5.055a1.062 1.062 0 01-1.049-1.075v-2.846" stroke-miterlimit="10"/><path data-name="Caminho 18" d="M13.602 17.781v1.882a1.062 1.062 0 001.049 1.075h1.768a1.062 1.062 0 001.049-1.075v-2.658" stroke-miterlimit="10"/></g></svg>
-                    </div>
-                    <div class="icon o-search-box--reduced__form__options__icon__tour">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="25.065"><g data-name="Grupo 1109"><g data-name="Retângulo 22" transform="translate(0 5.072)" fill="none" stroke="#676767" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><rect width="20" height="18.124" rx="4" stroke="none"/><rect x=".75" y=".75" width="18.5" height="16.624" rx="3.25"/></g><path data-name="Caminho 12" d="M6.766 8.708h6.546" fill="none" stroke="#676767" stroke-linecap="round" stroke-width="1.5"/><g data-name="Grupo 47" fill="none" stroke="#676767" stroke-linecap="round" stroke-width="2"><path data-name="Linha 14" d="M5.055 24.065V22.67"/><path data-name="Linha 15" d="M14.234 24.065V22.67"/></g><g data-name="Grupo 48" fill="none" stroke="#676767" stroke-linecap="round" stroke-width="1.5"><path data-name="Linha 4" d="M5.258 18.456v-6.534"/><path data-name="Linha 12" d="M10.01 18.456v-6.534"/><path data-name="Linha 13" d="M14.762 18.456v-6.534"/></g><path data-name="Caminho 11" d="M5.938 5.076V4.004a2.5 2.5 0 012.5-2.5h3.764a2.5 2.5 0 012.5 2.5v1.072h1.5V4.004a4 4 0 00-4-4H8.438a4 4 0 00-4 4v1.072z" fill="#676767"/></g></svg>
-                    </div>
-                    <div class="icon o-search-box--reduced__form__options__icon__pacotes">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25.923" height="22.322"><g data-name="Grupo 1110" fill="none" stroke="#676767" stroke-miterlimit="10" stroke-width="1.5"><path data-name="Linha 216" d="M7.488 4.68v16.891"/><g data-name="Grupo 1108" transform="translate(-760.457 -62.75)"><rect data-name="Retângulo 399" width="24.423" height="16.891" rx="3.52" transform="translate(761.207 67.43)"/><path data-name="Caminho 283" d="M775.612 63.5h-4.666a1.921 1.921 0 00-1.816 1.032l-1.185 2.9h10.668l-1.186-2.9a1.919 1.919 0 00-1.815-1.032z"/><path data-name="Linha 217" d="M778.613 67.43v8.071"/><path data-name="Linha 218" d="M778.613 79.711v4.61"/><rect data-name="Retângulo 400" width="6.808" height="4.211" rx="1.244" transform="translate(775.314 75.5)"/></g></g></svg>
-                    </div>
-                    <div class="icon o-search-box--reduced__form__options__icon__extras">
-                        <span class="icon-extra"></span>
-                    </div>
+            <div class="o-search-box--reduced__form__options d-flex align-items-center h-100 JS__search-tipos">
+                <div class="o-search-box--reduced__form__options__icon d-inline fs-24">
+                    <span class="icon-bags icon o-search-box--reduced__form__options__icon__hotel"></span>
+                    <span class="icon-transfer icon o-search-box--reduced__form__options__icon__translado"></span>
+                    <span class="icon-suitcase icon o-search-box--reduced__form__options__icon__tour"></span>
+                    <span class="icon-case icon o-search-box--reduced__form__options__icon__pacotes"></span>
+                    <span class="icon-extra icon o-search-box--reduced__form__options__icon__extras"></span>
                 </div>
                 <span class="icon-arrow-down text-primary fw-bold"></span>
             </div>
             
-
-            <div class="o-search-box__form__item JS__item-input">
-                <label for="itemInput" class="form-label">Qual é o item que você busca?</label>
-                <input class="o-search-box--reduced__form__input text-body" type="text" id="itemInput" placeholder="Rio de Janeiro - Leblon" aria-label="Busque por tics, tours, transfers">
+            <div class="o-search-box__form__item JS__item-input h-100">
+                <label for="itemInput" class="form-label fw-normal text-secondary">Qual é o item que você busca?</label>
+                <input class="o-search-box--reduced__form__input text-body body-color" type="text" id="itemInput" placeholder="Rio de Janeiro - Leblon" aria-label="Busque por tics, tours, transfers">
             </div>
-            <div class="o-search-box--reduced__form__destino">
-                <label for="destinoInput" class="form-label">Qual é o destino?</label>
-                <input type="text" id="destinoInput" placeholder="Rio de Janeiro - Leblon" aria-label="Busque por país, cidade, estado" class="o-search-box--reduced__form__input text-body">
+            <div class="o-search-box--reduced__form__destino h-100">
+                <label for="destinoInput" class="form-label fw-normal text-secondary">Qual é o destino?</label>
+               
+                <select class="form-select JS__select">
+                    <option value="1"> Rio de Janeiro</option>
+                    <option value="1419">Aarhus</option>
+                    <option value="1411">Aguas de Lindoia</option>
+                    <option value="1432">Aguas De Santa Barbara</option>
+                    <option value="1435">Alexânia</option>
+                    <option value="1067">Alta Floresta </option>
+                    <option value="1293">Alter do Chao</option>
+                    <option value="1415">Alto Paraiso</option>
+                    <option value="1006">Angra dos Reis  </option>
+                    <option value="1155">Aparecida</option>
+                    <option value="1007">Aracaju</option>
+                    <option value="1319">Aracati</option>
+                    <option value="1356">Aracruz</option>
+                    <option value="1190">Araraquara</option>
+                    <option value="1245">Araxa</option>
+                    <option value="1152">Arraial D'Ajuda</option>
+                    <option value="1156">Arraial do Cabo</option>
+                    <option value="1157">Atibaia</option>
+                    <option value="1072">Bahia - Chapada Diamantina</option>
+                    <option value="1010">Balneario de Camboriu </option>
+                    <option value="1458">Bananal</option>
+                    <option value="1416">Barra do Pirai</option>
+                    <option value="1158">Barretos</option>
+                    <option value="1159">Barueri</option>
+                    <option value="1160">Bauru</option>
+                    <option value="1009">Belem</option>
+                    <option value="1008">Belo Horizonte</option>
+                    <option value="1425">Belo Jardim</option>
+                    <option value="1192">Bento Goncalves</option>
+                    <option value="1184">Bertioga</option>
+                    <option value="1368">Bilbao</option>
+                    <option value="1451">Biritiba Mirim</option>
+                    <option value="1164">Blumenau</option>
+                    <option value="1454">Bocaina</option>
+                    <option value="1420">Bom Jardim da Serra</option>
+                    <option value="1466">Bom Jesus da Lapa</option>
+                    <option value="1165">Bombinhas</option>
+                    <option value="1107">Bonito</option>
+                    <option value="1282">Botucatu</option>
+                    <option value="1011">Brasilia</option>
+                    <option value="1465">Brotas</option>
+                    <option value="1357">Brusque</option>
+                    <option value="1473">Bueno Brandao</option>
+                    <option value="2">Buzios</option>
+                    <option value="1347">Buzios. </option>
+                    <option value="1074">Cabo de Santo Agostinho </option>
+                    <option value="1033">Cabo Frio  </option>
+                    <option value="1434">Caete</option>
+                    <option value="1438">Cairu</option>
+                    <option value="1446">Cajueiro Da Praia</option>
+                    <option value="1429">Caldas</option>
+                    <option value="1193">Caldas Novas</option>
+                    <option value="1403">Camaçari</option>
+                    <option value="1421">Cambara do Sul </option>
+                    <option value="1379">Camocim</option>
+                    <option value="1194">Campina Grande</option>
+                    <option value="1249">Campina Grande do Sul</option>
+                    <option value="1013">Campinas</option>
+                    <option value="1039">Campo Grande </option>
+                    <option value="1195">Campos do Jordão</option>
+                    <option value="1196">Campos dos Goytacazes</option>
+                    <option value="1124">Cancun</option>
+                    <option value="1188">Canela</option>
+                    <option value="1167">Canoas</option>
+                    <option value="1362">Capao da Canoa</option>
+                    <option value="1474">Capim Branco</option>
+                    <option value="1391">Capitolio</option>
+                    <option value="1131">Caracas</option>
+                    <option value="1183">Caraguatatuba</option>
+                    <option value="1447">Caraíva</option>
+                    <option value="1470">Carandaí</option>
+                    <option value="1341">Cariacica</option>
+                    <option value="1264">Cascavel</option>
+                    <option value="1344">Caucaia</option>
+                    <option value="1197">Caxias do Sul</option>
+                    <option value="1410">Cesario Lange</option>
+                    <option value="1265">Chapada Dos Guimarães</option>
+                    <option value="1283">Chapeco</option>
+                    <option value="1393">Chui</option>
+                    <option value="1284">Confins</option>
+                    <option value="1468">Congonhas</option>
+                    <option value="1318">Conselheiro Lafaiete</option>
+                    <option value="1154">Costa do Sauipe</option>
+                    <option value="1285">Criciúma</option>
+                    <option value="1331">Cruz</option>
+                    <option value="1031">Cuiaba</option>
+                    <option value="1014">Curitiba</option>
+                    <option value="1457">Dom Macedo Costa</option>
+                    <option value="1430">Domingos Martins</option>
+                    <option value="1350">Duque De Caxias</option>
+                    <option value="1073">Eco - Aventura </option>
+                    <option value="1464">Engenheiro Paulo de Frontin</option>
+                    <option value="1428">Entre Rios</option>
+                    <option value="1476">Esmeraldas</option>
+                    <option value="1355">Feira de Santada</option>
+                    <option value="1423">Fernandes Pinheiro</option>
+                    <option value="1063">Fernando de Noronha </option>
+                    <option value="1477">Floresta</option>
+                    <option value="1015">Florianopolis</option>
+                    <option value="1002">Fortaleza</option>
+                    <option value="1038">Fortaleza - Aquiraz</option>
+                    <option value="1161">Fortaleza - Beberibe</option>
+                    <option value="1087">Fortaleza - Canoa Quebrada</option>
+                    <option value="1053">Fortaleza - Cumbuco</option>
+                    <option value="1295">Fortaleza - Fortim</option>
+                    <option value="1335">Fortaleza - Taiba</option>
+                    <option value="1016">Fortaleza - Trairi</option>
+                    <option value="1041">Foz do Iguacu</option>
+                    <option value="1269">Franca</option>
+                    <option value="1279">Garopaba</option>
+                    <option value="1381">Gent</option>
+                    <option value="1361">Goianesia</option>
+                    <option value="1198">Goiania</option>
+                    <option value="1439">Governador Celso Ramos</option>
+                    <option value="1026">Gramado</option>
+                    <option value="1461">Gravatá</option>
+                    <option value="1199">Gravataí</option>
+                    <option value="1281">Gravatal</option>
+                    <option value="1405">Greenacres</option>
+                    <option value="1448">Guadalajara </option>
+                    <option value="1280">Guarapari</option>
+                    <option value="1352">Guarapuava</option>
+                    <option value="1250">Guararema</option>
+                    <option value="1360">Guaratingueta</option>
+                    <option value="1291">Guaratuba</option>
+                    <option value="1058">Guaruja </option>
+                    <option value="1472">Igarape</option>
+                    <option value="1034">Ilha Grande </option>
+                    <option value="1042">Ilhabela</option>
+                    <option value="1044">Ilheus </option>
+                    <option value="1266">Ilheus - Ilha de Comandatuba</option>
+                    <option value="1045">Ilheus - Una </option>
+                    <option value="1166">Imbassai</option>
+                    <option value="1252">Imbituba</option>
+                    <option value="1200">Indaiatuba</option>
+                    <option value="1278">Ipatinga</option>
+                    <option value="1342">Iretama</option>
+                    <option value="1277">Ita</option>
+                    <option value="1017">Itacare</option>
+                    <option value="1290">Itacimirim</option>
+                    <option value="1337">Itaguai</option>
+                    <option value="1392">Itaipava</option>
+                    <option value="1201">Itajai</option>
+                    <option value="1396">Itajuba</option>
+                    <option value="1202">Itapema</option>
+                    <option value="1417">Itapira</option>
+                    <option value="1389">Itatiaia</option>
+                    <option value="1303">Itu</option>
+                    <option value="1203">Itupeva</option>
+                    <option value="1317">Jaboticatubas</option>
+                    <option value="1456">Jacareí</option>
+                    <option value="1326">Jaguariuna</option>
+                    <option value="1204">Jaragua do Sul</option>
+                    <option value="1066">Jericoacoara</option>
+                    <option value="1018">Joao Pessoa</option>
+                    <option value="1035">Joao Pessoa - Conde</option>
+                    <option value="1205">Joinville</option>
+                    <option value="1426">Juazeiro</option>
+                    <option value="1206">Juazeiro do Norte</option>
+                    <option value="1275">Juiz de Fora</option>
+                    <option value="1207">Jundiai</option>
+                    <option value="1068">Jungle Lodges &amp; Cruises</option>
+                    <option value="1354">La Plata</option>
+                    <option value="1462">Lages</option>
+                    <option value="1208">Lagoa Santa</option>
+                    <option value="1071">Lençois Maranhenses</option>
+                    <option value="1120">Lima</option>
+                    <option value="1273">Lins</option>
+                    <option value="1211">Londrina</option>
+                    <option value="1334">Los Angeles </option>
+                    <option value="1212">Macae</option>
+                    <option value="1213">Macapa</option>
+                    <option value="1021">Maceio</option>
+                    <option value="1051">Maceio - Barra de Sao Miguel</option>
+                    <option value="1306">Maceio - Japaratinga</option>
+                    <option value="1226">Maceio - Praia do Frances</option>
+                    <option value="1088">Maceio - Sao Miguel dos Milagres</option>
+                    <option value="1424">Mairipora</option>
+                    <option value="1377">Manacapuru</option>
+                    <option value="1040">Manaus </option>
+                    <option value="1214">Mangaratiba</option>
+                    <option value="1043">Maragogi </option>
+                    <option value="1055">Marau </option>
+                    <option value="1216">Maringa</option>
+                    <option value="1460">Massaranduba</option>
+                    <option value="1382">Mata de São João</option>
+                    <option value="1353">Medellin</option>
+                    <option value="1297">Mérida</option>
+                    <option value="1444">Miguel Pereira</option>
+                    <option value="1453">Miranda</option>
+                    <option value="1270">Mogi das Cruzes</option>
+                    <option value="1349">Mogi Guaçu</option>
+                    <option value="1271">Monte Claros</option>
+                    <option value="1475">Monte Siao</option>
+                    <option value="1412">Monte Verde</option>
+                    <option value="1065">Morro de Sao Paulo </option>
+                    <option value="1064">Morro de Sao Paulo - Boipeba</option>
+                    <option value="1146">Moscou</option>
+                    <option value="1020">Natal</option>
+                    <option value="1057">Natal - Praia de Camurupim</option>
+                    <option value="1150">Natal - Sao Miguel do Gostoso</option>
+                    <option value="1181">Natal - Touros</option>
+                    <option value="1217">Niteroi</option>
+                    <option value="1422">Nobres</option>
+                    <option value="1371">Northampton</option>
+                    <option value="1272">Nova Friburgo</option>
+                    <option value="1173">Nova Lima</option>
+                    <option value="1218">Novo Hamburgo</option>
+                    <option value="1219">Osasco</option>
+                    <option value="1406">Osório</option>
+                    <option value="1471">Ouro Fino</option>
+                    <option value="1036">Ouro Preto </option>
+                    <option value="1248">Palhoça</option>
+                    <option value="1332">Palmas</option>
+                    <option value="1069">Pantanal  - Norte </option>
+                    <option value="1070">Pantanal - Sur</option>
+                    <option value="1408">Paracatu</option>
+                    <option value="1220">Paragominas</option>
+                    <option value="1452">Paraiba Do Sul</option>
+                    <option value="1003">Paraty</option>
+                    <option value="1324">Parnaíba</option>
+                    <option value="1437">Penedo</option>
+                    <option value="1221">Penha</option>
+                    <option value="1253">Petrolina</option>
+                    <option value="1222">Petropolis</option>
+                    <option value="1445">Piauí</option>
+                    <option value="1037">Pipa</option>
+                    <option value="1223">Piracicaba</option>
+                    <option value="1463">Piraju</option>
+                    <option value="1311">Pirassununga</option>
+                    <option value="1246">Piratuba</option>
+                    <option value="1224">Pirenópolis</option>
+                    <option value="1440">Pitimbu</option>
+                    <option value="1225">Poços de Caldas</option>
+                    <option value="1022">Porto Alegre</option>
+                    <option value="1267">Porto belo</option>
+                    <option value="1004">Porto de Galinhas </option>
+                    <option value="1333">Porto Feliz</option>
+                    <option value="1032">Porto Seguro </option>
+                    <option value="1056">Prado</option>
+                    <option value="1153">Praia do Forte</option>
+                    <option value="1185">Praia Grande</option>
+                    <option value="1325">Puerto Iguazu (ARG)</option>
+                    <option value="1023">Recife</option>
+                    <option value="1046">Recife - Olinda</option>
+                    <option value="1388">Resende</option>
+                    <option value="1433">Ribeirão Claro</option>
+                    <option value="1186">Ribeirao Preto</option>
+                    <option value="1449">Rio Branco</option>
+                    <option value="1268">Rio das Ostras</option>
+                    <option value="1329">Rio Grande</option>
+                    <option value="1180">Rio Quente</option>
+                    <option value="1327">Rio Verde</option>
+                    <option value="1300">Riviera Maya</option>
+                    <option value="1227">Rondonópolis</option>
+                    <option value="1024">Salvador</option>
+                    <option value="1346">Salvador - Baixio</option>
+                    <option value="1209">Salvador - Lauro de Freitas</option>
+                    <option value="1149">Santa Cruz De Cabralia </option>
+                    <option value="1298">Santa Cruz de la Sierra</option>
+                    <option value="1363">Santa Cruz de Tenerife</option>
+                    <option value="1177">Santa Cruz Do Sul</option>
+                    <option value="1228">Santo Amaro da Imperatriz</option>
+                    <option value="1061">Santo Andre </option>
+                    <option value="1409">Santo Antonio do Pinhal</option>
+                    <option value="1030">Santos </option>
+                    <option value="1274">Sao Bento do Sul</option>
+                    <option value="1059">Sao Bernardo do Campo</option>
+                    <option value="1060">Sao Caetano do Sul </option>
+                    <option value="1229">Sao Carlos</option>
+                    <option value="1431">São Francisco de Paula</option>
+                    <option value="1276">Sao Francisco do Sul</option>
+                    <option value="1436">São Gonçalo Do Amarante</option>
+                    <option value="1230">Sao José do Rio Preto</option>
+                    <option value="1062">Sao Jose dos Campos </option>
+                    <option value="1231">Sao Jose dos Pinhais</option>
+                    <option value="1232">Sao Leopoldo</option>
+                    <option value="1469">São Lourenço</option>
+                    <option value="1169">Sao Luis do Maranhão</option>
+                    <option value="1005">Sao Paulo</option>
+                    <option value="1012">Sao Paulo - Guarulhos  </option>
+                    <option value="1259">Sao Paulo - Olimpia</option>
+                    <option value="1139">Sao Pedro da Aldeia</option>
+                    <option value="1234">Sao Sebastião</option>
+                    <option value="1390">Saquarema</option>
+                    <option value="1450">Senhor do Bonfim</option>
+                    <option value="1320">Serra Negra</option>
+                    <option value="1316">Sete Lagoas</option>
+                    <option value="1235">Sobral</option>
+                    <option value="1459">Socorro</option>
+                    <option value="1178">Sorocaba</option>
+                    <option value="1047">Tamandare</option>
+                    <option value="1236">Taubate</option>
+                    <option value="1330">TEGUCIGALPA</option>
+                    <option value="1369">Temara</option>
+                    <option value="1323">Tenerife</option>
+                    <option value="1258">Teresina</option>
+                    <option value="1179">Teresopolis</option>
+                    <option value="1427">Tianguá</option>
+                    <option value="1172">Tibau do Sul</option>
+                    <option value="1339">Timbo</option>
+                    <option value="1237">Tiradentes</option>
+                    <option value="1238">Torres</option>
+                    <option value="1027">Trancoso</option>
+                    <option value="1102">Trancoso - Espelho</option>
+                    <option value="1028">Trancoso - Ponta do Corumbau</option>
+                    <option value="1336">Tres Lagoas</option>
+                    <option value="1256">Tres Rios</option>
+                    <option value="1182">Ubatuba</option>
+                    <option value="1239">Uberaba</option>
+                    <option value="1240">Uberlandia</option>
+                    <option value="1455">Valença</option>
+                    <option value="1313">Valinhos</option>
+                    <option value="1288">Valparaiso</option>
+                    <option value="1189">Varzea Grande</option>
+                    <option value="1387">Vassouras</option>
+                    <option value="1367">Vienna</option>
+                    <option value="1241">Vila Velha</option>
+                    <option value="1441">Virginia</option>
+                    <option value="1242">Vitoria</option>
+                    <option value="1467">Vitoria da Conquista</option>
+                    <option value="1314">Volta Redonda</option>
+                </select>
             </div>
-            <div class="o-search-box--reduced__form__hotel">
-                <label for="hotelInput" class="form-label">Hotel</label>
-                <input class="o-search-box--reduced__form__input text-body" id="hotelInput" type="text" placeholder="Copacabana Palace" aria-label="Qual hotel desejado (opcional)">
-            </div>
-            <div class="o-search-box--reduced__form__regime position-absolute JS__regime-input">
-                <label for="hotelInput" class="form-label">Regime</label>
-                <select class="o-search-box--reduced__form__input text-body">
-                    <option value="">Todas</option>
-                    <option value="">Todas</option>
-                    <option value="">Todas</option>
-                    <option value="">Todas</option>
-                    <option value="">Todas</option>
-                    <option value="">Todas</option>
+            <div class="o-search-box--reduced__form__regime JS__experiencia-input h-100">
+                <label for="hotelInput" class="form-label fw-normal text-secondary">Regime</label>
+                <select class="o-search-box--reduced__form__input text-body JS__select">
+                    <option value="Todos">Todos</option>
+                    <option value="12">Basic - Privado</option>
+                    <option value="10">Basic - Regular</option>
+                    <option value="8">Comfort</option>
+                    <option value="2">Privado</option>
+                    <option value="4">Privado/Regular</option>
+                    <option value="1">Regular</option>
+                    <option value="3">Regular/Privado</option>
+                    <option value="9">Superior</option>
+                    <option value="11">Superior - Regular</option>
+                    <option value="5">Trf Priv / Tour Reg</option>
+                    <option value="7">Trf Rio - Privado / Trfs Buzios - Regular </option>
                 </select>
             </div>
             <div class="o-search-box--reduced__form__passageiros">
 
                 <div class="o-search-box__form__passageiros__input">
-                    <label for="passageirosInput" class="form-label">Passageiros + Quarto/s</label>
+                    <label for="passageirosInput" class="form-label fw-normal text-secondary">Passageiros + Quarto/s</label>
 
-                    <span class="o-search-box--reduced__form__input JS__passageiros-input cursor-pointer" id="passageirosInput" aria-label="Passageiros + Quarto/s"  onclick="openPassageiros()">
+                    <span class="o-search-box--reduced__form__input JS__passageiros-input cursor-pointer d-block text-body" id="passageirosInput" aria-label="Passageiros + Quarto/s">
                         <span class="JS__total-passageiros"></span> passageiros  • <span class="JS__total-quartos"></span> Quartos
                     </span>
                 </div>
 
-                <div class="o-search-box__form__passageiros__content position-absolute bg-white d-flex JS__passageiros-box d-flex justify-content-between">
+                <div class="o-search-box__form__passageiros__content w-100 position-absolute bg-white JS__passageiros-box">
 
-                    <div class="d-flex align-items-center o-search-box__form__passageiros__content__item">
-                        <div class="me-3">
-                            <span class="fs-5 fw-500 d-block mb-0">Adultos</span>
-                            <span class="text-primary fs-12">13 anos +</span>
-                        </div>
-                        <div class="input-number">
-                            <input type="button" value="-" class="button-minus" data-field="quantity">
-                            <input type="number" step="1" max="" value="0" name="quantity"  value="0" id="adultos-input" class="JS__search-box__quantity"/>
-                            <input type="button" value="+" class="button-plus" data-field="quantity">
+                    <div class="JS__passageiros-box__content">
+
+                        <div class="d-flex align-items-center justify-content-between o-search-box__form__passageiros__content__input border-bottom pb-3">
+                            <div class="me-3">
+                                <span class="fs-5 fw-500 d-block mb-0">Quartos</span>
+                            </div>
+                            <div class="input-number">
+                                <input type="button" value="-" class="button-minus JS__removeRoom" data-field="quantity">
+                                <input type="number" min="1" value="1" name="quantity" class="JS__search-box__quartos" readonly/>
+                                <input type="button" value="+" class="button-plus JS__addRoom" data-field="quantity">
+                            </div>
+
                         </div>
 
-                    </div>
+                        <div class="JS__hotel-room o-search-box__form__passageiros__content__room pb-3">
 
-                    <div class="d-flex align-items-center o-search-box__form__passageiros__content__item">
-                        <div class="me-3">
-                            <span class="fs-5 fw-500 d-block mb-0">Crianças</span>
-                            <span class="text-primary fs-12">02 a 13 anos</span>
-                        </div>
-                        <div class="input-number">
-                            <input type="button" class="button-minus" data-field="quantity" value="-" >
-                            <input type="number" step="1" max="" value="0" name="quantity"  value="0" id="criancas-input" class="JS__search-box__quantity"/>
-                            <input type="button" class="button-plus" data-field="quantity" value="+" >
-                        </div>
-                    </div>
+                            <span class="fw-500 fs-12 mb-3 d-block">Quarto 1</span>
+                        
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <div class="me-3">
+                                    <span class="fs-5 fw-500 d-block mb-0">Adultos</span>
+                                </div>
+                                <div class="input-number">
+                                    <input type="button" value="-" class="button-minus JS__search-box__quantity-minus" data-field="quantity">
+                                    <input type="number" step="1" min="1" value="1" name="quantity" class="JS__search-box__quantity" readonly/>
+                                    <input type="button" value="+" class="button-plus JS__search-box__quantity-plus" data-field="quantity">
+                                </div>
 
-                    
-                    <div class="d-flex align-items-center o-search-box__form__passageiros__content__item">
-                        <div class="me-3">
-                            <span class="fs-5 fw-500 d-block mb-0">Bebês</span>
-                            <span class="text-primary fs-12">Menor de 2</span>
-                        </div>
-                        <div class="input-number">
-                            <input type="button" class="button-minus" data-field="quantity" value="-" >
-                            <input type="number" step="1" max="" value="0" name="quantity"  value="0" id="adultos-input" placeholder="0" class="JS__search-box__quantity"/>
-                            <input type="button" class="button-plus" data-field="quantity" value="+">
-                        </div>
-                    </div>
+                            </div>
 
-                    <div class="d-flex align-items-center o-search-box__form__passageiros__content__item">
-                        <div class="me-3">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="29.723" height="24.266"><g data-name="Icon | Quartos" transform="translate(.75 .75)" fill="none" stroke="#868686" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><rect data-name="Retângulo 30" width="28.223" height="8.388" rx="2.207" transform="translate(0 11.971)"/><path data-name="Linha 19" d="M2.054 20.359v2.407"/><path data-name="Linha 20" d="M26.235 20.359v2.407"/><g data-name="Grupo 94"><path data-name="Caminho 32" d="M2.665 11.751s0-4.893 3.845-4.893h4.368s3.233 0 3.233 4.893"/><path data-name="Caminho 33" d="M14.111 11.751s0-4.893 3.844-4.893h4.369s3.233.11 3.233 4.893"/></g><path data-name="Caminho 34" d="M2.054 11.967v-7.8A4.36 4.36 0 016.581-.005h15.127a4.36 4.36 0 014.527 4.172v7.8z"/></g></svg>
+                            <div class="d-flex align-items-center justify-content-between flex-wrap mb-3">
+                                <div class="me-3">
+                                    <span class="fs-5 fw-500 d-block mb-0">Crianças</span>
+                                </div>
+                                <div class="input-number">
+                                    <input type="button" class="button-minus JS__search-box__quantity-minus JS__child-minus" data-field="quantity" value="-" >
+                                    <input type="number" min="0" name="quantity" value="0" data-crianca="1" class="JS__search-box__quantity" readonly/>
+                                    <input type="button" class="button-plus JS__search-box__quantity-plus JS__child-plus" data-field="quantity" value="+" >
+                                </div>
+                                
+                            </div>
+
                         </div>
-                        <div class="me-3">
-                            <span class="fs-5 fw-500 d-block mb-0">Quartos</span>
-                            <span class="text-primary fs-12">02 quartos</span>
-                        </div>
-                        <div class="input-number">
-                            <input type="button" class="button-minus" data-field="quantity" value="-" >
-                            <input type="number" step="1" max="" value="0" name="quantity"  value="0" id="quartos-input" class="JS__search-box__rooms"/>
-                            <input type="button" class="button-plus" data-field="quantity" value="+" >
-                        </div>
+
                     </div>
 
                 </div>
 
             </div>
-            <div class="o-search-box--reduced__form__checkin">
+            <div class="o-search-box--reduced__form__checkin border-end">
 
-                <label for="datefilter" class="form-label">Check-In</label>
-                <input class="o-search-box--reduced__form__input bg-transparent input-date" type="text" id="datepicker" placeholder="12 de Fevereiro">
+                <label for="datefilter" class="form-label fw-normal text-secondary">Check-In</label>
+                    <input class="o-search-box--reduced__form__input bg-transparent input-date" type="text"placeholder="Quando?">
                 </label>
 
             </div>
             <div class="o-search-box--reduced__form__checkout">
 
-                <label for="datefilter" class="form-label">Check-Out</label>
-                <input class="o-search-box--reduced__form__input bg-transparent input-date" type="text" id="datepicker" placeholder="12 de Fevereiro">
+                <label for="datefilter" class="form-label fw-normal text-secondary">Check-Out</label>
+                <input class="o-search-box--reduced__form__input bg-transparent input-date" type="text" placeholder="Quando?">
 
             </div>
             <div class="o-search-box--reduced__form__submit">
@@ -139,13 +443,11 @@
                 </button>
             </div>
             
-        </div>
-
     </div>
-
     
 </div>
  
+
 
 <div class="d-flex justify-content-between o-search-box--reduced__radios position-absolute bg-white JS__search-box__radios">
 
@@ -155,27 +457,27 @@
         <div class="form-check">
             <input class="form-check-input JS__search-box__radio" type="radio" name="search-opt" id="search-hotel" value="1" checked>
             <label class="form-check-label d-flex align-items-center" for="search-hotel">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"><g data-name="Icon | Hotel"><path data-name="Caminho 5" d="M18.204 22h-.6c-.054-.017-.107-.036-.162-.051a1.926 1.926 0 01-1.414-1.366 2.02 2.02 0 01.027-1.15H5.965a.114.114 0 00-.006.03c.007.034.014.069.022.1a1.855 1.855 0 01-.664 2 4.5 4.5 0 01-.916.441h-.6a.763.763 0 00-.1-.04 1.877 1.877 0 01-1.511-1.581 5.58 5.58 0 01-.009-.966h-1.5a.634.634 0 01-.676-.67v-2.535a.633.633 0 01.663-.661h.631v-.282c0-2.57-.006-5.141.006-7.711a7.18 7.18 0 01.132-1.34 6.248 6.248 0 015.39-4.9.347.347 0 00.232-.166A1.929 1.929 0 018.894-.006h4.2a1.932 1.932 0 011.852 1.164.359.359 0 00.214.161c.43.1.878.154 1.3.292a6.214 6.214 0 014.248 5.885v8.055h.615a.632.632 0 01.679.666v2.535a.633.633 0 01-.68.665h-1.38c-.06 0-.119.01-.186.015a1.887 1.887 0 01-.616 2.107 4.544 4.544 0 01-.936.461zM4.746 15.544v-.261-6.037a1.494 1.494 0 011.516-1.512h1.932V6.647a1.488 1.488 0 011.488-1.491c.611 0 1.224.034 1.833-.007 1.779-.119 2.417.53 2.287 2.274-.007.1 0 .2 0 .285a.3.3 0 00.063.022h1.833a1.491 1.491 0 011.554 1.556V15.537h2.151c0-.055.006-.1.006-.139 0-2.635.009-5.271-.009-7.906a4.613 4.613 0 00-.2-1.329 4.873 4.873 0 00-4.057-3.539c-.135-.025-.182.032-.239.141a1.875 1.875 0 01-1.761 1.1q-2.167.011-4.335 0a1.869 1.869 0 01-1.629-.923c-.222-.344-.214-.35-.624-.259a4.946 4.946 0 00-3.968 4.918v7.944zM1.301 18.12h19.387v-1.258H1.301zm7.337-2.58h4.718v-3.927H8.638zM7.324 9.023h-.912c-.32 0-.377.056-.377.371v6.143H7.32zm7.352 6.52h1.284v-.179-4.935c0-.372.012-.745-.008-1.115-.005-.1-.106-.266-.172-.27-.368-.027-.738-.013-1.1-.013zm-3.688-12.96h2.113a.665.665 0 00.7-.636.663.663 0 00-.708-.649H8.911a.9.9 0 00-.425.118.589.589 0 00-.254.689.642.642 0 00.642.473c.705.005 1.41.005 2.114.005zm2.38 6.458H8.643v1.26h4.725zm-.856-1.314V6.698a.232.232 0 00-.259-.251h-2.5c-.141 0-.248.069-.253.21-.011.355 0 .71 0 1.072zM4.745 20.074a.668.668 0 00-.643-.652.668.668 0 00-.648.624.669.669 0 00.632.662.668.668 0 00.659-.634zm13.16.635a.667.667 0 00.643-.65.669.669 0 00-.658-.635.663.663 0 00-.632.638.668.668 0 00.646.648z" fill="#676767"/></g></svg> Hotel
+                <span class="icon-bags"></span> Hotel
             </label>
         </div>
         <div class="form-check">
             <input class="form-check-input JS__search-box__radio" type="radio" name="search-opt" id="search-translado" value="2">
             <label class="form-check-label d-flex align-items-center" for="search-translado" value="translado">
-                <svg xmlns="http://www.w3.org/2000/svg" width="21.646" height="21.488"><g data-name="Icon | Translado" fill="none" stroke="#676767" stroke-width="1.5"><g data-name="Retângulo 22" transform="translate(2.678)" stroke-linecap="round" stroke-linejoin="round"><rect width="16.292" height="19.154" rx="4" stroke="none"/><rect x=".75" y=".75" width="14.792" height="17.654" rx="3.25"/></g><path data-name="Caminho 7" d="M.75 9.001V5.019h20.146v3.982" stroke-linecap="round" stroke-linejoin="round"/><path data-name="Linha 3" stroke-linecap="round" d="M3.633 11.084h14.379"/><path data-name="Linha 4" stroke-linecap="round" d="M5.289 15.063h2.55"/><path data-name="Linha 5" stroke-linecap="round" d="M13.809 15.063h2.55"/><path data-name="Caminho 17" d="M7.872 17.781v1.882a1.062 1.062 0 01-1.049 1.075H5.055a1.062 1.062 0 01-1.049-1.075v-2.846" stroke-miterlimit="10"/><path data-name="Caminho 18" d="M13.602 17.781v1.882a1.062 1.062 0 001.049 1.075h1.768a1.062 1.062 0 001.049-1.075v-2.658" stroke-miterlimit="10"/></g></svg>
+                <span class="icon-transfer"></span>
                 Translado
             </label>
         </div>
         <div class="form-check">
             <input class="form-check-input JS__search-box__radio" type="radio" name="search-opt" id="search-tour" value="3">
             <label class="form-check-label d-flex align-items-center" for="search-tour">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="25.065"><g data-name="Grupo 1109"><g data-name="Retângulo 22" transform="translate(0 5.072)" fill="none" stroke="#676767" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><rect width="20" height="18.124" rx="4" stroke="none"/><rect x=".75" y=".75" width="18.5" height="16.624" rx="3.25"/></g><path data-name="Caminho 12" d="M6.766 8.708h6.546" fill="none" stroke="#676767" stroke-linecap="round" stroke-width="1.5"/><g data-name="Grupo 47" fill="none" stroke="#676767" stroke-linecap="round" stroke-width="2"><path data-name="Linha 14" d="M5.055 24.065V22.67"/><path data-name="Linha 15" d="M14.234 24.065V22.67"/></g><g data-name="Grupo 48" fill="none" stroke="#676767" stroke-linecap="round" stroke-width="1.5"><path data-name="Linha 4" d="M5.258 18.456v-6.534"/><path data-name="Linha 12" d="M10.01 18.456v-6.534"/><path data-name="Linha 13" d="M14.762 18.456v-6.534"/></g><path data-name="Caminho 11" d="M5.938 5.076V4.004a2.5 2.5 0 012.5-2.5h3.764a2.5 2.5 0 012.5 2.5v1.072h1.5V4.004a4 4 0 00-4-4H8.438a4 4 0 00-4 4v1.072z" fill="#676767"/></g></svg>
+                <span class="icon-suitcase"></span>
                 Tour
             </label>
         </div>
         <div class="form-check">
             <input class="form-check-input JS__search-box__radio" type="radio" name="search-opt" id="search-pacotes" value="4">
             <label class="form-check-label d-flex align-items-center" for="search-pacotes">
-                <svg xmlns="http://www.w3.org/2000/svg" width="25.923" height="22.322"><g data-name="Grupo 1110" fill="none" stroke="#676767" stroke-miterlimit="10" stroke-width="1.5"><path data-name="Linha 216" d="M7.488 4.68v16.891"/><g data-name="Grupo 1108" transform="translate(-760.457 -62.75)"><rect data-name="Retângulo 399" width="24.423" height="16.891" rx="3.52" transform="translate(761.207 67.43)"/><path data-name="Caminho 283" d="M775.612 63.5h-4.666a1.921 1.921 0 00-1.816 1.032l-1.185 2.9h10.668l-1.186-2.9a1.919 1.919 0 00-1.815-1.032z"/><path data-name="Linha 217" d="M778.613 67.43v8.071"/><path data-name="Linha 218" d="M778.613 79.711v4.61"/><rect data-name="Retângulo 400" width="6.808" height="4.211" rx="1.244" transform="translate(775.314 75.5)"/></g></g></svg>
+                <span class="icon-case"></span>
                 Pacotes
             </label>
         </div>

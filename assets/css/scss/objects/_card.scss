@@ -8,7 +8,9 @@
     color: #fff;
     overflow: hidden;
     border-radius: 1.25rem;
-    transition:  .2s;
+    @include breakpoint(md){
+        width: 100%;
+    }
     &__bg{
         position: absolute;
         height: 100%;
@@ -32,6 +34,7 @@
     }
     // &.swiper-slide-active{
     //     width: 33.5rem;
+    //     transition-delay: width 3s;
     //     &:after{
     //         content:'';
     //         background: $primary;

@@ -3,14 +3,20 @@
     &__img{
         background-size: cover;
         background-position: center;
-        height: calc(100vh - 99px);
+        height: 100%;
         width: 43.2%;
         position: fixed;
         z-index: -1;
+        top: 0;
         @include breakpoint(lg){
             width: 100%;
             height: calc(52vh - 99px);
-            position: initial;
+            position: initial!important;
+            background-attachment: fixed;
+        }
+        &--absolute{
+            position: absolute;
+            top: initial;
         }
     }
     &__container{
@@ -36,6 +42,9 @@
         b, strong{
             font-weight: 500;
         }
+        
     }
 
 }
+
+

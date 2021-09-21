@@ -11,7 +11,7 @@
             
             <div class="swiper-wrapper h-100">
 
-                <div class="c-banner__item swiper-slide h-100 d-flex align-items-end" style="background-image: url('assets/img/todas-reservas-banner.jpg');">
+                <div class="c-banner__item swiper-slide h-100 d-flex align-items-end" style="background-image: url('assets/img/banner-bali.jpg');">
                     <img src="assets/img/banner-bg.png" alt="background" class="c-banner__background">
                     <div class="container text-light">
                         <div class="row h-100 d-flex align-items-center">
@@ -48,7 +48,7 @@
 
     </section>
 
-    <section class="c-reservas__container">
+    <section class="py-3 mt-5 mb-4">
         <div class="container">
 
             <div class="row mb-4">
@@ -62,12 +62,12 @@
 
                     <div class="row">
                         <div class="col-md-9 d-flex align-items-center mb-4">
-                            <span class="icon-search me-3"></span>
-                            <input type="text" class="form-control w-100 fs-5 border-0" placeholder="Procure por uma reserva inserindo o código #000">
+                            <label class="icon-search me-3 fs-22 cursor-pointer" for="reserva-search"></label>
+                            <input type="text" class="form-control w-100 fs-5 border-0 fw-light px-3" id="reserva-search" placeholder="Procure por uma reserva inserindo o código #000">
                         </div>
-                        <div class="col-md-2 offset-md-1 d-flex align-items-center mb-4">
-                            <a class="fs-4 text-decoration-none text-primary fw-500 d-flex align-items-center" data-bs-toggle="collapse" href="#filtros" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
-                                <span class="icon-ajust me-3"></span>
+                        <div class="col-md-2 offset-md-1 d-flex align-items-center justify-content-lg-end mb-4">
+                            <a class="fs-4 text-decoration-none text-primary fw-500 d-flex align-items-center c-reservas__filtros__button collapsed" data-bs-toggle="collapse" href="#filtros" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
+                                <span class="icon-ajust me-3 fs-22"></span>
                                 Filtros
                                 <svg xmlns="http://www.w3.org/2000/svg" width="14.73" height="8.397" class="ms-3"><path data-name="Caminho 4" d="M7.366 8.397a1.029 1.029 0 01-.729-.3L.3 1.76A1.032 1.032 0 011.759.301l5.6 5.6 5.6-5.6a1.036 1.036 0 111.47 1.459L8.1 8.096a1.029 1.029 0 01-.734.301z" fill="#0e6a7a"/></svg>
                             </a>
@@ -78,8 +78,8 @@
             </div>
 
             <div class="collapse multi-collapse c-reservas__filtros" id="filtros">
-                <div class="d-flex justify-content-between align-items-baseline flex-wrap">
 
+                <div class="d-flex align-items-baseline flex-wrap">
                     <div class="c-reservas__filtros__container mb-4">
                         <div class="d-flex no-wrap justify-content-between c-reservas__filtros__content">
                             <div class="mb-4 w-100 mx-2">
@@ -110,56 +110,95 @@
                             </div>
                             <div class="mb-4 w-100 mx-2">
                                 <label for="exampleInputEmail1" class="form-label">Unidade de Faturamento</label>
-                                <select class="form-select">
-                                    <option value="">Todas</option>
-                                    <option value="">Todas</option>
-                                    <option value="">Todas</option>
-                                    <option value="">Todas</option>
-                                    <option value="">Todas</option>
-                                    <option value="">Todas</option>
+                                <select class="form-select JS__select">
+                                    <option selected="selected"></option>
+                                    <option value="2">JOURNEYS AGENCIA DE VIAGENS E TURISMO EIRELI</option>
+                                    <option value="3">JOURNEYS NACIONAL</option>
+                                    <option value="4">NANO NACIONAL</option>
+                                    <option value="1">NANO TURISMO EIRELI</option>
                                 </select>
                             </div>
                             <div class="mb-4 w-100 mx-2">
                                 <label for="exampleInputEmail1" class="form-label">Agrupamento</label>
-                                <select class="form-select">
-                                    <option value="">Todas</option>
-                                    <option value="">Todas</option>
-                                    <option value="">Todas</option>
-                                    <option value="">Todas</option>
-                                    <option value="">Todas</option>
-                                    <option value="">Todas</option>
+                                <select class="form-select JS__select" id="filtro-agrupamento">
+                                    <option selected="selected"></option>
+                                    <option value="2">Journeys</option>
+                                    <option value="1">Journeys AGT</option>
+                                    <option value="3">Journeys ALLOT</option>
+                                    <option value="4">Journeys ESP</option>
+                                    <option value="5">Journeys GRP</option>
+                                    <option value="7">Journeys NACIONAL</option>
+                                    <option value="6">Journeys PARTNERS</option>
                                 </select>
                             </div>
                         </div>
                         <div class="d-flex no-wrap justify-content-between align-items-baseline c-reservas__filtros__content">
                             <div class="mb-4 w-100 mx-2">
                                 <label for="country" class="form-label">País do Cliente</label>
-                                <select class="form-select">
-                                    <option value="">Brasil</option>
+                                <select class="form-select JS__select-country" id="filtro-pais">
+                                    <option value="24">Africa do Sul </option>
+                                    <option value="5">Alemanha</option>
+                                    <option value="3">Argentina</option>
+                                    <option value="38">Austria</option>
+                                    <option value="40">Belgica</option>
+                                    <option value="6">Bolivia</option>
+                                    <option value="2">Brasil</option>
+                                    <option value="26">Bulgaria</option>
+                                    <option value="36">Canada</option>
+                                    <option value="4">Chile</option>
+                                    <option value="28">China</option>
+                                    <option value="34">Chipre</option>
+                                    <option value="13">Colômbia</option>
+                                    <option value="37">Dinamarca</option>
+                                    <option value="11">El Salvador</option>
+                                    <option value="35">Emirados Arabes Unidos</option>
+                                    <option value="10">Equador</option>
+                                    <option value="12">Espanha</option>
+                                    <option value="18">Estados Unidos</option>
+                                    <option value="29">França</option>
+                                    <option value="32">Honduras</option>
+                                    <option value="27">Inglaterra</option>
+                                    <option value="25">Israel </option>
+                                    <option value="39">Marrocos</option>
+                                    <option value="9">México</option>
+                                    <option value="41">Noruega</option>
+                                    <option value="23">Panamá</option>
+                                     <option value="7">Paraguai</option>
+                                    <option value="8">Peru</option>
+                                    <option value="30">Porto Rico</option> 
+                                    <option value="16">Portugal</option>
+                                    <option value="14">Rep. Dominicana</option>
+                                    <option value="21">República Dominicana</option>
+                                    <option value="22">Russia</option>
+                                    <option value="31">Suiça </option>
+                                    <option value="17">Turquia</option>
+                                    <option value="33">Ucrânia</option>
+                                    <option value="15">Uruguai</option> 
+                                    <option value="19">Venezuela</option>
                                 </select>
                             </div>
                             
                             <div class="mb-4 w-100 mx-2 o-data-picker">
                                 <label for="checkin" class="form-label">Datas Check-In</label>
-                                <input class="form-control daterange bg-transparent" type="text" aria-label="Datas de Check-In" id="checkin" placeholder="Ida e volta">
+                                <input class="form-control daterange bg-transparent" type="text" aria-label="Datas de Check-In" id="checkin">
                                 <span class="icon-calendar"></span>
                             </div>
                             
                             <div class="mb-4 w-100 mx-2 o-data-picker">
                                 <label for="checkout" class="form-label">Datas Check-Out</label>
-                                <input class="form-control daterange bg-transparent" type="text" aria-label="Datas de Check-In" id="checkout" placeholder="Ida e volta">
+                                <input class="form-control daterange bg-transparent" type="text" aria-label="Datas de Check-In" id="checkout">
                                 <span class="icon-calendar"></span>
                             </div>
                             
                             <div class="mb-4 w-100 mx-2 o-data-picker">
                                 <label for="data-criacao" class="form-label">Datas Criação</label>
-                                <input class="form-control daterange bg-transparent" type="text" aria-label="Datas de Criação" id="data-criacao" placeholder="Ida e volta">
+                                <input class="form-control daterange bg-transparent" type="text" aria-label="Datas de Criação" id="data-criacao">
                                 <span class="icon-calendar"></span>
                             </div>
                             
                             <div class="mb-4 w-100 mx-2 o-data-picker">
                                 <label for="data-cancelamento" class="form-label">Datas Cancelamento</label>
-                                <input class="form-control daterange bg-transparent" type="text" aria-label="Datas de Cancelamento" id="data-cancelamento" placeholder="Ida e volta">
+                                <input class="form-control daterange bg-transparent" type="text" aria-label="Datas de Cancelamento" id="data-cancelamento">
                                 <span class="icon-calendar"></span>
                             </div>
                         </div>
@@ -168,43 +207,43 @@
                         <div class="ms-2 me-5">   
                             <label for="exampleInputEmail1" class="form-label">Canais de Venda</label>
                             <div class="form-check mb-1">
-                                <input class="form-check-input" type="radio" name="canais-venda" id="mesa-operativa">
+                                <input class="form-check-input" type="checkbox" id="mesa-operativa">
                                 <label class="form-check-label fw-normal" for="mesa-operativa">
                                     Mesa Operativa
                                 </label>
                             </div>  
                             <div class="form-check mb-1">
-                                <input class="form-check-input" type="radio" name="canais-venda" id="pagina-web">
+                                <input class="form-check-input" type="checkbox" id="pagina-web">
                                 <label class="form-check-label fw-normal" for="pagina-web">
                                     Página Web
                                 </label>
                             </div>  
                             <div class="form-check mb-1">
-                                <input class="form-check-input" type="radio" name="canais-venda" id="nemo">
+                                <input class="form-check-input" type="checkbox" id="nemo">
                                 <label class="form-check-label fw-normal" for="nemo">
                                     Nemo
                                 </label>
                             </div>  
                             <div class="form-check mb-1">
-                                <input class="form-check-input" type="radio" name="canais-venda" id="hub">
+                                <input class="form-check-input" type="checkbox" id="hub">
                                 <label class="form-check-label fw-normal" for="hub">
                                     Hub
                                 </label>
                             </div>  
                             <div class="form-check mb-1">
-                                <input class="form-check-input" type="radio" name="canais-venda" id="cangooroo">
+                                <input class="form-check-input" type="checkbox" id="cangooroo">
                                 <label class="form-check-label fw-normal" for="cangooroo">
                                     Cangooroo
                                 </label>
                             </div>  
                             <div class="form-check mb-1">
-                                <input class="form-check-input" type="radio" name="canais-venda" id="bookingmotor">
+                                <input class="form-check-input" type="checkbox" id="bookingmotor">
                                 <label class="form-check-label fw-normal" for="bookingmotor">
                                     Bookingmotor
                                 </label>
                             </div>  
                             <div class="form-check mb-1">
-                                <input class="form-check-input" type="radio" name="canais-venda" id="consultar">
+                                <input class="form-check-input" type="checkbox" id="consultar">
                                 <label class="form-check-label fw-normal" for="consultar">
                                     Consultar
                                 </label>
@@ -213,63 +252,169 @@
                         <div class="ms-2 me-3">   
                             <label for="exampleInputEmail1" class="form-label">Status</label>
                             <div class="form-check mb-1">
-                                <input class="form-check-input" type="radio" name="status" id="confirmada">
+                                <input class="form-check-input" type="checkbox" id="confirmada">
                                 <label class="form-check-label fw-normal" for="confirmada">
                                     Confirmada
                                 </label>
                             </div>  
                             <div class="form-check mb-1">
-                                <input class="form-check-input" type="radio" name="status" id="sob-consulta">
+                                <input class="form-check-input" type="checkbox" id="sob-consulta">
                                 <label class="form-check-label fw-normal" for="sob-consulta">
                                     Sob-Consulta
                                 </label>
                             </div> 
                             <div class="form-check mb-1">
-                                <input class="form-check-input" type="radio" name="status" id="cancelada">
+                                <input class="form-check-input" type="checkbox" id="cancelada">
                                 <label class="form-check-label fw-normal" for="cancelada">
                                     Cancelada
                                 </label>
                             </div>  
-                            <label for="exampleInputEmail1" class="form-label mt-5">Visíbilidade</label>
+                            
 
-                            <div class="form-check mb-1">
-                                <input class="form-check-input" type="radio" name="visibilidade" id="visivel">
-                                <label class="form-check-label fw-normal" for="visivel">
-                                    Visível ao Cliente
-                                </label>
-                            </div>  
-                            <div class="form-check mb-1">
-                                <input class="form-check-input" type="radio" name="visibilidade" id="invisivel">
-                                <label class="form-check-label fw-normal" for="invisivel">
-                                    Invisível ao Cliente
-                                </label>
-                            </div>  
+                            <div>
+                                <label for="exampleInputEmail1" class="form-label mt-5">Visíbilidade</label>
+
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="checkbox" id="visivel">
+                                    <label class="form-check-label fw-normal" for="visivel">
+                                        Visível ao Cliente
+                                    </label>
+                                </div>  
+                                <div class="form-check mb-1">
+                                    <input class="form-check-input" type="checkbox" id="invisivel">
+                                    <label class="form-check-label fw-normal" for="invisivel">
+                                        Invisível ao Cliente
+                                    </label>
+                                </div>  
+                            </div>
+
                         </div>
                         <div class="ms-2">
                             <label for="exampleInputEmail1" class="form-label">Conferido</label>
                             <div class="form-check mb-1">
-                                <input class="form-check-input" type="radio" name="conferido" id="com-bookings">
+                                <input class="form-check-input" type="checkbox" id="com-bookings">
                                 <label class="form-check-label fw-normal" for="com-bookings">
                                     Com Bookings Não Conferidos
                                 </label>
                             </div>  
                             <div class="form-check mb-1">
-                                <input class="form-check-input" type="radio" name="conferido" id="sem-bookings">
+                                <input class="form-check-input" type="checkbox" id="sem-bookings">
                                 <label class="form-check-label fw-normal" for="sem-bookings">
                                     Sem Bookings Não Conferidos
                                 </label>
                             </div>
                         </div>
                     </div>
+                </div>     
+
+                <!-- 
+                *
+                *    VERSÃO NÃO-LOGADO 
+                *
+                -->
+
+                <?php /*
+                <div class="d-flex align-items-baseline flex-wrap">
+                    <div class="c-reservas__filtros__container mb-4">
+                        <div class="d-flex no-wrap justify-content-between c-reservas__filtros__content">
+                            <div class="mb-4 w-100 mx-2">
+                                <label for="exampleInputEmail1" class="form-label">Id. Journeys</label>
+                                <input class="form-control " type="text" aria-label="default input example">
+                            </div>
+                            <div class="mb-4 w-100 mx-2">
+                                <label for="exampleInputEmail1" class="form-label">File/Invoice</label>
+                                <input class="form-control" type="text"  aria-label="default input example">
+                            </div>
+                            <div class="mb-4 w-100 mx-2">
+                                <label for="exampleInputEmail1" class="form-label">Usuário</label>
+                                <input class="form-control" type="text" aria-label="default input example">
+                            </div>
+                            <div class="mb-4 w-100 mx-2">
+                                <label for="exampleInputEmail1" class="form-label">Referência do Cliente</label>
+                                <input class="form-control" type="text" aria-label="default input example">
+                            </div>
+                        </div>
+                        <div class="d-flex no-wrap justify-content-between align-items-baseline c-reservas__filtros__content">
+                            <div class="mb-4 w-100 mx-2">
+                                <label for="exampleInputEmail1" class="form-label">Tour Líder</label>
+                                <input class="form-control" type="text" aria-label="default input example">
+                            </div>
+                            <div class="mb-4 w-100 mx-2 o-data-picker">
+                                <label for="checkin" class="form-label">Datas Check-In</label>
+                                <input class="form-control daterange bg-transparent" type="text" aria-label="Datas de Check-In" id="checkin">
+                                <span class="icon-calendar"></span>
+                            </div>
+                            
+                            <div class="mb-4 w-100 mx-2 o-data-picker">
+                                <label for="checkout" class="form-label">Datas Check-Out</label>
+                                <input class="form-control daterange bg-transparent" type="text" aria-label="Datas de Check-In" id="checkout">
+                                <span class="icon-calendar"></span>
+                            </div>
+                            
+                            <div class="mb-4 w-100 mx-2 o-data-picker">
+                                <label for="data-criacao" class="form-label">Datas Criação</label>
+                                <input class="form-control daterange bg-transparent" type="text" aria-label="Datas de Criação" id="data-criacao">
+                                <span class="icon-calendar"></span>
+                            </div>
+                            
+                            <div class="mb-4 w-100 mx-2 o-data-picker">
+                                <label for="data-cancelamento" class="form-label">Datas Cancelamento</label>
+                                <input class="form-control daterange bg-transparent" type="text" aria-label="Datas de Cancelamento" id="data-cancelamento">
+                                <span class="icon-calendar"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-4 flex-wrap">
+                        <div class="ms-2 me-5">   
+                            <label for="exampleInputEmail1" class="form-label">Canais de Venda</label>
+                            <div class="form-check mb-1">
+                                <input class="form-check-input" type="checkbox" id="pagina-web">
+                                <label class="form-check-label fw-normal" for="pagina-web">
+                                    Página Web
+                                </label>
+                            </div>  
+                        </div>
+                        <div class="ms-2 me-3">   
+                            <label for="exampleInputEmail1" class="form-label">Status</label>
+                            <div class="form-check mb-1">
+                                <input class="form-check-input" type="checkbox" id="confirmada">
+                                <label class="form-check-label fw-normal" for="confirmada">
+                                    Confirmada
+                                </label>
+                            </div>  
+                            <div class="form-check mb-1">
+                                <input class="form-check-input" type="checkbox" id="sob-consulta">
+                                <label class="form-check-label fw-normal" for="sob-consulta">
+                                    Sob-Consulta
+                                </label>
+                            </div> 
+                            <div class="form-check mb-1">
+                                <input class="form-check-input" type="checkbox" id="cancelada">
+                                <label class="form-check-label fw-normal" for="cancelada">
+                                    Cancelada
+                                </label>
+                            </div>  
+                        </div>
+                    </div>
                 </div>  
-                <div class="mx-2 mb-5">
-                    <a href="" class="btn-link fs-6 fw-500">Limpar filtros</a>
+
+                */?>
+
+                <!-- 
+                    NÁO-LOGADO END 
+                -->
+
+
+                <div class="mx-2 mb-5 d-flex flex-wrap justify-content-between align-items-center">
+                    <a href="" class="btn-link fs-6 fw-500 me-5">Limpar filtros</a>
+
+                    <button class="btn btn-primary px-5 rounded-pill fw-500 fs-4">Filtrar<div class="o-loader"></div></button>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-xl-12 c-reservas__table">
-                    <table class="table table-striped fs-6 table-borderless table-hover" id="table">
+                <div class="col-xl-12 c-reservas__table overflow-x">
+                    <table class="table table-striped fs-6 table-borderless table-hover JS__datatable">
                         <thead>
                             <tr class="text-secondary">
                                 <th scope="col">Id.</th>
@@ -318,8 +463,8 @@
                                 </td>
                                 <td>-</td>
                                 <td>01</td>
-                                <td>
-                                    <span class="c-reservas__table__visibilidade"></span>
+                                <td class="fs-24 text-black-50">
+                                    <span class="icon-pass-show"></span>
                                 </td>
                             </tr>
                             <tr data-href="reserva.php">
@@ -336,39 +481,8 @@
                                 <td>-</td>
                                 <td>-</td>
                                 <td>01</td>
-                                <td><span class="c-reservas__table__visibilidade check"></span></td>
-                            </tr>
-                            <tr  data-href="reserva.php">
-                                <td scope="row">36496</td>
-                                <td>1564AO</td>
-                                <td>110064B21</td>
-                                <td>David Baez</td>
-                                <td>Mundo Travel</td>
-                                <td>Caroline Menezes</td>
-                                <td>Caroline Menezes</td>
-                                <td>11/02/2021</td>
-                                <td>15/03/2021</td>
-                                <td>13/03/2021</td>
-                                <td class="c-reservas__table__status">
-                                   <div class="d-flex">
-                                        <div class="c-reservas__table__status__item">
-                                            1
-                                            <span class="bg-success"></span>
-                                        </div>
-                                        <div class="c-reservas__table__status__item">
-                                            2
-                                            <span class="bg-danger"></span>
-                                        </div>
-                                        <div class="c-reservas__table__status__item">
-                                            3
-                                            <span class="bg-warning"></span>
-                                        </div>
-                                   </div>
-                                </td>
-                                <td>-</td>
-                                <td>01</td>
-                                <td>
-                                    <span class="c-reservas__table__visibilidade"></span>
+                                <td class="fs-24 text-black-50">
+                                    <span class="icon-pass-show"></span>
                                 </td>
                             </tr>
                             <tr data-href="reserva.php">
@@ -400,8 +514,41 @@
                                 </td>
                                 <td>-</td>
                                 <td>01</td>
-                                <td>
-                                    <span class="c-reservas__table__visibilidade"></span>
+                                <td class="fs-24 text-black-50">
+                                    <span class="icon-pass-show"></span>
+                                </td>
+                            </tr>
+                            <tr data-href="reserva.php">
+                                <td scope="row">36496</td>
+                                <td>1564AO</td>
+                                <td>110064B21</td>
+                                <td>David Baez</td>
+                                <td>Mundo Travel</td>
+                                <td>Caroline Menezes</td>
+                                <td>Caroline Menezes</td>
+                                <td>11/02/2021</td>
+                                <td>15/03/2021</td>
+                                <td>13/03/2021</td>
+                                <td class="c-reservas__table__status">
+                                   <div class="d-flex">
+                                        <div class="c-reservas__table__status__item">
+                                            1
+                                            <span class="bg-success"></span>
+                                        </div>
+                                        <div class="c-reservas__table__status__item">
+                                            2
+                                            <span class="bg-danger"></span>
+                                        </div>
+                                        <div class="c-reservas__table__status__item">
+                                            3
+                                            <span class="bg-warning"></span>
+                                        </div>
+                                   </div>
+                                </td>
+                                <td>-</td>
+                                <td>01</td>
+                                <td class="fs-24 text-black-50">
+                                    <span class="icon-pass-show"></span>
                                 </td>
                             </tr>
                             <tr data-href="reserva.php">
@@ -433,8 +580,8 @@
                                 </td>
                                 <td>-</td>
                                 <td>01</td>
-                                <td>
-                                    <span class="c-reservas__table__visibilidade"></span>
+                                <td class="fs-24 text-black-50">
+                                    <span class="icon-pass-show"></span>
                                 </td>
                             </tr>
                             <tr data-href="reserva.php">
@@ -466,8 +613,41 @@
                                 </td>
                                 <td>-</td>
                                 <td>01</td>
-                                <td>
-                                    <span class="c-reservas__table__visibilidade"></span>
+                                <td class="fs-24 text-black-50">
+                                    <span class="icon-pass-hidden"></span>
+                                </td>
+                            </tr>
+                            <tr data-href="reserva.php">
+                                <td scope="row">36496</td>
+                                <td>1564AO</td>
+                                <td>110064B21</td>
+                                <td>David Baez</td>
+                                <td>Mundo Travel</td>
+                                <td>Caroline Menezes</td>
+                                <td>Caroline Menezes</td>
+                                <td>11/02/2021</td>
+                                <td>15/03/2021</td>
+                                <td>13/03/2021</td>
+                                <td class="c-reservas__table__status">
+                                    <div class="d-flex">
+                                        <div class="c-reservas__table__status__item">
+                                            1
+                                            <span class="bg-success"></span>
+                                        </div>
+                                        <div class="c-reservas__table__status__item">
+                                            2
+                                            <span class="bg-danger"></span>
+                                        </div>
+                                        <div class="c-reservas__table__status__item">
+                                            3
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>-</td>
+                                <td>01</td>
+                                <td class="fs-24 text-black-50">
+                                    <span class="icon-pass-show"></span>
                                 </td>
                             </tr>
                             <tr data-href="reserva.php">
@@ -499,8 +679,41 @@
                                 </td>
                                 <td>-</td>
                                 <td>01</td>
-                                <td>
-                                    <span class="c-reservas__table__visibilidade"></span>
+                                <td class="fs-24 text-black-50">
+                                    <span class="icon-pass-hidden"></span>
+                                </td>
+                            </tr>
+                            <tr data-href="reserva.php">
+                                <td scope="row">36496</td>
+                                <td>1564AO</td>
+                                <td>110064B21</td>
+                                <td>David Baez</td>
+                                <td>Mundo Travel</td>
+                                <td>Caroline Menezes</td>
+                                <td>Caroline Menezes</td>
+                                <td>11/02/2021</td>
+                                <td>15/03/2021</td>
+                                <td>13/03/2021</td>
+                                <td class="c-reservas__table__status">
+                                    <div class="d-flex">
+                                        <div class="c-reservas__table__status__item">
+                                            1
+                                            <span class="bg-success"></span>
+                                        </div>
+                                        <div class="c-reservas__table__status__item">
+                                            2
+                                            <span class="bg-danger"></span>
+                                        </div>
+                                        <div class="c-reservas__table__status__item">
+                                            3
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>-</td>
+                                <td>01</td>
+                                <td class="fs-24 text-black-50">
+                                    <span class="icon-pass-show"></span>
                                 </td>
                             </tr>
                             <tr data-href="reserva.php">
@@ -532,8 +745,41 @@
                                 </td>
                                 <td>-</td>
                                 <td>01</td>
-                                <td>
-                                    <span class="c-reservas__table__visibilidade"></span>
+                                <td class="fs-24 text-black-50">
+                                    <span class="icon-pass-hidden"></span>
+                                </td>
+                            </tr>
+                            <tr data-href="reserva.php">
+                                <td scope="row">36496</td>
+                                <td>1564AO</td>
+                                <td>110064B21</td>
+                                <td>David Baez</td>
+                                <td>Mundo Travel</td>
+                                <td>Caroline Menezes</td>
+                                <td>Caroline Menezes</td>
+                                <td>11/02/2021</td>
+                                <td>15/03/2021</td>
+                                <td>13/03/2021</td>
+                                <td class="c-reservas__table__status">
+                                    <div class="d-flex">
+                                        <div class="c-reservas__table__status__item">
+                                            1
+                                            <span class="bg-success"></span>
+                                        </div>
+                                        <div class="c-reservas__table__status__item">
+                                            2
+                                            <span class="bg-danger"></span>
+                                        </div>
+                                        <div class="c-reservas__table__status__item">
+                                            3
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>-</td>
+                                <td>01</td>
+                                <td class="fs-24 text-black-50">
+                                    <span class="icon-pass-show"></span>
                                 </td>
                             </tr>
                             <tr data-href="reserva.php">
@@ -565,8 +811,41 @@
                                 </td>
                                 <td>-</td>
                                 <td>01</td>
-                                <td>
-                                    <span class="c-reservas__table__visibilidade"></span>
+                                <td class="fs-24 text-black-50">
+                                    <span class="icon-pass-hidden"></span>
+                                </td>
+                            </tr>
+                            <tr data-href="reserva.php">
+                                <td scope="row">36496</td>
+                                <td>1564AO</td>
+                                <td>110064B21</td>
+                                <td>David Baez</td>
+                                <td>Mundo Travel</td>
+                                <td>Caroline Menezes</td>
+                                <td>Caroline Menezes</td>
+                                <td>11/02/2021</td>
+                                <td>15/03/2021</td>
+                                <td>13/03/2021</td>
+                                <td class="c-reservas__table__status">
+                                    <div class="d-flex">
+                                        <div class="c-reservas__table__status__item">
+                                            1
+                                            <span class="bg-success"></span>
+                                        </div>
+                                        <div class="c-reservas__table__status__item">
+                                            2
+                                            <span class="bg-danger"></span>
+                                        </div>
+                                        <div class="c-reservas__table__status__item">
+                                            3
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>-</td>
+                                <td>01</td>
+                                <td class="fs-24 text-black-50">
+                                    <span class="icon-pass-show"></span>
                                 </td>
                             </tr>
                             <tr data-href="reserva.php">
@@ -598,8 +877,41 @@
                                 </td>
                                 <td>-</td>
                                 <td>01</td>
-                                <td>
-                                    <span class="c-reservas__table__visibilidade"></span>
+                                <td class="fs-24 text-black-50">
+                                    <span class="icon-pass-hidden"></span>
+                                </td>
+                            </tr>
+                            <tr data-href="reserva.php">
+                                <td scope="row">36496</td>
+                                <td>1564AO</td>
+                                <td>110064B21</td>
+                                <td>David Baez</td>
+                                <td>Mundo Travel</td>
+                                <td>Caroline Menezes</td>
+                                <td>Caroline Menezes</td>
+                                <td>11/02/2021</td>
+                                <td>15/03/2021</td>
+                                <td>13/03/2021</td>
+                                <td class="c-reservas__table__status">
+                                    <div class="d-flex">
+                                        <div class="c-reservas__table__status__item">
+                                            1
+                                            <span class="bg-success"></span>
+                                        </div>
+                                        <div class="c-reservas__table__status__item">
+                                            2
+                                            <span class="bg-danger"></span>
+                                        </div>
+                                        <div class="c-reservas__table__status__item">
+                                            3
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>-</td>
+                                <td>01</td>
+                                <td class="fs-24 text-black-50">
+                                    <span class="icon-pass-show"></span>
                                 </td>
                             </tr>
                             <tr data-href="reserva.php">
@@ -631,8 +943,371 @@
                                 </td>
                                 <td>-</td>
                                 <td>01</td>
-                                <td>
-                                    <span class="c-reservas__table__visibilidade"></span>
+                                <td class="fs-24 text-black-50">
+                                    <span class="icon-pass-hidden"></span>
+                                </td>
+                            </tr>
+                            <tr data-href="reserva.php">
+                                <td scope="row">36496</td>
+                                <td>1564AO</td>
+                                <td>110064B21</td>
+                                <td>David Baez</td>
+                                <td>Mundo Travel</td>
+                                <td>Caroline Menezes</td>
+                                <td>Caroline Menezes</td>
+                                <td>11/02/2021</td>
+                                <td>15/03/2021</td>
+                                <td>13/03/2021</td>
+                                <td class="c-reservas__table__status">
+                                    <div class="d-flex">
+                                        <div class="c-reservas__table__status__item">
+                                            1
+                                            <span class="bg-success"></span>
+                                        </div>
+                                        <div class="c-reservas__table__status__item">
+                                            2
+                                            <span class="bg-danger"></span>
+                                        </div>
+                                        <div class="c-reservas__table__status__item">
+                                            3
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>-</td>
+                                <td>01</td>
+                                <td class="fs-24 text-black-50">
+                                    <span class="icon-pass-show"></span>
+                                </td>
+                            </tr>
+                            <tr data-href="reserva.php">
+                                <td scope="row">36496</td>
+                                <td>1564AO</td>
+                                <td>110064B21</td>
+                                <td>David Baez</td>
+                                <td>Mundo Travel</td>
+                                <td>Caroline Menezes</td>
+                                <td>Caroline Menezes</td>
+                                <td>11/02/2021</td>
+                                <td>15/03/2021</td>
+                                <td>13/03/2021</td>
+                                <td class="c-reservas__table__status">
+                                    <div class="d-flex">
+                                        <div class="c-reservas__table__status__item">
+                                            1
+                                            <span class="bg-success"></span>
+                                        </div>
+                                        <div class="c-reservas__table__status__item">
+                                            2
+                                            <span class="bg-danger"></span>
+                                        </div>
+                                        <div class="c-reservas__table__status__item">
+                                            3
+                                            <span class="bg-warning"></span>
+                                        </div>
+                                   </div>
+                                </td>
+                                <td>-</td>
+                                <td>01</td>
+                                <td class="fs-24 text-black-50">
+                                    <span class="icon-pass-hidden"></span>
+                                </td>
+                            </tr>
+                            <tr data-href="reserva.php">
+                                <td scope="row">36496</td>
+                                <td>1564AO</td>
+                                <td>110064B21</td>
+                                <td>David Baez</td>
+                                <td>Mundo Travel</td>
+                                <td>Caroline Menezes</td>
+                                <td>Caroline Menezes</td>
+                                <td>11/02/2021</td>
+                                <td>15/03/2021</td>
+                                <td>13/03/2021</td>
+                                <td class="c-reservas__table__status">
+                                    <div class="d-flex">
+                                        <div class="c-reservas__table__status__item">
+                                            1
+                                            <span class="bg-success"></span>
+                                        </div>
+                                        <div class="c-reservas__table__status__item">
+                                            2
+                                            <span class="bg-danger"></span>
+                                        </div>
+                                        <div class="c-reservas__table__status__item">
+                                            3
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>-</td>
+                                <td>01</td>
+                                <td class="fs-24 text-black-50">
+                                    <span class="icon-pass-show"></span>
+                                </td>
+                            </tr>
+                            <tr data-href="reserva.php">
+                                <td scope="row">36496</td>
+                                <td>1564AO</td>
+                                <td>110064B21</td>
+                                <td>David Baez</td>
+                                <td>Mundo Travel</td>
+                                <td>Caroline Menezes</td>
+                                <td>Caroline Menezes</td>
+                                <td>11/02/2021</td>
+                                <td>15/03/2021</td>
+                                <td>13/03/2021</td>
+                                <td class="c-reservas__table__status">
+                                    <div class="d-flex">
+                                        <div class="c-reservas__table__status__item">
+                                            1
+                                            <span class="bg-success"></span>
+                                        </div>
+                                        <div class="c-reservas__table__status__item">
+                                            2
+                                            <span class="bg-danger"></span>
+                                        </div>
+                                        <div class="c-reservas__table__status__item">
+                                            3
+                                            <span class="bg-warning"></span>
+                                        </div>
+                                   </div>
+                                </td>
+                                <td>-</td>
+                                <td>01</td>
+                                <td class="fs-24 text-black-50">
+                                    <span class="icon-pass-hidden"></span>
+                                </td>
+                            </tr>
+                            <tr data-href="reserva.php">
+                                <td scope="row">36496</td>
+                                <td>1564AO</td>
+                                <td>110064B21</td>
+                                <td>David Baez</td>
+                                <td>Mundo Travel</td>
+                                <td>Caroline Menezes</td>
+                                <td>Caroline Menezes</td>
+                                <td>11/02/2021</td>
+                                <td>15/03/2021</td>
+                                <td>13/03/2021</td>
+                                <td class="c-reservas__table__status">
+                                    <div class="d-flex">
+                                        <div class="c-reservas__table__status__item">
+                                            1
+                                            <span class="bg-success"></span>
+                                        </div>
+                                        <div class="c-reservas__table__status__item">
+                                            2
+                                            <span class="bg-danger"></span>
+                                        </div>
+                                        <div class="c-reservas__table__status__item">
+                                            3
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>-</td>
+                                <td>01</td>
+                                <td class="fs-24 text-black-50">
+                                    <span class="icon-pass-show"></span>
+                                </td>
+                            </tr>
+                            <tr data-href="reserva.php">
+                                <td scope="row">36496</td>
+                                <td>1564AO</td>
+                                <td>110064B21</td>
+                                <td>David Baez</td>
+                                <td>Mundo Travel</td>
+                                <td>Caroline Menezes</td>
+                                <td>Caroline Menezes</td>
+                                <td>11/02/2021</td>
+                                <td>15/03/2021</td>
+                                <td>13/03/2021</td>
+                                <td class="c-reservas__table__status">
+                                    <div class="d-flex">
+                                        <div class="c-reservas__table__status__item">
+                                            1
+                                            <span class="bg-success"></span>
+                                        </div>
+                                        <div class="c-reservas__table__status__item">
+                                            2
+                                            <span class="bg-danger"></span>
+                                        </div>
+                                        <div class="c-reservas__table__status__item">
+                                            3
+                                            <span class="bg-warning"></span>
+                                        </div>
+                                   </div>
+                                </td>
+                                <td>-</td>
+                                <td>01</td>
+                                <td class="fs-24 text-black-50">
+                                    <span class="icon-pass-hidden"></span>
+                                </td>
+                            </tr>
+                            <tr data-href="reserva.php">
+                                <td scope="row">36496</td>
+                                <td>1564AO</td>
+                                <td>110064B21</td>
+                                <td>David Baez</td>
+                                <td>Mundo Travel</td>
+                                <td>Caroline Menezes</td>
+                                <td>Caroline Menezes</td>
+                                <td>11/02/2021</td>
+                                <td>15/03/2021</td>
+                                <td>13/03/2021</td>
+                                <td class="c-reservas__table__status">
+                                    <div class="d-flex">
+                                        <div class="c-reservas__table__status__item">
+                                            1
+                                            <span class="bg-success"></span>
+                                        </div>
+                                        <div class="c-reservas__table__status__item">
+                                            2
+                                            <span class="bg-danger"></span>
+                                        </div>
+                                        <div class="c-reservas__table__status__item">
+                                            3
+                                            <span class="bg-warning"></span>
+                                        </div>
+                                   </div>
+                                </td>
+                                <td>-</td>
+                                <td>01</td>
+                                <td class="fs-24 text-black-50">
+                                    <span class="icon-pass-hidden"></span>
+                                </td>
+                            </tr>
+                            <tr data-href="reserva.php">
+                                <td scope="row">36496</td>
+                                <td>1564AO</td>
+                                <td>110064B21</td>
+                                <td>David Baez</td>
+                                <td>Mundo Travel</td>
+                                <td>Caroline Menezes</td>
+                                <td>Caroline Menezes</td>
+                                <td>11/02/2021</td>
+                                <td>15/03/2021</td>
+                                <td>13/03/2021</td>
+                                <td class="c-reservas__table__status">
+                                    <div class="d-flex">
+                                        <div class="c-reservas__table__status__item">
+                                            1
+                                            <span class="bg-success"></span>
+                                        </div>
+                                        <div class="c-reservas__table__status__item">
+                                            2
+                                            <span class="bg-danger"></span>
+                                        </div>
+                                        <div class="c-reservas__table__status__item">
+                                            3
+                                            <span class="bg-warning"></span>
+                                        </div>
+                                   </div>
+                                </td>
+                                <td>-</td>
+                                <td>01</td>
+                                <td class="fs-24 text-black-50">
+                                    <span class="icon-pass-show"></span>
+                                </td>
+                            </tr>
+                            <tr data-href="reserva.php">
+                                <td scope="row">36496</td>
+                                <td>1564AO</td>
+                                <td>110064B21</td>
+                                <td>David Baez</td>
+                                <td>Mundo Travel</td>
+                                <td>Caroline Menezes</td>
+                                <td>Caroline Menezes</td>
+                                <td>11/02/2021</td>
+                                <td>15/03/2021</td>
+                                <td>13/03/2021</td>
+                                <td class="c-reservas__table__status">
+                                    <div class="d-flex">
+                                        <div class="c-reservas__table__status__item">
+                                            1
+                                            <span class="bg-success"></span>
+                                        </div>
+                                        <div class="c-reservas__table__status__item">
+                                            2
+                                            <span class="bg-danger"></span>
+                                        </div>
+                                        <div class="c-reservas__table__status__item">
+                                            3
+                                            <span class="bg-warning"></span>
+                                        </div>
+                                   </div>
+                                </td>
+                                <td>-</td>
+                                <td>01</td>
+                                <td class="fs-24 text-black-50">
+                                    <span class="icon-pass-show"></span>
+                                </td>
+                            </tr>
+                            <tr data-href="reserva.php">
+                                <td scope="row">36496</td>
+                                <td>1564AO</td>
+                                <td>110064B21</td>
+                                <td>David Baez</td>
+                                <td>Mundo Travel</td>
+                                <td>Caroline Menezes</td>
+                                <td>Caroline Menezes</td>
+                                <td>11/02/2021</td>
+                                <td>15/03/2021</td>
+                                <td>13/03/2021</td>
+                                <td class="c-reservas__table__status">
+                                    <div class="d-flex">
+                                        <div class="c-reservas__table__status__item">
+                                            1
+                                            <span class="bg-success"></span>
+                                        </div>
+                                        <div class="c-reservas__table__status__item">
+                                            2
+                                            <span class="bg-danger"></span>
+                                        </div>
+                                        <div class="c-reservas__table__status__item">
+                                            3
+                                            <span class="bg-warning"></span>
+                                        </div>
+                                   </div>
+                                </td>
+                                <td>-</td>
+                                <td>01</td>
+                                <td class="fs-24 text-black-50">
+                                    <span class="icon-pass-show"></span>
+                                </td>
+                            </tr>
+                            <tr data-href="reserva.php">
+                                <td scope="row">36496</td>
+                                <td>1564AO</td>
+                                <td>110064B21</td>
+                                <td>David Baez</td>
+                                <td>Mundo Travel</td>
+                                <td>Caroline Menezes</td>
+                                <td>Caroline Menezes</td>
+                                <td>11/02/2021</td>
+                                <td>15/03/2021</td>
+                                <td>13/03/2021</td>
+                                <td class="c-reservas__table__status">
+                                    <div class="d-flex">
+                                        <div class="c-reservas__table__status__item">
+                                            1
+                                            <span class="bg-success"></span>
+                                        </div>
+                                        <div class="c-reservas__table__status__item">
+                                            2
+                                            <span class="bg-danger"></span>
+                                        </div>
+                                        <div class="c-reservas__table__status__item">
+                                            3
+                                            <span class="bg-warning"></span>
+                                        </div>
+                                   </div>
+                                </td>
+                                <td>-</td>
+                                <td>01</td>
+                                <td class="fs-24 text-black-50">
+                                    <span class="icon-pass-show"></span>
                                 </td>
                             </tr>
                            
@@ -644,7 +1319,6 @@
     </section>
 
 </main>
-
 
 
 <?php include('includes/footer.php') ?>

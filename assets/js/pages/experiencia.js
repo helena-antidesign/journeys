@@ -4,11 +4,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
   new Swiper(".JS__experiencia-galeria", {
       slidesPerView: 'auto',
       navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+        nextEl: ".JS__experiencia-galeria .swiper-button-next",
+        prevEl: ".JS__experiencia-galeria .swiper-button-prev",
       },
       pagination: {
-        el: ".swiper-pagination",
+        el: ".JS__experiencia-galeria .swiper-pagination",
       },
       effect: 'fade',
       fadeEffect: {
@@ -16,36 +16,26 @@ document.addEventListener("DOMContentLoaded", function (event) {
       },
   });
 
-  new Swiper(".JS__classificacao", {
-    slidesPerView: 'auto',
-    spaceBetween: 16,
-    // centeredSlides: true,
-    loop: true,
-    navigation: {
-        nextEl: '.JS__classificacao__pagination .swiper-button-next',
-        prevEl: '.JS__classificacao__pagination .swiper-button-prev',
-    },
-  });
 
-  new Swiper(".JS__experiencias-swiper", {
-    slidesPerView: 'auto',
-    loop: true,
-    spaceBetween: 16,
-    navigation: {
-        nextEl: '.JS__experiencias-swiper__pagination .swiper-button-next',
-        prevEl: '.JS__experiencias-swiper__pagination .swiper-button-prev',
-    },
-  });
+  $(".filter-button").click(function(){
+      var value = $(this).attr('data-filter');
 
-  new Swiper(".JS__praias", {
-    slidesPerView: 'auto',
-    loop: true,
-    spaceBetween: 16,
-    navigation: {
-        nextEl: '.JS__praias__pagination .swiper-button-next',
-        prevEl: '.JS__praias__pagination .swiper-button-prev',
-    },
-  });
-
+      $('.filter-button.active').removeClass('active');
+      $(this).addClass('active');
+      
+      if(value == "all")
+      {
+          //$('.filter').removeClass('hidden');
+          $('.filter').removeClass('hidden');
+      }
+      else
+      {
+  //            $('.filter[filter-item="'+value+'"]').removeClass('hidden');
+  //            $(".filter").not('.filter[filter-item="'+value+'"]').addClass('hidden');
+          $(".filter").not('.'+value).addClass('hidden');
+          $('.filter').filter('.'+value).removeClass('hidden');
+          
+      }
+    });
 
 });

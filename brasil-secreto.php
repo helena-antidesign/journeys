@@ -7,7 +7,7 @@
     <section class="c-brasil-secreto__banner">
         <div class="container text-secondary text-center">
             <img src="assets/img/journeys-expert.png" alt="Experts">
-            <h1 class="fw-bold mt-5 mb-0">Brasil Secreto</h1>
+            <h1 class="fw-bold mt-5 mb-2">Brasil Secreto</h1>
             <h2 class="fw-light mb-5">A viagem perfeita com a experiência única</h2>
             <p class="text-gray-200 col-xl-5 fs-4 mx-auto">Conheça experiencias únicas que o brasil tem a oferecer, culinárias hospedagens e lugares incríveis que esperam por você!</p>
         </div>
@@ -72,107 +72,107 @@
     <section class="c-brasil-secreto__tour">
             <!-- Slider main container -->
             <div class="swiper-container JS__brasil-tour">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-                <!-- Slides -->
-                <div class="swiper-slide c-brasil-secreto__tour__item text-center">
-                    <a href="#" class="text-decoration-none">
-                        <div class="c-brasil-secreto__tour__item__img">
-                            <img src="assets/img/brasil-secreto/carousel2.jpg" alt="">
-                        </div>
-                        <div class="c-brasil-secreto__tour__item__content">
-                            <span class="c-brasil-secreto__tour__item__content__title fs-5 text-uppercase d-block text-secondary">Trancoso</span>
-                            <span class="fw-500 mt-2 d-flex align-items-center justify-content-center mx-auto">
-                                Conheça opções de tour nesta cidade <span class="icon-arrow-right fs-4 fw-bold ms-2"></span> 
-                            </span>
-                        </div>
-                    </a>
-                </div>
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide c-brasil-secreto__tour__item text-center">
+                        <a href="#" class="text-decoration-none">
+                            <div class="c-brasil-secreto__tour__item__img">
+                                <img src="assets/img/brasil-secreto/carousel2.jpg" alt="">
+                            </div>
+                            <div class="c-brasil-secreto__tour__item__content">
+                                <span class="c-brasil-secreto__tour__item__content__title fs-5 text-uppercase d-block text-secondary">Trancoso</span>
+                                <span class="fw-500 mt-2 d-flex align-items-center justify-content-center mx-auto">
+                                    Conheça opções de tour nesta cidade <span class="icon-arrow-right fw-bold ms-2"></span> 
+                                </span>
+                            </div>
+                        </a>
+                    </div>
 
-                <div class="swiper-slide c-brasil-secreto__tour__item text-center">
-                    <a href="" class="text-decoration-none">
-                        <div class="c-brasil-secreto__tour__item__img">
-                            <img src="assets/img/brasil-secreto/carousel1.jpg" alt="">
-                        </div>
-                        <div class="c-brasil-secreto__tour__item__content">
-                            <span class="c-brasil-secreto__tour__item__content__title fs-5 text-uppercase d-block text-secondary">Trancoso</span>
-                            <span class="fw-500 mt-3 d-flex align-items-center justify-content-center mx-auto">
-                                Conheça opções de tour nesta cidade <span class="icon-arrow-right fs-4 fw-bold ms-2"></span> 
-                            </span>
-                        </div>
-                    </a>
-                </div>
+                    <div class="swiper-slide c-brasil-secreto__tour__item text-center">
+                        <a href="" class="text-decoration-none">
+                            <div class="c-brasil-secreto__tour__item__img">
+                                <img src="assets/img/brasil-secreto/carousel1.jpg" alt="">
+                            </div>
+                            <div class="c-brasil-secreto__tour__item__content">
+                                <span class="c-brasil-secreto__tour__item__content__title fs-5 text-uppercase d-block text-secondary">Trancoso</span>
+                                <span class="fw-500 mt-3 d-flex align-items-center justify-content-center mx-auto">
+                                    Conheça opções de tour nesta cidade <span class="icon-arrow-right fw-bold ms-2"></span> 
+                                </span>
+                            </div>
+                        </a>
+                    </div>
 
-                <div class="swiper-slide c-brasil-secreto__tour__item text-center">
-                    <a href="" class="text-decoration-none">
-                        <div class="c-brasil-secreto__tour__item__img">
-                            <img src="assets/img/brasil-secreto/carousel3.jpg" alt="">
-                        </div>
-                        <div class="c-brasil-secreto__tour__item__content">
-                            <span class="c-brasil-secreto__tour__item__content__title fs-5 text-uppercase d-block text-secondary">Trancoso</span>
-                            <span class="fw-500 mt-3 d-flex align-items-center justify-content-center mx-auto">
-                                Conheça opções de tour nesta cidade <span class="icon-arrow-right fs-4 fw-bold ms-2"></span> 
-                            </span>
-                        </div>
-                    </a>
-                </div>
+                    <div class="swiper-slide c-brasil-secreto__tour__item text-center">
+                        <a href="" class="text-decoration-none">
+                            <div class="c-brasil-secreto__tour__item__img">
+                                <img src="assets/img/brasil-secreto/carousel3.jpg" alt="">
+                            </div>
+                            <div class="c-brasil-secreto__tour__item__content">
+                                <span class="c-brasil-secreto__tour__item__content__title fs-5 text-uppercase d-block text-secondary">Trancoso</span>
+                                <span class="fw-500 mt-3 d-flex align-items-center justify-content-center mx-auto">
+                                    Conheça opções de tour nesta cidade <span class="icon-arrow-right fw-bold ms-2"></span> 
+                                </span>
+                            </div>
+                        </a>
+                    </div>
 
-                <!-- Slides -->
-                <div class="swiper-slide c-brasil-secreto__tour__item text-center">
-                    <a href="" class="text-decoration-none">
-                        <div class="c-brasil-secreto__tour__item__img">
-                            <img src="assets/img/brasil-secreto/carousel2.jpg" alt="">
-                        </div>
-                        <div class="c-brasil-secreto__tour__item__content">
-                            <span class="c-brasil-secreto__tour__item__content__title fs-5 text-uppercase d-block text-secondary">Trancoso</span>
-                            <span class="fw-500 mt-3 d-flex align-items-center justify-content-center mx-auto">
-                                Conheça opções de tour nesta cidade <span class="icon-arrow-right fs-4 fw-bold ms-2"></span> 
-                            </span>
-                        </div>
-                    </a>
-                </div>
+                    <div class="swiper-slide c-brasil-secreto__tour__item text-center">
+                        <a href="" class="text-decoration-none">
+                            <div class="c-brasil-secreto__tour__item__img">
+                                <img src="assets/img/brasil-secreto/carousel2.jpg" alt="">
+                            </div>
+                            <div class="c-brasil-secreto__tour__item__content">
+                                <span class="c-brasil-secreto__tour__item__content__title fs-5 text-uppercase d-block text-secondary">Trancoso</span>
+                                <span class="fw-500 mt-3 d-flex align-items-center justify-content-center mx-auto">
+                                    Conheça opções de tour nesta cidade <span class="icon-arrow-right fw-bold ms-2"></span> 
+                                </span>
+                            </div>
+                        </a>
+                    </div>
 
-                <div class="swiper-slide c-brasil-secreto__tour__item text-center">
-                    <a href="" class="text-decoration-none">
-                        <div class="c-brasil-secreto__tour__item__img">
-                            <img src="assets/img/brasil-secreto/carousel1.jpg" alt="">
-                        </div>
-                        <div class="c-brasil-secreto__tour__item__content">
-                            <span class="c-brasil-secreto__tour__item__content__title fs-5 text-uppercase d-block text-secondary">Trancoso</span>
-                            <span class="fw-500 mt-3 d-flex align-items-center justify-content-center mx-auto">
-                                Conheça opções de tour nesta cidade <span class="icon-arrow-right fs-4 fw-bold ms-2"></span> 
-                            </span>
-                        </div>
-                    </a>
-                </div>
+                    <div class="swiper-slide c-brasil-secreto__tour__item text-center">
+                        <a href="" class="text-decoration-none">
+                            <div class="c-brasil-secreto__tour__item__img">
+                                <img src="assets/img/brasil-secreto/carousel1.jpg" alt="">
+                            </div>
+                            <div class="c-brasil-secreto__tour__item__content">
+                                <span class="c-brasil-secreto__tour__item__content__title fs-5 text-uppercase d-block text-secondary">Trancoso</span>
+                                <span class="fw-500 mt-3 d-flex align-items-center justify-content-center mx-auto">
+                                    Conheça opções de tour nesta cidade <span class="icon-arrow-right fw-bold ms-2"></span> 
+                                </span>
+                            </div>
+                        </a>
+                    </div>
 
-                <div class="swiper-slide c-brasil-secreto__tour__item text-center">
-                    <a href="" class="text-decoration-none">
-                        <div class="c-brasil-secreto__tour__item__img">
-                            <img src="assets/img/brasil-secreto/carousel3.jpg" alt="">
-                        </div>
-                        <div class="c-brasil-secreto__tour__item__content">
-                            <span class="c-brasil-secreto__tour__item__content__title fs-5 text-uppercase d-block text-secondary">Trancoso</span>
-                            <span class="fw-500 mt-3 d-flex align-items-center justify-content-center mx-auto">
-                                Conheça opções de tour nesta cidade <span class="icon-arrow-right fs-4 fw-bold ms-2"></span> 
-                            </span>
-                        </div>
-                    </a>
+                    <div class="swiper-slide c-brasil-secreto__tour__item text-center">
+                        <a href="" class="text-decoration-none">
+                            <div class="c-brasil-secreto__tour__item__img">
+                                <img src="assets/img/brasil-secreto/carousel3.jpg" alt="">
+                            </div>
+                            <div class="c-brasil-secreto__tour__item__content">
+                                <span class="c-brasil-secreto__tour__item__content__title fs-5 text-uppercase d-block text-secondary">Trancoso</span>
+                                <span class="fw-500 mt-3 d-flex align-items-center justify-content-center mx-auto">
+                                    Conheça opções de tour nesta cidade <span class="icon-arrow-right fw-bold ms-2"></span> 
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                    
                 </div>
                 
-            </div>
-            
-            <!-- If we need pagination -->
-            <div class="swiper-pagination"></div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
 
-            <!-- If we need scrollbar -->
-            <div class="swiper-scrollbar"></div>
+                <!-- If we need scrollbar -->
+                <div class="swiper-scrollbar"></div>
+                
             </div>
 
     </section>
 
  
-    <section class="c-cards-carousel">
+    <section class="c-cards-carousel JS__cards-carousel">
         <div class="container-fluid h-100">
             <div class="row h-100 d-flex align-items-center">
 
@@ -181,13 +181,13 @@
                     <h3 class="mb-4 fs-3 fw-bold text-secondary">Encontre a experiencia perfeita com nossa seleção de hotéis</h3>
                     <p class="text-black-50">Explore os diversos hotéis com classificações desde a gastronomia até a decoração</p>
 
-                    <div class="position-relative JS-cards__pagination c-cards-carousel__pagination">
+                    <div class="position-relative c-cards-carousel__pagination">
                         <!-- If we need navigation buttons -->
-                        <div class="swiper-button-prev fs-4 shadow rounded-circle">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="8.397" height="14.73"><path data-name="Caminho 4" d="M8.396 7.365a1.029 1.029 0 01-.3.729l-6.337 6.337A1.032 1.032 0 01.3 12.972l5.6-5.6-5.6-5.6A1.036 1.036 0 111.759.302l6.336 6.329a1.029 1.029 0 01.301.734z" fill="#0e6a7a"/></svg>
+                        <div class="swiper-button-prev fs-24 shadow rounded-circle">
+                            <span class="icon-arrow-left fw-bold text-primary"></span>
                         </div>
                         <div class="swiper-button-next fs-4 shadow rounded-circle">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="8.397" height="14.73"><path data-name="Caminho 4" d="M8.396 7.365a1.029 1.029 0 01-.3.729l-6.337 6.337A1.032 1.032 0 01.3 12.972l5.6-5.6-5.6-5.6A1.036 1.036 0 111.759.302l6.336 6.329a1.029 1.029 0 01.301.734z" fill="#0e6a7a"/></svg>
+                            <span class="icon-arrow-right fw-bold text-primary"></span>
                         </div>
                     </div>
 
@@ -195,7 +195,7 @@
 
                 <div class="c-cards-carousel__content">
                 
-                    <div class="swiper-container JS-cards">
+                    <div class="swiper-container">
                     <!-- Additional required wrapper -->
                         <div class="swiper-wrapper">
                             <div class="swiper-slide o-card d-flex align-items-end" style="background-image: url('assets/img/card-barra-de-sao-miguel.jpg');">
@@ -301,33 +301,33 @@
 
             <div class="row fs-6">
             
-                <div class="col-xxl-2 col-lg-4 col-md-6 px-4 mb-5">
-                    <span class="icon-bad d-block fs-3 mb-4"></span>
+                <div class="col-xxl-2 col-lg-4 col-md-6 pe-5 mb-5">
+                    <span class="icon-bad d-block fs-28 mb-4"></span>
                     Oferecem poucos quartos e, muitas vezes, são diferenciados, com categorias personalizadas para cada quarto.
                 </div>
                 
-                <div class="col-xxl-2 col-lg-4 col-md-6 px-4 mb-5">
-                    <span class="icon-percent d-block fs-3 mb-4"></span>
+                <div class="col-xxl-2 col-lg-4 col-md-6 pe-5 mb-5">
+                    <span class="icon-percent d-block fs-28 mb-4"></span>
                     Políticas de marketing diferenciadas, pois normalmente não funcionam com tarifas de operadora e agência, ou seja, protegidas.
                 </div>
                 
-                <div class="col-xxl-2 col-lg-4 col-md-6 px-4 mb-5">
-                    <span class="icon-edit-values d-block fs-3 mb-4"></span>
+                <div class="col-xxl-2 col-lg-4 col-md-6 pe-5 mb-5">
+                    <span class="icon-edit-values d-block fs-28 mb-4"></span>
                     Aplicam-se severas restrições na política de garantia de reserva, prazos de cancelamento sem despesas e reembolsos.
                 </div>
                 
-                <div class="col-xxl-2 col-lg-4 col-md-6 px-4 mb-5">
-                    <span class="icon-user d-block fs-3 mb-4"></span>
+                <div class="col-xxl-2 col-lg-4 col-md-6 pe-5 mb-5">
+                    <span class="icon-user d-block fs-28 mb-4"></span>
                     Valorizam um relacionamento personalizado tanto com o hóspede quanto na sua forma de marketing e divulgação.
                 </div>
                 
-                <div class="col-xxl-2 col-lg-4 col-md-6 px-4 mb-5">
-                    <span class="icon-tax-increace d-block fs-3 mb-4"></span>
+                <div class="col-xxl-2 col-lg-4 col-md-6 pe-5 mb-5">
+                    <span class="icon-tax-increace d-block fs-28 mb-4"></span>
                     Não funcionam com taxas de mercado nacional e internacional.
                 </div>
                 
-                <div class="col-xxl-2 col-lg-4 col-md-6 px-4 mb-5">
-                    <span class="icon-group d-block fs-3 mb-4"></span>
+                <div class="col-xxl-2 col-lg-4 col-md-6 pe-5 mb-5">
+                    <span class="icon-group d-block fs-28 mb-4"></span>
                     Muitos deles não aceitam menores ou grupos.
                 </div>
 

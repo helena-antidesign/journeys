@@ -1,16 +1,13 @@
-.o-search-box,
-.o-search-box--reduced{
-    display: none;
-}
-
 .o-search-box{
     border-radius: 40px;
-    height: 11.5rem;
+    // height: 11.5rem;
     width: 68rem;
     padding: 1.5rem 2rem 1.68rem;
     font-size: .75rem;
     z-index: 99;
     box-shadow: 5px 13px 15px 5px rgba(0,0,0,0.16);
+    position: relative;
+    
     @include breakpoint(xl){
         width: 57rem;
     }
@@ -19,19 +16,63 @@
         height: auto;
     }
     @include breakpoint(md){
-        width: 21rem;
+        width: calc(100% - 50px);
         top: 7rem;
+        padding: 1rem 2rem;
     }
+    &__title{
+        color: $primary;
+        font-weight: bold;
+        font-size: 1.13rem;
+        line-height: 1.37rem;
+        position: absolute;
+        top: 25px;
+        @include breakpoint(xl){
+            font-size: .85rem;
+        }
+        @include breakpoint(lg){
+            position: initial;
+            display: block;
+            display: flex;    
+            justify-content: space-between;
+        }
 
+        &__toggle{
+            display: none;
+            @include breakpoint(lg){
+                display: block;
+                background: transparent;
+                border: 0;
+                padding: 0;
+                height: 20px;
+                width: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                outline: none;
+                transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+            }
+        }
+
+        &.active{
+            .o-search-box__title__toggle{
+                transform: rotate(180deg);  
+            }
+        }
+    }
     &__radios{
+        display: flex;
+        justify-content: space-between;
         width: 46rem;
         @include breakpoint(xl){
             width: 39rem;
         }
         @include breakpoint(lg){
-            flex-wrap: wrap;
+            width: 100%;
+            padding-top: 1rem;
         }
         @include breakpoint(md){
+            flex-wrap: wrap;
             & > div{ 
                 width: 100%;
             }
@@ -63,14 +104,14 @@
             margin-right: 13px;
         }
     }
-    &__title{
-        color: $primary;
-        font-weight: bold;
-        font-size: 1.13rem;
-        line-height: 1.37rem;
-        margin-bottom: 1.15rem;
-        @include breakpoint(xl){
-            font-size: .85rem;
+    &__container{
+        @include breakpoint(lg){
+            max-height: 0;
+            overflow: hidden;
+            transition: .5s ease-in-out;
+            &.show{
+                max-height: 1000px;
+            }
         }
     }
     &__form{
@@ -79,14 +120,22 @@
         &__item{
             display: none;
             width: 42.9rem;
-            position: absolute;
             background: #fff;
             z-index: 99;
             &.show{
                 display: block;
             }
+            
             @include breakpoint(xl){
                 width: 38.2rem;
+            }
+            @include breakpoint(lg){
+                width: calc(50% - 12px);
+            }
+            
+            @include breakpoint(md){
+                width: 100%;
+                margin-bottom: 1rem;
             }
         }
         &__destino{
@@ -116,7 +165,8 @@
                 width: 100%;
             }
         }
-        &__regime{
+        &__regime,
+        &__experiencia{
             display: none;
             width: 12rem;
             background: #fff;
@@ -126,15 +176,20 @@
                 width: 11rem;
                 left: 11.6rem;
             }
+            @include breakpoint(lg){
+                width: calc(50% - 12px);
+            }
             @include breakpoint(md){
                 width: 100%;
+                margin-bottom: 1rem;
             }
             .form-select{
-                padding: 1.02rem 3rem 1.14rem 1rem;
+                padding: 1rem 3rem 1.14rem 1rem;
             }
         }
         &__passageiros{
             width: 16rem;
+            position: relative;
             @include breakpoint(xl){
                 width: 15rem;
             }
@@ -159,32 +214,76 @@
                 left: 1rem;
             }
             &__content{
-                top: 8.65rem;
-                left: 0;
-                height: 5rem;
-                width: calc(100% + 4rem);
-                margin-left: -2rem;
-                padding: .75rem 2.37rem .75rem 2.37rem;
-                border-radius: 1.8rem;
+                padding: 19px 19px 21px;
+                border-radius: 15px;
                 opacity: 0;
                 box-shadow: 5px 13px 15px 5px rgba(0,0,0,0.16);
                 visibility: hidden;
                 overflow: hidden;
+                flex-wrap: wrap;
                 @include breakpoint(xl){
                     padding: .75rem 1.37rem;
+                    z-index: 9999;
                 }
-                &__item{
-                    border-right: 1px solid #E3E3E3;
-                    padding: 0 2.44rem 0 1.5rem;
-                    @include breakpoint(xl){
-                        padding: 0 .9rem;
+                @include breakpoint(lg){
+                    flex-wrap: wrap;
+                    height: auto;
+                    z-index: 999;    
+                    top: 11rem;
+                    width: 16rem;
+                    left: 2rem;
+                    & > div{
+                        width: 100%;
                     }
-                    &:first-of-type{
-                        padding-left: 0;
-                    }
+                }
+                @include breakpoint(md){
+                    top: 15.4rem;
+                    left: 0;
+                    right: 0;
+                    margin: 0 auto;
+                }
+                &__room{
+                    border-bottom: 1px solid #f1f1f1f1;
+                    padding-bottom: 1rem;
+                    margin-bottom: 1rem;
                     &:last-of-type{
-                        border-right: 0;
-                        padding-right: 0;
+                        border-bottom: 0;
+                        margin-bottom: 0;
+                        padding-bottom: 0;
+                    }
+                    &__child-age{
+                        input[type="number"]{
+                            width: 102px;
+                        }
+                    }
+                }
+                &__input{
+                    margin-bottom: 1rem;
+                    justify-content: space-between;
+                    width: 100%;
+                    
+                    &:last-of-type{
+                        margin-bottom: 0;
+                    }
+                    // @include breakpoint(xl){
+                    //     padding: 0 .9rem;
+                    // }
+                    // @include breakpoint(lg){
+                    //     padding: 0;
+                    //     margin-bottom: 1rem;
+                    //     border-right: 0;
+                    //     svg{
+                    //         display: none;
+                    //     }
+                    //     .me-3{
+                    //         width: 100px;
+                    //     }
+                    // }
+                    &--criancas{
+                        input{
+                            width: calc(50% - .5rem /2);
+                            margin-bottom: .5rem;
+                        }
                     }
                 }
                 &.show{
@@ -196,7 +295,6 @@
         }
         &__data{
             width: 25.3%;
-            // position: relative;
 
             @include breakpoint(xl){
                 width: 20%;
@@ -216,30 +314,27 @@
                 top: 8.65rem;
                 left: calc(50% - 68rem/2)!important;
                 right: inherit!important;
-                padding: 28px 48px;
+                padding: 26px 44px 24px 48px;
                 position: absolute!important;
-
                 visibility: hidden;
                 opacity: 0;
 
-                @include breakpoint(xl){
-                    padding: 1.37rem;
-                }
-
-                
                 &.show{
                     animation: fpFadeInDown 300ms cubic-bezier(.23,1,.32,1);
                     opacity: 1;
                     visibility: visible;
+                    z-index: 999;
                 }
-
+                
                 @include breakpoint(xl){
+                    padding: 1.37rem;
                     width: 57rem!important;
                     left: calc(50% - 57rem/2)!important;
                 }
                 @include breakpoint(lg){    
-                    width: 41rem!important;
-                    left: calc(50% - 41rem/2)!important;
+                    width: 45rem !important;
+                    left: calc(50% - 45rem/2) !important;
+                    top: 11.5rem;
                 }
                 @include breakpoint(md){
                     width: 21rem!important;
@@ -251,11 +346,66 @@
                 }
             }
 
+            .dayContainer{
+                min-width: 288px;
+                max-width: 288px;
+            }
+            .flatpickr-weekdaycontainer{
+                min-width: 288px;
+                max-width: 288px;
+            }
+            
+            .flatpickr-month{
+                min-width: 288px;
+                max-width: 288px;
+                @include breakpoint(md){
+                    &:nth-child(2){
+                        display: none;
+                    }
+                    &:nth-child(3){
+                        display: none;
+                    }
+                }
+            }
+            .flatpickr-weekdaycontainer{
+                @include breakpoint(lg){
+                    max-width: 200px;
+                    min-width: 200px;
+                }
+                @include breakpoint(md){
+                    &:nth-child(2){
+                        display: none;
+                    }
+                    &:nth-child(3){
+                        display: none;
+                    }
+                }
+            }
+            .dayContainer{
+                @include breakpoint(lg){
+                    max-width: 200px;
+                    min-width: 200px;
+                }
+            }
+            span.flatpickr-weekday{
+                @include breakpoint(md){
+                    padding: 0 11px;
+                }
+            }
+
             &__icon{
                 position: absolute;
                 font-size: 1.75rem;
                 top: 1.87rem;
-                right: .68rem;
+                right: 4.68rem;
+                @include breakpoint(lg){
+                    top: 7.4rem;
+                    right: .68rem;
+                }
+                @include breakpoint(md){
+                    bottom: 5.3rem;
+                    top: inherit;
+                }
             }
             input{
                 position: relative;
@@ -277,15 +427,17 @@
                 height: 3rem;
                 width: 3rem;
                 padding: 0;
-                .icon-search{
-                    font-size: 1.75rem;
-                    top: 2px;
-                }
+                position: absolute;
                 @include breakpoint(lg){
                     width: 100%;
+                    position: initial;
                     .icon-search{
                         display: none;
                     }
+                }
+                .icon-search{
+                    font-size: 1.75rem;
+                    top: 2px;
                 }
             }
             
@@ -300,30 +452,56 @@
             margin-bottom: .4rem;
         }
     }
- 
+    
     &.--translado,
-    &.--tour,
-    &.--pacotes{
+    &.--tour{
         .o-search-box__form__regime{
             display: block;
+        }
+        .o-search-box__form__hotel{
+            display: none;
         }
     }
     &.--extra{
         .o-search-box__form__item{
             display: block;
         }
+
+        .o-search-box__form__destino,
+        .o-search-box__form__hotel,
+        .o-search-box__form__regime,
+        .o-search-box__form__passageiros{
+            display: none;
+        }
+    }
+    &.--pacotes{
+        .o-search-box__form__experiencia{
+            display: block;
+        }
+        .o-search-box__form__hotel{
+            display: none;
+        }
+    }
+    
+    &.--hotel{
+        .o-search-box__form__destino{
+            width: 415px;
+            @include breakpoint(xl){
+                width: 22rem;
+            }
+            @include breakpoint(lg){
+                width: 100%;
+            }
+        }
     }
 }
-
-
-
 
 .o-search-box--reduced{
     height: 4rem;
     border-radius: 2.5rem;
     height: 4rem;
-    width: 72.6rem;
-    padding: 1rem .52rem 1rem 2rem;
+    width: 58.25rem;
+    padding: 16.3px .52rem 15.7px 2rem;
     font-size: .75rem;
     z-index: 99;
     box-shadow: 5px 13px 15px 5px rgba(0,0,0,0.16);
@@ -344,24 +522,27 @@
 
 
     &__form{
-        overflow: hidden;
-        height: 31px;
+        // overflow: hidden;
+        // height: 31px;
         .form-label{
             display: block;
             margin-bottom: 0;
             line-height: 1;
         }
         &__input{
-            font-size: .87rem;
+            font-size: 14px;
             border: 0;
             outline: none;
+            font-weight: 300;
+            padding: 0;
+            line-height: 1.6;
         }
 
         &__options{
             width: 6rem;
             cursor: pointer;
             .icon-arrow-down{
-                font-size: 24px;
+                font-size: 13px;
             }
             &__icon{
                 margin-right: 1rem;
@@ -407,20 +588,18 @@
                 position: relative;
                 cursor: pointer;
                 .form-control{
-                    padding: 1.02rem 1rem 1.02rem 3.7rem;
+                    padding: 1rem 1rem 1rem 3.7rem;
                 }
             }
            .o-search-box__form__passageiros__content{
-                width: 72.6rem;
-                // margin-left: 2rem;
-                top: 6.5rem;
+                width: 16rem!important;
+                top: 4rem;
                 @include breakpoint(xl){
                     width: 57rem;
                 }
            }
         }
         &__checkin{
-            border-right: 1px solid #EAEAEA;
             width: 7.5rem;
             padding-right: 1rem;
         }
@@ -441,25 +620,64 @@
                 padding: 0;
                 border-radius: 100%;
                 span{
-                    font-size: 1.75rem;
-                    top: 2px;
+                    font-size: 22px;
                 }
             }
+        }
+        
+        .select2-container--default .select2-selection--single{
+            border: 0;
+        }
+        .select2-container--default .select2-selection--single .select2-selection__rendered{
+            padding: 0;
+            font-size: 14px;
+            color: #656565;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+        .select2-container--default .select2-selection--single .select2-selection__arrow{
+            right: 0;
+        }
+        .select2-container--default .select2-selection--single:focus{
+            box-shadow: none;
+        }
+        .select2-container--default .select2-selection--single{
+            padding: 0;
+        }
+        .select2-container--default .select2-selection--single .select2-selection__arrow{
+           background: none;
         }
     }
     
     &__radios{
         top: 14rem;
         height: 4rem;
-        width: 72.6rem;
-        left: calc(50% - 72.6rem/2);
+        width: 64.37rem;
+        left: calc(50% - 64.37rem/2);
         padding: 1.3rem 2.16rem 1rem 2rem;
         border-radius: 1.8rem;
         box-shadow: 5px 13px 15px 5px rgba(0,0,0,0.16);
         z-index: 999;
         opacity: 0;
         visibility: hidden;
-
+        border-radius: 32px;
+        .o-search-box__title{
+            position: initial;
+        }
+        .o-search-box__radios{
+            width: auto;
+        }
+        
+        .form-check{
+            padding-right: 28px;
+            margin-right: 28px;
+            border-right: 1px solid #E5E5E5;
+            &:last-of-type{
+                margin-right: 0;
+                padding-right: 0;
+                border-right: 0;
+            }
+        }
         @include breakpoint(xl){
             width: 57rem;
             left: calc(50% - 57rem/2);
@@ -512,15 +730,16 @@
         }
     }
     &.--extra{
-        width: 43.25rem;
+        // width: 43.25rem;
+        width: 692px;
         .o-search-box__form__item{
             display: block;
-            width: 186px;
+            width: 13.6rem;
             left: 7rem;
-            position: absolute;
         }
         .o-search-box--reduced__form__destino,
-        .o-search-box--reduced__form__hotel{
+        .o-search-box--reduced__form__hotel,
+        .o-search-box--reduced__form__passageiros{
             display: none;
         }
         .o-search-box--reduced__form__options__icon__extras{
@@ -528,7 +747,6 @@
             font-size: 22px;
         }
     }
-    transition: .2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 

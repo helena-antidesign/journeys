@@ -7,6 +7,10 @@
             overflow: initial;
         }
     }
+    @include breakpoint(md){
+        padding-left: 25px;
+        padding-right: 25px;
+    }
     &__title{
         margin-left: calc((100vw - 1640px) / 2);
         width: 552px;
@@ -36,6 +40,7 @@
     }
     &__content{
         width: calc(100% - ((100vw - 1640px) / 2 + 552px));
+        overflow: hidden;
         @media (max-width: 1679px){
             width: calc(100% - ((100vw - 1140px) / 2 + 552px));
         }
@@ -68,8 +73,19 @@
     .swiper-button-next{
         height: 3rem;
         width: 3rem;
+        transition: .3s;
+        svg{
+            transition: .3s;
+        }
         &:after{
             content:'';
+        }
+
+        &:hover{
+            background: $primary;
+            span{
+                color: #fff!important;
+            }
         }
     }
 }

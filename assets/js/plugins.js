@@ -5693,1350 +5693,6 @@
   */
 !function(t,e){"object"==typeof exports&&"undefined"!=typeof module?module.exports=e():"function"==typeof define&&define.amd?define(e):(t="undefined"!=typeof globalThis?globalThis:t||self).bootstrap=e()}(this,(function(){"use strict";const t={find:(t,e=document.documentElement)=>[].concat(...Element.prototype.querySelectorAll.call(e,t)),findOne:(t,e=document.documentElement)=>Element.prototype.querySelector.call(e,t),children:(t,e)=>[].concat(...t.children).filter(t=>t.matches(e)),parents(t,e){const i=[];let n=t.parentNode;for(;n&&n.nodeType===Node.ELEMENT_NODE&&3!==n.nodeType;)n.matches(e)&&i.push(n),n=n.parentNode;return i},prev(t,e){let i=t.previousElementSibling;for(;i;){if(i.matches(e))return[i];i=i.previousElementSibling}return[]},next(t,e){let i=t.nextElementSibling;for(;i;){if(i.matches(e))return[i];i=i.nextElementSibling}return[]}},e=t=>{do{t+=Math.floor(1e6*Math.random())}while(document.getElementById(t));return t},i=t=>{let e=t.getAttribute("data-bs-target");if(!e||"#"===e){let i=t.getAttribute("href");if(!i||!i.includes("#")&&!i.startsWith("."))return null;i.includes("#")&&!i.startsWith("#")&&(i="#"+i.split("#")[1]),e=i&&"#"!==i?i.trim():null}return e},n=t=>{const e=i(t);return e&&document.querySelector(e)?e:null},s=t=>{const e=i(t);return e?document.querySelector(e):null},o=t=>{if(!t)return 0;let{transitionDuration:e,transitionDelay:i}=window.getComputedStyle(t);const n=Number.parseFloat(e),s=Number.parseFloat(i);return n||s?(e=e.split(",")[0],i=i.split(",")[0],1e3*(Number.parseFloat(e)+Number.parseFloat(i))):0},r=t=>{t.dispatchEvent(new Event("transitionend"))},a=t=>!(!t||"object"!=typeof t)&&(void 0!==t.jquery&&(t=t[0]),void 0!==t.nodeType),l=e=>a(e)?e.jquery?e[0]:e:"string"==typeof e&&e.length>0?t.findOne(e):null,c=(t,e)=>{let i=!1;const n=e+5;t.addEventListener("transitionend",(function e(){i=!0,t.removeEventListener("transitionend",e)})),setTimeout(()=>{i||r(t)},n)},d=(t,e,i)=>{Object.keys(i).forEach(n=>{const s=i[n],o=e[n],r=o&&a(o)?"element":null==(l=o)?""+l:{}.toString.call(l).match(/\s([a-z]+)/i)[1].toLowerCase();var l;if(!new RegExp(s).test(r))throw new TypeError(`${t.toUpperCase()}: Option "${n}" provided type "${r}" but expected type "${s}".`)})},h=t=>{if(!t)return!1;if(t.style&&t.parentNode&&t.parentNode.style){const e=getComputedStyle(t),i=getComputedStyle(t.parentNode);return"none"!==e.display&&"none"!==i.display&&"hidden"!==e.visibility}return!1},u=t=>!t||t.nodeType!==Node.ELEMENT_NODE||!!t.classList.contains("disabled")||(void 0!==t.disabled?t.disabled:t.hasAttribute("disabled")&&"false"!==t.getAttribute("disabled")),f=t=>{if(!document.documentElement.attachShadow)return null;if("function"==typeof t.getRootNode){const e=t.getRootNode();return e instanceof ShadowRoot?e:null}return t instanceof ShadowRoot?t:t.parentNode?f(t.parentNode):null},p=()=>{},m=t=>t.offsetHeight,g=()=>{const{jQuery:t}=window;return t&&!document.body.hasAttribute("data-bs-no-jquery")?t:null},_=()=>"rtl"===document.documentElement.dir,b=t=>{var e;e=()=>{const e=g();if(e){const i=t.NAME,n=e.fn[i];e.fn[i]=t.jQueryInterface,e.fn[i].Constructor=t,e.fn[i].noConflict=()=>(e.fn[i]=n,t.jQueryInterface)}},"loading"===document.readyState?document.addEventListener("DOMContentLoaded",e):e()},v=t=>{"function"==typeof t&&t()},y=new Map;var w={set(t,e,i){y.has(t)||y.set(t,new Map);const n=y.get(t);n.has(e)||0===n.size?n.set(e,i):console.error(`Bootstrap doesn't allow more than one instance per element. Bound instance: ${Array.from(n.keys())[0]}.`)},get:(t,e)=>y.has(t)&&y.get(t).get(e)||null,remove(t,e){if(!y.has(t))return;const i=y.get(t);i.delete(e),0===i.size&&y.delete(t)}};const E=/[^.]*(?=\..*)\.|.*/,T=/\..*/,A=/::\d+$/,L={};let O=1;const k={mouseenter:"mouseover",mouseleave:"mouseout"},C=/^(mouseenter|mouseleave)/i,x=new Set(["click","dblclick","mouseup","mousedown","contextmenu","mousewheel","DOMMouseScroll","mouseover","mouseout","mousemove","selectstart","selectend","keydown","keypress","keyup","orientationchange","touchstart","touchmove","touchend","touchcancel","pointerdown","pointermove","pointerup","pointerleave","pointercancel","gesturestart","gesturechange","gestureend","focus","blur","change","reset","select","submit","focusin","focusout","load","unload","beforeunload","resize","move","DOMContentLoaded","readystatechange","error","abort","scroll"]);function D(t,e){return e&&`${e}::${O++}`||t.uidEvent||O++}function N(t){const e=D(t);return t.uidEvent=e,L[e]=L[e]||{},L[e]}function S(t,e,i=null){const n=Object.keys(t);for(let s=0,o=n.length;s<o;s++){const o=t[n[s]];if(o.originalHandler===e&&o.delegationSelector===i)return o}return null}function I(t,e,i){const n="string"==typeof e,s=n?i:e;let o=M(t);return x.has(o)||(o=t),[n,s,o]}function j(t,e,i,n,s){if("string"!=typeof e||!t)return;if(i||(i=n,n=null),C.test(e)){const t=t=>function(e){if(!e.relatedTarget||e.relatedTarget!==e.delegateTarget&&!e.delegateTarget.contains(e.relatedTarget))return t.call(this,e)};n?n=t(n):i=t(i)}const[o,r,a]=I(e,i,n),l=N(t),c=l[a]||(l[a]={}),d=S(c,r,o?i:null);if(d)return void(d.oneOff=d.oneOff&&s);const h=D(r,e.replace(E,"")),u=o?function(t,e,i){return function n(s){const o=t.querySelectorAll(e);for(let{target:r}=s;r&&r!==this;r=r.parentNode)for(let a=o.length;a--;)if(o[a]===r)return s.delegateTarget=r,n.oneOff&&H.off(t,s.type,e,i),i.apply(r,[s]);return null}}(t,i,n):function(t,e){return function i(n){return n.delegateTarget=t,i.oneOff&&H.off(t,n.type,e),e.apply(t,[n])}}(t,i);u.delegationSelector=o?i:null,u.originalHandler=r,u.oneOff=s,u.uidEvent=h,c[h]=u,t.addEventListener(a,u,o)}function P(t,e,i,n,s){const o=S(e[i],n,s);o&&(t.removeEventListener(i,o,Boolean(s)),delete e[i][o.uidEvent])}function M(t){return t=t.replace(T,""),k[t]||t}const H={on(t,e,i,n){j(t,e,i,n,!1)},one(t,e,i,n){j(t,e,i,n,!0)},off(t,e,i,n){if("string"!=typeof e||!t)return;const[s,o,r]=I(e,i,n),a=r!==e,l=N(t),c=e.startsWith(".");if(void 0!==o){if(!l||!l[r])return;return void P(t,l,r,o,s?i:null)}c&&Object.keys(l).forEach(i=>{!function(t,e,i,n){const s=e[i]||{};Object.keys(s).forEach(o=>{if(o.includes(n)){const n=s[o];P(t,e,i,n.originalHandler,n.delegationSelector)}})}(t,l,i,e.slice(1))});const d=l[r]||{};Object.keys(d).forEach(i=>{const n=i.replace(A,"");if(!a||e.includes(n)){const e=d[i];P(t,l,r,e.originalHandler,e.delegationSelector)}})},trigger(t,e,i){if("string"!=typeof e||!t)return null;const n=g(),s=M(e),o=e!==s,r=x.has(s);let a,l=!0,c=!0,d=!1,h=null;return o&&n&&(a=n.Event(e,i),n(t).trigger(a),l=!a.isPropagationStopped(),c=!a.isImmediatePropagationStopped(),d=a.isDefaultPrevented()),r?(h=document.createEvent("HTMLEvents"),h.initEvent(s,l,!0)):h=new CustomEvent(e,{bubbles:l,cancelable:!0}),void 0!==i&&Object.keys(i).forEach(t=>{Object.defineProperty(h,t,{get:()=>i[t]})}),d&&h.preventDefault(),c&&t.dispatchEvent(h),h.defaultPrevented&&void 0!==a&&a.preventDefault(),h}};class R{constructor(t){(t=l(t))&&(this._element=t,w.set(this._element,this.constructor.DATA_KEY,this))}dispose(){w.remove(this._element,this.constructor.DATA_KEY),H.off(this._element,this.constructor.EVENT_KEY),Object.getOwnPropertyNames(this).forEach(t=>{this[t]=null})}_queueCallback(t,e,i=!0){if(!i)return void v(t);const n=o(e);H.one(e,"transitionend",()=>v(t)),c(e,n)}static getInstance(t){return w.get(t,this.DATA_KEY)}static get VERSION(){return"5.0.1"}static get NAME(){throw new Error('You have to implement the static method "NAME", for each component!')}static get DATA_KEY(){return"bs."+this.NAME}static get EVENT_KEY(){return"."+this.DATA_KEY}}class B extends R{static get NAME(){return"alert"}close(t){const e=t?this._getRootElement(t):this._element,i=this._triggerCloseEvent(e);null===i||i.defaultPrevented||this._removeElement(e)}_getRootElement(t){return s(t)||t.closest(".alert")}_triggerCloseEvent(t){return H.trigger(t,"close.bs.alert")}_removeElement(t){t.classList.remove("show");const e=t.classList.contains("fade");this._queueCallback(()=>this._destroyElement(t),t,e)}_destroyElement(t){t.parentNode&&t.parentNode.removeChild(t),H.trigger(t,"closed.bs.alert")}static jQueryInterface(t){return this.each((function(){let e=w.get(this,"bs.alert");e||(e=new B(this)),"close"===t&&e[t](this)}))}static handleDismiss(t){return function(e){e&&e.preventDefault(),t.close(this)}}}H.on(document,"click.bs.alert.data-api",'[data-bs-dismiss="alert"]',B.handleDismiss(new B)),b(B);class W extends R{static get NAME(){return"button"}toggle(){this._element.setAttribute("aria-pressed",this._element.classList.toggle("active"))}static jQueryInterface(t){return this.each((function(){let e=w.get(this,"bs.button");e||(e=new W(this)),"toggle"===t&&e[t]()}))}}function q(t){return"true"===t||"false"!==t&&(t===Number(t).toString()?Number(t):""===t||"null"===t?null:t)}function z(t){return t.replace(/[A-Z]/g,t=>"-"+t.toLowerCase())}H.on(document,"click.bs.button.data-api",'[data-bs-toggle="button"]',t=>{t.preventDefault();const e=t.target.closest('[data-bs-toggle="button"]');let i=w.get(e,"bs.button");i||(i=new W(e)),i.toggle()}),b(W);const U={setDataAttribute(t,e,i){t.setAttribute("data-bs-"+z(e),i)},removeDataAttribute(t,e){t.removeAttribute("data-bs-"+z(e))},getDataAttributes(t){if(!t)return{};const e={};return Object.keys(t.dataset).filter(t=>t.startsWith("bs")).forEach(i=>{let n=i.replace(/^bs/,"");n=n.charAt(0).toLowerCase()+n.slice(1,n.length),e[n]=q(t.dataset[i])}),e},getDataAttribute:(t,e)=>q(t.getAttribute("data-bs-"+z(e))),offset(t){const e=t.getBoundingClientRect();return{top:e.top+document.body.scrollTop,left:e.left+document.body.scrollLeft}},position:t=>({top:t.offsetTop,left:t.offsetLeft})},$={interval:5e3,keyboard:!0,slide:!1,pause:"hover",wrap:!0,touch:!0},F={interval:"(number|boolean)",keyboard:"boolean",slide:"(boolean|string)",pause:"(string|boolean)",wrap:"boolean",touch:"boolean"},V="next",K="prev",X="left",Y="right";class Q extends R{constructor(e,i){super(e),this._items=null,this._interval=null,this._activeElement=null,this._isPaused=!1,this._isSliding=!1,this.touchTimeout=null,this.touchStartX=0,this.touchDeltaX=0,this._config=this._getConfig(i),this._indicatorsElement=t.findOne(".carousel-indicators",this._element),this._touchSupported="ontouchstart"in document.documentElement||navigator.maxTouchPoints>0,this._pointerEvent=Boolean(window.PointerEvent),this._addEventListeners()}static get Default(){return $}static get NAME(){return"carousel"}next(){this._isSliding||this._slide(V)}nextWhenVisible(){!document.hidden&&h(this._element)&&this.next()}prev(){this._isSliding||this._slide(K)}pause(e){e||(this._isPaused=!0),t.findOne(".carousel-item-next, .carousel-item-prev",this._element)&&(r(this._element),this.cycle(!0)),clearInterval(this._interval),this._interval=null}cycle(t){t||(this._isPaused=!1),this._interval&&(clearInterval(this._interval),this._interval=null),this._config&&this._config.interval&&!this._isPaused&&(this._updateInterval(),this._interval=setInterval((document.visibilityState?this.nextWhenVisible:this.next).bind(this),this._config.interval))}to(e){this._activeElement=t.findOne(".active.carousel-item",this._element);const i=this._getItemIndex(this._activeElement);if(e>this._items.length-1||e<0)return;if(this._isSliding)return void H.one(this._element,"slid.bs.carousel",()=>this.to(e));if(i===e)return this.pause(),void this.cycle();const n=e>i?V:K;this._slide(n,this._items[e])}_getConfig(t){return t={...$,...t},d("carousel",t,F),t}_handleSwipe(){const t=Math.abs(this.touchDeltaX);if(t<=40)return;const e=t/this.touchDeltaX;this.touchDeltaX=0,e&&this._slide(e>0?Y:X)}_addEventListeners(){this._config.keyboard&&H.on(this._element,"keydown.bs.carousel",t=>this._keydown(t)),"hover"===this._config.pause&&(H.on(this._element,"mouseenter.bs.carousel",t=>this.pause(t)),H.on(this._element,"mouseleave.bs.carousel",t=>this.cycle(t))),this._config.touch&&this._touchSupported&&this._addTouchEventListeners()}_addTouchEventListeners(){const e=t=>{!this._pointerEvent||"pen"!==t.pointerType&&"touch"!==t.pointerType?this._pointerEvent||(this.touchStartX=t.touches[0].clientX):this.touchStartX=t.clientX},i=t=>{this.touchDeltaX=t.touches&&t.touches.length>1?0:t.touches[0].clientX-this.touchStartX},n=t=>{!this._pointerEvent||"pen"!==t.pointerType&&"touch"!==t.pointerType||(this.touchDeltaX=t.clientX-this.touchStartX),this._handleSwipe(),"hover"===this._config.pause&&(this.pause(),this.touchTimeout&&clearTimeout(this.touchTimeout),this.touchTimeout=setTimeout(t=>this.cycle(t),500+this._config.interval))};t.find(".carousel-item img",this._element).forEach(t=>{H.on(t,"dragstart.bs.carousel",t=>t.preventDefault())}),this._pointerEvent?(H.on(this._element,"pointerdown.bs.carousel",t=>e(t)),H.on(this._element,"pointerup.bs.carousel",t=>n(t)),this._element.classList.add("pointer-event")):(H.on(this._element,"touchstart.bs.carousel",t=>e(t)),H.on(this._element,"touchmove.bs.carousel",t=>i(t)),H.on(this._element,"touchend.bs.carousel",t=>n(t)))}_keydown(t){/input|textarea/i.test(t.target.tagName)||("ArrowLeft"===t.key?(t.preventDefault(),this._slide(Y)):"ArrowRight"===t.key&&(t.preventDefault(),this._slide(X)))}_getItemIndex(e){return this._items=e&&e.parentNode?t.find(".carousel-item",e.parentNode):[],this._items.indexOf(e)}_getItemByOrder(t,e){const i=t===V,n=t===K,s=this._getItemIndex(e),o=this._items.length-1;if((n&&0===s||i&&s===o)&&!this._config.wrap)return e;const r=(s+(n?-1:1))%this._items.length;return-1===r?this._items[this._items.length-1]:this._items[r]}_triggerSlideEvent(e,i){const n=this._getItemIndex(e),s=this._getItemIndex(t.findOne(".active.carousel-item",this._element));return H.trigger(this._element,"slide.bs.carousel",{relatedTarget:e,direction:i,from:s,to:n})}_setActiveIndicatorElement(e){if(this._indicatorsElement){const i=t.findOne(".active",this._indicatorsElement);i.classList.remove("active"),i.removeAttribute("aria-current");const n=t.find("[data-bs-target]",this._indicatorsElement);for(let t=0;t<n.length;t++)if(Number.parseInt(n[t].getAttribute("data-bs-slide-to"),10)===this._getItemIndex(e)){n[t].classList.add("active"),n[t].setAttribute("aria-current","true");break}}}_updateInterval(){const e=this._activeElement||t.findOne(".active.carousel-item",this._element);if(!e)return;const i=Number.parseInt(e.getAttribute("data-bs-interval"),10);i?(this._config.defaultInterval=this._config.defaultInterval||this._config.interval,this._config.interval=i):this._config.interval=this._config.defaultInterval||this._config.interval}_slide(e,i){const n=this._directionToOrder(e),s=t.findOne(".active.carousel-item",this._element),o=this._getItemIndex(s),r=i||this._getItemByOrder(n,s),a=this._getItemIndex(r),l=Boolean(this._interval),c=n===V,d=c?"carousel-item-start":"carousel-item-end",h=c?"carousel-item-next":"carousel-item-prev",u=this._orderToDirection(n);if(r&&r.classList.contains("active"))return void(this._isSliding=!1);if(this._triggerSlideEvent(r,u).defaultPrevented)return;if(!s||!r)return;this._isSliding=!0,l&&this.pause(),this._setActiveIndicatorElement(r),this._activeElement=r;const f=()=>{H.trigger(this._element,"slid.bs.carousel",{relatedTarget:r,direction:u,from:o,to:a})};if(this._element.classList.contains("slide")){r.classList.add(h),m(r),s.classList.add(d),r.classList.add(d);const t=()=>{r.classList.remove(d,h),r.classList.add("active"),s.classList.remove("active",h,d),this._isSliding=!1,setTimeout(f,0)};this._queueCallback(t,s,!0)}else s.classList.remove("active"),r.classList.add("active"),this._isSliding=!1,f();l&&this.cycle()}_directionToOrder(t){return[Y,X].includes(t)?_()?t===X?K:V:t===X?V:K:t}_orderToDirection(t){return[V,K].includes(t)?_()?t===K?X:Y:t===K?Y:X:t}static carouselInterface(t,e){let i=w.get(t,"bs.carousel"),n={...$,...U.getDataAttributes(t)};"object"==typeof e&&(n={...n,...e});const s="string"==typeof e?e:n.slide;if(i||(i=new Q(t,n)),"number"==typeof e)i.to(e);else if("string"==typeof s){if(void 0===i[s])throw new TypeError(`No method named "${s}"`);i[s]()}else n.interval&&n.ride&&(i.pause(),i.cycle())}static jQueryInterface(t){return this.each((function(){Q.carouselInterface(this,t)}))}static dataApiClickHandler(t){const e=s(this);if(!e||!e.classList.contains("carousel"))return;const i={...U.getDataAttributes(e),...U.getDataAttributes(this)},n=this.getAttribute("data-bs-slide-to");n&&(i.interval=!1),Q.carouselInterface(e,i),n&&w.get(e,"bs.carousel").to(n),t.preventDefault()}}H.on(document,"click.bs.carousel.data-api","[data-bs-slide], [data-bs-slide-to]",Q.dataApiClickHandler),H.on(window,"load.bs.carousel.data-api",()=>{const e=t.find('[data-bs-ride="carousel"]');for(let t=0,i=e.length;t<i;t++)Q.carouselInterface(e[t],w.get(e[t],"bs.carousel"))}),b(Q);const G={toggle:!0,parent:""},Z={toggle:"boolean",parent:"(string|element)"};class J extends R{constructor(e,i){super(e),this._isTransitioning=!1,this._config=this._getConfig(i),this._triggerArray=t.find(`[data-bs-toggle="collapse"][href="#${this._element.id}"],[data-bs-toggle="collapse"][data-bs-target="#${this._element.id}"]`);const s=t.find('[data-bs-toggle="collapse"]');for(let e=0,i=s.length;e<i;e++){const i=s[e],o=n(i),r=t.find(o).filter(t=>t===this._element);null!==o&&r.length&&(this._selector=o,this._triggerArray.push(i))}this._parent=this._config.parent?this._getParent():null,this._config.parent||this._addAriaAndCollapsedClass(this._element,this._triggerArray),this._config.toggle&&this.toggle()}static get Default(){return G}static get NAME(){return"collapse"}toggle(){this._element.classList.contains("show")?this.hide():this.show()}show(){if(this._isTransitioning||this._element.classList.contains("show"))return;let e,i;this._parent&&(e=t.find(".show, .collapsing",this._parent).filter(t=>"string"==typeof this._config.parent?t.getAttribute("data-bs-parent")===this._config.parent:t.classList.contains("collapse")),0===e.length&&(e=null));const n=t.findOne(this._selector);if(e){const t=e.find(t=>n!==t);if(i=t?w.get(t,"bs.collapse"):null,i&&i._isTransitioning)return}if(H.trigger(this._element,"show.bs.collapse").defaultPrevented)return;e&&e.forEach(t=>{n!==t&&J.collapseInterface(t,"hide"),i||w.set(t,"bs.collapse",null)});const s=this._getDimension();this._element.classList.remove("collapse"),this._element.classList.add("collapsing"),this._element.style[s]=0,this._triggerArray.length&&this._triggerArray.forEach(t=>{t.classList.remove("collapsed"),t.setAttribute("aria-expanded",!0)}),this.setTransitioning(!0);const o="scroll"+(s[0].toUpperCase()+s.slice(1));this._queueCallback(()=>{this._element.classList.remove("collapsing"),this._element.classList.add("collapse","show"),this._element.style[s]="",this.setTransitioning(!1),H.trigger(this._element,"shown.bs.collapse")},this._element,!0),this._element.style[s]=this._element[o]+"px"}hide(){if(this._isTransitioning||!this._element.classList.contains("show"))return;if(H.trigger(this._element,"hide.bs.collapse").defaultPrevented)return;const t=this._getDimension();this._element.style[t]=this._element.getBoundingClientRect()[t]+"px",m(this._element),this._element.classList.add("collapsing"),this._element.classList.remove("collapse","show");const e=this._triggerArray.length;if(e>0)for(let t=0;t<e;t++){const e=this._triggerArray[t],i=s(e);i&&!i.classList.contains("show")&&(e.classList.add("collapsed"),e.setAttribute("aria-expanded",!1))}this.setTransitioning(!0),this._element.style[t]="",this._queueCallback(()=>{this.setTransitioning(!1),this._element.classList.remove("collapsing"),this._element.classList.add("collapse"),H.trigger(this._element,"hidden.bs.collapse")},this._element,!0)}setTransitioning(t){this._isTransitioning=t}_getConfig(t){return(t={...G,...t}).toggle=Boolean(t.toggle),d("collapse",t,Z),t}_getDimension(){return this._element.classList.contains("width")?"width":"height"}_getParent(){let{parent:e}=this._config;e=l(e);const i=`[data-bs-toggle="collapse"][data-bs-parent="${e}"]`;return t.find(i,e).forEach(t=>{const e=s(t);this._addAriaAndCollapsedClass(e,[t])}),e}_addAriaAndCollapsedClass(t,e){if(!t||!e.length)return;const i=t.classList.contains("show");e.forEach(t=>{i?t.classList.remove("collapsed"):t.classList.add("collapsed"),t.setAttribute("aria-expanded",i)})}static collapseInterface(t,e){let i=w.get(t,"bs.collapse");const n={...G,...U.getDataAttributes(t),..."object"==typeof e&&e?e:{}};if(!i&&n.toggle&&"string"==typeof e&&/show|hide/.test(e)&&(n.toggle=!1),i||(i=new J(t,n)),"string"==typeof e){if(void 0===i[e])throw new TypeError(`No method named "${e}"`);i[e]()}}static jQueryInterface(t){return this.each((function(){J.collapseInterface(this,t)}))}}H.on(document,"click.bs.collapse.data-api",'[data-bs-toggle="collapse"]',(function(e){("A"===e.target.tagName||e.delegateTarget&&"A"===e.delegateTarget.tagName)&&e.preventDefault();const i=U.getDataAttributes(this),s=n(this);t.find(s).forEach(t=>{const e=w.get(t,"bs.collapse");let n;e?(null===e._parent&&"string"==typeof i.parent&&(e._config.parent=i.parent,e._parent=e._getParent()),n="toggle"):n=i,J.collapseInterface(t,n)})})),b(J);var tt="top",et="bottom",it="right",nt="left",st=[tt,et,it,nt],ot=st.reduce((function(t,e){return t.concat([e+"-start",e+"-end"])}),[]),rt=[].concat(st,["auto"]).reduce((function(t,e){return t.concat([e,e+"-start",e+"-end"])}),[]),at=["beforeRead","read","afterRead","beforeMain","main","afterMain","beforeWrite","write","afterWrite"];function lt(t){return t?(t.nodeName||"").toLowerCase():null}function ct(t){if(null==t)return window;if("[object Window]"!==t.toString()){var e=t.ownerDocument;return e&&e.defaultView||window}return t}function dt(t){return t instanceof ct(t).Element||t instanceof Element}function ht(t){return t instanceof ct(t).HTMLElement||t instanceof HTMLElement}function ut(t){return"undefined"!=typeof ShadowRoot&&(t instanceof ct(t).ShadowRoot||t instanceof ShadowRoot)}var ft={name:"applyStyles",enabled:!0,phase:"write",fn:function(t){var e=t.state;Object.keys(e.elements).forEach((function(t){var i=e.styles[t]||{},n=e.attributes[t]||{},s=e.elements[t];ht(s)&&lt(s)&&(Object.assign(s.style,i),Object.keys(n).forEach((function(t){var e=n[t];!1===e?s.removeAttribute(t):s.setAttribute(t,!0===e?"":e)})))}))},effect:function(t){var e=t.state,i={popper:{position:e.options.strategy,left:"0",top:"0",margin:"0"},arrow:{position:"absolute"},reference:{}};return Object.assign(e.elements.popper.style,i.popper),e.styles=i,e.elements.arrow&&Object.assign(e.elements.arrow.style,i.arrow),function(){Object.keys(e.elements).forEach((function(t){var n=e.elements[t],s=e.attributes[t]||{},o=Object.keys(e.styles.hasOwnProperty(t)?e.styles[t]:i[t]).reduce((function(t,e){return t[e]="",t}),{});ht(n)&&lt(n)&&(Object.assign(n.style,o),Object.keys(s).forEach((function(t){n.removeAttribute(t)})))}))}},requires:["computeStyles"]};function pt(t){return t.split("-")[0]}function mt(t){var e=t.getBoundingClientRect();return{width:e.width,height:e.height,top:e.top,right:e.right,bottom:e.bottom,left:e.left,x:e.left,y:e.top}}function gt(t){var e=mt(t),i=t.offsetWidth,n=t.offsetHeight;return Math.abs(e.width-i)<=1&&(i=e.width),Math.abs(e.height-n)<=1&&(n=e.height),{x:t.offsetLeft,y:t.offsetTop,width:i,height:n}}function _t(t,e){var i=e.getRootNode&&e.getRootNode();if(t.contains(e))return!0;if(i&&ut(i)){var n=e;do{if(n&&t.isSameNode(n))return!0;n=n.parentNode||n.host}while(n)}return!1}function bt(t){return ct(t).getComputedStyle(t)}function vt(t){return["table","td","th"].indexOf(lt(t))>=0}function yt(t){return((dt(t)?t.ownerDocument:t.document)||window.document).documentElement}function wt(t){return"html"===lt(t)?t:t.assignedSlot||t.parentNode||(ut(t)?t.host:null)||yt(t)}function Et(t){return ht(t)&&"fixed"!==bt(t).position?t.offsetParent:null}function Tt(t){for(var e=ct(t),i=Et(t);i&&vt(i)&&"static"===bt(i).position;)i=Et(i);return i&&("html"===lt(i)||"body"===lt(i)&&"static"===bt(i).position)?e:i||function(t){var e=-1!==navigator.userAgent.toLowerCase().indexOf("firefox");if(-1!==navigator.userAgent.indexOf("Trident")&&ht(t)&&"fixed"===bt(t).position)return null;for(var i=wt(t);ht(i)&&["html","body"].indexOf(lt(i))<0;){var n=bt(i);if("none"!==n.transform||"none"!==n.perspective||"paint"===n.contain||-1!==["transform","perspective"].indexOf(n.willChange)||e&&"filter"===n.willChange||e&&n.filter&&"none"!==n.filter)return i;i=i.parentNode}return null}(t)||e}function At(t){return["top","bottom"].indexOf(t)>=0?"x":"y"}var Lt=Math.max,Ot=Math.min,kt=Math.round;function Ct(t,e,i){return Lt(t,Ot(e,i))}function xt(t){return Object.assign({},{top:0,right:0,bottom:0,left:0},t)}function Dt(t,e){return e.reduce((function(e,i){return e[i]=t,e}),{})}var Nt={name:"arrow",enabled:!0,phase:"main",fn:function(t){var e,i=t.state,n=t.name,s=t.options,o=i.elements.arrow,r=i.modifiersData.popperOffsets,a=pt(i.placement),l=At(a),c=[nt,it].indexOf(a)>=0?"height":"width";if(o&&r){var d=function(t,e){return xt("number"!=typeof(t="function"==typeof t?t(Object.assign({},e.rects,{placement:e.placement})):t)?t:Dt(t,st))}(s.padding,i),h=gt(o),u="y"===l?tt:nt,f="y"===l?et:it,p=i.rects.reference[c]+i.rects.reference[l]-r[l]-i.rects.popper[c],m=r[l]-i.rects.reference[l],g=Tt(o),_=g?"y"===l?g.clientHeight||0:g.clientWidth||0:0,b=p/2-m/2,v=d[u],y=_-h[c]-d[f],w=_/2-h[c]/2+b,E=Ct(v,w,y),T=l;i.modifiersData[n]=((e={})[T]=E,e.centerOffset=E-w,e)}},effect:function(t){var e=t.state,i=t.options.element,n=void 0===i?"[data-popper-arrow]":i;null!=n&&("string"!=typeof n||(n=e.elements.popper.querySelector(n)))&&_t(e.elements.popper,n)&&(e.elements.arrow=n)},requires:["popperOffsets"],requiresIfExists:["preventOverflow"]},St={top:"auto",right:"auto",bottom:"auto",left:"auto"};function It(t){var e,i=t.popper,n=t.popperRect,s=t.placement,o=t.offsets,r=t.position,a=t.gpuAcceleration,l=t.adaptive,c=t.roundOffsets,d=!0===c?function(t){var e=t.x,i=t.y,n=window.devicePixelRatio||1;return{x:kt(kt(e*n)/n)||0,y:kt(kt(i*n)/n)||0}}(o):"function"==typeof c?c(o):o,h=d.x,u=void 0===h?0:h,f=d.y,p=void 0===f?0:f,m=o.hasOwnProperty("x"),g=o.hasOwnProperty("y"),_=nt,b=tt,v=window;if(l){var y=Tt(i),w="clientHeight",E="clientWidth";y===ct(i)&&"static"!==bt(y=yt(i)).position&&(w="scrollHeight",E="scrollWidth"),y=y,s===tt&&(b=et,p-=y[w]-n.height,p*=a?1:-1),s===nt&&(_=it,u-=y[E]-n.width,u*=a?1:-1)}var T,A=Object.assign({position:r},l&&St);return a?Object.assign({},A,((T={})[b]=g?"0":"",T[_]=m?"0":"",T.transform=(v.devicePixelRatio||1)<2?"translate("+u+"px, "+p+"px)":"translate3d("+u+"px, "+p+"px, 0)",T)):Object.assign({},A,((e={})[b]=g?p+"px":"",e[_]=m?u+"px":"",e.transform="",e))}var jt={name:"computeStyles",enabled:!0,phase:"beforeWrite",fn:function(t){var e=t.state,i=t.options,n=i.gpuAcceleration,s=void 0===n||n,o=i.adaptive,r=void 0===o||o,a=i.roundOffsets,l=void 0===a||a,c={placement:pt(e.placement),popper:e.elements.popper,popperRect:e.rects.popper,gpuAcceleration:s};null!=e.modifiersData.popperOffsets&&(e.styles.popper=Object.assign({},e.styles.popper,It(Object.assign({},c,{offsets:e.modifiersData.popperOffsets,position:e.options.strategy,adaptive:r,roundOffsets:l})))),null!=e.modifiersData.arrow&&(e.styles.arrow=Object.assign({},e.styles.arrow,It(Object.assign({},c,{offsets:e.modifiersData.arrow,position:"absolute",adaptive:!1,roundOffsets:l})))),e.attributes.popper=Object.assign({},e.attributes.popper,{"data-popper-placement":e.placement})},data:{}},Pt={passive:!0},Mt={name:"eventListeners",enabled:!0,phase:"write",fn:function(){},effect:function(t){var e=t.state,i=t.instance,n=t.options,s=n.scroll,o=void 0===s||s,r=n.resize,a=void 0===r||r,l=ct(e.elements.popper),c=[].concat(e.scrollParents.reference,e.scrollParents.popper);return o&&c.forEach((function(t){t.addEventListener("scroll",i.update,Pt)})),a&&l.addEventListener("resize",i.update,Pt),function(){o&&c.forEach((function(t){t.removeEventListener("scroll",i.update,Pt)})),a&&l.removeEventListener("resize",i.update,Pt)}},data:{}},Ht={left:"right",right:"left",bottom:"top",top:"bottom"};function Rt(t){return t.replace(/left|right|bottom|top/g,(function(t){return Ht[t]}))}var Bt={start:"end",end:"start"};function Wt(t){return t.replace(/start|end/g,(function(t){return Bt[t]}))}function qt(t){var e=ct(t);return{scrollLeft:e.pageXOffset,scrollTop:e.pageYOffset}}function zt(t){return mt(yt(t)).left+qt(t).scrollLeft}function Ut(t){var e=bt(t),i=e.overflow,n=e.overflowX,s=e.overflowY;return/auto|scroll|overlay|hidden/.test(i+s+n)}function $t(t,e){var i;void 0===e&&(e=[]);var n=function t(e){return["html","body","#document"].indexOf(lt(e))>=0?e.ownerDocument.body:ht(e)&&Ut(e)?e:t(wt(e))}(t),s=n===(null==(i=t.ownerDocument)?void 0:i.body),o=ct(n),r=s?[o].concat(o.visualViewport||[],Ut(n)?n:[]):n,a=e.concat(r);return s?a:a.concat($t(wt(r)))}function Ft(t){return Object.assign({},t,{left:t.x,top:t.y,right:t.x+t.width,bottom:t.y+t.height})}function Vt(t,e){return"viewport"===e?Ft(function(t){var e=ct(t),i=yt(t),n=e.visualViewport,s=i.clientWidth,o=i.clientHeight,r=0,a=0;return n&&(s=n.width,o=n.height,/^((?!chrome|android).)*safari/i.test(navigator.userAgent)||(r=n.offsetLeft,a=n.offsetTop)),{width:s,height:o,x:r+zt(t),y:a}}(t)):ht(e)?function(t){var e=mt(t);return e.top=e.top+t.clientTop,e.left=e.left+t.clientLeft,e.bottom=e.top+t.clientHeight,e.right=e.left+t.clientWidth,e.width=t.clientWidth,e.height=t.clientHeight,e.x=e.left,e.y=e.top,e}(e):Ft(function(t){var e,i=yt(t),n=qt(t),s=null==(e=t.ownerDocument)?void 0:e.body,o=Lt(i.scrollWidth,i.clientWidth,s?s.scrollWidth:0,s?s.clientWidth:0),r=Lt(i.scrollHeight,i.clientHeight,s?s.scrollHeight:0,s?s.clientHeight:0),a=-n.scrollLeft+zt(t),l=-n.scrollTop;return"rtl"===bt(s||i).direction&&(a+=Lt(i.clientWidth,s?s.clientWidth:0)-o),{width:o,height:r,x:a,y:l}}(yt(t)))}function Kt(t){return t.split("-")[1]}function Xt(t){var e,i=t.reference,n=t.element,s=t.placement,o=s?pt(s):null,r=s?Kt(s):null,a=i.x+i.width/2-n.width/2,l=i.y+i.height/2-n.height/2;switch(o){case tt:e={x:a,y:i.y-n.height};break;case et:e={x:a,y:i.y+i.height};break;case it:e={x:i.x+i.width,y:l};break;case nt:e={x:i.x-n.width,y:l};break;default:e={x:i.x,y:i.y}}var c=o?At(o):null;if(null!=c){var d="y"===c?"height":"width";switch(r){case"start":e[c]=e[c]-(i[d]/2-n[d]/2);break;case"end":e[c]=e[c]+(i[d]/2-n[d]/2)}}return e}function Yt(t,e){void 0===e&&(e={});var i=e,n=i.placement,s=void 0===n?t.placement:n,o=i.boundary,r=void 0===o?"clippingParents":o,a=i.rootBoundary,l=void 0===a?"viewport":a,c=i.elementContext,d=void 0===c?"popper":c,h=i.altBoundary,u=void 0!==h&&h,f=i.padding,p=void 0===f?0:f,m=xt("number"!=typeof p?p:Dt(p,st)),g="popper"===d?"reference":"popper",_=t.elements.reference,b=t.rects.popper,v=t.elements[u?g:d],y=function(t,e,i){var n="clippingParents"===e?function(t){var e=$t(wt(t)),i=["absolute","fixed"].indexOf(bt(t).position)>=0&&ht(t)?Tt(t):t;return dt(i)?e.filter((function(t){return dt(t)&&_t(t,i)&&"body"!==lt(t)})):[]}(t):[].concat(e),s=[].concat(n,[i]),o=s[0],r=s.reduce((function(e,i){var n=Vt(t,i);return e.top=Lt(n.top,e.top),e.right=Ot(n.right,e.right),e.bottom=Ot(n.bottom,e.bottom),e.left=Lt(n.left,e.left),e}),Vt(t,o));return r.width=r.right-r.left,r.height=r.bottom-r.top,r.x=r.left,r.y=r.top,r}(dt(v)?v:v.contextElement||yt(t.elements.popper),r,l),w=mt(_),E=Xt({reference:w,element:b,strategy:"absolute",placement:s}),T=Ft(Object.assign({},b,E)),A="popper"===d?T:w,L={top:y.top-A.top+m.top,bottom:A.bottom-y.bottom+m.bottom,left:y.left-A.left+m.left,right:A.right-y.right+m.right},O=t.modifiersData.offset;if("popper"===d&&O){var k=O[s];Object.keys(L).forEach((function(t){var e=[it,et].indexOf(t)>=0?1:-1,i=[tt,et].indexOf(t)>=0?"y":"x";L[t]+=k[i]*e}))}return L}function Qt(t,e){void 0===e&&(e={});var i=e,n=i.placement,s=i.boundary,o=i.rootBoundary,r=i.padding,a=i.flipVariations,l=i.allowedAutoPlacements,c=void 0===l?rt:l,d=Kt(n),h=d?a?ot:ot.filter((function(t){return Kt(t)===d})):st,u=h.filter((function(t){return c.indexOf(t)>=0}));0===u.length&&(u=h);var f=u.reduce((function(e,i){return e[i]=Yt(t,{placement:i,boundary:s,rootBoundary:o,padding:r})[pt(i)],e}),{});return Object.keys(f).sort((function(t,e){return f[t]-f[e]}))}var Gt={name:"flip",enabled:!0,phase:"main",fn:function(t){var e=t.state,i=t.options,n=t.name;if(!e.modifiersData[n]._skip){for(var s=i.mainAxis,o=void 0===s||s,r=i.altAxis,a=void 0===r||r,l=i.fallbackPlacements,c=i.padding,d=i.boundary,h=i.rootBoundary,u=i.altBoundary,f=i.flipVariations,p=void 0===f||f,m=i.allowedAutoPlacements,g=e.options.placement,_=pt(g),b=l||(_!==g&&p?function(t){if("auto"===pt(t))return[];var e=Rt(t);return[Wt(t),e,Wt(e)]}(g):[Rt(g)]),v=[g].concat(b).reduce((function(t,i){return t.concat("auto"===pt(i)?Qt(e,{placement:i,boundary:d,rootBoundary:h,padding:c,flipVariations:p,allowedAutoPlacements:m}):i)}),[]),y=e.rects.reference,w=e.rects.popper,E=new Map,T=!0,A=v[0],L=0;L<v.length;L++){var O=v[L],k=pt(O),C="start"===Kt(O),x=[tt,et].indexOf(k)>=0,D=x?"width":"height",N=Yt(e,{placement:O,boundary:d,rootBoundary:h,altBoundary:u,padding:c}),S=x?C?it:nt:C?et:tt;y[D]>w[D]&&(S=Rt(S));var I=Rt(S),j=[];if(o&&j.push(N[k]<=0),a&&j.push(N[S]<=0,N[I]<=0),j.every((function(t){return t}))){A=O,T=!1;break}E.set(O,j)}if(T)for(var P=function(t){var e=v.find((function(e){var i=E.get(e);if(i)return i.slice(0,t).every((function(t){return t}))}));if(e)return A=e,"break"},M=p?3:1;M>0&&"break"!==P(M);M--);e.placement!==A&&(e.modifiersData[n]._skip=!0,e.placement=A,e.reset=!0)}},requiresIfExists:["offset"],data:{_skip:!1}};function Zt(t,e,i){return void 0===i&&(i={x:0,y:0}),{top:t.top-e.height-i.y,right:t.right-e.width+i.x,bottom:t.bottom-e.height+i.y,left:t.left-e.width-i.x}}function Jt(t){return[tt,it,et,nt].some((function(e){return t[e]>=0}))}var te={name:"hide",enabled:!0,phase:"main",requiresIfExists:["preventOverflow"],fn:function(t){var e=t.state,i=t.name,n=e.rects.reference,s=e.rects.popper,o=e.modifiersData.preventOverflow,r=Yt(e,{elementContext:"reference"}),a=Yt(e,{altBoundary:!0}),l=Zt(r,n),c=Zt(a,s,o),d=Jt(l),h=Jt(c);e.modifiersData[i]={referenceClippingOffsets:l,popperEscapeOffsets:c,isReferenceHidden:d,hasPopperEscaped:h},e.attributes.popper=Object.assign({},e.attributes.popper,{"data-popper-reference-hidden":d,"data-popper-escaped":h})}},ee={name:"offset",enabled:!0,phase:"main",requires:["popperOffsets"],fn:function(t){var e=t.state,i=t.options,n=t.name,s=i.offset,o=void 0===s?[0,0]:s,r=rt.reduce((function(t,i){return t[i]=function(t,e,i){var n=pt(t),s=[nt,tt].indexOf(n)>=0?-1:1,o="function"==typeof i?i(Object.assign({},e,{placement:t})):i,r=o[0],a=o[1];return r=r||0,a=(a||0)*s,[nt,it].indexOf(n)>=0?{x:a,y:r}:{x:r,y:a}}(i,e.rects,o),t}),{}),a=r[e.placement],l=a.x,c=a.y;null!=e.modifiersData.popperOffsets&&(e.modifiersData.popperOffsets.x+=l,e.modifiersData.popperOffsets.y+=c),e.modifiersData[n]=r}},ie={name:"popperOffsets",enabled:!0,phase:"read",fn:function(t){var e=t.state,i=t.name;e.modifiersData[i]=Xt({reference:e.rects.reference,element:e.rects.popper,strategy:"absolute",placement:e.placement})},data:{}},ne={name:"preventOverflow",enabled:!0,phase:"main",fn:function(t){var e=t.state,i=t.options,n=t.name,s=i.mainAxis,o=void 0===s||s,r=i.altAxis,a=void 0!==r&&r,l=i.boundary,c=i.rootBoundary,d=i.altBoundary,h=i.padding,u=i.tether,f=void 0===u||u,p=i.tetherOffset,m=void 0===p?0:p,g=Yt(e,{boundary:l,rootBoundary:c,padding:h,altBoundary:d}),_=pt(e.placement),b=Kt(e.placement),v=!b,y=At(_),w="x"===y?"y":"x",E=e.modifiersData.popperOffsets,T=e.rects.reference,A=e.rects.popper,L="function"==typeof m?m(Object.assign({},e.rects,{placement:e.placement})):m,O={x:0,y:0};if(E){if(o||a){var k="y"===y?tt:nt,C="y"===y?et:it,x="y"===y?"height":"width",D=E[y],N=E[y]+g[k],S=E[y]-g[C],I=f?-A[x]/2:0,j="start"===b?T[x]:A[x],P="start"===b?-A[x]:-T[x],M=e.elements.arrow,H=f&&M?gt(M):{width:0,height:0},R=e.modifiersData["arrow#persistent"]?e.modifiersData["arrow#persistent"].padding:{top:0,right:0,bottom:0,left:0},B=R[k],W=R[C],q=Ct(0,T[x],H[x]),z=v?T[x]/2-I-q-B-L:j-q-B-L,U=v?-T[x]/2+I+q+W+L:P+q+W+L,$=e.elements.arrow&&Tt(e.elements.arrow),F=$?"y"===y?$.clientTop||0:$.clientLeft||0:0,V=e.modifiersData.offset?e.modifiersData.offset[e.placement][y]:0,K=E[y]+z-V-F,X=E[y]+U-V;if(o){var Y=Ct(f?Ot(N,K):N,D,f?Lt(S,X):S);E[y]=Y,O[y]=Y-D}if(a){var Q="x"===y?tt:nt,G="x"===y?et:it,Z=E[w],J=Z+g[Q],st=Z-g[G],ot=Ct(f?Ot(J,K):J,Z,f?Lt(st,X):st);E[w]=ot,O[w]=ot-Z}}e.modifiersData[n]=O}},requiresIfExists:["offset"]};function se(t,e,i){void 0===i&&(i=!1);var n,s,o=yt(e),r=mt(t),a=ht(e),l={scrollLeft:0,scrollTop:0},c={x:0,y:0};return(a||!a&&!i)&&(("body"!==lt(e)||Ut(o))&&(l=(n=e)!==ct(n)&&ht(n)?{scrollLeft:(s=n).scrollLeft,scrollTop:s.scrollTop}:qt(n)),ht(e)?((c=mt(e)).x+=e.clientLeft,c.y+=e.clientTop):o&&(c.x=zt(o))),{x:r.left+l.scrollLeft-c.x,y:r.top+l.scrollTop-c.y,width:r.width,height:r.height}}var oe={placement:"bottom",modifiers:[],strategy:"absolute"};function re(){for(var t=arguments.length,e=new Array(t),i=0;i<t;i++)e[i]=arguments[i];return!e.some((function(t){return!(t&&"function"==typeof t.getBoundingClientRect)}))}function ae(t){void 0===t&&(t={});var e=t,i=e.defaultModifiers,n=void 0===i?[]:i,s=e.defaultOptions,o=void 0===s?oe:s;return function(t,e,i){void 0===i&&(i=o);var s,r,a={placement:"bottom",orderedModifiers:[],options:Object.assign({},oe,o),modifiersData:{},elements:{reference:t,popper:e},attributes:{},styles:{}},l=[],c=!1,d={state:a,setOptions:function(i){h(),a.options=Object.assign({},o,a.options,i),a.scrollParents={reference:dt(t)?$t(t):t.contextElement?$t(t.contextElement):[],popper:$t(e)};var s,r,c=function(t){var e=function(t){var e=new Map,i=new Set,n=[];return t.forEach((function(t){e.set(t.name,t)})),t.forEach((function(t){i.has(t.name)||function t(s){i.add(s.name),[].concat(s.requires||[],s.requiresIfExists||[]).forEach((function(n){if(!i.has(n)){var s=e.get(n);s&&t(s)}})),n.push(s)}(t)})),n}(t);return at.reduce((function(t,i){return t.concat(e.filter((function(t){return t.phase===i})))}),[])}((s=[].concat(n,a.options.modifiers),r=s.reduce((function(t,e){var i=t[e.name];return t[e.name]=i?Object.assign({},i,e,{options:Object.assign({},i.options,e.options),data:Object.assign({},i.data,e.data)}):e,t}),{}),Object.keys(r).map((function(t){return r[t]}))));return a.orderedModifiers=c.filter((function(t){return t.enabled})),a.orderedModifiers.forEach((function(t){var e=t.name,i=t.options,n=void 0===i?{}:i,s=t.effect;if("function"==typeof s){var o=s({state:a,name:e,instance:d,options:n});l.push(o||function(){})}})),d.update()},forceUpdate:function(){if(!c){var t=a.elements,e=t.reference,i=t.popper;if(re(e,i)){a.rects={reference:se(e,Tt(i),"fixed"===a.options.strategy),popper:gt(i)},a.reset=!1,a.placement=a.options.placement,a.orderedModifiers.forEach((function(t){return a.modifiersData[t.name]=Object.assign({},t.data)}));for(var n=0;n<a.orderedModifiers.length;n++)if(!0!==a.reset){var s=a.orderedModifiers[n],o=s.fn,r=s.options,l=void 0===r?{}:r,h=s.name;"function"==typeof o&&(a=o({state:a,options:l,name:h,instance:d})||a)}else a.reset=!1,n=-1}}},update:(s=function(){return new Promise((function(t){d.forceUpdate(),t(a)}))},function(){return r||(r=new Promise((function(t){Promise.resolve().then((function(){r=void 0,t(s())}))}))),r}),destroy:function(){h(),c=!0}};if(!re(t,e))return d;function h(){l.forEach((function(t){return t()})),l=[]}return d.setOptions(i).then((function(t){!c&&i.onFirstUpdate&&i.onFirstUpdate(t)})),d}}var le=ae(),ce=ae({defaultModifiers:[Mt,ie,jt,ft]}),de=ae({defaultModifiers:[Mt,ie,jt,ft,ee,Gt,ne,Nt,te]}),he=Object.freeze({__proto__:null,popperGenerator:ae,detectOverflow:Yt,createPopperBase:le,createPopper:de,createPopperLite:ce,top:tt,bottom:et,right:it,left:nt,auto:"auto",basePlacements:st,start:"start",end:"end",clippingParents:"clippingParents",viewport:"viewport",popper:"popper",reference:"reference",variationPlacements:ot,placements:rt,beforeRead:"beforeRead",read:"read",afterRead:"afterRead",beforeMain:"beforeMain",main:"main",afterMain:"afterMain",beforeWrite:"beforeWrite",write:"write",afterWrite:"afterWrite",modifierPhases:at,applyStyles:ft,arrow:Nt,computeStyles:jt,eventListeners:Mt,flip:Gt,hide:te,offset:ee,popperOffsets:ie,preventOverflow:ne});const ue=new RegExp("ArrowUp|ArrowDown|Escape"),fe=_()?"top-end":"top-start",pe=_()?"top-start":"top-end",me=_()?"bottom-end":"bottom-start",ge=_()?"bottom-start":"bottom-end",_e=_()?"left-start":"right-start",be=_()?"right-start":"left-start",ve={offset:[0,2],boundary:"clippingParents",reference:"toggle",display:"dynamic",popperConfig:null,autoClose:!0},ye={offset:"(array|string|function)",boundary:"(string|element)",reference:"(string|element|object)",display:"string",popperConfig:"(null|object|function)",autoClose:"(boolean|string)"};class we extends R{constructor(t,e){super(t),this._popper=null,this._config=this._getConfig(e),this._menu=this._getMenuElement(),this._inNavbar=this._detectNavbar(),this._addEventListeners()}static get Default(){return ve}static get DefaultType(){return ye}static get NAME(){return"dropdown"}toggle(){u(this._element)||(this._element.classList.contains("show")?this.hide():this.show())}show(){if(u(this._element)||this._menu.classList.contains("show"))return;const t=we.getParentFromElement(this._element),e={relatedTarget:this._element};if(!H.trigger(this._element,"show.bs.dropdown",e).defaultPrevented){if(this._inNavbar)U.setDataAttribute(this._menu,"popper","none");else{if(void 0===he)throw new TypeError("Bootstrap's dropdowns require Popper (https://popper.js.org)");let e=this._element;"parent"===this._config.reference?e=t:a(this._config.reference)?e=l(this._config.reference):"object"==typeof this._config.reference&&(e=this._config.reference);const i=this._getPopperConfig(),n=i.modifiers.find(t=>"applyStyles"===t.name&&!1===t.enabled);this._popper=de(e,this._menu,i),n&&U.setDataAttribute(this._menu,"popper","static")}"ontouchstart"in document.documentElement&&!t.closest(".navbar-nav")&&[].concat(...document.body.children).forEach(t=>H.on(t,"mouseover",p)),this._element.focus(),this._element.setAttribute("aria-expanded",!0),this._menu.classList.toggle("show"),this._element.classList.toggle("show"),H.trigger(this._element,"shown.bs.dropdown",e)}}hide(){if(u(this._element)||!this._menu.classList.contains("show"))return;const t={relatedTarget:this._element};this._completeHide(t)}dispose(){this._popper&&this._popper.destroy(),super.dispose()}update(){this._inNavbar=this._detectNavbar(),this._popper&&this._popper.update()}_addEventListeners(){H.on(this._element,"click.bs.dropdown",t=>{t.preventDefault(),this.toggle()})}_completeHide(t){H.trigger(this._element,"hide.bs.dropdown",t).defaultPrevented||("ontouchstart"in document.documentElement&&[].concat(...document.body.children).forEach(t=>H.off(t,"mouseover",p)),this._popper&&this._popper.destroy(),this._menu.classList.remove("show"),this._element.classList.remove("show"),this._element.setAttribute("aria-expanded","false"),U.removeDataAttribute(this._menu,"popper"),H.trigger(this._element,"hidden.bs.dropdown",t))}_getConfig(t){if(t={...this.constructor.Default,...U.getDataAttributes(this._element),...t},d("dropdown",t,this.constructor.DefaultType),"object"==typeof t.reference&&!a(t.reference)&&"function"!=typeof t.reference.getBoundingClientRect)throw new TypeError("dropdown".toUpperCase()+': Option "reference" provided type "object" without a required "getBoundingClientRect" method.');return t}_getMenuElement(){return t.next(this._element,".dropdown-menu")[0]}_getPlacement(){const t=this._element.parentNode;if(t.classList.contains("dropend"))return _e;if(t.classList.contains("dropstart"))return be;const e="end"===getComputedStyle(this._menu).getPropertyValue("--bs-position").trim();return t.classList.contains("dropup")?e?pe:fe:e?ge:me}_detectNavbar(){return null!==this._element.closest(".navbar")}_getOffset(){const{offset:t}=this._config;return"string"==typeof t?t.split(",").map(t=>Number.parseInt(t,10)):"function"==typeof t?e=>t(e,this._element):t}_getPopperConfig(){const t={placement:this._getPlacement(),modifiers:[{name:"preventOverflow",options:{boundary:this._config.boundary}},{name:"offset",options:{offset:this._getOffset()}}]};return"static"===this._config.display&&(t.modifiers=[{name:"applyStyles",enabled:!1}]),{...t,..."function"==typeof this._config.popperConfig?this._config.popperConfig(t):this._config.popperConfig}}_selectMenuItem(e){const i=t.find(".dropdown-menu .dropdown-item:not(.disabled):not(:disabled)",this._menu).filter(h);if(!i.length)return;let n=i.indexOf(e.target);"ArrowUp"===e.key&&n>0&&n--,"ArrowDown"===e.key&&n<i.length-1&&n++,n=-1===n?0:n,i[n].focus()}static dropdownInterface(t,e){let i=w.get(t,"bs.dropdown");if(i||(i=new we(t,"object"==typeof e?e:null)),"string"==typeof e){if(void 0===i[e])throw new TypeError(`No method named "${e}"`);i[e]()}}static jQueryInterface(t){return this.each((function(){we.dropdownInterface(this,t)}))}static clearMenus(e){if(e&&(2===e.button||"keyup"===e.type&&"Tab"!==e.key))return;const i=t.find('[data-bs-toggle="dropdown"]');for(let t=0,n=i.length;t<n;t++){const n=w.get(i[t],"bs.dropdown");if(!n||!1===n._config.autoClose)continue;if(!n._element.classList.contains("show"))continue;const s={relatedTarget:n._element};if(e){const t=e.composedPath(),i=t.includes(n._menu);if(t.includes(n._element)||"inside"===n._config.autoClose&&!i||"outside"===n._config.autoClose&&i)continue;if(n._menu.contains(e.target)&&("keyup"===e.type&&"Tab"===e.key||/input|select|option|textarea|form/i.test(e.target.tagName)))continue;"click"===e.type&&(s.clickEvent=e)}n._completeHide(s)}}static getParentFromElement(t){return s(t)||t.parentNode}static dataApiKeydownHandler(e){if(/input|textarea/i.test(e.target.tagName)?"Space"===e.key||"Escape"!==e.key&&("ArrowDown"!==e.key&&"ArrowUp"!==e.key||e.target.closest(".dropdown-menu")):!ue.test(e.key))return;const i=this.classList.contains("show");if(!i&&"Escape"===e.key)return;if(e.preventDefault(),e.stopPropagation(),u(this))return;const n=()=>this.matches('[data-bs-toggle="dropdown"]')?this:t.prev(this,'[data-bs-toggle="dropdown"]')[0];if("Escape"===e.key)return n().focus(),void we.clearMenus();i||"ArrowUp"!==e.key&&"ArrowDown"!==e.key?i&&"Space"!==e.key?we.getInstance(n())._selectMenuItem(e):we.clearMenus():n().click()}}H.on(document,"keydown.bs.dropdown.data-api",'[data-bs-toggle="dropdown"]',we.dataApiKeydownHandler),H.on(document,"keydown.bs.dropdown.data-api",".dropdown-menu",we.dataApiKeydownHandler),H.on(document,"click.bs.dropdown.data-api",we.clearMenus),H.on(document,"keyup.bs.dropdown.data-api",we.clearMenus),H.on(document,"click.bs.dropdown.data-api",'[data-bs-toggle="dropdown"]',(function(t){t.preventDefault(),we.dropdownInterface(this)})),b(we);const Ee=()=>{const t=document.documentElement.clientWidth;return Math.abs(window.innerWidth-t)},Te=(t=Ee())=>{Ae(),Le("body","paddingRight",e=>e+t),Le(".fixed-top, .fixed-bottom, .is-fixed, .sticky-top","paddingRight",e=>e+t),Le(".sticky-top","marginRight",e=>e-t)},Ae=()=>{const t=document.body.style.overflow;t&&U.setDataAttribute(document.body,"overflow",t),document.body.style.overflow="hidden"},Le=(e,i,n)=>{const s=Ee();t.find(e).forEach(t=>{if(t!==document.body&&window.innerWidth>t.clientWidth+s)return;const e=t.style[i],o=window.getComputedStyle(t)[i];U.setDataAttribute(t,i,e),t.style[i]=n(Number.parseFloat(o))+"px"})},Oe=()=>{ke("body","overflow"),ke("body","paddingRight"),ke(".fixed-top, .fixed-bottom, .is-fixed, .sticky-top","paddingRight"),ke(".sticky-top","marginRight")},ke=(e,i)=>{t.find(e).forEach(t=>{const e=U.getDataAttribute(t,i);void 0===e?t.style.removeProperty(i):(U.removeDataAttribute(t,i),t.style[i]=e)})},Ce={isVisible:!0,isAnimated:!1,rootElement:document.body,clickCallback:null},xe={isVisible:"boolean",isAnimated:"boolean",rootElement:"element",clickCallback:"(function|null)"};class De{constructor(t){this._config=this._getConfig(t),this._isAppended=!1,this._element=null}show(t){this._config.isVisible?(this._append(),this._config.isAnimated&&m(this._getElement()),this._getElement().classList.add("show"),this._emulateAnimation(()=>{v(t)})):v(t)}hide(t){this._config.isVisible?(this._getElement().classList.remove("show"),this._emulateAnimation(()=>{this.dispose(),v(t)})):v(t)}_getElement(){if(!this._element){const t=document.createElement("div");t.className="modal-backdrop",this._config.isAnimated&&t.classList.add("fade"),this._element=t}return this._element}_getConfig(t){return(t={...Ce,..."object"==typeof t?t:{}}).rootElement=t.rootElement||document.body,d("backdrop",t,xe),t}_append(){this._isAppended||(this._config.rootElement.appendChild(this._getElement()),H.on(this._getElement(),"mousedown.bs.backdrop",()=>{v(this._config.clickCallback)}),this._isAppended=!0)}dispose(){this._isAppended&&(H.off(this._element,"mousedown.bs.backdrop"),this._getElement().parentNode.removeChild(this._element),this._isAppended=!1)}_emulateAnimation(t){if(!this._config.isAnimated)return void v(t);const e=o(this._getElement());H.one(this._getElement(),"transitionend",()=>v(t)),c(this._getElement(),e)}}const Ne={backdrop:!0,keyboard:!0,focus:!0},Se={backdrop:"(boolean|string)",keyboard:"boolean",focus:"boolean"};class Ie extends R{constructor(e,i){super(e),this._config=this._getConfig(i),this._dialog=t.findOne(".modal-dialog",this._element),this._backdrop=this._initializeBackDrop(),this._isShown=!1,this._ignoreBackdropClick=!1,this._isTransitioning=!1}static get Default(){return Ne}static get NAME(){return"modal"}toggle(t){return this._isShown?this.hide():this.show(t)}show(t){if(this._isShown||this._isTransitioning)return;this._isAnimated()&&(this._isTransitioning=!0);const e=H.trigger(this._element,"show.bs.modal",{relatedTarget:t});this._isShown||e.defaultPrevented||(this._isShown=!0,Te(),document.body.classList.add("modal-open"),this._adjustDialog(),this._setEscapeEvent(),this._setResizeEvent(),H.on(this._element,"click.dismiss.bs.modal",'[data-bs-dismiss="modal"]',t=>this.hide(t)),H.on(this._dialog,"mousedown.dismiss.bs.modal",()=>{H.one(this._element,"mouseup.dismiss.bs.modal",t=>{t.target===this._element&&(this._ignoreBackdropClick=!0)})}),this._showBackdrop(()=>this._showElement(t)))}hide(t){if(t&&t.preventDefault(),!this._isShown||this._isTransitioning)return;if(H.trigger(this._element,"hide.bs.modal").defaultPrevented)return;this._isShown=!1;const e=this._isAnimated();e&&(this._isTransitioning=!0),this._setEscapeEvent(),this._setResizeEvent(),H.off(document,"focusin.bs.modal"),this._element.classList.remove("show"),H.off(this._element,"click.dismiss.bs.modal"),H.off(this._dialog,"mousedown.dismiss.bs.modal"),this._queueCallback(()=>this._hideModal(),this._element,e)}dispose(){[window,this._dialog].forEach(t=>H.off(t,".bs.modal")),this._backdrop.dispose(),super.dispose(),H.off(document,"focusin.bs.modal")}handleUpdate(){this._adjustDialog()}_initializeBackDrop(){return new De({isVisible:Boolean(this._config.backdrop),isAnimated:this._isAnimated()})}_getConfig(t){return t={...Ne,...U.getDataAttributes(this._element),...t},d("modal",t,Se),t}_showElement(e){const i=this._isAnimated(),n=t.findOne(".modal-body",this._dialog);this._element.parentNode&&this._element.parentNode.nodeType===Node.ELEMENT_NODE||document.body.appendChild(this._element),this._element.style.display="block",this._element.removeAttribute("aria-hidden"),this._element.setAttribute("aria-modal",!0),this._element.setAttribute("role","dialog"),this._element.scrollTop=0,n&&(n.scrollTop=0),i&&m(this._element),this._element.classList.add("show"),this._config.focus&&this._enforceFocus(),this._queueCallback(()=>{this._config.focus&&this._element.focus(),this._isTransitioning=!1,H.trigger(this._element,"shown.bs.modal",{relatedTarget:e})},this._dialog,i)}_enforceFocus(){H.off(document,"focusin.bs.modal"),H.on(document,"focusin.bs.modal",t=>{document===t.target||this._element===t.target||this._element.contains(t.target)||this._element.focus()})}_setEscapeEvent(){this._isShown?H.on(this._element,"keydown.dismiss.bs.modal",t=>{this._config.keyboard&&"Escape"===t.key?(t.preventDefault(),this.hide()):this._config.keyboard||"Escape"!==t.key||this._triggerBackdropTransition()}):H.off(this._element,"keydown.dismiss.bs.modal")}_setResizeEvent(){this._isShown?H.on(window,"resize.bs.modal",()=>this._adjustDialog()):H.off(window,"resize.bs.modal")}_hideModal(){this._element.style.display="none",this._element.setAttribute("aria-hidden",!0),this._element.removeAttribute("aria-modal"),this._element.removeAttribute("role"),this._isTransitioning=!1,this._backdrop.hide(()=>{document.body.classList.remove("modal-open"),this._resetAdjustments(),Oe(),H.trigger(this._element,"hidden.bs.modal")})}_showBackdrop(t){H.on(this._element,"click.dismiss.bs.modal",t=>{this._ignoreBackdropClick?this._ignoreBackdropClick=!1:t.target===t.currentTarget&&(!0===this._config.backdrop?this.hide():"static"===this._config.backdrop&&this._triggerBackdropTransition())}),this._backdrop.show(t)}_isAnimated(){return this._element.classList.contains("fade")}_triggerBackdropTransition(){if(H.trigger(this._element,"hidePrevented.bs.modal").defaultPrevented)return;const t=this._element.scrollHeight>document.documentElement.clientHeight;t||(this._element.style.overflowY="hidden"),this._element.classList.add("modal-static");const e=o(this._dialog);H.off(this._element,"transitionend"),H.one(this._element,"transitionend",()=>{this._element.classList.remove("modal-static"),t||(H.one(this._element,"transitionend",()=>{this._element.style.overflowY=""}),c(this._element,e))}),c(this._element,e),this._element.focus()}_adjustDialog(){const t=this._element.scrollHeight>document.documentElement.clientHeight,e=Ee(),i=e>0;(!i&&t&&!_()||i&&!t&&_())&&(this._element.style.paddingLeft=e+"px"),(i&&!t&&!_()||!i&&t&&_())&&(this._element.style.paddingRight=e+"px")}_resetAdjustments(){this._element.style.paddingLeft="",this._element.style.paddingRight=""}static jQueryInterface(t,e){return this.each((function(){const i=Ie.getInstance(this)||new Ie(this,"object"==typeof t?t:{});if("string"==typeof t){if(void 0===i[t])throw new TypeError(`No method named "${t}"`);i[t](e)}}))}}H.on(document,"click.bs.modal.data-api",'[data-bs-toggle="modal"]',(function(t){const e=s(this);["A","AREA"].includes(this.tagName)&&t.preventDefault(),H.one(e,"show.bs.modal",t=>{t.defaultPrevented||H.one(e,"hidden.bs.modal",()=>{h(this)&&this.focus()})}),(Ie.getInstance(e)||new Ie(e)).toggle(this)})),b(Ie);const je={backdrop:!0,keyboard:!0,scroll:!1},Pe={backdrop:"boolean",keyboard:"boolean",scroll:"boolean"};class Me extends R{constructor(t,e){super(t),this._config=this._getConfig(e),this._isShown=!1,this._backdrop=this._initializeBackDrop(),this._addEventListeners()}static get NAME(){return"offcanvas"}static get Default(){return je}toggle(t){return this._isShown?this.hide():this.show(t)}show(t){this._isShown||H.trigger(this._element,"show.bs.offcanvas",{relatedTarget:t}).defaultPrevented||(this._isShown=!0,this._element.style.visibility="visible",this._backdrop.show(),this._config.scroll||(Te(),this._enforceFocusOnElement(this._element)),this._element.removeAttribute("aria-hidden"),this._element.setAttribute("aria-modal",!0),this._element.setAttribute("role","dialog"),this._element.classList.add("show"),this._queueCallback(()=>{H.trigger(this._element,"shown.bs.offcanvas",{relatedTarget:t})},this._element,!0))}hide(){this._isShown&&(H.trigger(this._element,"hide.bs.offcanvas").defaultPrevented||(H.off(document,"focusin.bs.offcanvas"),this._element.blur(),this._isShown=!1,this._element.classList.remove("show"),this._backdrop.hide(),this._queueCallback(()=>{this._element.setAttribute("aria-hidden",!0),this._element.removeAttribute("aria-modal"),this._element.removeAttribute("role"),this._element.style.visibility="hidden",this._config.scroll||Oe(),H.trigger(this._element,"hidden.bs.offcanvas")},this._element,!0)))}dispose(){this._backdrop.dispose(),super.dispose(),H.off(document,"focusin.bs.offcanvas")}_getConfig(t){return t={...je,...U.getDataAttributes(this._element),..."object"==typeof t?t:{}},d("offcanvas",t,Pe),t}_initializeBackDrop(){return new De({isVisible:this._config.backdrop,isAnimated:!0,rootElement:this._element.parentNode,clickCallback:()=>this.hide()})}_enforceFocusOnElement(t){H.off(document,"focusin.bs.offcanvas"),H.on(document,"focusin.bs.offcanvas",e=>{document===e.target||t===e.target||t.contains(e.target)||t.focus()}),t.focus()}_addEventListeners(){H.on(this._element,"click.dismiss.bs.offcanvas",'[data-bs-dismiss="offcanvas"]',()=>this.hide()),H.on(this._element,"keydown.dismiss.bs.offcanvas",t=>{this._config.keyboard&&"Escape"===t.key&&this.hide()})}static jQueryInterface(t){return this.each((function(){const e=w.get(this,"bs.offcanvas")||new Me(this,"object"==typeof t?t:{});if("string"==typeof t){if(void 0===e[t]||t.startsWith("_")||"constructor"===t)throw new TypeError(`No method named "${t}"`);e[t](this)}}))}}H.on(document,"click.bs.offcanvas.data-api",'[data-bs-toggle="offcanvas"]',(function(e){const i=s(this);if(["A","AREA"].includes(this.tagName)&&e.preventDefault(),u(this))return;H.one(i,"hidden.bs.offcanvas",()=>{h(this)&&this.focus()});const n=t.findOne(".offcanvas.show");n&&n!==i&&Me.getInstance(n).hide(),(w.get(i,"bs.offcanvas")||new Me(i)).toggle(this)})),H.on(window,"load.bs.offcanvas.data-api",()=>{t.find(".offcanvas.show").forEach(t=>(w.get(t,"bs.offcanvas")||new Me(t)).show())}),b(Me);const He=new Set(["background","cite","href","itemtype","longdesc","poster","src","xlink:href"]),Re=/^(?:(?:https?|mailto|ftp|tel|file):|[^#&/:?]*(?:[#/?]|$))/i,Be=/^data:(?:image\/(?:bmp|gif|jpeg|jpg|png|tiff|webp)|video\/(?:mpeg|mp4|ogg|webm)|audio\/(?:mp3|oga|ogg|opus));base64,[\d+/a-z]+=*$/i,We=(t,e)=>{const i=t.nodeName.toLowerCase();if(e.includes(i))return!He.has(i)||Boolean(Re.test(t.nodeValue)||Be.test(t.nodeValue));const n=e.filter(t=>t instanceof RegExp);for(let t=0,e=n.length;t<e;t++)if(n[t].test(i))return!0;return!1};function qe(t,e,i){if(!t.length)return t;if(i&&"function"==typeof i)return i(t);const n=(new window.DOMParser).parseFromString(t,"text/html"),s=Object.keys(e),o=[].concat(...n.body.querySelectorAll("*"));for(let t=0,i=o.length;t<i;t++){const i=o[t],n=i.nodeName.toLowerCase();if(!s.includes(n)){i.parentNode.removeChild(i);continue}const r=[].concat(...i.attributes),a=[].concat(e["*"]||[],e[n]||[]);r.forEach(t=>{We(t,a)||i.removeAttribute(t.nodeName)})}return n.body.innerHTML}const ze=new RegExp("(^|\\s)bs-tooltip\\S+","g"),Ue=new Set(["sanitize","allowList","sanitizeFn"]),$e={animation:"boolean",template:"string",title:"(string|element|function)",trigger:"string",delay:"(number|object)",html:"boolean",selector:"(string|boolean)",placement:"(string|function)",offset:"(array|string|function)",container:"(string|element|boolean)",fallbackPlacements:"array",boundary:"(string|element)",customClass:"(string|function)",sanitize:"boolean",sanitizeFn:"(null|function)",allowList:"object",popperConfig:"(null|object|function)"},Fe={AUTO:"auto",TOP:"top",RIGHT:_()?"left":"right",BOTTOM:"bottom",LEFT:_()?"right":"left"},Ve={animation:!0,template:'<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>',trigger:"hover focus",title:"",delay:0,html:!1,selector:!1,placement:"top",offset:[0,0],container:!1,fallbackPlacements:["top","right","bottom","left"],boundary:"clippingParents",customClass:"",sanitize:!0,sanitizeFn:null,allowList:{"*":["class","dir","id","lang","role",/^aria-[\w-]*$/i],a:["target","href","title","rel"],area:[],b:[],br:[],col:[],code:[],div:[],em:[],hr:[],h1:[],h2:[],h3:[],h4:[],h5:[],h6:[],i:[],img:["src","srcset","alt","title","width","height"],li:[],ol:[],p:[],pre:[],s:[],small:[],span:[],sub:[],sup:[],strong:[],u:[],ul:[]},popperConfig:null},Ke={HIDE:"hide.bs.tooltip",HIDDEN:"hidden.bs.tooltip",SHOW:"show.bs.tooltip",SHOWN:"shown.bs.tooltip",INSERTED:"inserted.bs.tooltip",CLICK:"click.bs.tooltip",FOCUSIN:"focusin.bs.tooltip",FOCUSOUT:"focusout.bs.tooltip",MOUSEENTER:"mouseenter.bs.tooltip",MOUSELEAVE:"mouseleave.bs.tooltip"};class Xe extends R{constructor(t,e){if(void 0===he)throw new TypeError("Bootstrap's tooltips require Popper (https://popper.js.org)");super(t),this._isEnabled=!0,this._timeout=0,this._hoverState="",this._activeTrigger={},this._popper=null,this._config=this._getConfig(e),this.tip=null,this._setListeners()}static get Default(){return Ve}static get NAME(){return"tooltip"}static get Event(){return Ke}static get DefaultType(){return $e}enable(){this._isEnabled=!0}disable(){this._isEnabled=!1}toggleEnabled(){this._isEnabled=!this._isEnabled}toggle(t){if(this._isEnabled)if(t){const e=this._initializeOnDelegatedTarget(t);e._activeTrigger.click=!e._activeTrigger.click,e._isWithActiveTrigger()?e._enter(null,e):e._leave(null,e)}else{if(this.getTipElement().classList.contains("show"))return void this._leave(null,this);this._enter(null,this)}}dispose(){clearTimeout(this._timeout),H.off(this._element.closest(".modal"),"hide.bs.modal",this._hideModalHandler),this.tip&&this.tip.parentNode&&this.tip.parentNode.removeChild(this.tip),this._popper&&this._popper.destroy(),super.dispose()}show(){if("none"===this._element.style.display)throw new Error("Please use show on visible elements");if(!this.isWithContent()||!this._isEnabled)return;const t=H.trigger(this._element,this.constructor.Event.SHOW),i=f(this._element),n=null===i?this._element.ownerDocument.documentElement.contains(this._element):i.contains(this._element);if(t.defaultPrevented||!n)return;const s=this.getTipElement(),o=e(this.constructor.NAME);s.setAttribute("id",o),this._element.setAttribute("aria-describedby",o),this.setContent(),this._config.animation&&s.classList.add("fade");const r="function"==typeof this._config.placement?this._config.placement.call(this,s,this._element):this._config.placement,a=this._getAttachment(r);this._addAttachmentClass(a);const{container:l}=this._config;w.set(s,this.constructor.DATA_KEY,this),this._element.ownerDocument.documentElement.contains(this.tip)||(l.appendChild(s),H.trigger(this._element,this.constructor.Event.INSERTED)),this._popper?this._popper.update():this._popper=de(this._element,s,this._getPopperConfig(a)),s.classList.add("show");const c="function"==typeof this._config.customClass?this._config.customClass():this._config.customClass;c&&s.classList.add(...c.split(" ")),"ontouchstart"in document.documentElement&&[].concat(...document.body.children).forEach(t=>{H.on(t,"mouseover",p)});const d=this.tip.classList.contains("fade");this._queueCallback(()=>{const t=this._hoverState;this._hoverState=null,H.trigger(this._element,this.constructor.Event.SHOWN),"out"===t&&this._leave(null,this)},this.tip,d)}hide(){if(!this._popper)return;const t=this.getTipElement();if(H.trigger(this._element,this.constructor.Event.HIDE).defaultPrevented)return;t.classList.remove("show"),"ontouchstart"in document.documentElement&&[].concat(...document.body.children).forEach(t=>H.off(t,"mouseover",p)),this._activeTrigger.click=!1,this._activeTrigger.focus=!1,this._activeTrigger.hover=!1;const e=this.tip.classList.contains("fade");this._queueCallback(()=>{this._isWithActiveTrigger()||("show"!==this._hoverState&&t.parentNode&&t.parentNode.removeChild(t),this._cleanTipClass(),this._element.removeAttribute("aria-describedby"),H.trigger(this._element,this.constructor.Event.HIDDEN),this._popper&&(this._popper.destroy(),this._popper=null))},this.tip,e),this._hoverState=""}update(){null!==this._popper&&this._popper.update()}isWithContent(){return Boolean(this.getTitle())}getTipElement(){if(this.tip)return this.tip;const t=document.createElement("div");return t.innerHTML=this._config.template,this.tip=t.children[0],this.tip}setContent(){const e=this.getTipElement();this.setElementContent(t.findOne(".tooltip-inner",e),this.getTitle()),e.classList.remove("fade","show")}setElementContent(t,e){if(null!==t)return a(e)?(e=l(e),void(this._config.html?e.parentNode!==t&&(t.innerHTML="",t.appendChild(e)):t.textContent=e.textContent)):void(this._config.html?(this._config.sanitize&&(e=qe(e,this._config.allowList,this._config.sanitizeFn)),t.innerHTML=e):t.textContent=e)}getTitle(){let t=this._element.getAttribute("data-bs-original-title");return t||(t="function"==typeof this._config.title?this._config.title.call(this._element):this._config.title),t}updateAttachment(t){return"right"===t?"end":"left"===t?"start":t}_initializeOnDelegatedTarget(t,e){const i=this.constructor.DATA_KEY;return(e=e||w.get(t.delegateTarget,i))||(e=new this.constructor(t.delegateTarget,this._getDelegateConfig()),w.set(t.delegateTarget,i,e)),e}_getOffset(){const{offset:t}=this._config;return"string"==typeof t?t.split(",").map(t=>Number.parseInt(t,10)):"function"==typeof t?e=>t(e,this._element):t}_getPopperConfig(t){const e={placement:t,modifiers:[{name:"flip",options:{fallbackPlacements:this._config.fallbackPlacements}},{name:"offset",options:{offset:this._getOffset()}},{name:"preventOverflow",options:{boundary:this._config.boundary}},{name:"arrow",options:{element:`.${this.constructor.NAME}-arrow`}},{name:"onChange",enabled:!0,phase:"afterWrite",fn:t=>this._handlePopperPlacementChange(t)}],onFirstUpdate:t=>{t.options.placement!==t.placement&&this._handlePopperPlacementChange(t)}};return{...e,..."function"==typeof this._config.popperConfig?this._config.popperConfig(e):this._config.popperConfig}}_addAttachmentClass(t){this.getTipElement().classList.add("bs-tooltip-"+this.updateAttachment(t))}_getAttachment(t){return Fe[t.toUpperCase()]}_setListeners(){this._config.trigger.split(" ").forEach(t=>{if("click"===t)H.on(this._element,this.constructor.Event.CLICK,this._config.selector,t=>this.toggle(t));else if("manual"!==t){const e="hover"===t?this.constructor.Event.MOUSEENTER:this.constructor.Event.FOCUSIN,i="hover"===t?this.constructor.Event.MOUSELEAVE:this.constructor.Event.FOCUSOUT;H.on(this._element,e,this._config.selector,t=>this._enter(t)),H.on(this._element,i,this._config.selector,t=>this._leave(t))}}),this._hideModalHandler=()=>{this._element&&this.hide()},H.on(this._element.closest(".modal"),"hide.bs.modal",this._hideModalHandler),this._config.selector?this._config={...this._config,trigger:"manual",selector:""}:this._fixTitle()}_fixTitle(){const t=this._element.getAttribute("title"),e=typeof this._element.getAttribute("data-bs-original-title");(t||"string"!==e)&&(this._element.setAttribute("data-bs-original-title",t||""),!t||this._element.getAttribute("aria-label")||this._element.textContent||this._element.setAttribute("aria-label",t),this._element.setAttribute("title",""))}_enter(t,e){e=this._initializeOnDelegatedTarget(t,e),t&&(e._activeTrigger["focusin"===t.type?"focus":"hover"]=!0),e.getTipElement().classList.contains("show")||"show"===e._hoverState?e._hoverState="show":(clearTimeout(e._timeout),e._hoverState="show",e._config.delay&&e._config.delay.show?e._timeout=setTimeout(()=>{"show"===e._hoverState&&e.show()},e._config.delay.show):e.show())}_leave(t,e){e=this._initializeOnDelegatedTarget(t,e),t&&(e._activeTrigger["focusout"===t.type?"focus":"hover"]=e._element.contains(t.relatedTarget)),e._isWithActiveTrigger()||(clearTimeout(e._timeout),e._hoverState="out",e._config.delay&&e._config.delay.hide?e._timeout=setTimeout(()=>{"out"===e._hoverState&&e.hide()},e._config.delay.hide):e.hide())}_isWithActiveTrigger(){for(const t in this._activeTrigger)if(this._activeTrigger[t])return!0;return!1}_getConfig(t){const e=U.getDataAttributes(this._element);return Object.keys(e).forEach(t=>{Ue.has(t)&&delete e[t]}),(t={...this.constructor.Default,...e,..."object"==typeof t&&t?t:{}}).container=!1===t.container?document.body:l(t.container),"number"==typeof t.delay&&(t.delay={show:t.delay,hide:t.delay}),"number"==typeof t.title&&(t.title=t.title.toString()),"number"==typeof t.content&&(t.content=t.content.toString()),d("tooltip",t,this.constructor.DefaultType),t.sanitize&&(t.template=qe(t.template,t.allowList,t.sanitizeFn)),t}_getDelegateConfig(){const t={};if(this._config)for(const e in this._config)this.constructor.Default[e]!==this._config[e]&&(t[e]=this._config[e]);return t}_cleanTipClass(){const t=this.getTipElement(),e=t.getAttribute("class").match(ze);null!==e&&e.length>0&&e.map(t=>t.trim()).forEach(e=>t.classList.remove(e))}_handlePopperPlacementChange(t){const{state:e}=t;e&&(this.tip=e.elements.popper,this._cleanTipClass(),this._addAttachmentClass(this._getAttachment(e.placement)))}static jQueryInterface(t){return this.each((function(){let e=w.get(this,"bs.tooltip");const i="object"==typeof t&&t;if((e||!/dispose|hide/.test(t))&&(e||(e=new Xe(this,i)),"string"==typeof t)){if(void 0===e[t])throw new TypeError(`No method named "${t}"`);e[t]()}}))}}b(Xe);const Ye=new RegExp("(^|\\s)bs-popover\\S+","g"),Qe={...Xe.Default,placement:"right",offset:[0,8],trigger:"click",content:"",template:'<div class="popover" role="tooltip"><div class="popover-arrow"></div><h3 class="popover-header"></h3><div class="popover-body"></div></div>'},Ge={...Xe.DefaultType,content:"(string|element|function)"},Ze={HIDE:"hide.bs.popover",HIDDEN:"hidden.bs.popover",SHOW:"show.bs.popover",SHOWN:"shown.bs.popover",INSERTED:"inserted.bs.popover",CLICK:"click.bs.popover",FOCUSIN:"focusin.bs.popover",FOCUSOUT:"focusout.bs.popover",MOUSEENTER:"mouseenter.bs.popover",MOUSELEAVE:"mouseleave.bs.popover"};class Je extends Xe{static get Default(){return Qe}static get NAME(){return"popover"}static get Event(){return Ze}static get DefaultType(){return Ge}isWithContent(){return this.getTitle()||this._getContent()}setContent(){const e=this.getTipElement();this.setElementContent(t.findOne(".popover-header",e),this.getTitle());let i=this._getContent();"function"==typeof i&&(i=i.call(this._element)),this.setElementContent(t.findOne(".popover-body",e),i),e.classList.remove("fade","show")}_addAttachmentClass(t){this.getTipElement().classList.add("bs-popover-"+this.updateAttachment(t))}_getContent(){return this._element.getAttribute("data-bs-content")||this._config.content}_cleanTipClass(){const t=this.getTipElement(),e=t.getAttribute("class").match(Ye);null!==e&&e.length>0&&e.map(t=>t.trim()).forEach(e=>t.classList.remove(e))}static jQueryInterface(t){return this.each((function(){let e=w.get(this,"bs.popover");const i="object"==typeof t?t:null;if((e||!/dispose|hide/.test(t))&&(e||(e=new Je(this,i),w.set(this,"bs.popover",e)),"string"==typeof t)){if(void 0===e[t])throw new TypeError(`No method named "${t}"`);e[t]()}}))}}b(Je);const ti={offset:10,method:"auto",target:""},ei={offset:"number",method:"string",target:"(string|element)"};class ii extends R{constructor(t,e){super(t),this._scrollElement="BODY"===this._element.tagName?window:this._element,this._config=this._getConfig(e),this._selector=`${this._config.target} .nav-link, ${this._config.target} .list-group-item, ${this._config.target} .dropdown-item`,this._offsets=[],this._targets=[],this._activeTarget=null,this._scrollHeight=0,H.on(this._scrollElement,"scroll.bs.scrollspy",()=>this._process()),this.refresh(),this._process()}static get Default(){return ti}static get NAME(){return"scrollspy"}refresh(){const e=this._scrollElement===this._scrollElement.window?"offset":"position",i="auto"===this._config.method?e:this._config.method,s="position"===i?this._getScrollTop():0;this._offsets=[],this._targets=[],this._scrollHeight=this._getScrollHeight(),t.find(this._selector).map(e=>{const o=n(e),r=o?t.findOne(o):null;if(r){const t=r.getBoundingClientRect();if(t.width||t.height)return[U[i](r).top+s,o]}return null}).filter(t=>t).sort((t,e)=>t[0]-e[0]).forEach(t=>{this._offsets.push(t[0]),this._targets.push(t[1])})}dispose(){H.off(this._scrollElement,".bs.scrollspy"),super.dispose()}_getConfig(t){if("string"!=typeof(t={...ti,...U.getDataAttributes(this._element),..."object"==typeof t&&t?t:{}}).target&&a(t.target)){let{id:i}=t.target;i||(i=e("scrollspy"),t.target.id=i),t.target="#"+i}return d("scrollspy",t,ei),t}_getScrollTop(){return this._scrollElement===window?this._scrollElement.pageYOffset:this._scrollElement.scrollTop}_getScrollHeight(){return this._scrollElement.scrollHeight||Math.max(document.body.scrollHeight,document.documentElement.scrollHeight)}_getOffsetHeight(){return this._scrollElement===window?window.innerHeight:this._scrollElement.getBoundingClientRect().height}_process(){const t=this._getScrollTop()+this._config.offset,e=this._getScrollHeight(),i=this._config.offset+e-this._getOffsetHeight();if(this._scrollHeight!==e&&this.refresh(),t>=i){const t=this._targets[this._targets.length-1];this._activeTarget!==t&&this._activate(t)}else{if(this._activeTarget&&t<this._offsets[0]&&this._offsets[0]>0)return this._activeTarget=null,void this._clear();for(let e=this._offsets.length;e--;)this._activeTarget!==this._targets[e]&&t>=this._offsets[e]&&(void 0===this._offsets[e+1]||t<this._offsets[e+1])&&this._activate(this._targets[e])}}_activate(e){this._activeTarget=e,this._clear();const i=this._selector.split(",").map(t=>`${t}[data-bs-target="${e}"],${t}[href="${e}"]`),n=t.findOne(i.join(","));n.classList.contains("dropdown-item")?(t.findOne(".dropdown-toggle",n.closest(".dropdown")).classList.add("active"),n.classList.add("active")):(n.classList.add("active"),t.parents(n,".nav, .list-group").forEach(e=>{t.prev(e,".nav-link, .list-group-item").forEach(t=>t.classList.add("active")),t.prev(e,".nav-item").forEach(e=>{t.children(e,".nav-link").forEach(t=>t.classList.add("active"))})})),H.trigger(this._scrollElement,"activate.bs.scrollspy",{relatedTarget:e})}_clear(){t.find(this._selector).filter(t=>t.classList.contains("active")).forEach(t=>t.classList.remove("active"))}static jQueryInterface(t){return this.each((function(){const e=ii.getInstance(this)||new ii(this,"object"==typeof t?t:{});if("string"==typeof t){if(void 0===e[t])throw new TypeError(`No method named "${t}"`);e[t]()}}))}}H.on(window,"load.bs.scrollspy.data-api",()=>{t.find('[data-bs-spy="scroll"]').forEach(t=>new ii(t))}),b(ii);class ni extends R{static get NAME(){return"tab"}show(){if(this._element.parentNode&&this._element.parentNode.nodeType===Node.ELEMENT_NODE&&this._element.classList.contains("active"))return;let e;const i=s(this._element),n=this._element.closest(".nav, .list-group");if(n){const i="UL"===n.nodeName||"OL"===n.nodeName?":scope > li > .active":".active";e=t.find(i,n),e=e[e.length-1]}const o=e?H.trigger(e,"hide.bs.tab",{relatedTarget:this._element}):null;if(H.trigger(this._element,"show.bs.tab",{relatedTarget:e}).defaultPrevented||null!==o&&o.defaultPrevented)return;this._activate(this._element,n);const r=()=>{H.trigger(e,"hidden.bs.tab",{relatedTarget:this._element}),H.trigger(this._element,"shown.bs.tab",{relatedTarget:e})};i?this._activate(i,i.parentNode,r):r()}_activate(e,i,n){const s=(!i||"UL"!==i.nodeName&&"OL"!==i.nodeName?t.children(i,".active"):t.find(":scope > li > .active",i))[0],o=n&&s&&s.classList.contains("fade"),r=()=>this._transitionComplete(e,s,n);s&&o?(s.classList.remove("show"),this._queueCallback(r,e,!0)):r()}_transitionComplete(e,i,n){if(i){i.classList.remove("active");const e=t.findOne(":scope > .dropdown-menu .active",i.parentNode);e&&e.classList.remove("active"),"tab"===i.getAttribute("role")&&i.setAttribute("aria-selected",!1)}e.classList.add("active"),"tab"===e.getAttribute("role")&&e.setAttribute("aria-selected",!0),m(e),e.classList.contains("fade")&&e.classList.add("show");let s=e.parentNode;if(s&&"LI"===s.nodeName&&(s=s.parentNode),s&&s.classList.contains("dropdown-menu")){const i=e.closest(".dropdown");i&&t.find(".dropdown-toggle",i).forEach(t=>t.classList.add("active")),e.setAttribute("aria-expanded",!0)}n&&n()}static jQueryInterface(t){return this.each((function(){const e=w.get(this,"bs.tab")||new ni(this);if("string"==typeof t){if(void 0===e[t])throw new TypeError(`No method named "${t}"`);e[t]()}}))}}H.on(document,"click.bs.tab.data-api",'[data-bs-toggle="tab"], [data-bs-toggle="pill"], [data-bs-toggle="list"]',(function(t){["A","AREA"].includes(this.tagName)&&t.preventDefault(),u(this)||(w.get(this,"bs.tab")||new ni(this)).show()})),b(ni);const si={animation:"boolean",autohide:"boolean",delay:"number"},oi={animation:!0,autohide:!0,delay:5e3};class ri extends R{constructor(t,e){super(t),this._config=this._getConfig(e),this._timeout=null,this._hasMouseInteraction=!1,this._hasKeyboardInteraction=!1,this._setListeners()}static get DefaultType(){return si}static get Default(){return oi}static get NAME(){return"toast"}show(){H.trigger(this._element,"show.bs.toast").defaultPrevented||(this._clearTimeout(),this._config.animation&&this._element.classList.add("fade"),this._element.classList.remove("hide"),m(this._element),this._element.classList.add("showing"),this._queueCallback(()=>{this._element.classList.remove("showing"),this._element.classList.add("show"),H.trigger(this._element,"shown.bs.toast"),this._maybeScheduleHide()},this._element,this._config.animation))}hide(){this._element.classList.contains("show")&&(H.trigger(this._element,"hide.bs.toast").defaultPrevented||(this._element.classList.remove("show"),this._queueCallback(()=>{this._element.classList.add("hide"),H.trigger(this._element,"hidden.bs.toast")},this._element,this._config.animation)))}dispose(){this._clearTimeout(),this._element.classList.contains("show")&&this._element.classList.remove("show"),super.dispose()}_getConfig(t){return t={...oi,...U.getDataAttributes(this._element),..."object"==typeof t&&t?t:{}},d("toast",t,this.constructor.DefaultType),t}_maybeScheduleHide(){this._config.autohide&&(this._hasMouseInteraction||this._hasKeyboardInteraction||(this._timeout=setTimeout(()=>{this.hide()},this._config.delay)))}_onInteraction(t,e){switch(t.type){case"mouseover":case"mouseout":this._hasMouseInteraction=e;break;case"focusin":case"focusout":this._hasKeyboardInteraction=e}if(e)return void this._clearTimeout();const i=t.relatedTarget;this._element===i||this._element.contains(i)||this._maybeScheduleHide()}_setListeners(){H.on(this._element,"click.dismiss.bs.toast",'[data-bs-dismiss="toast"]',()=>this.hide()),H.on(this._element,"mouseover.bs.toast",t=>this._onInteraction(t,!0)),H.on(this._element,"mouseout.bs.toast",t=>this._onInteraction(t,!1)),H.on(this._element,"focusin.bs.toast",t=>this._onInteraction(t,!0)),H.on(this._element,"focusout.bs.toast",t=>this._onInteraction(t,!1))}_clearTimeout(){clearTimeout(this._timeout),this._timeout=null}static jQueryInterface(t){return this.each((function(){let e=w.get(this,"bs.toast");if(e||(e=new ri(this,"object"==typeof t&&t)),"string"==typeof t){if(void 0===e[t])throw new TypeError(`No method named "${t}"`);e[t](this)}}))}}return b(ri),{Alert:B,Button:W,Carousel:Q,Collapse:J,Dropdown:we,Modal:Ie,Offcanvas:Me,Popover:Je,ScrollSpy:ii,Tab:ni,Toast:ri,Tooltip:Xe}}));
 //# sourceMappingURL=bootstrap.bundle.min.js.map
-// wrap in UMD - see https://github.com/umdjs/umd/blob/master/jqueryPlugin.js
-(function(factory) {
-	if (typeof define === "function" && define.amd) {
-		define([ "jquery" ], function($) {
-			factory($, window, document);
-		});
-	} else {
-		factory(jQuery, window, document);
-	}
-})(function($, window, document, undefined) {
-	"use strict";
-	var pluginName = "countrySelect", id = 1, // give each instance its own ID for namespaced event handling
-	defaults = {
-		// Default country
-		defaultCountry: "",
-		// Position the selected flag inside or outside of the input
-		defaultStyling: "inside",
-        // don't display these countries
-        excludeCountries: [],
-		// Display only these countries
-		onlyCountries: [],
-		// The countries at the top of the list. Defaults to United States and United Kingdom
-		preferredCountries: [ "us", "gb" ]
-	}, keys = {
-		UP: 38,
-		DOWN: 40,
-		ENTER: 13,
-		ESC: 27,
-		PLUS: 43,
-		A: 65,
-		Z: 90
-	}, windowLoaded = false;
-	// keep track of if the window.load event has fired as impossible to check after the fact
-	$(window).on('load', function() {
-		windowLoaded = true;
-	});
-	function Plugin(element, options) {
-		this.element = element;
-		this.options = $.extend({}, defaults, options);
-		this._defaults = defaults;
-		// event namespace
-		this.ns = "." + pluginName + id++;
-		this._name = pluginName;
-		this.init();
-	}
-	Plugin.prototype = {
-		init: function() {
-			// Process all the data: onlyCountries, excludeCountries, preferredCountries, defaultCountry etc
-			this._processCountryData();
-			// Generate the markup
-			this._generateMarkup();
-			// Set the initial state of the input value and the selected flag
-			this._setInitialState();
-			// Start all of the event listeners: input keyup, selectedFlag click
-			this._initListeners();
-			// Return this when the auto country is resolved.
-			this.autoCountryDeferred = new $.Deferred();
-			// Get auto country.
-			this._initAutoCountry();
-
-			return this.autoCountryDeferred;
-		},
-		/********************
-		 *  PRIVATE METHODS
-		 ********************/
-		// prepare all of the country data, including onlyCountries, excludeCountries, preferredCountries and
-		// defaultCountry options
-		_processCountryData: function() {
-			// set the instances country data objects
-			this._setInstanceCountryData();
-			// set the preferredCountries property
-			this._setPreferredCountries();
-		},
-		// process onlyCountries array if present
-		_setInstanceCountryData: function() {
-			var that = this;
-			if (this.options.onlyCountries.length) {
-				var newCountries = [];
-				$.each(this.options.onlyCountries, function(i, countryCode) {
-					var countryData = that._getCountryData(countryCode, true);
-					if (countryData) {
-						newCountries.push(countryData);
-					}
-				});
-				this.countries = newCountries;
-			} else if (this.options.excludeCountries.length) {
-                var lowerCaseExcludeCountries = this.options.excludeCountries.map(function(country) {
-                    return country.toLowerCase();
-                });
-                this.countries = allCountries.filter(function(country) {
-                    return lowerCaseExcludeCountries.indexOf(country.iso2) === -1;
-                });
-            } else {
-				this.countries = allCountries;
-			}
-		},
-		// Process preferred countries - iterate through the preferences,
-		// fetching the country data for each one
-		_setPreferredCountries: function() {
-			var that = this;
-			this.preferredCountries = [];
-			$.each(this.options.preferredCountries, function(i, countryCode) {
-				var countryData = that._getCountryData(countryCode, false);
-				if (countryData) {
-					that.preferredCountries.push(countryData);
-				}
-			});
-		},
-		// generate all of the markup for the plugin: the selected flag overlay, and the dropdown
-		_generateMarkup: function() {
-			// Country input
-			this.countryInput = $(this.element);
-			// containers (mostly for positioning)
-			var mainClass = "country-select";
-			if (this.options.defaultStyling) {
-				mainClass += " " + this.options.defaultStyling;
-			}
-			this.countryInput.wrap($("<div>", {
-				"class": mainClass
-			}));
-			var flagsContainer = $("<div>", {
-				"class": "flag-dropdown"
-			}).insertAfter(this.countryInput);
-			// currently selected flag (displayed to left of input)
-			var selectedFlag = $("<div>", {
-				"class": "selected-flag"
-			}).appendTo(flagsContainer);
-			this.selectedFlagInner = $("<div>", {
-				"class": "flag"
-			}).appendTo(selectedFlag);
-			// CSS triangle
-			$("<div>", {
-				"class": "arrow"
-			}).appendTo(selectedFlag);
-			// country list contains: preferred countries, then divider, then all countries
-			this.countryList = $("<ul>", {
-				"class": "country-list v-hide"
-			}).appendTo(flagsContainer);
-			if (this.preferredCountries.length) {
-				this._appendListItems(this.preferredCountries, "preferred");
-				$("<li>", {
-					"class": "divider"
-				}).appendTo(this.countryList);
-			}
-			this._appendListItems(this.countries, "");
-			// Add the hidden input for the country code
-			this.countryCodeInput = $("#"+this.countryInput.attr("id")+"_code");
-			if (!this.countryCodeInput) {
-				this.countryCodeInput = $('<input type="hidden" id="'+this.countryInput.attr("id")+'_code" name="'+this.countryInput.attr("name")+'_code" value="" />');
-				this.countryCodeInput.insertAfter(this.countryInput);
-			}
-			// now we can grab the dropdown height, and hide it properly
-			this.dropdownHeight = this.countryList.outerHeight();
-			this.countryList.removeClass("v-hide").addClass("hide");
-			// this is useful in lots of places
-			this.countryListItems = this.countryList.children(".country");
-		},
-		// add a country <li> to the countryList <ul> container
-		_appendListItems: function(countries, className) {
-			// Generate DOM elements as a large temp string, so that there is only
-			// one DOM insert event
-			var tmp = "";
-			// for each country
-			$.each(countries, function(i, c) {
-				// open the list item
-				tmp += '<li class="country ' + className + '" data-country-code="' + c.iso2 + '">';
-				// add the flag
-				tmp += '<div class="flag ' + c.iso2 + '"></div>';
-				// and the country name
-				tmp += '<span class="country-name">' + c.name + '</span>';
-				// close the list item
-				tmp += '</li>';
-			});
-			this.countryList.append(tmp);
-		},
-		// set the initial state of the input value and the selected flag
-		_setInitialState: function() {
-			var flagIsSet = false;
-			// If the input is pre-populated, then just update the selected flag
-			if (this.countryInput.val()) {
-				flagIsSet = this._updateFlagFromInputVal();
-			}
-			// If the country code input is pre-populated, update the name and the selected flag
-			var selectedCode = this.countryCodeInput.val();
-			if (selectedCode) {
-				this.selectCountry(selectedCode);
-			}
-			if (!flagIsSet) {
-				// flag is not set, so set to the default country
-				var defaultCountry;
-				// check the defaultCountry option, else fall back to the first in the list
-				if (this.options.defaultCountry) {
-					defaultCountry = this._getCountryData(this.options.defaultCountry, false);
-					// Did we not find the requested default country?
-					if (!defaultCountry) {
-						defaultCountry = this.preferredCountries.length ? this.preferredCountries[0] : this.countries[0];
-					}
-				} else {
-					defaultCountry = this.preferredCountries.length ? this.preferredCountries[0] : this.countries[0];
-				}
-				this.defaultCountry = defaultCountry.iso2;
-			}
-		},
-		// initialise the main event listeners: input keyup, and click selected flag
-		_initListeners: function() {
-			var that = this;
-			// Update flag on keyup.
-			// Use keyup instead of keypress because we want to update on backspace
-			// and instead of keydown because the value hasn't updated when that
-			// event is fired.
-			// NOTE: better to have this one listener all the time instead of
-			// starting it on focus and stopping it on blur, because then you've
-			// got two listeners (focus and blur)
-			this.countryInput.on("keyup" + this.ns, function() {
-				that._updateFlagFromInputVal();
-			});
-			// toggle country dropdown on click
-			var selectedFlag = this.selectedFlagInner.parent();
-			selectedFlag.on("click" + this.ns, function(e) {
-				// only intercept this event if we're opening the dropdown
-				// else let it bubble up to the top ("click-off-to-close" listener)
-				// we cannot just stopPropagation as it may be needed to close another instance
-				if (that.countryList.hasClass("hide") && !that.countryInput.prop("disabled")) {
-					that._showDropdown();
-				}
-			});
-			// Despite above note, added blur to ensure partially spelled country
-			// with correctly chosen flag is spelled out on blur. Also, correctly
-			// selects flag when field is autofilled
-			this.countryInput.on("blur" + this.ns, function() {
-				if (that.countryInput.val() != that.getSelectedCountryData().name) {
-					that.setCountry(that.countryInput.val());
-				}
-				that.countryInput.val(that.getSelectedCountryData().name);
-			});
-		},
-		_initAutoCountry: function() {
-			if (this.options.initialCountry === "auto") {
-				this._loadAutoCountry();
-			} else {
-				if (this.defaultCountry) {
-					this.selectCountry(this.defaultCountry);
-				}
-				this.autoCountryDeferred.resolve();
-			}
-		},
-		// perform the geo ip lookup
-		_loadAutoCountry: function() {
-			var that = this;
-
-			// 3 options:
-			// 1) already loaded (we're done)
-			// 2) not already started loading (start)
-			// 3) already started loading (do nothing - just wait for loading callback to fire)
-			if ($.fn[pluginName].autoCountry) {
-				this.handleAutoCountry();
-			} else if (!$.fn[pluginName].startedLoadingAutoCountry) {
-				// don't do this twice!
-				$.fn[pluginName].startedLoadingAutoCountry = true;
-
-				if (typeof this.options.geoIpLookup === 'function') {
-					this.options.geoIpLookup(function(countryCode) {
-						$.fn[pluginName].autoCountry = countryCode.toLowerCase();
-						// tell all instances the auto country is ready
-						// TODO: this should just be the current instances
-						// UPDATE: use setTimeout in case their geoIpLookup function calls this callback straight away (e.g. if they have already done the geo ip lookup somewhere else). Using setTimeout means that the current thread of execution will finish before executing this, which allows the plugin to finish initialising.
-						setTimeout(function() {
-							$(".country-select input").countrySelect("handleAutoCountry");
-						});
-					});
-				}
-			}
-		},
-		// Focus input and put the cursor at the end
-		_focus: function() {
-			this.countryInput.focus();
-			var input = this.countryInput[0];
-			// works for Chrome, FF, Safari, IE9+
-			if (input.setSelectionRange) {
-				var len = this.countryInput.val().length;
-				input.setSelectionRange(len, len);
-			}
-		},
-		// Show the dropdown
-		_showDropdown: function() {
-			this._setDropdownPosition();
-			// update highlighting and scroll to active list item
-			var activeListItem = this.countryList.children(".active");
-			this._highlightListItem(activeListItem);
-			// show it
-			this.countryList.removeClass("hide");
-			this._scrollTo(activeListItem);
-			// bind all the dropdown-related listeners: mouseover, click, click-off, keydown
-			this._bindDropdownListeners();
-			// update the arrow
-			this.selectedFlagInner.parent().children(".arrow").addClass("up");
-		},
-		// decide where to position dropdown (depends on position within viewport, and scroll)
-		_setDropdownPosition: function() {
-			var inputTop = this.countryInput.offset().top, windowTop = $(window).scrollTop(),
-			dropdownFitsBelow = inputTop + this.countryInput.outerHeight() + this.dropdownHeight < windowTop + $(window).height(), dropdownFitsAbove = inputTop - this.dropdownHeight > windowTop;
-			// dropdownHeight - 1 for border
-			var cssTop = !dropdownFitsBelow && dropdownFitsAbove ? "-" + (this.dropdownHeight - 1) + "px" : "";
-			this.countryList.css("top", cssTop);
-		},
-		// we only bind dropdown listeners when the dropdown is open
-		_bindDropdownListeners: function() {
-			var that = this;
-			// when mouse over a list item, just highlight that one
-			// we add the class "highlight", so if they hit "enter" we know which one to select
-			this.countryList.on("mouseover" + this.ns, ".country", function(e) {
-				that._highlightListItem($(this));
-			});
-			// listen for country selection
-			this.countryList.on("click" + this.ns, ".country", function(e) {
-				that._selectListItem($(this));
-			});
-			// click off to close
-			// (except when this initial opening click is bubbling up)
-			// we cannot just stopPropagation as it may be needed to close another instance
-			var isOpening = true;
-			$("html").on("click" + this.ns, function(e) {
-				if (!isOpening) {
-					that._closeDropdown();
-				}
-				isOpening = false;
-			});
-			// Listen for up/down scrolling, enter to select, or letters to jump to country name.
-			// Use keydown as keypress doesn't fire for non-char keys and we want to catch if they
-			// just hit down and hold it to scroll down (no keyup event).
-			// Listen on the document because that's where key events are triggered if no input has focus
-			$(document).on("keydown" + this.ns, function(e) {
-				// prevent down key from scrolling the whole page,
-				// and enter key from submitting a form etc
-				e.preventDefault();
-				if (e.which == keys.UP || e.which == keys.DOWN) {
-					// up and down to navigate
-					that._handleUpDownKey(e.which);
-				} else if (e.which == keys.ENTER) {
-					// enter to select
-					that._handleEnterKey();
-				} else if (e.which == keys.ESC) {
-					// esc to close
-					that._closeDropdown();
-				} else if (e.which >= keys.A && e.which <= keys.Z) {
-					// upper case letters (note: keyup/keydown only return upper case letters)
-					// cycle through countries beginning with that letter
-					that._handleLetterKey(e.which);
-				}
-			});
-		},
-		// Highlight the next/prev item in the list (and ensure it is visible)
-		_handleUpDownKey: function(key) {
-			var current = this.countryList.children(".highlight").first();
-			var next = key == keys.UP ? current.prev() : current.next();
-			if (next.length) {
-				// skip the divider
-				if (next.hasClass("divider")) {
-					next = key == keys.UP ? next.prev() : next.next();
-				}
-				this._highlightListItem(next);
-				this._scrollTo(next);
-			}
-		},
-		// select the currently highlighted item
-		_handleEnterKey: function() {
-			var currentCountry = this.countryList.children(".highlight").first();
-			if (currentCountry.length) {
-				this._selectListItem(currentCountry);
-			}
-		},
-		// Iterate through the countries starting with the given letter
-		_handleLetterKey: function(key) {
-			var letter = String.fromCharCode(key);
-			// filter out the countries beginning with that letter
-			var countries = this.countryListItems.filter(function() {
-				return $(this).text().charAt(0) == letter && !$(this).hasClass("preferred");
-			});
-			if (countries.length) {
-				// if one is already highlighted, then we want the next one
-				var highlightedCountry = countries.filter(".highlight").first(), listItem;
-				// if the next country in the list also starts with that letter
-				if (highlightedCountry && highlightedCountry.next() && highlightedCountry.next().text().charAt(0) == letter) {
-					listItem = highlightedCountry.next();
-				} else {
-					listItem = countries.first();
-				}
-				// update highlighting and scroll
-				this._highlightListItem(listItem);
-				this._scrollTo(listItem);
-			}
-		},
-		// Update the selected flag using the input's current value
-		_updateFlagFromInputVal: function() {
-			var that = this;
-			// try and extract valid country from input
-			var value = this.countryInput.val().replace(/(?=[() ])/g, '\\');
-			if (value) {
-				var countryCodes = [];
-				var matcher = new RegExp("^"+value, "i");
-				for (var i = 0; i < this.countries.length; i++) {
-					if (this.countries[i].name.match(matcher)) {
-						countryCodes.push(this.countries[i].iso2);
-					}
-				}
-				// Check if one of the matching countries is already selected
-				var alreadySelected = false;
-				$.each(countryCodes, function(i, c) {
-					if (that.selectedFlagInner.hasClass(c)) {
-						alreadySelected = true;
-					}
-				});
-				if (!alreadySelected) {
-					this._selectFlag(countryCodes[0]);
-					this.countryCodeInput.val(countryCodes[0]).trigger("change");
-				}
-				// Matching country found
-				return true;
-			}
-			// No match found
-			return false;
-		},
-		// remove highlighting from other list items and highlight the given item
-		_highlightListItem: function(listItem) {
-			this.countryListItems.removeClass("highlight");
-			listItem.addClass("highlight");
-		},
-		// find the country data for the given country code
-		// the ignoreOnlyCountriesOption is only used during init() while parsing the onlyCountries array
-		_getCountryData: function(countryCode, ignoreOnlyCountriesOption) {
-			var countryList = ignoreOnlyCountriesOption ? allCountries : this.countries;
-			for (var i = 0; i < countryList.length; i++) {
-				if (countryList[i].iso2 == countryCode) {
-					return countryList[i];
-				}
-			}
-			return null;
-		},
-		// update the selected flag and the active list item
-		_selectFlag: function(countryCode) {
-			if (! countryCode) {
-				return false;
-			}
-			this.selectedFlagInner.attr("class", "flag " + countryCode);
-			// update the title attribute
-			var countryData = this._getCountryData(countryCode);
-			this.selectedFlagInner.parent().attr("title", countryData.name);
-			// update the active list item
-			var listItem = this.countryListItems.children(".flag." + countryCode).first().parent();
-			this.countryListItems.removeClass("active");
-			listItem.addClass("active");
-		},
-		// called when the user selects a list item from the dropdown
-		_selectListItem: function(listItem) {
-			// update selected flag and active list item
-			var countryCode = listItem.attr("data-country-code");
-			this._selectFlag(countryCode);
-			this._closeDropdown();
-			// update input value
-			this._updateName(countryCode);
-			this.countryInput.trigger("change");
-			this.countryCodeInput.trigger("change");
-			// focus the input
-			this._focus();
-		},
-		// close the dropdown and unbind any listeners
-		_closeDropdown: function() {
-			this.countryList.addClass("hide");
-			// update the arrow
-			this.selectedFlagInner.parent().children(".arrow").removeClass("up");
-			// unbind event listeners
-			$(document).off("keydown" + this.ns);
-			$("html").off("click" + this.ns);
-			// unbind both hover and click listeners
-			this.countryList.off(this.ns);
-		},
-		// check if an element is visible within its container, else scroll until it is
-		_scrollTo: function(element) {
-			if (!element || !element.offset()) {
-				return;
-			}
-			var container = this.countryList, containerHeight = container.height(), containerTop = container.offset().top, containerBottom = containerTop + containerHeight, elementHeight = element.outerHeight(), elementTop = element.offset().top, elementBottom = elementTop + elementHeight, newScrollTop = elementTop - containerTop + container.scrollTop();
-			if (elementTop < containerTop) {
-				// scroll up
-				container.scrollTop(newScrollTop);
-			} else if (elementBottom > containerBottom) {
-				// scroll down
-				var heightDifference = containerHeight - elementHeight;
-				container.scrollTop(newScrollTop - heightDifference);
-			}
-		},
-		// Replace any existing country name with the new one
-		_updateName: function(countryCode) {
-			this.countryCodeInput.val(countryCode).trigger("change");
-			this.countryInput.val(this._getCountryData(countryCode).name);
-		},
-		/********************
-		 *  PUBLIC METHODS
-		 ********************/
-		// this is called when the geoip call returns
-		handleAutoCountry: function() {
-			if (this.options.initialCountry === "auto") {
-				// we must set this even if there is an initial val in the input: in case the initial val is invalid and they delete it - they should see their auto country
-				this.defaultCountry = $.fn[pluginName].autoCountry;
-				// if there's no initial value in the input, then update the flag
-				if (!this.countryInput.val()) {
-					this.selectCountry(this.defaultCountry);
-				}
-				this.autoCountryDeferred.resolve();
-			}
-		},
-		// get the country data for the currently selected flag
-		getSelectedCountryData: function() {
-			// rely on the fact that we only set 2 classes on the selected flag element:
-			// the first is "flag" and the second is the 2-char country code
-			var countryCode = this.selectedFlagInner.attr("class").split(" ")[1];
-			return this._getCountryData(countryCode);
-		},
-		// update the selected flag
-		selectCountry: function(countryCode) {
-			countryCode = countryCode.toLowerCase();
-			// check if already selected
-			if (!this.selectedFlagInner.hasClass(countryCode)) {
-				this._selectFlag(countryCode);
-				this._updateName(countryCode);
-			}
-		},
-		// set the input value and update the flag
-		setCountry: function(country) {
-			this.countryInput.val(country);
-			this._updateFlagFromInputVal();
-		},
-		// remove plugin
-		destroy: function() {
-			// stop listeners
-			this.countryInput.off(this.ns);
-			this.selectedFlagInner.parent().off(this.ns);
-			// remove markup
-			var container = this.countryInput.parent();
-			container.before(this.countryInput).remove();
-		}
-	};
-	// adapted to allow public functions
-	// using https://github.com/jquery-boilerplate/jquery-boilerplate/wiki/Extending-jQuery-Boilerplate
-	$.fn[pluginName] = function(options) {
-		var args = arguments;
-		// Is the first parameter an object (options), or was omitted,
-		// instantiate a new instance of the plugin.
-		if (options === undefined || typeof options === "object") {
-			return this.each(function() {
-				if (!$.data(this, "plugin_" + pluginName)) {
-					$.data(this, "plugin_" + pluginName, new Plugin(this, options));
-				}
-			});
-		} else if (typeof options === "string" && options[0] !== "_" && options !== "init") {
-			// If the first parameter is a string and it doesn't start
-			// with an underscore or "contains" the `init`-function,
-			// treat this as a call to a public method.
-			// Cache the method call to make it possible to return a value
-			var returns;
-			this.each(function() {
-				var instance = $.data(this, "plugin_" + pluginName);
-				// Tests that there's already a plugin-instance
-				// and checks that the requested public method exists
-				if (instance instanceof Plugin && typeof instance[options] === "function") {
-					// Call the method of our plugin instance,
-					// and pass it the supplied arguments.
-					returns = instance[options].apply(instance, Array.prototype.slice.call(args, 1));
-				}
-				// Allow instances to be destroyed via the 'destroy' method
-				if (options === "destroy") {
-					$.data(this, "plugin_" + pluginName, null);
-				}
-			});
-			// If the earlier cached method gives a value back return the value,
-			// otherwise return this to preserve chainability.
-			return returns !== undefined ? returns : this;
-		}
-	};
-	/********************
-   *  STATIC METHODS
-   ********************/
-	// get the country data object
-	$.fn[pluginName].getCountryData = function() {
-		return allCountries;
-	};
-	// set the country data object
-	$.fn[pluginName].setCountryData = function(obj) {
-		allCountries = obj;
-	};
-	// Tell JSHint to ignore this warning: "character may get silently deleted by one or more browsers"
-	// jshint -W100
-	// Array of country objects for the flag dropdown.
-	// Each contains a name and country code (ISO 3166-1 alpha-2).
-	//
-	// Note: using single char property names to keep filesize down
-	// n = name
-	// i = iso2 (2-char country code)
-	var allCountries = $.each([ {
-		n: "Afghanistan (‫افغانستان‬‎)",
-		i: "af"
-	}, {
-		n: "Åland Islands (Åland)",
-		i: "ax"
-	}, {
-		n: "Albania (Shqipëri)",
-		i: "al"
-	}, {
-		n: "Algeria (‫الجزائر‬‎)",
-		i: "dz"
-	}, {
-		n: "American Samoa",
-		i: "as"
-	}, {
-		n: "Andorra",
-		i: "ad"
-	}, {
-		n: "Angola",
-		i: "ao"
-	}, {
-		n: "Anguilla",
-		i: "ai"
-	}, {
-		n: "Antigua and Barbuda",
-		i: "ag"
-	}, {
-		n: "Argentina",
-		i: "ar"
-	}, {
-		n: "Armenia (Հայաստան)",
-		i: "am"
-	}, {
-		n: "Aruba",
-		i: "aw"
-	}, {
-		n: "Australia",
-		i: "au"
-	}, {
-		n: "Austria (Österreich)",
-		i: "at"
-	}, {
-		n: "Azerbaijan (Azərbaycan)",
-		i: "az"
-	}, {
-		n: "Bahamas",
-		i: "bs"
-	}, {
-		n: "Bahrain (‫البحرين‬‎)",
-		i: "bh"
-	}, {
-		n: "Bangladesh (বাংলাদেশ)",
-		i: "bd"
-	}, {
-		n: "Barbados",
-		i: "bb"
-	}, {
-		n: "Belarus (Беларусь)",
-		i: "by"
-	}, {
-		n: "Belgium (België)",
-		i: "be"
-	}, {
-		n: "Belize",
-		i: "bz"
-	}, {
-		n: "Benin (Bénin)",
-		i: "bj"
-	}, {
-		n: "Bermuda",
-		i: "bm"
-	}, {
-		n: "Bhutan (འབྲུག)",
-		i: "bt"
-	}, {
-		n: "Bolivia",
-		i: "bo"
-	}, {
-		n: "Bosnia and Herzegovina (Босна и Херцеговина)",
-		i: "ba"
-	}, {
-		n: "Botswana",
-		i: "bw"
-	}, {
-		n: "Brazil (Brasil)",
-		i: "br"
-	}, {
-		n: "British Indian Ocean Territory",
-		i: "io"
-	}, {
-		n: "British Virgin Islands",
-		i: "vg"
-	}, {
-		n: "Brunei",
-		i: "bn"
-	}, {
-		n: "Bulgaria (България)",
-		i: "bg"
-	}, {
-		n: "Burkina Faso",
-		i: "bf"
-	}, {
-		n: "Burundi (Uburundi)",
-		i: "bi"
-	}, {
-		n: "Cambodia (កម្ពុជា)",
-		i: "kh"
-	}, {
-		n: "Cameroon (Cameroun)",
-		i: "cm"
-	}, {
-		n: "Canada",
-		i: "ca"
-	}, {
-		n: "Cape Verde (Kabu Verdi)",
-		i: "cv"
-	}, {
-		n: "Caribbean Netherlands",
-		i: "bq"
-	}, {
-		n: "Cayman Islands",
-		i: "ky"
-	}, {
-		n: "Central African Republic (République Centrafricaine)",
-		i: "cf"
-	}, {
-		n: "Chad (Tchad)",
-		i: "td"
-	}, {
-		n: "Chile",
-		i: "cl"
-	}, {
-		n: "China (中国)",
-		i: "cn"
-	}, {
-		n: "Christmas Island",
-		i: "cx"
-	}, {
-		n: "Cocos (Keeling) Islands (Kepulauan Cocos (Keeling))",
-		i: "cc"
-	}, {
-		n: "Colombia",
-		i: "co"
-	}, {
-		n: "Comoros (‫جزر القمر‬‎)",
-		i: "km"
-	}, {
-		n: "Congo (DRC) (Jamhuri ya Kidemokrasia ya Kongo)",
-		i: "cd"
-	}, {
-		n: "Congo (Republic) (Congo-Brazzaville)",
-		i: "cg"
-	}, {
-		n: "Cook Islands",
-		i: "ck"
-	}, {
-		n: "Costa Rica",
-		i: "cr"
-	}, {
-		n: "Côte d’Ivoire",
-		i: "ci"
-	}, {
-		n: "Croatia (Hrvatska)",
-		i: "hr"
-	}, {
-		n: "Cuba",
-		i: "cu"
-	}, {
-		n: "Curaçao",
-		i: "cw"
-	}, {
-		n: "Cyprus (Κύπρος)",
-		i: "cy"
-	}, {
-		n: "Czech Republic (Česká republika)",
-		i: "cz"
-	}, {
-		n: "Denmark (Danmark)",
-		i: "dk"
-	}, {
-		n: "Djibouti",
-		i: "dj"
-	}, {
-		n: "Dominica",
-		i: "dm"
-	}, {
-		n: "Dominican Republic (República Dominicana)",
-		i: "do"
-	}, {
-		n: "Ecuador",
-		i: "ec"
-	}, {
-		n: "Egypt (‫مصر‬‎)",
-		i: "eg"
-	}, {
-		n: "El Salvador",
-		i: "sv"
-	}, {
-		n: "Equatorial Guinea (Guinea Ecuatorial)",
-		i: "gq"
-	}, {
-		n: "Eritrea",
-		i: "er"
-	}, {
-		n: "Estonia (Eesti)",
-		i: "ee"
-	}, {
-		n: "Ethiopia",
-		i: "et"
-	}, {
-		n: "Falkland Islands (Islas Malvinas)",
-		i: "fk"
-	}, {
-		n: "Faroe Islands (Føroyar)",
-		i: "fo"
-	}, {
-		n: "Fiji",
-		i: "fj"
-	}, {
-		n: "Finland (Suomi)",
-		i: "fi"
-	}, {
-		n: "France",
-		i: "fr"
-	}, {
-		n: "French Guiana (Guyane française)",
-		i: "gf"
-	}, {
-		n: "French Polynesia (Polynésie française)",
-		i: "pf"
-	}, {
-		n: "Gabon",
-		i: "ga"
-	}, {
-		n: "Gambia",
-		i: "gm"
-	}, {
-		n: "Georgia (საქართველო)",
-		i: "ge"
-	}, {
-		n: "Germany (Deutschland)",
-		i: "de"
-	}, {
-		n: "Ghana (Gaana)",
-		i: "gh"
-	}, {
-		n: "Gibraltar",
-		i: "gi"
-	}, {
-		n: "Greece (Ελλάδα)",
-		i: "gr"
-	}, {
-		n: "Greenland (Kalaallit Nunaat)",
-		i: "gl"
-	}, {
-		n: "Grenada",
-		i: "gd"
-	}, {
-		n: "Guadeloupe",
-		i: "gp"
-	}, {
-		n: "Guam",
-		i: "gu"
-	}, {
-		n: "Guatemala",
-		i: "gt"
-	}, {
-		n: "Guernsey",
-		i: "gg"
-	}, {
-		n: "Guinea (Guinée)",
-		i: "gn"
-	}, {
-		n: "Guinea-Bissau (Guiné Bissau)",
-		i: "gw"
-	}, {
-		n: "Guyana",
-		i: "gy"
-	}, {
-		n: "Haiti",
-		i: "ht"
-	}, {
-		n: "Honduras",
-		i: "hn"
-	}, {
-		n: "Hong Kong (香港)",
-		i: "hk"
-	}, {
-		n: "Hungary (Magyarország)",
-		i: "hu"
-	}, {
-		n: "Iceland (Ísland)",
-		i: "is"
-	}, {
-		n: "India (भारत)",
-		i: "in"
-	}, {
-		n: "Indonesia",
-		i: "id"
-	}, {
-		n: "Iran (‫ایران‬‎)",
-		i: "ir"
-	}, {
-		n: "Iraq (‫العراق‬‎)",
-		i: "iq"
-	}, {
-		n: "Ireland",
-		i: "ie"
-	}, {
-		n: "Isle of Man",
-		i: "im"
-	}, {
-		n: "Israel (‫ישראל‬‎)",
-		i: "il"
-	}, {
-		n: "Italy (Italia)",
-		i: "it"
-	}, {
-		n: "Jamaica",
-		i: "jm"
-	}, {
-		n: "Japan (日本)",
-		i: "jp"
-	}, {
-		n: "Jersey",
-		i: "je"
-	}, {
-		n: "Jordan (‫الأردن‬‎)",
-		i: "jo"
-	}, {
-		n: "Kazakhstan (Казахстан)",
-		i: "kz"
-	}, {
-		n: "Kenya",
-		i: "ke"
-	}, {
-		n: "Kiribati",
-		i: "ki"
-	}, {
-		n: "Kosovo (Kosovë)",
-		i: "xk"
-	}, {
-		n: "Kuwait (‫الكويت‬‎)",
-		i: "kw"
-	}, {
-		n: "Kyrgyzstan (Кыргызстан)",
-		i: "kg"
-	}, {
-		n: "Laos (ລາວ)",
-		i: "la"
-	}, {
-		n: "Latvia (Latvija)",
-		i: "lv"
-	}, {
-		n: "Lebanon (‫لبنان‬‎)",
-		i: "lb"
-	}, {
-		n: "Lesotho",
-		i: "ls"
-	}, {
-		n: "Liberia",
-		i: "lr"
-	}, {
-		n: "Libya (‫ليبيا‬‎)",
-		i: "ly"
-	}, {
-		n: "Liechtenstein",
-		i: "li"
-	}, {
-		n: "Lithuania (Lietuva)",
-		i: "lt"
-	}, {
-		n: "Luxembourg",
-		i: "lu"
-	}, {
-		n: "Macau (澳門)",
-		i: "mo"
-	}, {
-		n: "Macedonia (FYROM) (Македонија)",
-		i: "mk"
-	}, {
-		n: "Madagascar (Madagasikara)",
-		i: "mg"
-	}, {
-		n: "Malawi",
-		i: "mw"
-	}, {
-		n: "Malaysia",
-		i: "my"
-	}, {
-		n: "Maldives",
-		i: "mv"
-	}, {
-		n: "Mali",
-		i: "ml"
-	}, {
-		n: "Malta",
-		i: "mt"
-	}, {
-		n: "Marshall Islands",
-		i: "mh"
-	}, {
-		n: "Martinique",
-		i: "mq"
-	}, {
-		n: "Mauritania (‫موريتانيا‬‎)",
-		i: "mr"
-	}, {
-		n: "Mauritius (Moris)",
-		i: "mu"
-	}, {
-		n: "Mayotte",
-		i: "yt"
-	}, {
-		n: "Mexico (México)",
-		i: "mx"
-	}, {
-		n: "Micronesia",
-		i: "fm"
-	}, {
-		n: "Moldova (Republica Moldova)",
-		i: "md"
-	}, {
-		n: "Monaco",
-		i: "mc"
-	}, {
-		n: "Mongolia (Монгол)",
-		i: "mn"
-	}, {
-		n: "Montenegro (Crna Gora)",
-		i: "me"
-	}, {
-		n: "Montserrat",
-		i: "ms"
-	}, {
-		n: "Morocco (‫المغرب‬‎)",
-		i: "ma"
-	}, {
-		n: "Mozambique (Moçambique)",
-		i: "mz"
-	}, {
-		n: "Myanmar (Burma) (မြန်မာ)",
-		i: "mm"
-	}, {
-		n: "Namibia (Namibië)",
-		i: "na"
-	}, {
-		n: "Nauru",
-		i: "nr"
-	}, {
-		n: "Nepal (नेपाल)",
-		i: "np"
-	}, {
-		n: "Netherlands (Nederland)",
-		i: "nl"
-	}, {
-		n: "New Caledonia (Nouvelle-Calédonie)",
-		i: "nc"
-	}, {
-		n: "New Zealand",
-		i: "nz"
-	}, {
-		n: "Nicaragua",
-		i: "ni"
-	}, {
-		n: "Niger (Nijar)",
-		i: "ne"
-	}, {
-		n: "Nigeria",
-		i: "ng"
-	}, {
-		n: "Niue",
-		i: "nu"
-	}, {
-		n: "Norfolk Island",
-		i: "nf"
-	}, {
-		n: "North Korea (조선 민주주의 인민 공화국)",
-		i: "kp"
-	}, {
-		n: "Northern Mariana Islands",
-		i: "mp"
-	}, {
-		n: "Norway (Norge)",
-		i: "no"
-	}, {
-		n: "Oman (‫عُمان‬‎)",
-		i: "om"
-	}, {
-		n: "Pakistan (‫پاکستان‬‎)",
-		i: "pk"
-	}, {
-		n: "Palau",
-		i: "pw"
-	}, {
-		n: "Palestine (‫فلسطين‬‎)",
-		i: "ps"
-	}, {
-		n: "Panama (Panamá)",
-		i: "pa"
-	}, {
-		n: "Papua New Guinea",
-		i: "pg"
-	}, {
-		n: "Paraguay",
-		i: "py"
-	}, {
-		n: "Peru (Perú)",
-		i: "pe"
-	}, {
-		n: "Philippines",
-		i: "ph"
-	}, {
-		n: "Pitcairn Islands",
-		i: "pn"
-	}, {
-		n: "Poland (Polska)",
-		i: "pl"
-	}, {
-		n: "Portugal",
-		i: "pt"
-	}, {
-		n: "Puerto Rico",
-		i: "pr"
-	}, {
-		n: "Qatar (‫قطر‬‎)",
-		i: "qa"
-	}, {
-		n: "Réunion (La Réunion)",
-		i: "re"
-	}, {
-		n: "Romania (România)",
-		i: "ro"
-	}, {
-		n: "Russia (Россия)",
-		i: "ru"
-	}, {
-		n: "Rwanda",
-		i: "rw"
-	}, {
-		n: "Saint Barthélemy (Saint-Barthélemy)",
-		i: "bl"
-	}, {
-		n: "Saint Helena",
-		i: "sh"
-	}, {
-		n: "Saint Kitts and Nevis",
-		i: "kn"
-	}, {
-		n: "Saint Lucia",
-		i: "lc"
-	}, {
-		n: "Saint Martin (Saint-Martin (partie française))",
-		i: "mf"
-	}, {
-		n: "Saint Pierre and Miquelon (Saint-Pierre-et-Miquelon)",
-		i: "pm"
-	}, {
-		n: "Saint Vincent and the Grenadines",
-		i: "vc"
-	}, {
-		n: "Samoa",
-		i: "ws"
-	}, {
-		n: "San Marino",
-		i: "sm"
-	}, {
-		n: "São Tomé and Príncipe (São Tomé e Príncipe)",
-		i: "st"
-	}, {
-		n: "Saudi Arabia (‫المملكة العربية السعودية‬‎)",
-		i: "sa"
-	}, {
-		n: "Senegal (Sénégal)",
-		i: "sn"
-	}, {
-		n: "Serbia (Србија)",
-		i: "rs"
-	}, {
-		n: "Seychelles",
-		i: "sc"
-	}, {
-		n: "Sierra Leone",
-		i: "sl"
-	}, {
-		n: "Singapore",
-		i: "sg"
-	}, {
-		n: "Sint Maarten",
-		i: "sx"
-	}, {
-		n: "Slovakia (Slovensko)",
-		i: "sk"
-	}, {
-		n: "Slovenia (Slovenija)",
-		i: "si"
-	}, {
-		n: "Solomon Islands",
-		i: "sb"
-	}, {
-		n: "Somalia (Soomaaliya)",
-		i: "so"
-	}, {
-		n: "South Africa",
-		i: "za"
-	}, {
-		n: "South Georgia & South Sandwich Islands",
-		i: "gs"
-	}, {
-		n: "South Korea (대한민국)",
-		i: "kr"
-	}, {
-		n: "South Sudan (‫جنوب السودان‬‎)",
-		i: "ss"
-	}, {
-		n: "Spain (España)",
-		i: "es"
-	}, {
-		n: "Sri Lanka (ශ්‍රී ලංකාව)",
-		i: "lk"
-	}, {
-		n: "Sudan (‫السودان‬‎)",
-		i: "sd"
-	}, {
-		n: "Suriname",
-		i: "sr"
-	}, {
-		n: "Svalbard and Jan Mayen (Svalbard og Jan Mayen)",
-		i: "sj"
-	}, {
-		n: "Swaziland",
-		i: "sz"
-	}, {
-		n: "Sweden (Sverige)",
-		i: "se"
-	}, {
-		n: "Switzerland (Schweiz)",
-		i: "ch"
-	}, {
-		n: "Syria (‫سوريا‬‎)",
-		i: "sy"
-	}, {
-		n: "Taiwan (台灣)",
-		i: "tw"
-	}, {
-		n: "Tajikistan",
-		i: "tj"
-	}, {
-		n: "Tanzania",
-		i: "tz"
-	}, {
-		n: "Thailand (ไทย)",
-		i: "th"
-	}, {
-		n: "Timor-Leste",
-		i: "tl"
-	}, {
-		n: "Togo",
-		i: "tg"
-	}, {
-		n: "Tokelau",
-		i: "tk"
-	}, {
-		n: "Tonga",
-		i: "to"
-	}, {
-		n: "Trinidad and Tobago",
-		i: "tt"
-	}, {
-		n: "Tunisia (‫تونس‬‎)",
-		i: "tn"
-	}, {
-		n: "Turkey (Türkiye)",
-		i: "tr"
-	}, {
-		n: "Turkmenistan",
-		i: "tm"
-	}, {
-		n: "Turks and Caicos Islands",
-		i: "tc"
-	}, {
-		n: "Tuvalu",
-		i: "tv"
-	}, {
-		n: "Uganda",
-		i: "ug"
-	}, {
-		n: "Ukraine (Україна)",
-		i: "ua"
-	}, {
-		n: "United Arab Emirates (‫الإمارات العربية المتحدة‬‎)",
-		i: "ae"
-	}, {
-		n: "United Kingdom",
-		i: "gb"
-	}, {
-		n: "United States",
-		i: "us"
-	}, {
-		n: "U.S. Minor Outlying Islands",
-		i: "um"
-	}, {
-		n: "U.S. Virgin Islands",
-		i: "vi"
-	}, {
-		n: "Uruguay",
-		i: "uy"
-	}, {
-		n: "Uzbekistan (Oʻzbekiston)",
-		i: "uz"
-	}, {
-		n: "Vanuatu",
-		i: "vu"
-	}, {
-		n: "Vatican City (Città del Vaticano)",
-		i: "va"
-	}, {
-		n: "Venezuela",
-		i: "ve"
-	}, {
-		n: "Vietnam (Việt Nam)",
-		i: "vn"
-	}, {
-		n: "Wallis and Futuna",
-		i: "wf"
-	}, {
-		n: "Western Sahara (‫الصحراء الغربية‬‎)",
-		i: "eh"
-	}, {
-		n: "Yemen (‫اليمن‬‎)",
-		i: "ye"
-	}, {
-		n: "Zambia",
-		i: "zm"
-	}, {
-		n: "Zimbabwe",
-		i: "zw"
-	} ], function(i, c) {
-		c.name = c.n;
-		c.iso2 = c.i;
-		delete c.n;
-		delete c.i;
-	});
-});
-
 /*!
  * jQuery JavaScript Library v3.4.1
  * https://jquery.com/
@@ -73088,6 +71744,728 @@ var widgetsSlider = $.widget( "ui.slider", $.ui.mouse, {
 
 
 }));
+/*!
+ * jQuery UI date range picker widget
+ * Copyright (c) 2017 Tamble, Inc.
+ * Licensed under MIT (https://github.com/tamble/jquery-ui-daterangepicker/raw/master/LICENSE.txt)
+ *
+ * Depends:
+ *   - jQuery 1.8.3+
+ *   - jQuery UI 1.9.0+ (widget factory, position utility, button, menu, datepicker)
+ *   - moment.js 2.3.0+
+ */
+
+(function($, window, undefined) {
+
+	var uniqueId = 0; // used for unique ID generation within multiple plugin instances
+
+	$.widget('comiseo.daterangepicker', {
+		version: '0.6.0-beta.1',
+
+		options: {
+			// presetRanges: array of objects; each object describes an item in the presets menu
+			// and must have the properties: text, dateStart, dateEnd.
+			// dateStart, dateEnd are functions returning a moment object
+			presetRanges: [
+				{text: 'Today', dateStart: function() { return moment() }, dateEnd: function() { return moment() } },
+				{text: 'Yesterday', dateStart: function() { return moment().subtract('days', 1) }, dateEnd: function() { return moment().subtract('days', 1) } },
+				{text: 'Last 7 Days', dateStart: function() { return moment().subtract('days', 6) }, dateEnd: function() { return moment() } },
+				{text: 'Last Week (Mo-Su)', dateStart: function() { return moment().subtract('days', 7).isoWeekday(1) }, dateEnd: function() { return moment().subtract('days', 7).isoWeekday(7) } },
+				{text: 'Month to Date', dateStart: function() { return moment().startOf('month') }, dateEnd: function() { return moment() } },
+				{text: 'Previous Month', dateStart: function() { return moment().subtract('month', 1).startOf('month') }, dateEnd: function() { return moment().subtract('month', 1).endOf('month') } },
+				{text: 'Year to Date', dateStart: function() { return moment().startOf('year') }, dateEnd: function() { return moment() } }
+			],
+			initialText: 'Select date range...', // placeholder text - shown when nothing is selected
+			icon: 'ui-icon-triangle-1-s',
+			applyButtonText: 'Apply', // use '' to get rid of the button
+			clearButtonText: 'Clear', // use '' to get rid of the button
+			cancelButtonText: 'Cancel', // use '' to get rid of the button
+			rangeSplitter: ' - ', // string to use between dates
+			dateFormat: 'M d, yy', // displayed date format. Available formats: http://api.jqueryui.com/datepicker/#utility-formatDate
+			altFormat: 'yy-mm-dd', // submitted date format - inside JSON {"start":"...","end":"..."}
+			verticalOffset: 0, // offset of the dropdown relative to the closest edge of the trigger button
+			mirrorOnCollision: true, // reverse layout when there is not enough space on the right
+			autoFitCalendars: true, // override datepicker's numberOfMonths option in order to fit widget width
+			applyOnMenuSelect: true, // whether to auto apply menu selections
+			open: null, // callback that executes when the dropdown opens
+			close: null, // callback that executes when the dropdown closes
+			change: null, // callback that executes when the date range changes
+			clear: null, // callback that executes when the clear button is used
+			cancel: null, // callback that executes when the cancel button is used
+			onOpen: null, // @deprecated callback that executes when the dropdown opens
+			onClose: null, // @deprecated callback that executes when the dropdown closes
+			onChange: null, // @deprecated callback that executes when the date range changes
+			onClear: null, // @deprecated callback that executes when the clear button is used
+			datepickerOptions: { // object containing datepicker options. See http://api.jqueryui.com/datepicker/#options
+				numberOfMonths: 3,
+//				showCurrentAtPos: 1 // bug; use maxDate instead
+				maxDate: 0 // the maximum selectable date is today (also current month is displayed on the last position)
+			}
+		},
+
+		_create: function() {
+			this._dateRangePicker = buildDateRangePicker(this.element, this, this.options);
+		},
+
+		_destroy: function() {
+			this._dateRangePicker.destroy();
+		},
+
+		_setOptions: function(options) {
+			this._super(options);
+			this._dateRangePicker.enforceOptions();
+		},
+
+		open: function() {
+			this._dateRangePicker.open();
+		},
+
+		close: function() {
+			this._dateRangePicker.close();
+		},
+
+		setRange: function(range) {
+			this._dateRangePicker.setRange(range);
+		},
+
+		getRange: function() {
+			return this._dateRangePicker.getRange();
+		},
+
+		clearRange: function() {
+			this._dateRangePicker.clearRange();
+		},
+
+		widget: function() {
+			return this._dateRangePicker.getContainer();
+		}
+	});
+
+	/**
+	 * factory for the trigger button (which visually replaces the original input form element)
+	 *
+	 * @param {jQuery} $originalElement jQuery object containing the input form element used to instantiate this widget instance
+	 * @param {String} classnameContext classname of the parent container
+	 * @param {Object} options
+	 */
+	function buildTriggerButton($originalElement, classnameContext, options) {
+		var $self, id;
+
+		function fixReferences() {
+			id = 'drp_autogen' + uniqueId++;
+			$('label[for="' + $originalElement.attr('id') + '"]')
+				.attr('for', id);
+		}
+
+		function init() {
+			fixReferences();
+			$self = $('<button type="button"></button>')
+				.addClass(classnameContext + '-triggerbutton')
+				.attr({'title': $originalElement.attr('title'), 'tabindex': $originalElement.attr('tabindex'), id: id})
+				.button({
+					icons: {
+						secondary: options.icon
+					},
+					icon: options.icon,
+					iconPosition: 'end',
+					label: options.initialText
+				});
+		}
+
+		function getLabel() {
+			return $self.button('option', 'label');
+		}
+
+		function setLabel(value) {
+			$self.button('option', 'label', value);
+		}
+
+		function reset() {
+			$originalElement.val('').change();
+			setLabel(options.initialText);
+		}
+
+		function enforceOptions() {
+			$self.button('option', {
+				icons: {
+					secondary: options.icon
+				},
+				icon: options.icon,
+				iconPosition: 'end',
+				label: options.initialText
+			});
+		}
+
+		init();
+		return {
+			getElement: function() { return $self; },
+			getLabel: getLabel,
+			setLabel: setLabel,
+			reset: reset,
+			enforceOptions: enforceOptions
+		};
+	}
+
+	/**
+	 * factory for the presets menu (containing built-in date ranges)
+	 *
+	 * @param {String} classnameContext classname of the parent container
+	 * @param {Object} options
+	 * @param {Function} onClick callback that executes when a preset is clicked
+	 */
+	function buildPresetsMenu(classnameContext, options, onClick) {
+		var $self,
+			$menu,
+			menuItemWrapper;
+
+		function init() {
+			$self = $('<div></div>')
+				.addClass(classnameContext + '-presets');
+
+			$menu = $('<ul></ul>');
+
+			if ($.ui.menu.prototype.options.items === undefined) {
+				menuItemWrapper = {start: '<li><a href="#">', end: '</a></li>'};
+			} else {
+				menuItemWrapper = {start: '<li><div>', end: '</div></li>'};
+			}
+
+			$.each(options.presetRanges, function() {
+				$(menuItemWrapper.start + this.text + menuItemWrapper.end)
+				.data('dateStart', this.dateStart)
+				.data('dateEnd', this.dateEnd)
+				.click(onClick)
+				.appendTo($menu);
+			});
+
+			$self.append($menu);
+
+			$menu.menu()
+				.data('ui-menu').delay = 0; // disable submenu delays
+		}
+
+		init();
+		return {
+			getElement: function() { return $self; }
+		};
+	}
+
+	/**
+	 * factory for the multiple month date picker
+	 *
+	 * @param {String} classnameContext classname of the parent container
+	 * @param {Object} options
+	 */
+	function buildCalendar(classnameContext, options) {
+		var $self,
+			range = {start: null, end: null}; // selected range
+
+		function init() {
+			$self = $('<div></div>', {'class': classnameContext + '-calendar ui-widget-content'});
+
+			$self.datepicker($.extend({}, options.datepickerOptions, {beforeShowDay: beforeShowDay, onSelect: onSelectDay}));
+			updateAtMidnight();
+		}
+
+		function enforceOptions() {
+			$self.datepicker('option', $.extend({}, options.datepickerOptions, {beforeShowDay: beforeShowDay, onSelect: onSelectDay}));
+		}
+
+		// called when a day is selected
+		function onSelectDay(dateText, instance) {
+			var dateFormat = options.datepickerOptions.dateFormat || $.datepicker._defaults.dateFormat,
+				selectedDate = $.datepicker.parseDate(dateFormat, dateText);
+
+			if (!range.start || range.end) { // start not set, or both already set
+				range.start = selectedDate;
+				range.end = null;
+			} else if (selectedDate < range.start) { // start set, but selected date is earlier
+				range.end = range.start;
+				range.start = selectedDate;
+			} else {
+				range.end = selectedDate;
+			}
+			if (options.datepickerOptions.hasOwnProperty('onSelect')) {
+				options.datepickerOptions.onSelect(dateText, instance);
+			}
+			if(range.start && range.end) {
+				$('.comiseo-daterangepicker-buttonpanel button:first-child').click();
+			}
+		}
+
+		// called for each day in the datepicker before it is displayed
+		function beforeShowDay(date) {
+			var result = [
+					true, // selectable
+					range.start && ((+date === +range.start) || (range.end && range.start <= date && date <= range.end)) ? 'ui-state-highlight' : '' // class to be added
+				],
+				userResult = [true, '', ''];
+
+			if (options.datepickerOptions.hasOwnProperty('beforeShowDay')) {
+				userResult = options.datepickerOptions.beforeShowDay(date);
+			}
+			return [
+				result[0] && userResult[0],
+				result[1] + ' ' + userResult[1],
+				userResult[2]
+			];
+		}
+
+		function updateAtMidnight() {
+			setTimeout(function() {
+				refresh();
+				updateAtMidnight();
+			}, moment().endOf('day') - moment());
+		}
+
+		function scrollToRangeStart() {
+			if (range.start) {
+				$self.datepicker('setDate', range.start);
+			}
+		}
+
+		function refresh() {
+			$self.datepicker('refresh');
+			$self.datepicker('setDate', null); // clear the selected date
+		}
+
+		function reset() {
+			range = {start: null, end: null};
+			refresh();
+		}
+
+		init();
+		return {
+			getElement: function() { return $self; },
+			scrollToRangeStart: function() { return scrollToRangeStart(); },
+			getRange: function() { return range; },
+			setRange: function(value) { range = value; refresh(); },
+			refresh: refresh,
+			reset: reset,
+			enforceOptions: enforceOptions
+		};
+	}
+
+	/**
+	 * factory for the button panel
+	 *
+	 * @param {String} classnameContext classname of the parent container
+	 * @param {Object} options
+	 * @param {Object} handlers contains callbacks for each button
+	 */
+	function buildButtonPanel(classnameContext, options, handlers) {
+		var $self,
+			applyButton,
+			clearButton,
+			cancelButton;
+
+		function init() {
+			$self = $('<div></div>')
+				.addClass(classnameContext + '-buttonpanel');
+
+			if (options.applyButtonText) {
+				applyButton = $('<button type="button" class="ui-priority-primary"></button>')
+					.text(options.applyButtonText)
+					.button();
+
+				$self.append(applyButton);
+			}
+
+			if (options.clearButtonText) {
+				clearButton = $('<button type="button" class="ui-priority-secondary"></button>')
+					.text(options.clearButtonText)
+					.button();
+
+				$self.append(clearButton);
+			}
+
+			if (options.cancelButtonText) {
+				cancelButton = $('<button type="button" class="ui-priority-secondary"></button>')
+					.text(options.cancelButtonText)
+					.button();
+
+				$self.append(cancelButton);
+			}
+
+			bindEvents();
+		}
+
+		function enforceOptions() {
+			if (applyButton) {
+				applyButton.button('option', 'label', options.applyButtonText);
+			}
+
+			if (clearButton) {
+				clearButton.button('option', 'label', options.clearButtonText);
+			}
+
+			if (cancelButton) {
+				cancelButton.button('option', 'label', options.cancelButtonText);
+			}
+		}
+
+		function bindEvents() {
+			if (handlers) {
+				if (applyButton) {
+					applyButton.click(handlers.onApply);
+				}
+
+				if (clearButton) {
+					clearButton.click(handlers.onClear);
+				}
+
+				if (cancelButton) {
+					cancelButton.click(handlers.onCancel);
+				}
+			}
+		}
+
+		init();
+		return {
+			getElement: function() { return $self; },
+			enforceOptions: enforceOptions
+		};
+	}
+
+	/**
+	 * factory for the widget
+	 *
+	 * @param {jQuery} $originalElement jQuery object containing the input form element used to instantiate this widget instance
+	 * @param {Object} instance
+	 * @param {Object} options
+	 */
+	function buildDateRangePicker($originalElement, instance, options) {
+		var classname = 'comiseo-daterangepicker',
+			$container, // the dropdown
+			$mask, // ui helper (z-index fix)
+			triggerButton,
+			presetsMenu,
+			calendar,
+			buttonPanel,
+			isOpen = false,
+			autoFitNeeded = false,
+			LEFT = 0,
+			RIGHT = 1,
+			TOP = 2,
+			BOTTOM = 3,
+			sides = ['left', 'right', 'top', 'bottom'],
+			hSide = RIGHT, // initialized to pick layout styles from CSS
+			vSide = null;
+
+		function init() {
+			triggerButton = buildTriggerButton($originalElement, classname, options);
+			presetsMenu = buildPresetsMenu(classname, options, usePreset);
+			calendar = buildCalendar(classname, options);
+			autoFit.numberOfMonths = options.datepickerOptions.numberOfMonths; // save initial option!
+			if (autoFit.numberOfMonths instanceof Array) { // not implemented
+				options.autoFitCalendars = false;
+			}
+			buttonPanel = buildButtonPanel(classname, options, {
+				onApply: function (event) {
+					close(event);
+					setRange(null, event);
+				},
+				onClear: function (event) {
+					close(event);
+					clearRange(event);
+				},
+				onCancel: function (event) {
+					instance._trigger('cancel', event, {instance: instance});
+					close(event);
+					reset();
+				}
+			});
+			render();
+			autoFit();
+			reset();
+			bindEvents();
+		}
+
+		function render() {
+			$container = $('<div></div>', {'class': classname + ' ' + classname + '-' + sides[hSide] + ' ui-widget ui-widget-content ui-corner-all ui-front'})
+				.append($('<div></div>', {'class': classname + '-main ui-widget-content'})
+					.append(presetsMenu.getElement())
+					.append(calendar.getElement()))
+				.append($('<div class="ui-helper-clearfix"></div>')
+					.append(buttonPanel.getElement()))
+				.hide();
+			$originalElement.hide().after(triggerButton.getElement());
+			$mask = $('<div></div>', {'class': 'ui-front ' + classname + '-mask'}).hide();
+			$('body').append($mask).append($container);
+		}
+
+		// auto adjusts the number of months in the date picker
+		function autoFit() {
+			if (options.autoFitCalendars) {
+				var maxWidth = $(window).width(),
+					initialWidth = $container.outerWidth(true),
+					$calendar = calendar.getElement(),
+					numberOfMonths = $calendar.datepicker('option', 'numberOfMonths'),
+					initialNumberOfMonths = numberOfMonths;
+
+				if (initialWidth > maxWidth) {
+					while (numberOfMonths > 1 && $container.outerWidth(true) > maxWidth) {
+						$calendar.datepicker('option', 'numberOfMonths', --numberOfMonths);
+					}
+					if (numberOfMonths !== initialNumberOfMonths) {
+						autoFit.monthWidth = (initialWidth - $container.outerWidth(true)) / (initialNumberOfMonths - numberOfMonths);
+					}
+				} else {
+					while (numberOfMonths < autoFit.numberOfMonths && (maxWidth - $container.outerWidth(true)) >= autoFit.monthWidth) {
+						$calendar.datepicker('option', 'numberOfMonths', ++numberOfMonths);
+					}
+				}
+				reposition();
+				autoFitNeeded = false;
+			}
+		}
+
+		function destroy() {
+			$container.remove();
+			triggerButton.getElement().remove();
+			$originalElement.show();
+		}
+
+		function bindEvents() {
+			triggerButton.getElement().click(toggle);
+			triggerButton.getElement().keydown(keyPressTriggerOpenOrClose);
+			$mask.click(function(event) {
+				close(event);
+				reset();
+			});
+			$(window).resize(function() { isOpen ? autoFit() : autoFitNeeded = true; });
+		}
+
+		function formatRangeForDisplay(range) {
+			var dateFormat = options.dateFormat;
+			return $.datepicker.formatDate(dateFormat, range.start) + (+range.end !== +range.start ? options.rangeSplitter + $.datepicker.formatDate(dateFormat, range.end) : '');
+		}
+
+		// formats a date range as JSON
+		function formatRange(range) {
+			var dateFormat = options.altFormat,
+				formattedRange = {};
+			formattedRange.start = $.datepicker.formatDate(dateFormat, range.start);
+			formattedRange.end = $.datepicker.formatDate(dateFormat, range.end);
+			return JSON.stringify(formattedRange);
+		}
+
+		// parses a date range in JSON format
+		function parseRange(text) {
+			var dateFormat = options.altFormat,
+				range = null;
+			if (text) {
+				try {
+					range = JSON.parse(text, function(key, value) {
+						return key ? $.datepicker.parseDate(dateFormat, value) : value;
+					});
+				} catch (e) {
+				}
+			}
+			return range;
+		}
+
+		function reset() {
+			var range = getRange();
+			if (range) {
+				triggerButton.setLabel(formatRangeForDisplay(range));
+				calendar.setRange(range);
+			} else {
+				calendar.reset();
+			}
+		}
+
+		function setRange(value, event) {
+			var range = value || calendar.getRange();
+			if (!range.start) {
+				return;
+			}
+			if (!range.end) {
+				range.end = range.start;
+			}
+			value && calendar.setRange(range);
+			triggerButton.setLabel(formatRangeForDisplay(range));
+			$originalElement.val(formatRange(range)).change();
+			if (options.onChange) {
+				options.onChange();
+			}
+			instance._trigger('change', event, {instance: instance});
+		}
+
+		function getRange() {
+			return parseRange($originalElement.val());
+		}
+
+		function clearRange(event) {
+			triggerButton.reset();
+			calendar.reset();
+			if (options.onClear) {
+				options.onClear();
+			}
+			instance._trigger('clear', event, {instance: instance});
+		}
+
+		// callback - used when the user clicks a preset range
+		function usePreset(event) {
+			var $this = $(this),
+				start = $this.data('dateStart')().startOf('day').toDate(),
+				end = $this.data('dateEnd')().startOf('day').toDate();
+			calendar.setRange({ start: start, end: end });
+			if (options.applyOnMenuSelect) {
+				close(event);
+				setRange(null, event);
+			}
+			return false;
+		}
+
+		// adjusts dropdown's position taking into account the available space
+		function reposition() {
+			$container.position({
+				my: 'left top',
+				at: 'left bottom' + (options.verticalOffset < 0 ? options.verticalOffset : '+' + options.verticalOffset),
+				of: triggerButton.getElement(),
+				collision : 'flipfit flipfit',
+				using: function(coords, feedback) {
+					var containerCenterX = feedback.element.left + feedback.element.width / 2,
+						triggerButtonCenterX = feedback.target.left + feedback.target.width / 2,
+						prevHSide = hSide,
+						last,
+						containerCenterY = feedback.element.top + feedback.element.height / 2,
+						triggerButtonCenterY = feedback.target.top + feedback.target.height / 2,
+						prevVSide = vSide,
+						vFit; // is the container fit vertically
+
+					hSide = (containerCenterX > triggerButtonCenterX) ? RIGHT : LEFT;
+					if (hSide !== prevHSide) {
+						if (options.mirrorOnCollision) {
+							last = (hSide === LEFT) ? presetsMenu : calendar;
+							$container.children().first().append(last.getElement());
+						}
+						$container.removeClass(classname + '-' + sides[prevHSide]);
+						$container.addClass(classname + '-' + sides[hSide]);
+					}
+					$container.css({
+						left: coords.left,
+						top: coords.top
+					});
+
+					vSide = (containerCenterY > triggerButtonCenterY) ? BOTTOM : TOP;
+					if (vSide !== prevVSide) {
+						if (prevVSide !== null) {
+							triggerButton.getElement().removeClass(classname + '-' + sides[prevVSide]);
+						}
+						triggerButton.getElement().addClass(classname + '-' + sides[vSide]);
+					}
+					vFit = vSide === BOTTOM && feedback.element.top - feedback.target.top !== feedback.target.height + options.verticalOffset
+						|| vSide === TOP && feedback.target.top - feedback.element.top !== feedback.element.height + options.verticalOffset;
+					triggerButton.getElement().toggleClass(classname + '-vfit', vFit);
+				}
+			});
+		}
+
+		function killEvent(event) {
+			event.preventDefault();
+			event.stopPropagation();
+		}
+
+		function keyPressTriggerOpenOrClose(event) {
+			switch (event.which) {
+				case $.ui.keyCode.UP:
+				case $.ui.keyCode.DOWN:
+					killEvent(event);
+					open(event);
+					return;
+				case $.ui.keyCode.ESCAPE:
+					killEvent(event);
+					close(event);
+					reset();
+					return;
+				case $.ui.keyCode.TAB:
+					close(event);
+					return;
+			}
+		}
+
+		function open(event) {
+			if (!isOpen) {
+				triggerButton.getElement().addClass(classname + '-active');
+				$mask.show();
+				isOpen = true;
+				autoFitNeeded && autoFit();
+				calendar.scrollToRangeStart();
+				$container.show();
+				reposition();
+			}
+			if (options.onOpen) {
+				options.onOpen();
+			}
+			instance._trigger('open', event, {instance: instance});
+		}
+
+		function close(event) {
+			if (isOpen) {
+				$container.hide();
+				$mask.hide();
+				triggerButton.getElement().removeClass(classname + '-active');
+				isOpen = false;
+			}
+			if (options.onClose) {
+				options.onClose();
+			}
+			instance._trigger('close', event, {instance: instance});
+		}
+
+		function toggle(event) {
+			if (isOpen) {
+				close(event);
+				reset();
+			}
+			else {
+				open(event);
+			}
+		}
+
+		function getContainer(){
+			return $container;
+		}
+
+		function enforceOptions() {
+			var oldPresetsMenu = presetsMenu;
+			presetsMenu = buildPresetsMenu(classname, options, usePreset);
+			oldPresetsMenu.getElement().replaceWith(presetsMenu.getElement());
+			calendar.enforceOptions();
+			buttonPanel.enforceOptions();
+			triggerButton.enforceOptions();
+			var range = getRange();
+			if (range) {
+				triggerButton.setLabel(formatRangeForDisplay(range));
+			}
+		}
+
+		init();
+		return {
+			toggle: toggle,
+			destroy: destroy,
+			open: open,
+			close: close,
+			setRange: setRange,
+			getRange: getRange,
+			clearRange: clearRange,
+			reset: reset,
+			enforceOptions: enforceOptions,
+			getContainer: getContainer
+		};
+	}
+
+})(jQuery, window);
+
+/**
+ * jquery-date-range-picker
+ * @version v0.21.1
+ * @link https://github.com/longbill/jquery-date-range-picker
+ * @license MIT
+ */
+ !function(e){"function"==typeof define&&define.amd?define(["jquery","moment"],e):"object"==typeof exports&&"undefined"!=typeof module?module.exports=e(require("jquery"),require("moment")):e(jQuery,moment)}(function(U,Q){"use strict";U.dateRangePickerLanguages={default:{selected:"Selected:",day:"Day",days:"Days",apply:"Close","week-1":"mo","week-2":"tu","week-3":"we","week-4":"th","week-5":"fr","week-6":"sa","week-7":"su","week-number":"W","month-name":["january","february","march","april","may","june","july","august","september","october","november","december"],shortcuts:"Shortcuts","custom-values":"Custom Values",past:"Past",following:"Following",previous:"Previous","prev-week":"Week","prev-month":"Month","prev-year":"Year",next:"Next","next-week":"Week","next-month":"Month","next-year":"Year","less-than":"Date range should not be more than %d days","more-than":"Date range should not be less than %d days","default-more":"Please select a date range longer than %d days","default-single":"Please select a date","default-less":"Please select a date range less than %d days","default-range":"Please select a date range between %d and %d days","default-default":"Please select a date range",time:"Time",hour:"Hour",minute:"Minute"},id:{selected:"Terpilih:",day:"Hari",days:"Hari",apply:"Tutup","week-1":"sen","week-2":"sel","week-3":"rab","week-4":"kam","week-5":"jum","week-6":"sab","week-7":"min","week-number":"W","month-name":["januari","februari","maret","april","mei","juni","juli","agustus","september","oktober","november","desember"],shortcuts:"Pintas","custom-values":"Nilai yang ditentukan",past:"Yang Lalu",following:"Mengikuti",previous:"Sebelumnya","prev-week":"Minggu","prev-month":"Bulan","prev-year":"Tahun",next:"Selanjutnya","next-week":"Minggu","next-month":"Bulan","next-year":"Tahun","less-than":"Tanggal harus lebih dari %d hari","more-than":"Tanggal harus kurang dari %d hari","default-more":"Jarak tanggal harus lebih lama dari %d hari","default-single":"Silakan pilih tanggal","default-less":"Jarak rentang tanggal tidak boleh lebih lama dari %d hari","default-range":"Rentang tanggal harus antara %d dan %d hari","default-default":"Silakan pilih rentang tanggal",time:"Waktu",hour:"Jam",minute:"Menit"},az:{selected:"Seçildi:",day:" gün",days:" gün",apply:"tətbiq","week-1":"1","week-2":"2","week-3":"3","week-4":"4","week-5":"5","week-6":"6","week-7":"7","month-name":["yanvar","fevral","mart","aprel","may","iyun","iyul","avqust","sentyabr","oktyabr","noyabr","dekabr"],shortcuts:"Qısayollar",past:"Keçmiş",following:"Növbəti",previous:"&nbsp;&nbsp;&nbsp;","prev-week":"Öncəki həftə","prev-month":"Öncəki ay","prev-year":"Öncəki il",next:"&nbsp;&nbsp;&nbsp;","next-week":"Növbəti həftə","next-month":"Növbəti ay","next-year":"Növbəti il","less-than":"Tarix aralığı %d gündən çox olmamalıdır","more-than":"Tarix aralığı %d gündən az olmamalıdır","default-more":"%d gündən çox bir tarix seçin","default-single":"Tarix seçin","default-less":"%d gündən az bir tarix seçin","default-range":"%d və %d gün aralığında tarixlər seçin","default-default":"Tarix aralığı seçin"},bg:{selected:"Избрано:",day:"Ден",days:"Дни",apply:"Затвори","week-1":"пн","week-2":"вт","week-3":"ср","week-4":"чт","week-5":"пт","week-6":"сб","week-7":"нд","week-number":"С","month-name":["януари","февруари","март","април","май","юни","юли","август","септември","октомври","ноември","декември"],shortcuts:"Преки пътища","custom-values":"Персонализирани стойности",past:"Минал",following:"Следващ",previous:"Предишен","prev-week":"Седмица","prev-month":"Месец","prev-year":"Година",next:"Следващ","next-week":"Седмица","next-month":"Месец","next-year":"Година","less-than":"Периодът от време не трябва да е повече от %d дни","more-than":"Периодът от време не трябва да е по-малко от %d дни","default-more":"Моля изберете период по-дълъг от %d дни","default-single":"Моля изберете дата","default-less":"Моля изберете период по-къс от %d дни","default-range":"Моля изберете период между %d и %d дни","default-default":"Моля изберете период",time:"Време",hour:"Час",minute:"Минута"},cn:{selected:"已选择:",day:"天",days:"天",apply:"确定","week-1":"一","week-2":"二","week-3":"三","week-4":"四","week-5":"五","week-6":"六","week-7":"日","week-number":"周","month-name":["一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月"],shortcuts:"快捷选择",past:"过去",following:"将来",previous:"&nbsp;&nbsp;&nbsp;","prev-week":"上周","prev-month":"上个月","prev-year":"去年",next:"&nbsp;&nbsp;&nbsp;","next-week":"下周","next-month":"下个月","next-year":"明年","less-than":"所选日期范围不能大于%d天","more-than":"所选日期范围不能小于%d天","default-more":"请选择大于%d天的日期范围","default-less":"请选择小于%d天的日期范围","default-range":"请选择%d天到%d天的日期范围","default-single":"请选择一个日期","default-default":"请选择一个日期范围",time:"时间",hour:"小时",minute:"分钟"},cz:{selected:"Vybráno:",day:"Den",days:"Dny",apply:"Zavřít","week-1":"po","week-2":"út","week-3":"st","week-4":"čt","week-5":"pá","week-6":"so","week-7":"ne","month-name":["leden","únor","březen","duben","květen","červen","červenec","srpen","září","říjen","listopad","prosinec"],shortcuts:"Zkratky",past:"po",following:"následující",previous:"předchozí","prev-week":"týden","prev-month":"měsíc","prev-year":"rok",next:"další","next-week":"týden","next-month":"měsíc","next-year":"rok","less-than":"Rozsah data by neměl být větší než %d dnů","more-than":"Rozsah data by neměl být menší než %d dnů","default-more":"Prosím zvolte rozsah data větší než %d dnů","default-single":"Prosím zvolte datum","default-less":"Prosím zvolte rozsah data menší než %d dnů","default-range":"Prosím zvolte rozsah data mezi %d a %d dny","default-default":"Prosím zvolte rozsah data"},de:{selected:"Auswahl:",day:"Tag",days:"Tage",apply:"Schließen","week-1":"mo","week-2":"di","week-3":"mi","week-4":"do","week-5":"fr","week-6":"sa","week-7":"so","month-name":["januar","februar","märz","april","mai","juni","juli","august","september","oktober","november","dezember"],shortcuts:"Schnellwahl",past:"Vorherige",following:"Folgende",previous:"Vorherige","prev-week":"Woche","prev-month":"Monat","prev-year":"Jahr",next:"Nächste","next-week":"Woche","next-month":"Monat","next-year":"Jahr","less-than":"Datumsbereich darf nicht größer sein als %d Tage","more-than":"Datumsbereich darf nicht kleiner sein als %d Tage","default-more":"Bitte mindestens %d Tage auswählen","default-single":"Bitte ein Datum auswählen","default-less":"Bitte weniger als %d Tage auswählen","default-range":"Bitte einen Datumsbereich zwischen %d und %d Tagen auswählen","default-default":"Bitte ein Start- und Enddatum auswählen",Time:"Zeit",hour:"Stunde",minute:"Minute"},es:{selected:"Seleccionado:",day:"Día",days:"Días",apply:"Cerrar","week-1":"lu","week-2":"ma","week-3":"mi","week-4":"ju","week-5":"vi","week-6":"sa","week-7":"do","month-name":["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"],shortcuts:"Accesos directos",past:"Pasado",following:"Siguiente",previous:"Anterior","prev-week":"Semana","prev-month":"Mes","prev-year":"Año",next:"Siguiente","next-week":"Semana","next-month":"Mes","next-year":"Año","less-than":"El rango no debería ser mayor de %d días","more-than":"El rango no debería ser menor de %d días","default-more":"Por favor selecciona un rango mayor a %d días","default-single":"Por favor selecciona un día","default-less":"Por favor selecciona un rango menor a %d días","default-range":"Por favor selecciona un rango entre %d y %d días","default-default":"Por favor selecciona un rango de fechas."},fr:{selected:"Sélection:",day:"Jour",days:"Jours",apply:"Fermer","week-1":"lu","week-2":"ma","week-3":"me","week-4":"je","week-5":"ve","week-6":"sa","week-7":"di","month-name":["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],shortcuts:"Raccourcis",past:"Passé",following:"Suivant",previous:"Précédent","prev-week":"Semaine","prev-month":"Mois","prev-year":"Année",next:"Suivant","next-week":"Semaine","next-month":"Mois","next-year":"Année","less-than":"L'intervalle ne doit pas être supérieure à %d jours","more-than":"L'intervalle ne doit pas être inférieure à %d jours","default-more":"Merci de choisir une intervalle supérieure à %d jours","default-single":"Merci de choisir une date","default-less":"Merci de choisir une intervalle inférieure %d jours","default-range":"Merci de choisir une intervalle comprise entre %d et %d jours","default-default":"Merci de choisir une date"},hu:{selected:"Kiválasztva:",day:"Nap",days:"Nap",apply:"Ok","week-1":"h","week-2":"k","week-3":"sz","week-4":"cs","week-5":"p","week-6":"sz","week-7":"v","month-name":["január","február","március","április","május","június","július","augusztus","szeptember","október","november","december"],shortcuts:"Gyorsválasztó",past:"Múlt",following:"Következő",previous:"Előző","prev-week":"Hét","prev-month":"Hónap","prev-year":"Év",next:"Következő","next-week":"Hét","next-month":"Hónap","next-year":"Év","less-than":"A kiválasztás nem lehet több %d napnál","more-than":"A kiválasztás nem lehet több %d napnál","default-more":"Válassz ki egy időszakot ami hosszabb mint %d nap","default-single":"Válassz egy napot","default-less":"Válassz ki egy időszakot ami rövidebb mint %d nap","default-range":"Válassz ki egy %d - %d nap hosszú időszakot","default-default":"Válassz ki egy időszakot"},it:{selected:"Selezionati:",day:"Giorno",days:"Giorni",apply:"Chiudi","week-1":"lu","week-2":"ma","week-3":"me","week-4":"gi","week-5":"ve","week-6":"sa","week-7":"do","month-name":["gennaio","febbraio","marzo","aprile","maggio","giugno","luglio","agosto","settembre","ottobre","novembre","dicembre"],shortcuts:"Scorciatoie",past:"Scorso",following:"Successivo",previous:"Precedente","prev-week":"Settimana","prev-month":"Mese","prev-year":"Anno",next:"Prossimo","next-week":"Settimana","next-month":"Mese","next-year":"Anno","less-than":"L'intervallo non dev'essere maggiore di %d giorni","more-than":"L'intervallo non dev'essere minore di %d giorni","default-more":"Seleziona un intervallo maggiore di %d giorni","default-single":"Seleziona una data","default-less":"Seleziona un intervallo minore di %d giorni","default-range":"Seleziona un intervallo compreso tra i %d e i %d giorni","default-default":"Seleziona un intervallo di date"},ko:{selected:"기간:",day:"일",days:"일간",apply:"닫기","week-1":"월","week-2":"화","week-3":"수","week-4":"목","week-5":"금","week-6":"토","week-7":"일","week-number":"주","month-name":["1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"],shortcuts:"단축키들",past:"지난(오늘기준)",following:"이후(오늘기준)",previous:"이전","prev-week":"1주","prev-month":"1달","prev-year":"1년",next:"다음","next-week":"1주","next-month":"1달","next-year":"1년","less-than":"날짜 범위는 %d 일보다 많을 수 없습니다","more-than":"날짜 범위는 %d 일보다 작을 수 없습니다","default-more":"날짜 범위를 %d 일보다 길게 선택해 주세요","default-single":"날짜를 선택해 주세요","default-less":"%d 일보다 작은 날짜를 선택해 주세요","default-range":"%d와 %d 일 사이의 날짜 범위를 선택해 주세요","default-default":"날짜 범위를 선택해 주세요",time:"시각",hour:"시",minute:"분"},no:{selected:"Valgt:",day:"Dag",days:"Dager",apply:"Lukk","week-1":"ma","week-2":"ti","week-3":"on","week-4":"to","week-5":"fr","week-6":"lø","week-7":"sø","month-name":["januar","februar","mars","april","mai","juni","juli","august","september","oktober","november","desember"],shortcuts:"Snarveier","custom-values":"Egendefinerte Verdier",past:"Over",following:"Følger",previous:"Forrige","prev-week":"Uke","prev-month":"Måned","prev-year":"År",next:"Neste","next-week":"Uke","next-month":"Måned","next-year":"År","less-than":"Datoperioden skal ikkje være lengre enn %d dager","more-than":"Datoperioden skal ikkje være kortere enn %d dager","default-more":"Vennligst velg ein datoperiode lengre enn %d dager","default-single":"Vennligst velg ein dato","default-less":"Vennligst velg ein datoperiode mindre enn %d dager","default-range":"Vennligst velg ein datoperiode mellom %d og %d dager","default-default":"Vennligst velg ein datoperiode",time:"Tid",hour:"Time",minute:"Minutter"},nl:{selected:"Geselecteerd:",day:"Dag",days:"Dagen",apply:"Ok","week-1":"ma","week-2":"di","week-3":"wo","week-4":"do","week-5":"vr","week-6":"za","week-7":"zo","month-name":["januari","februari","maart","april","mei","juni","juli","augustus","september","oktober","november","december"],shortcuts:"Snelkoppelingen","custom-values":"Aangepaste waarden",past:"Verleden",following:"Komend",previous:"Vorige","prev-week":"Week","prev-month":"Maand","prev-year":"Jaar",next:"Volgende","next-week":"Week","next-month":"Maand","next-year":"Jaar","less-than":"Interval moet langer dan %d dagen zijn","more-than":"Interval mag niet minder dan %d dagen zijn","default-more":"Selecteer een interval langer dan %dagen","default-single":"Selecteer een datum","default-less":"Selecteer een interval minder dan %d dagen","default-range":"Selecteer een interval tussen %d en %d dagen","default-default":"Selecteer een interval",time:"Tijd",hour:"Uur",minute:"Minuut"},ru:{selected:"Выбрано:",day:"День",days:"Дней",apply:"Применить","week-1":"пн","week-2":"вт","week-3":"ср","week-4":"чт","week-5":"пт","week-6":"сб","week-7":"вс","month-name":["январь","февраль","март","апрель","май","июнь","июль","август","сентябрь","октябрь","ноябрь","декабрь"],shortcuts:"Быстрый выбор","custom-values":"Пользовательские значения",past:"Прошедшие",following:"Следующие",previous:"&nbsp;&nbsp;&nbsp;","prev-week":"Неделя","prev-month":"Месяц","prev-year":"Год",next:"&nbsp;&nbsp;&nbsp;","next-week":"Неделя","next-month":"Месяц","next-year":"Год","less-than":"Диапазон не может быть больше %d дней","more-than":"Диапазон не может быть меньше %d дней","default-more":"Пожалуйста выберите диапазон больше %d дней","default-single":"Пожалуйста выберите дату","default-less":"Пожалуйста выберите диапазон меньше %d дней","default-range":"Пожалуйста выберите диапазон между %d и %d днями","default-default":"Пожалуйста выберите диапазон",time:"Время",hour:"Часы",minute:"Минуты"},uk:{selected:"Вибрано:",day:"День",days:"Днів",apply:"Застосувати","week-1":"пн","week-2":"вт","week-3":"ср","week-4":"чт","week-5":"пт","week-6":"сб","week-7":"нд","month-name":["січень","лютий","березень","квітень","травень","червень","липень","серпень","вересень","жовтень","листопад","грудень"],shortcuts:"Швидкий вибір","custom-values":"Значення користувача",past:"Минулі",following:"Наступні",previous:"&nbsp;&nbsp;&nbsp;","prev-week":"Тиждень","prev-month":"Місяць","prev-year":"Рік",next:"&nbsp;&nbsp;&nbsp;","next-week":"Тиждень","next-month":"Місяць","next-year":"Рік","less-than":"Діапазон не може бути більш ніж %d днів","more-than":"Діапазон не може бути меньш ніж %d днів","default-more":"Будь ласка виберіть діапазон більше %d днів","default-single":"Будь ласка виберіть дату","default-less":"Будь ласка виберіть діапазон менше %d днів","default-range":"Будь ласка виберіть діапазон між %d та %d днями","default-default":"Будь ласка виберіть діапазон",time:"Час",hour:"Години",minute:"Хвилини"},pl:{selected:"Wybrany:",day:"Dzień",days:"Dni",apply:"Zamknij","week-1":"pon","week-2":"wt","week-3":"śr","week-4":"czw","week-5":"pt","week-6":"so","week-7":"nd","month-name":["styczeń","luty","marzec","kwiecień","maj","czerwiec","lipiec","sierpień","wrzesień","październik","listopad","grudzień"],shortcuts:"Skróty","custom-values":"Niestandardowe wartości",past:"Przeszłe",following:"Następne",previous:"Poprzednie","prev-week":"tydzień","prev-month":"miesiąc","prev-year":"rok",next:"Następny","next-week":"tydzień","next-month":"miesiąc","next-year":"rok","less-than":"Okres nie powinien być dłuższy niż %d dni","more-than":"Okres nie powinien być krótszy niż  %d ni","default-more":"Wybierz okres dłuższy niż %d dni","default-single":"Wybierz datę","default-less":"Wybierz okres krótszy niż %d dni","default-range":"Wybierz okres trwający od %d do %d dni","default-default":"Wybierz okres",time:"Czas",hour:"Godzina",minute:"Minuta"},se:{selected:"Vald:",day:"dag",days:"dagar",apply:"godkänn","week-1":"ma","week-2":"ti","week-3":"on","week-4":"to","week-5":"fr","week-6":"lö","week-7":"sö","month-name":["januari","februari","mars","april","maj","juni","juli","augusti","september","oktober","november","december"],shortcuts:"genvägar","custom-values":"Anpassade värden",past:"över",following:"följande",previous:"förra","prev-week":"vecka","prev-month":"månad","prev-year":"år",next:"nästa","next-week":"vecka","next-month":"måned","next-year":"år","less-than":"Datumintervall bör inte vara mindre än %d dagar","more-than":"Datumintervall bör inte vara mer än %d dagar","default-more":"Välj ett datumintervall längre än %d dagar","default-single":"Välj ett datum","default-less":"Välj ett datumintervall mindre än %d dagar","default-range":"Välj ett datumintervall mellan %d och %d dagar","default-default":"Välj ett datumintervall",time:"tid",hour:"timme",minute:"minut"},pt:{selected:"Selecionado:",day:"Dia",days:"Dias",apply:"Fechar","week-1":"seg","week-2":"ter","week-3":"qua","week-4":"qui","week-5":"sex","week-6":"sab","week-7":"dom","week-number":"N","month-name":["janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"],shortcuts:"Atalhos","custom-values":"Valores Personalizados",past:"Passado",following:"Seguinte",previous:"Anterior","prev-week":"Semana","prev-month":"Mês","prev-year":"Ano",next:"Próximo","next-week":"Próxima Semana","next-month":"Próximo Mês","next-year":"Próximo Ano","less-than":"O período selecionado não deve ser maior que %d dias","more-than":"O período selecionado não deve ser menor que %d dias","default-more":"Selecione um período superior a %d dias","default-single":"Selecione uma data","default-less":"Selecione um período inferior a %d dias","default-range":"Selecione um período de %d a %d dias","default-default":"Selecione um período",time:"Tempo",hour:"Hora",minute:"Minuto"},tc:{selected:"已選擇:",day:"天",days:"天",apply:"確定","week-1":"一","week-2":"二","week-3":"三","week-4":"四","week-5":"五","week-6":"六","week-7":"日","week-number":"週","month-name":["一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月"],shortcuts:"快速選擇",past:"過去",following:"將來",previous:"&nbsp;&nbsp;&nbsp;","prev-week":"上週","prev-month":"上個月","prev-year":"去年",next:"&nbsp;&nbsp;&nbsp;","next-week":"下週","next-month":"下個月","next-year":"明年","less-than":"所選日期範圍不能大於%d天","more-than":"所選日期範圍不能小於%d天","default-more":"請選擇大於%d天的日期範圍","default-less":"請選擇少於%d天的日期範圍","default-range":"請選擇%d天到%d天的日期範圍","default-single":"請選擇一個日期","default-default":"請選擇一個日期範圍",time:"日期",hour:"小時",minute:"分鐘"},ja:{selected:"選択しました:",day:"日",days:"日",apply:"確定","week-1":"月","week-2":"火","week-3":"水","week-4":"木","week-5":"金","week-6":"土","week-7":"日","month-name":["1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],shortcuts:"クイック選択",past:"過去",following:"将来",previous:"&nbsp;&nbsp;&nbsp;","prev-week":"先週","prev-month":"先月","prev-year":"昨年",next:"&nbsp;&nbsp;&nbsp;","next-week":"来週","next-month":"来月","next-year":"来年","less-than":"日付の範囲は％d日以上にすべきではありません","more-than":"日付の範囲は％d日を下回ってはいけません","default-more":"％d日よりも長い期間を選択してください","default-less":"％d日未満の期間を選択してください","default-range":"％d日と％d日の間の日付範囲を選択してください","default-single":"日付を選択してください","default-default":"日付範囲を選択してください",time:"時間",hour:"時間",minute:"分"},da:{selected:"Valgt:",day:"Dag",days:"Dage",apply:"Luk","week-1":"ma","week-2":"ti","week-3":"on","week-4":"to","week-5":"fr","week-6":"lø","week-7":"sø","month-name":["januar","februar","marts","april","maj","juni","juli","august","september","oktober","november","december"],shortcuts:"genveje","custom-values":"Brugerdefinerede værdier",past:"Forbi",following:"Følgende",previous:"Forrige","prev-week":"uge","prev-month":"måned","prev-year":"år",next:"Næste","next-week":"uge","next-month":"måned","next-year":"år","less-than":"Dato interval bør ikke være med end %d dage","more-than":"Dato interval bør ikke være mindre end %d dage","default-more":"Vælg datointerval længere end %d dage","default-single":"Vælg dato","default-less":"Vælg datointerval mindre end %d dage","default-range":"Vælg datointerval mellem %d og %d dage","default-default":"Vælg datointerval",time:"tid",hour:"time",minute:"minut"},fi:{selected:"Valittu:",day:"Päivä",days:"Päivää",apply:"Sulje","week-1":"ma","week-2":"ti","week-3":"ke","week-4":"to","week-5":"pe","week-6":"la","week-7":"su","week-number":"V","month-name":["tammikuu","helmikuu","maaliskuu","huhtikuu","toukokuu","kesäkuu","heinäkuu","elokuu","syyskuu","lokakuu","marraskuu","joulukuu"],shortcuts:"Pikavalinnat","custom-values":"Mukautetut Arvot",past:"Menneet",following:"Tulevat",previous:"Edellinen","prev-week":"Viikko","prev-month":"Kuukausi","prev-year":"Vuosi",next:"Seuraava","next-week":"Viikko","next-month":"Kuukausi","next-year":"Vuosi","less-than":"Aikajakson tulisi olla vähemmän kuin %d päivää","more-than":"Aikajakson ei tulisi olla vähempää kuin %d päivää","default-more":"Valitse pidempi aikajakso kuin %d päivää","default-single":"Valitse päivä","default-less":"Valitse lyhyempi aikajakso kuin %d päivää","default-range":"Valitse aikajakso %d ja %d päivän väliltä","default-default":"Valitse aikajakso",time:"Aika",hour:"Tunti",minute:"Minuutti"},cat:{selected:"Seleccionats:",day:"Dia",days:"Dies",apply:"Tanca","week-1":"Dl","week-2":"Dm","week-3":"Dc","week-4":"Dj","week-5":"Dv","week-6":"Ds","week-7":"Dg","week-number":"S","month-name":["gener","febrer","març","abril","maig","juny","juliol","agost","setembre","octubre","novembre","desembre"],shortcuts:"Dreçeres","custom-values":"Valors personalitzats",past:"Passat",following:"Futur",previous:"Anterior","prev-week":"Setmana","prev-month":"Mes","prev-year":"Any",next:"Següent","next-week":"Setmana","next-month":"Mes","next-year":"Any","less-than":"El període no hauria de ser de més de %d dies","more-than":"El període no hauria de ser de menys de %d dies","default-more":"Perfavor selecciona un període més gran de %d dies","default-single":"Perfavor selecciona una data","default-less":"Perfavor selecciona un període de menys de %d dies","default-range":"Perfavor selecciona un període d'entre %d i %d dies","default-default":"Perfavor selecciona un període",time:"Temps",hour:"Hora",minute:"Minut"},sk:{selected:"Vybrané:",day:"Deň",days:"Dni",apply:"Zavrieť","week-1":"po","week-2":"út","week-3":"st","week-4":"št","week-5":"pi","week-6":"so","week-7":"ne","week-number":"T","month-name":["január","február","marec","apríl","máj","jún","júl","august","september","október","november","december"],shortcuts:"Skratky","custom-values":"Vlastné hodnoty",past:"po",following:"nasledujúci",previous:"predchádzajúci","prev-week":"týždeň","prev-month":"mesiac","prev-year":"rok",next:"ďalší","next-week":"týždeň","next-month":"mesiac","next-year":"rok","less-than":"Rozsah dátumu by nemal byť väčší ako %d dní","more-than":"Rozsah dátumu by nemal byť menší ako %d dní","default-more":"Prosím zvoľte rozsah dlhší ako %d dní","default-single":"Prosím zvoľte dátum","default-less":"Prosím zvoľte rozsah menší ako %d dní","default-range":"Prosím zvoľte rozsah medzi %d a %d dňami","default-default":"Prosím zvoľte rozsah",time:"Čas",hour:"Hodina",minute:"Minúta"}},U.fn.dateRangePicker=function(f){f||(f={}),(f=U.extend(!0,{autoClose:!1,format:"YYYY-MM-DD",separator:" to ",language:"auto",startOfWeek:"sunday",getValue:function(){return U(this).val()},setValue:function(e){U(this).attr("readonly")||U(this).is(":disabled")||e==U(this).val()||U(this).val(e)},startDate:!1,endDate:!1,time:{enabled:!1},minDays:0,maxDays:0,showShortcuts:!1,shortcuts:{},customShortcuts:[],inline:!1,container:"body",alwaysOpen:!1,singleDate:!1,lookBehind:!1,batchMode:!1,duration:200,stickyMonths:!1,dayDivAttrs:[],dayTdAttrs:[],selectForward:!1,selectBackward:!1,applyBtnClass:"",singleMonth:"auto",hoveringTooltip:function(e,t,a){return 1<e?e+" "+K("days"):""},showTopbar:!0,swapTime:!1,showWeekNumbers:!1,getWeekNumber:function(e){return Q(e).format("w")},customOpenAnimation:null,customCloseAnimation:null,customArrowPrevSymbol:null,customArrowNextSymbol:null,monthSelect:!1,yearSelect:!1},f)).start=!1,f.end=!1,f.startWeek=!1,f.isTouchDevice="ontouchstart"in window||navigator.msMaxTouchPoints,f.isTouchDevice&&(f.hoveringTooltip=!1),"auto"==f.singleMonth&&(f.singleMonth=U(window).width()<480),f.singleMonth&&(f.stickyMonths=!1),f.showTopbar||(f.autoClose=!0),f.startDate&&"string"==typeof f.startDate&&(f.startDate=Q(f.startDate,f.format).toDate()),f.endDate&&"string"==typeof f.endDate&&(f.endDate=Q(f.endDate,f.format).toDate()),f.yearSelect&&"boolean"==typeof f.yearSelect&&(f.yearSelect=function(e){return[e-5,e+5]});var m,e,r=function(){{if("auto"==f.language){var e=navigator.language?navigator.language:navigator.browserLanguage;return e&&(e=e.toLowerCase())in U.dateRangePickerLanguages?U.dateRangePickerLanguages[e]:U.dateRangePickerLanguages.default}return f.language&&f.language in U.dateRangePickerLanguages?U.dateRangePickerLanguages[f.language]:U.dateRangePickerLanguages.default}}(),s=!1,n=this,o=U(n).get(0);return U(this).off(".datepicker").on("click.datepicker",function(e){m.is(":visible")||t(f.duration)}).on("change.datepicker",function(e){a()}).on("keyup.datepicker",function(){try{clearTimeout(e)}catch(e){}e=setTimeout(function(){a()},2e3)}),function(){var t=this;if(U(this).data("date-picker-opened"))return void B();U(this).data("date-picker-opened",!0),(m=function(){var e,t='<div class="date-picker-wrapper';f.extraClass&&(t+=" "+f.extraClass+" "),f.singleDate&&(t+=" single-date "),f.showShortcuts||(t+=" no-shortcuts "),f.showTopbar||(t+=" no-topbar "),f.customTopBar&&(t+=" custom-topbar "),t+='">',f.showTopbar&&(t+='<div class="drp_top-bar">',f.customTopBar?("function"==typeof f.customTopBar&&(f.customTopBar=f.customTopBar()),t+='<div class="custom-top">'+f.customTopBar+"</div>"):(t+='<div class="normal-top"><span class="selection-top">'+K("selected")+' </span> <b class="start-day">...</b>',f.singleDate||(t+=' <span class="separator-day">'+f.separator+'</span> <b class="end-day">...</b> <i class="selected-days">(<span class="selected-days-num">3</span> '+K("days")+")</i>"),t+="</div>",t+='<div class="error-top">error</div><div class="default-top">default</div>'),t+='<input type="button" class="apply-btn disabled'+(!(e="")===f.autoClose&&(e+=" hide"),""!==f.applyBtnClass&&(e+=" "+f.applyBtnClass),e)+'" value="'+K("apply")+'" />',t+="</div>");var a=f.showWeekNumbers?6:5,n="&lt;";f.customArrowPrevSymbol&&(n=f.customArrowPrevSymbol);var r="&gt;";if(f.customArrowNextSymbol&&(r=f.customArrowNextSymbol),t+='<div class="month-wrapper">   <table class="month1" cellspacing="0" border="0" cellpadding="0">       <thead>           <tr class="caption">               <th>                   <span class="prev">'+n+'                   </span>               </th>               <th colspan="'+a+'" class="month-name">               </th>               <th>'+(f.singleDate||!f.stickyMonths?'<span class="next">'+r+"</span>":"")+'               </th>           </tr>           <tr class="week-name">'+E()+"       </thead>       <tbody></tbody>   </table>",f.singleMonth||(t+='<div class="gap">'+function(){for(var e=['<div class="gap-top-mask"></div><div class="gap-bottom-mask"></div><div class="gap-lines">'],t=0;t<20;t++)e.push('<div class="gap-line"><div class="gap-1"></div><div class="gap-2"></div><div class="gap-3"></div></div>');return e.push("</div>"),e.join("")}()+'</div><table class="month2" cellspacing="0" border="0" cellpadding="0">   <thead>   <tr class="caption">       <th>'+(f.stickyMonths?"":'<span class="prev">'+n+"</span>")+'       </th>       <th colspan="'+a+'" class="month-name">       </th>       <th>           <span class="next">'+r+'</span>       </th>   </tr>   <tr class="week-name">'+E()+"   </thead>   <tbody></tbody></table>"),t+='<div class="dp-clearfix"></div><div class="time"><div class="time1"></div>',f.singleDate||(t+='<div class="time2"></div>'),t+='</div><div class="dp-clearfix"></div></div>',t+='<div class="footer">',f.showShortcuts){t+='<div class="shortcuts"><b>'+K("shortcuts")+"</b>";var s=f.shortcuts;if(s){var o;if(s["prev-days"]&&0<s["prev-days"].length){t+='&nbsp;<span class="prev-days">'+K("past");for(var i=0;i<s["prev-days"].length;i++)o=s["prev-days"][i],o+=1<s["prev-days"][i]?K("days"):K("day"),t+=' <a href="javascript:;" shortcut="day,-'+s["prev-days"][i]+'">'+o+"</a>";t+="</span>"}if(s["next-days"]&&0<s["next-days"].length){t+='&nbsp;<span class="next-days">'+K("following");for(var i=0;i<s["next-days"].length;i++)o=s["next-days"][i],o+=1<s["next-days"][i]?K("days"):K("day"),t+=' <a href="javascript:;" shortcut="day,'+s["next-days"][i]+'">'+o+"</a>";t+="</span>"}if(s.prev&&0<s.prev.length){t+='&nbsp;<span class="prev-buttons">'+K("previous");for(var i=0;i<s.prev.length;i++)o=K("prev-"+s.prev[i]),t+=' <a href="javascript:;" shortcut="prev,'+s.prev[i]+'">'+o+"</a>";t+="</span>"}if(s.next&&0<s.next.length){t+='&nbsp;<span class="next-buttons">'+K("next");for(var i=0;i<s.next.length;i++)o=K("next-"+s.next[i]),t+=' <a href="javascript:;" shortcut="next,'+s.next[i]+'">'+o+"</a>";t+="</span>"}}if(f.customShortcuts)for(var i=0;i<f.customShortcuts.length;i++){var d=f.customShortcuts[i];t+='&nbsp;<span class="custom-shortcut"><a href="javascript:;" shortcut="custom">'+d.name+"</a></span>"}t+="</div>"}if(f.showCustomValues&&(t+='<div class="customValues"><b>'+(f.customValueLabel||K("custom-values"))+"</b>",f.customValues))for(var i=0;i<f.customValues.length;i++){var l=f.customValues[i];t+='&nbsp;<span class="custom-value"><a href="javascript:;" custom="'+l.value+'">'+l.name+"</a></span>"}return U(t+="</div></div>")}().hide()).append('<div class="date-range-length-tip"></div>'),U(f.container).append(m),f.inline?m.addClass("inline-wrapper"):i();f.alwaysOpen&&m.find(".apply-btn").hide();var e=_();if(G(e),f.time.enabled)if(f.startDate&&f.endDate||f.start&&f.end)Y(Q(f.start||f.startDate).toDate(),"time1"),Y(Q(f.end||f.endDate).toDate(),"time2");else{var a=f.defaultEndTime?f.defaultEndTime:e;Y(e,"time1"),Y(a,"time2")}var n="";n=f.singleDate?K("default-single"):f.minDays&&f.maxDays?K("default-range"):f.minDays?K("default-more"):f.maxDays?K("default-less"):K("default-default");m.find(".default-top").html(n.replace(/\%d/,f.minDays).replace(/\%d/,f.maxDays)),f.singleMonth?m.addClass("single-month"):m.addClass("two-months");setTimeout(function(){l(),s=!0},0),m.on("click",function(e){e.stopPropagation()}),U(document).on("click.datepicker",Z),m.find(".next").on("click",function(){f.stickyMonths?function(e){var t=F(f.month1),a=F(f.month2);if(q(a))return;if(!f.singleDate&&0<=L(t,a))return;O(t,"month1"),O(a,"month2"),C()}():function(e){var t=U(e).parents("table").hasClass("month2"),a=t?f.month2:f.month1;if(a=F(a),!f.singleMonth&&!f.singleDate&&!t&&0<=L(a,f.month2)||q(a))return;O(a,t?"month2":"month1"),I()}(this)}),m.find(".prev").on("click",function(){f.stickyMonths?function(e){var t=R(f.month1),a=R(f.month2);if(q(t))return;if(!f.singleDate&&L(a,t)<=0)return;O(a,"month2"),O(t,"month1"),C()}():function(e){var t=U(e).parents("table").hasClass("month2"),a=t?f.month2:f.month1;if(a=R(a),t&&L(a,f.month1)<=0||q(a))return;O(a,t?"month2":"month1"),I()}(this)}),m.attr("unselectable","on").css("user-select","none").on("selectstart",function(e){return e.preventDefault(),!1}),m.find(".apply-btn").on("click",function(){B();var e=W(new Date(f.start))+f.separator+W(new Date(f.end));U(t).trigger("datepicker-apply",{value:e,date1:new Date(f.start),date2:new Date(f.end)})}),m.find("[custom]").on("click",function(){var e=U(this).attr("custom");f.start=!1,f.end=!1,m.find(".day.checked").removeClass("checked"),f.setValue.call(o,e),M(),S(!0),C(),f.autoClose&&B()}),m.find("[shortcut]").on("click",function(){var e,t=U(this).attr("shortcut"),a=new Date,n=!1;if(-1!=t.indexOf("day")){var r=parseInt(t.split(",",2)[1],10);n=new Date((new Date).getTime()+864e5*r),a=new Date(a.getTime()+864e5*(0<r?1:-1))}else if(-1!=t.indexOf("week")){var s;for(e=-1!=t.indexOf("prev,")?-1:1,s=1==e?"monday"==f.startOfWeek?1:0:"monday"==f.startOfWeek?0:6,a=new Date(a.getTime()-864e5);a.getDay()!=s;)a=new Date(a.getTime()+864e5*e);n=new Date(a.getTime()+864e5*e*6)}else if(-1!=t.indexOf("month"))e=-1!=t.indexOf("prev,")?-1:1,(n=1==e?F(a):R(a)).setDate(1),(a=F(n)).setDate(1),a=new Date(a.getTime()-864e5);else if(-1!=t.indexOf("year"))e=-1!=t.indexOf("prev,")?-1:1,(n=new Date).setFullYear(a.getFullYear()+e),n.setMonth(0),n.setDate(1),a.setFullYear(a.getFullYear()+e),a.setMonth(11),a.setDate(31);else if("custom"==t){var o=U(this).html();if(f.customShortcuts&&0<f.customShortcuts.length)for(var i=0;i<f.customShortcuts.length;i++){var d=f.customShortcuts[i];if(d.name==o){var l=[];if((l=d.dates.call())&&2==l.length&&(n=l[0],a=l[1]),l&&1==l.length){var u=l[0];O(u,"month1"),O(F(u),"month2"),I()}break}}}n&&a&&(j(n,a),M())}),m.find(".time1 input[type=range]").on("change touchmove",function(e){var t=e.target,a="hour"==t.name?U(t).val().replace(/^(\d{1})$/,"0$1"):void 0,n="minute"==t.name?U(t).val().replace(/^(\d{1})$/,"0$1"):void 0;c("time1",a,n)}),m.find(".time2 input[type=range]").on("change touchmove",function(e){var t=e.target,a="hour"==t.name?U(t).val().replace(/^(\d{1})$/,"0$1"):void 0,n="minute"==t.name?U(t).val().replace(/^(\d{1})$/,"0$1"):void 0;c("time2",a,n)})}.call(this),f.alwaysOpen&&t(0),U(this).data("dateRangePicker",{setStart:function(e){return"string"==typeof e&&(e=Q(e,f.format).toDate()),f.end=!1,T(e),this},setEnd:function(e,t){var a=new Date;return a.setTime(f.start),"string"==typeof e&&(e=Q(e,f.format).toDate()),j(a,e,t),this},setDateRange:function(e,t,a){"string"==typeof e&&"string"==typeof t&&(e=Q(e,f.format).toDate(),t=Q(t,f.format).toDate()),j(e,t,a)},clear:function(){f.start=!1,f.end=!1,m.find(".day.checked").removeClass("checked"),m.find(".day.last-date-selected").removeClass("last-date-selected"),m.find(".day.first-date-selected").removeClass("first-date-selected"),f.setValue.call(o,""),M(),S(),C()},close:B,open:t,redraw:N,getDatePicker:function(){return m},resetMonthsView:G,destroy:function(){U(n).off(".datepicker"),U(n).data("dateRangePicker",""),U(n).data("date-picker-opened",null),m.remove(),U(window).off("resize.datepicker",i),U(document).off("click.datepicker",Z)}}),U(window).on("resize.datepicker",i),this;function i(){if(!f.inline){var e=U(n).offset();if("relative"==U(f.container).css("position")){var t=U(f.container).offset(),a=Math.max(0,e.left+m.outerWidth()-U("body").width()+16);m.css({top:e.top-t.top+U(n).outerHeight()+4,left:e.left-t.left-a})}else e.left<460?m.css({top:e.top+U(n).outerHeight()+parseInt(U("body").css("border-top")||0,10),left:e.left}):m.css({top:e.top+U(n).outerHeight()+parseInt(U("body").css("border-top")||0,10),left:e.left+U(n).width()-m.width()-16})}}function t(e){N(),a(),f.customOpenAnimation?f.customOpenAnimation.call(m.get(0),function(){U(n).trigger("datepicker-opened",{relatedTarget:m})}):m.slideDown(e,function(){U(n).trigger("datepicker-opened",{relatedTarget:m})}),U(n).trigger("datepicker-open",{relatedTarget:m}),I(),l(),i()}function a(){var e=f.getValue.call(o),t=e?e.split(f.separator):"";if(t&&(1==t.length&&f.singleDate||2<=t.length)){var a=f.format;a.match(/Do/)&&(a=a.replace(/Do/,"D"),t[0]=t[0].replace(/(\d+)(th|nd|st)/,"$1"),2<=t.length&&(t[1]=t[1].replace(/(\d+)(th|nd|st)/,"$1"))),s=!1,2<=t.length?j(d(t[0],a,Q.locale(f.language)),d(t[1],a,Q.locale(f.language))):1==t.length&&f.singleDate&&T(d(t[0],a,Q.locale(f.language))),s=!0}}function d(e,t,a){return Q(e,t,a).isValid()?Q(e,t,a).toDate():Q().toDate()}function l(){var e=m.find(".gap").css("margin-left");e&&(e=parseInt(e));var t=m.find(".month1").width(),a=m.find(".gap").width()+(e?2*e:0),n=m.find(".month2").width();m.find(".month-wrapper").width(t+a+n)}function u(e,t){m.find("."+e+" input[type=range].hour-range").val(Q(t).hours()),m.find("."+e+" input[type=range].minute-range").val(Q(t).minutes()),c(e,Q(t).format("HH"),Q(t).format("mm"))}function h(e,t){f[e]=parseInt(Q(parseInt(t)).hour(Q(f[e+"Time"]).format("HH"),"h").minute(Q(f[e+"Time"]).format("mm"),"m").valueOf())}function c(e,r,s){switch(r&&m.find("."+e+" .hour-val").text(r),s&&m.find("."+e+" .minute-val").text(s),e){case"time1":f.start&&t("start",Q(f.start)),t("startTime",Q(f.startTime||Q().valueOf()));break;case"time2":f.end&&t("end",Q(f.end)),t("endTime",Q(f.endTime||Q().valueOf()))}function t(e,t){var a=t.format("HH"),n=t.format("mm");f[e]=t.hour(r||a,"h").minute(s||n,"m").valueOf()}M(),S(),C()}function p(e){var t=e;return"week-range"===f.batchMode?t="monday"===f.startOfWeek?Q(parseInt(e)).startOf("isoweek").valueOf():Q(parseInt(e)).startOf("week").valueOf():"month-range"===f.batchMode&&(t=Q(parseInt(e)).startOf("month").valueOf()),t}function v(e){var t=e;return"week-range"===f.batchMode?t="monday"===f.startOfWeek?Q(parseInt(e)).endOf("isoweek").valueOf():Q(parseInt(e)).endOf("week").valueOf():"month-range"===f.batchMode&&(t=Q(parseInt(e)).endOf("month").valueOf()),t}function k(e){if(!e.hasClass("invalid")){var t=e.attr("time");if(e.addClass("checked"),f.singleDate?(f.start=t,f.end=!1):"week"===f.batchMode?"monday"===f.startOfWeek?(f.start=Q(parseInt(t)).startOf("isoweek").valueOf(),f.end=Q(parseInt(t)).endOf("isoweek").valueOf()):(f.end=Q(parseInt(t)).endOf("week").valueOf(),f.start=Q(parseInt(t)).startOf("week").valueOf()):"workweek"===f.batchMode?(f.start=Q(parseInt(t)).day(1).valueOf(),f.end=Q(parseInt(t)).day(5).valueOf()):"weekend"===f.batchMode?(f.start=Q(parseInt(t)).day(6).valueOf(),f.end=Q(parseInt(t)).day(7).valueOf()):"month"===f.batchMode?(f.start=Q(parseInt(t)).startOf("month").valueOf(),f.end=Q(parseInt(t)).endOf("month").valueOf()):f.start&&f.end||!f.start&&!f.end?(f.start=p(t),f.end=!1):f.start&&(f.end=v(t),f.time.enabled&&h("end",f.end)),f.time.enabled&&(f.start&&h("start",f.start),f.end&&h("end",f.end)),!f.singleDate&&f.start&&f.end&&f.start>f.end){var a=f.end;f.end=v(f.start),f.start=p(a),f.time.enabled&&f.swapTime&&(u("time1",f.start),u("time2",f.end))}f.start=parseInt(f.start),f.end=parseInt(f.end),b(),f.start&&!f.end&&(U(n).trigger("datepicker-first-date-selected",{date1:new Date(f.start)}),y(e)),w(),M(),S(),C(),x()}}function g(e){if(e=parseInt(e,10),f.startDate&&H(e,f.startDate)<0)return!1;if(f.endDate&&0<H(e,f.endDate))return!1;if(f.start&&!f.end&&!f.singleDate){if(0<f.maxDays&&z(e,f.start)>f.maxDays)return!1;if(0<f.minDays&&z(e,f.start)<f.minDays)return!1;if(f.selectForward&&e<f.start)return!1;if(f.selectBackward&&e>f.start)return!1;if(f.beforeShowDay&&"function"==typeof f.beforeShowDay){for(var t=!0,a=e;1<z(a,f.start);){if(!f.beforeShowDay(new Date(a))[0]){t=!1;break}if(Math.abs(a-f.start)<864e5)break;a>f.start&&(a-=864e5),a<f.start&&(a+=864e5)}if(!t)return!1}}return!0}function w(){return m.find(".day.invalid.tmp").removeClass("tmp invalid").addClass("valid"),f.start&&!f.end&&m.find(".day.toMonth.valid").each(function(){g(parseInt(U(this).attr("time"),10))?U(this).addClass("valid tmp").removeClass("invalid"):U(this).addClass("invalid tmp").removeClass("valid")}),!0}function y(e){var t=parseInt(e.attr("time")),a="";if(e.hasClass("has-tooltip")&&e.attr("data-tooltip"))a='<span class="tooltip-content">'+e.attr("data-tooltip")+"</span>";else if(!e.hasClass("invalid"))if(f.singleDate)m.find(".day.hovering").removeClass("hovering"),e.addClass("hovering");else if(m.find(".day").each(function(){var e=parseInt(U(this).attr("time"));f.start,f.end;e==t?U(this).addClass("hovering"):U(this).removeClass("hovering"),f.start&&!f.end&&(f.start<e&&e<=t||f.start>e&&t<=e)?U(this).addClass("hovering"):U(this).removeClass("hovering")}),f.start&&!f.end){var n=z(t,f.start);f.hoveringTooltip&&("function"==typeof f.hoveringTooltip?a=f.hoveringTooltip(n,f.start,t):!0===f.hoveringTooltip&&1<n&&(a=n+" "+K("days")))}if(a){var r=e.offset(),s=m.offset(),o=r.left-s.left,i=r.top-s.top;o+=e.width()/2;var d=m.find(".date-range-length-tip"),l=d.css({visibility:"hidden",display:"none"}).html(a).width(),u=d.height();o-=l/2,i-=u,setTimeout(function(){d.css({left:o,top:i,display:"block",visibility:"visible"})},10)}else m.find(".date-range-length-tip").hide()}function b(){m.find(".day.hovering").removeClass("hovering"),m.find(".date-range-length-tip").hide()}function D(e){var t=e.val(),a=e.attr("name"),n=e.parents("table").hasClass("month1")?"month1":"month2",r="month1"===n?"month2":"month1",s=!!f.startDate&&Q(f.startDate),o=!!f.endDate&&Q(f.endDate),i=Q(f[n])[a](t);s&&i.isSameOrBefore(s)&&(i=s.add("month2"===n?1:0,"month")),o&&i.isSameOrAfter(o)&&(i=o.add(f.singleMonth||"month1"!==n?0:-1,"month")),O(i,n),"month1"===n?(f.stickyMonths||Q(i).isSameOrAfter(f[r],"month"))&&O(Q(i).add(1,"month"),r):(f.stickyMonths||Q(i).isSameOrBefore(f[r],"month"))&&O(Q(i).add(-1,"month"),r),I()}function x(){!0===f.singleDate?s&&f.start&&f.autoClose&&B():s&&f.start&&f.end&&f.autoClose&&B()}function M(){var e=Math.ceil((f.end-f.start)/864e5)+1;f.singleDate?f.start&&!f.end?m.find(".drp_top-bar").removeClass("error").addClass("normal"):m.find(".drp_top-bar").removeClass("error").removeClass("normal"):f.maxDays&&e>f.maxDays?(f.start=!1,f.end=!1,m.find(".day").removeClass("checked"),m.find(".drp_top-bar").removeClass("normal").addClass("error").find(".error-top").html(K("less-than").replace("%d",f.maxDays))):f.minDays&&e<f.minDays?(f.start=!1,f.end=!1,m.find(".day").removeClass("checked"),m.find(".drp_top-bar").removeClass("normal").addClass("error").find(".error-top").html(K("more-than").replace("%d",f.minDays))):f.start||f.end?m.find(".drp_top-bar").removeClass("error").addClass("normal"):m.find(".drp_top-bar").removeClass("error").removeClass("normal"),f.singleDate&&f.start&&!f.end||!f.singleDate&&f.start&&f.end?m.find(".apply-btn").removeClass("disabled"):m.find(".apply-btn").addClass("disabled"),f.batchMode&&(f.start&&f.startDate&&H(f.start,f.startDate)<0||f.end&&f.endDate&&0<H(f.end,f.endDate))&&(f.start=!1,f.end=!1,m.find(".day").removeClass("checked"))}function S(e,t){var a;m.find(".start-day").html("..."),m.find(".end-day").html("..."),m.find(".selected-days").hide(),f.start&&m.find(".start-day").html(W(new Date(parseInt(f.start)))),f.end&&m.find(".end-day").html(W(new Date(parseInt(f.end)))),f.start&&f.singleDate?(m.find(".apply-btn").removeClass("disabled"),a=W(new Date(f.start)),f.setValue.call(o,a,W(new Date(f.start)),W(new Date(f.end))),s&&!t&&U(n).trigger("datepicker-change",{value:a,date1:new Date(f.start)})):f.start&&f.end?(m.find(".selected-days").show().find(".selected-days-num").html(z(f.end,f.start)),m.find(".apply-btn").removeClass("disabled"),a=W(new Date(f.start))+f.separator+W(new Date(f.end)),f.setValue.call(o,a,W(new Date(f.start)),W(new Date(f.end))),s&&!t&&U(n).trigger("datepicker-change",{value:a,date1:new Date(f.start),date2:new Date(f.end)})):e?m.find(".apply-btn").removeClass("disabled"):m.find(".apply-btn").addClass("disabled")}function z(e,t){return Math.abs(Q(e).diff(Q(t),"d"))+1}function j(e,t,a){if(e.getTime()>t.getTime()){var n=t;t=e,e=n,n=null}var r=!0;if(f.startDate&&H(e,f.startDate)<0&&(r=!1),f.endDate&&0<H(t,f.endDate)&&(r=!1),!r)return O(f.startDate,"month1"),O(F(f.startDate),"month2"),void I();f.start=e.getTime(),f.end=t.getTime(),f.time.enabled&&(u("time1",e),u("time2",t)),(f.stickyMonths||0<H(e,t)&&0===L(e,t))&&(f.lookBehind?e=R(t):t=F(e)),f.stickyMonths&&!1!==f.endDate&&0<L(t,f.endDate)&&(e=R(e),t=R(t)),f.stickyMonths||0===L(e,t)&&(f.lookBehind?e=R(t):t=F(e)),O(e,"month1"),O(t,"month2"),I(),M(),S(!1,a),x()}function T(e){var t=!0;if(f.startDate&&H(e,f.startDate)<0&&(t=!1),f.endDate&&0<H(e,f.endDate)&&(t=!1),t){if(f.start=e.getTime(),f.time.enabled&&u("time1",e),O(e,"month1"),!0!==f.singleMonth)O(F(e),"month2");I(),S(),x()}else O(f.startDate,"month1")}function C(){(f.start||f.end)&&(m.find(".day").each(function(){var e=parseInt(U(this).attr("time")),t=f.start,a=f.end;f.time.enabled&&(e=Q(e).startOf("day").valueOf(),t=Q(t||Q().valueOf()).startOf("day").valueOf(),a=Q(a||Q().valueOf()).startOf("day").valueOf()),f.start&&f.end&&e<=a&&t<=e||f.start&&!f.end&&Q(t).format("YYYY-MM-DD")==Q(e).format("YYYY-MM-DD")?U(this).addClass("checked"):U(this).removeClass("checked"),f.start&&Q(t).format("YYYY-MM-DD")==Q(e).format("YYYY-MM-DD")?U(this).addClass("first-date-selected"):U(this).removeClass("first-date-selected"),f.end&&Q(a).format("YYYY-MM-DD")==Q(e).format("YYYY-MM-DD")?U(this).addClass("last-date-selected"):U(this).removeClass("last-date-selected")}),m.find(".week-number").each(function(){U(this).attr("data-start-time")==f.startWeek&&U(this).addClass("week-number-selected")}))}function O(e,t){var a=function(e,t){var a=(e=Q(e)).get("month"),n='<div class="month-element">'+A(a)+"</div>";if(!f.monthSelect)return n;var r=!!f.startDate&&Q(f.startDate).add(f.singleMonth||"month2"!==t?0:1,"month"),s=!!f.endDate&&Q(f.endDate).add(f.singleMonth||"month1"!==t?0:-1,"month"),o=r&&e.isSame(r,"year")?r.get("month"):0,i=s&&e.isSame(s,"year")?s.get("month"):11,d=Math.min(o,a),l=Math.max(i,a);if(d===l)return n;return P("month",V({minSelectable:o,maxSelectable:i,minVisible:d,maxVisible:l},a,function(e){return A(e)}))}(e=Q(e).toDate(),t),n=function(e,t){var a=(e=Q(e)).get("year"),n='<div class="month-element">'+a+"</div>";if(!f.yearSelect)return n;var r=f.yearSelect&&"function"==typeof f.yearSelect,s=!!f.startDate&&Q(f.startDate).add(f.singleMonth||"month2"!==t?0:1,"month"),o=!!f.endDate&&Q(f.endDate).add(f.singleMonth||"month1"!==t?0:-1,"month"),i=r?f.yearSelect(a):f.yearSelect.slice(),d=s?Math.max(i[0],s.get("year")):Math.min(i[0],a),l=o?Math.min(i[1],o.get("year")):Math.max(i[1],a),u=Math.min(d,a),m=Math.max(l,a);if(u===m)return n;return P("year",V({minSelectable:d,maxSelectable:l,minVisible:u,maxVisible:m},a))}(e,t);m.find("."+t+" .month-name").html(a+" "+n),m.find("."+t+" tbody").html(function(e){var t=[];e.setDate(1);new Date(e.getTime()-864e5);var a,n,r=new Date,s=e.getDay();0===s&&"monday"===f.startOfWeek&&(s=7);if(0<s)for(var o=s;0<o;o--){var i=new Date(e.getTime()-864e5*o);n=g(i.getTime()),f.startDate&&H(i,f.startDate)<0&&(n=!1),f.endDate&&0<H(i,f.endDate)&&(n=!1),t.push({date:i,type:"lastMonth",day:i.getDate(),time:i.getTime(),valid:n})}for(var d=e.getMonth(),o=0;o<40;o++)a=Q(e).add(o,"days").toDate(),n=g(a.getTime()),f.startDate&&H(a,f.startDate)<0&&(n=!1),f.endDate&&0<H(a,f.endDate)&&(n=!1),t.push({date:a,type:a.getMonth()==d?"toMonth":"nextMonth",day:a.getDate(),time:a.getTime(),valid:n});for(var l=[],u=0;u<6&&"nextMonth"!=t[7*u].type;u++){l.push("<tr>");for(var i=0;i<7;i++){var m="monday"==f.startOfWeek?i+1:i;a=t[7*u+m];var h=Q(a.time).format("L")==Q(r).format("L");if(a.extraClass="",a.tooltip="",a.valid&&f.beforeShowDay&&"function"==typeof f.beforeShowDay){var c=f.beforeShowDay(Q(a.time).toDate());a.valid=c[0],a.extraClass=c[1]||"",a.tooltip=c[2]||"",""!==a.tooltip&&(a.extraClass+=" has-tooltip ")}var p={time:a.time,"data-tooltip":a.tooltip,class:"day "+a.type+" "+a.extraClass+" "+(a.valid?"valid":"invalid")+" "+(h?"real-today":"")};0===i&&f.showWeekNumbers&&l.push('<td><div class="week-number" data-start-time="'+a.time+'">'+f.getWeekNumber(a.date)+"</div></td>"),l.push("<td "+$({},f.dayTdAttrs,a)+"><div "+$(p,f.dayDivAttrs,a)+">"+J(a.time,a.day)+"</div></td>")}l.push("</tr>")}return l.join("")}(e)),f[t]=e,w(),m.find(".day").off("click").on("click",function(e){k(U(this))}),m.find(".day").off("mouseenter").on("mouseenter",function(e){y(U(this))}),m.find(".day").off("mouseleave").on("mouseleave",function(e){m.find(".date-range-length-tip").hide(),f.singleDate&&b()}),m.find(".week-number").off("click").on("click",function(e){var t,a,n,r;t=U(this),r=parseInt(t.attr("data-start-time"),10),f.startWeek?(m.find(".week-number-selected").removeClass("week-number-selected"),a=new Date(r<f.startWeek?r:f.startWeek),n=new Date(r<f.startWeek?f.startWeek:r),f.startWeek=!1,f.start=Q(a).day("monday"==f.startOfWeek?1:0).valueOf(),f.end=Q(n).day("monday"==f.startOfWeek?7:6).valueOf()):(f.startWeek=r,t.addClass("week-number-selected"),a=new Date(r),f.start=Q(a).day("monday"==f.startOfWeek?1:0).valueOf(),f.end=Q(a).day("monday"==f.startOfWeek?7:6).valueOf()),w(),M(),S(),C(),x()}),m.find(".month").off("change").on("change",function(e){D(U(this))}),m.find(".year").off("change").on("change",function(e){D(U(this))})}function V(e,t,a){var n=[];a=a||function(e){return e};for(var r=e.minVisible;r<=e.maxVisible;r++)n.push({value:r,text:a(r),selected:r===t,disabled:r<e.minSelectable||r>e.maxSelectable});return n}function P(e,t){for(var a,n='<div class="select-wrapper"><select class="'+e+'" name="'+e+'">',r=0,s=t.length;r<s;r++){var o=t[r];n+='<option value="'+o.value+'"'+(o.selected?" selected":"")+(o.disabled?" disabled":"")+">"+o.text+"</option>",o.selected&&(a=o.text)}return n+="</select>"+a+"</div>"}function Y(e,t){m.find("."+t).append("<div><span>"+K("Time")+': <span class="hour-val">00</span>:<span class="minute-val">00</span></span></div><div class="hour"><label>'+K("Hour")+': <input type="range" class="hour-range" name="hour" min="0" max="23"></label></div><div class="minute"><label>'+K("Minute")+': <input type="range" class="minute-range" name="minute" min="0" max="59"></label></div>'),u(t,e)}function A(e){return K("month-name")[e]}function W(e){return Q(e).format(f.format)}function I(){C();var e=parseInt(Q(f.month1).format("YYYYMM")),t=parseInt(Q(f.month2).format("YYYYMM")),a=Math.abs(e-t);1<a&&89!=a?m.addClass("has-gap").removeClass("no-gap").find(".gap").css("visibility","visible"):m.removeClass("has-gap").addClass("no-gap").find(".gap").css("visibility","hidden");var n=m.find("table.month1").height(),r=m.find("table.month2").height();m.find(".gap").height(Math.max(n,r)+10)}function B(){if(!f.alwaysOpen){var e=function(){U(n).data("date-picker-opened",!1),U(n).trigger("datepicker-closed",{relatedTarget:m})};f.customCloseAnimation?f.customCloseAnimation.call(m.get(0),e):U(m).slideUp(f.duration,e),U(n).trigger("datepicker-close",{relatedTarget:m})}}function N(){O(f.month1,"month1"),O(f.month2,"month2")}function L(e,t){var a=parseInt(Q(e).format("YYYYMM"))-parseInt(Q(t).format("YYYYMM"));return 0<a?1:0===a?0:-1}function H(e,t){var a=parseInt(Q(e).format("YYYYMMDD"))-parseInt(Q(t).format("YYYYMMDD"));return 0<a?1:0===a?0:-1}function F(e){return Q(e).add(1,"months").toDate()}function R(e){return Q(e).add(-1,"months").toDate()}function E(){var e=f.showWeekNumbers?"<th>"+K("week-number")+"</th>":"";return"monday"==f.startOfWeek?e+"<th>"+K("week-1")+"</th><th>"+K("week-2")+"</th><th>"+K("week-3")+"</th><th>"+K("week-4")+"</th><th>"+K("week-5")+"</th><th>"+K("week-6")+"</th><th>"+K("week-7")+"</th>":e+"<th>"+K("week-7")+"</th><th>"+K("week-1")+"</th><th>"+K("week-2")+"</th><th>"+K("week-3")+"</th><th>"+K("week-4")+"</th><th>"+K("week-5")+"</th><th>"+K("week-6")+"</th>"}function q(e){return e=Q(e),!(!f.startDate||!e.endOf("month").isBefore(f.startDate))||!(!f.endDate||!e.startOf("month").isAfter(f.endDate))}function $(e,t,r){var s=U.extend(!0,{},e);U.each(t,function(e,t){var a=t(r);for(var n in a)s.hasOwnProperty(n)?s[n]+=a[n]:s[n]=a[n]});var a="";for(var n in s)s.hasOwnProperty(n)&&(a+=n+'="'+s[n]+'" ');return a}function J(e,t){return f.showDateFilter&&"function"==typeof f.showDateFilter?f.showDateFilter(e,t):t}function K(e){var t=e.toLowerCase(),a=e in r?r[e]:t in r?r[t]:null,n=U.dateRangePickerLanguages.default;return null==a&&(a=e in n?n[e]:t in n?n[t]:""),a}function _(){var e=f.defaultTime?f.defaultTime:new Date;return f.lookBehind?(f.startDate&&L(e,f.startDate)<0&&(e=F(Q(f.startDate).toDate())),f.endDate&&0<L(e,f.endDate)&&(e=Q(f.endDate).toDate())):(f.startDate&&L(e,f.startDate)<0&&(e=Q(f.startDate).toDate()),f.endDate&&0<L(F(e),f.endDate)&&(e=R(Q(f.endDate).toDate()))),f.singleDate&&(f.startDate&&L(e,f.startDate)<0&&(e=Q(f.startDate).toDate()),f.endDate&&0<L(e,f.endDate)&&(e=Q(f.endDate).toDate())),e}function G(e){e||(e=_()),f.lookBehind?(O(R(e),"month1"),O(e,"month2")):(O(e,"month1"),O(F(e),"month2")),f.singleDate&&O(e,"month1"),C(),I()}function Z(e){var t,a;t=e,(a=n[0]).contains(t.target)||t.target==a||null!=a.childNodes&&0<=U.inArray(t.target,a.childNodes)||m.is(":visible")&&B()}}});
 // Snap.svg 0.5.0
 //
 // Copyright (c) 2013 – 2017 Adobe Systems Incorporated. All rights reserved.

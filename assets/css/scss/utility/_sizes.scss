@@ -13,8 +13,15 @@
     font-size: 5.8rem!important;
 }
 
+.fs-22{
+    font-size: 22px;
+}
+
 .fs-24{
-    font-size: 1.5rem!important;
+    font-size: calc(1rem + .7vw) !important;
+    @media (min-width: 1200px){
+        font-size: 1.5rem!important;
+    }
 }
 
 .fs-28{

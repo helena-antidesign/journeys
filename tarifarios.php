@@ -11,7 +11,7 @@
             
             <div class="swiper-wrapper h-100">
 
-                <div class="c-banner__item swiper-slide h-100 d-flex align-items-end" style="background-image: url('assets/img/tarifarios.jpg');">
+                <div class="c-banner__item swiper-slide h-100 d-flex align-items-end" style="background-image: url('assets/img/banner-tarifarios.jpg');">
                     <img src="assets/img/banner-bg.png" alt="background" class="c-banner__background">
                     <div class="container text-light">
                         <div class="row h-100 d-flex align-items-center">
@@ -39,43 +39,46 @@
                     <h1 class="mb-2 fs-3 fw-bold text-secondary">Hotéis, transfers, tours, pacotes.</h1>
                     <p class="text-black-50 mb-5 fs-4">Confira as alterações de valores do que precisar!</p>
                     
-                    <ul class="nav nav-tabs d-flex justify-content-between">
-                        <li class="nav-item">
-                            <button class="nav-link active" id="hotelaria-tab" data-bs-toggle="tab" data-bs-target="#hotelaria" type="button" role="tab" aria-controls="hotelaria" aria-selected="true">
-                                <span class="icon icon-hotel"></span>Hotelaria
-                            </button>
-                        </li>
-                        <li class="nav-item">
-                            <button class="nav-link" id="transfers-tab" data-bs-toggle="tab" data-bs-target="#transfers" type="button" role="tab" aria-controls="transfers" aria-selected="false">
-                                <span class="icon icon-car"></span>Transfers
-                            </button>
-                        </li>
-                        <li class="nav-item">
-                            <button class="nav-link" id="tour-tab" data-bs-toggle="tab" data-bs-target="#tour" type="button" role="tab" aria-controls="transfers" aria-selected="false">
-                                <span class="icon icon-tour"></span>Tour
-                            </button>
-                        </li>
-                        <li class="nav-item">
-                            <button class="nav-link" id="pacotes-tab" data-bs-toggle="tab" data-bs-target="#pacotes" type="button" role="tab" aria-controls="pacotes" aria-selected="false">
-                                <span class="icon icon-case"></span>Pacotes
-                            </button>
-                        </li>
-                        <li class="nav-item">
-                            <button class="nav-link" id="autos-tab" data-bs-toggle="tab" data-bs-target="#autos" type="button" role="tab" aria-controls="autos" aria-selected="false">
-                            <span class="icon icon-transfer"></span>Autos
-                            </button>
-                        </li>
-                        <li class="nav-item">
-                            <button class="nav-link" id="circuitos-tab" data-bs-toggle="tab" data-bs-target="#circuitos" type="button" role="tab" aria-controls="circuitos" aria-selected="false">
-                            <span class="icon icon-hotel"></span>Circuitos
-                            </button>
-                        </li>
-                        <li class="nav-item">
-                            <button class="nav-link" id="casas-tab" data-bs-toggle="tab" data-bs-target="#casas" type="button" role="tab" aria-controls="casas" aria-selected="false">
-                                <span class="icon icon-bad"></span>Casas &amp; Apartamentos
-                            </button>
-                        </li>
-                    </ul>
+                    <div class="overflow-x">
+                        <ul class="nav nav-tabs d-flex justify-content-between JS__tabsFlex">
+                            <li class="nav-item">
+                                <button class="nav-link active" id="hotelaria-tab" data-bs-toggle="tab" data-bs-target="#hotelaria" type="button" role="tab" aria-controls="hotelaria" aria-selected="true">
+                                    <span class="icon icon-lock me-3"></span>Hotelaria
+                                </button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" id="transfers-tab" data-bs-toggle="tab" data-bs-target="#transfers" type="button" role="tab" aria-controls="transfers" aria-selected="false">
+                                    <span class="icon icon-car me-3"></span>Transfers
+                                </button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" id="tour-tab" data-bs-toggle="tab" data-bs-target="#tour" type="button" role="tab" aria-controls="transfers" aria-selected="false">
+                                    <span class="icon icon-tour me-3"></span>Tour
+                                </button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" id="pacotes-tab" data-bs-toggle="tab" data-bs-target="#pacotes" type="button" role="tab" aria-controls="pacotes" aria-selected="false">
+                                    <span class="icon icon-case me-3"></span>Pacotes
+                                </button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" id="autos-tab" data-bs-toggle="tab" data-bs-target="#autos" type="button" role="tab" aria-controls="autos" aria-selected="false">
+                                <span class="icon icon-transfer me-3"></span>Autos
+                                </button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" id="circuitos-tab" data-bs-toggle="tab" data-bs-target="#circuitos" type="button" role="tab" aria-controls="circuitos" aria-selected="false">
+                                <span class="icon icon-brasil me-3"></span>Circuitos
+                                </button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" id="casas-tab" data-bs-toggle="tab" data-bs-target="#casas" type="button" role="tab" aria-controls="casas" aria-selected="false">
+                                    <span class="icon icon-bad me-3"></span>Casas &amp; Apartamentos
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+
                 </div>
             </div>
 
@@ -191,7 +194,7 @@
                                     <p class="fs-12"> 
                                         <span class="o-hotel__img__item md-inline-block fw-500 me-3">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="10.965" height="10.512"><path data-name="Caminho 36" d="M6.248.476l1.033 2.093a.853.853 0 00.642.467l2.31.335a.854.854 0 01.473 1.456L9.035 6.456a.854.854 0 00-.245.755l.395 2.3a.853.853 0 01-1.238.9L5.881 9.325a.854.854 0 00-.794 0l-2.066 1.086a.853.853 0 01-1.238-.9l.395-2.3a.853.853 0 00-.246-.755L.26 4.827a.854.854 0 01.473-1.456l2.31-.335a.853.853 0 00.642-.467L4.718.476a.853.853 0 011.53 0z" fill="#0f6b7b"></path></svg>
-                                            03
+                                            <span class="ms-1">03</span>
                                         </span>  
                                         Twin Standart BB   |   Sem Reembolso   |   Disp. Sob-Consulta
                                     </p>
@@ -323,19 +326,19 @@
                                     
                                             <div class="multi-collapse collapse border-0" id="belmond-copacabana-palace-info">
                                                 <div class="row border-top py-4"> 
-                                                    <div class="col-4 fs-6">
+                                                    <div class="col-xl-4 col-lg-6 fs-6 mb-4">
                                                         <span class="d-block icon-suport fs-24 mb-3"></span>
                                                         <span class="d-block text-primary fw-500 mb-3 fs-4">Nossa Opinião</span>
                                                         <p> El hotel Arpoador, es una opción excelente para quien desea conocer Rio de Janeiro y hospedarse en una de las mejores localizaciones de la ciudad. El barrio de Ipanema,
                                                         cuenta con bares, entretenimiento y una de las mejores vistas de la ciudad. Desde la
                                                         terraza es posible visualizar un imponente atardecer, con vista al “Morro dos Irmãos”</p>
                                                     </div>
-                                                    <div class="col-3 fs-6 offset-xl-1">
+                                                    <div class="col-xl-3 col-lg-5 offset-lg-1 fs-6 mb-4">
                                                         <span class="d-block icon-parking mb-3 fs-24"></span>
-                                                        <span class="d-block text-primary fs-4 fw-500 mb-3">Condições Gerias</span>
+                                                        <span class="d-block text-primary fs-4 fw-500 mb-3">Condições Gerais</span>
                                                         <p>Acepta 01 Chd free hasta 05 años en habitación doble con los padres solamente en la categoria Grande.</p>
                                                     </div>
-                                                    <div class="col-3 fs-6 offset-xl-1">
+                                                    <div class="col-xl-3 col-lg-5 offset-xl-1 fs-6">
                                                         <span class="d-block icon-calendar mb-3 fs-24"></span>
                                                         <span class="d-block text-primary fs-4 fw-500 mb-3">Check-In / Check-Out</span>
                                                         <p">14:00h / 12:00h</p>    
@@ -358,7 +361,7 @@
                                     <p class="fs-12"> 
                                         <span class="o-hotel__img__item md-inline-block fw-500 me-3">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="10.965" height="10.512"><path data-name="Caminho 36" d="M6.248.476l1.033 2.093a.853.853 0 00.642.467l2.31.335a.854.854 0 01.473 1.456L9.035 6.456a.854.854 0 00-.245.755l.395 2.3a.853.853 0 01-1.238.9L5.881 9.325a.854.854 0 00-.794 0l-2.066 1.086a.853.853 0 01-1.238-.9l.395-2.3a.853.853 0 00-.246-.755L.26 4.827a.854.854 0 01.473-1.456l2.31-.335a.853.853 0 00.642-.467L4.718.476a.853.853 0 011.53 0z" fill="#0f6b7b"></path></svg>
-                                            03
+                                            <span class="ms-1">03</span>
                                         </span>  
                                         Twin Standart BB   |   Sem Reembolso   |   Disp. Sob-Consulta
                                     </p>
@@ -488,19 +491,19 @@
                                         
                                             <div class="multi-collapse collapse border-0" id="astoria-copacabana-info">
                                                 <div class="row border-top py-4"> 
-                                                    <div class="col-4 fs-6">
+                                                    <div class="col-xl-4 col-lg-6 fs-6 mb-4">
                                                         <span class="d-block icon-suport fs-24 mb-3"></span>
                                                         <span class="d-block text-primary fw-500 mb-3 fs-4">Nossa Opinião</span>
                                                         <p> El hotel Arpoador, es una opción excelente para quien desea conocer Rio de Janeiro y hospedarse en una de las mejores localizaciones de la ciudad. El barrio de Ipanema,
                                                         cuenta con bares, entretenimiento y una de las mejores vistas de la ciudad. Desde la
                                                         terraza es posible visualizar un imponente atardecer, con vista al “Morro dos Irmãos”</p>
                                                     </div>
-                                                    <div class="col-3 fs-6 offset-xl-1">
+                                                    <div class="col-xl-3 col-lg-5 offset-lg-1 fs-6 mb-4">
                                                         <span class="d-block icon-parking mb-3 fs-24"></span>
-                                                        <span class="d-block text-primary fs-4 fw-500 mb-3">Condições Gerias</span>
+                                                        <span class="d-block text-primary fs-4 fw-500 mb-3">Condições Gerais</span>
                                                         <p>Acepta 01 Chd free hasta 05 años en habitación doble con los padres solamente en la categoria Grande.</p>
                                                     </div>
-                                                    <div class="col-3 fs-6 offset-xl-1">
+                                                    <div class="col-xl-3 col-lg-5 offset-xl-1 fs-6">
                                                         <span class="d-block icon-calendar mb-3 fs-24"></span>
                                                         <span class="d-block text-primary fs-4 fw-500 mb-3">Check-In / Check-Out</span>
                                                         <p">14:00h / 12:00h</p>    
@@ -651,19 +654,19 @@
                                         
                                             <div class="multi-collapse collapse border-0" id="atlantico-praia-info">
                                                 <div class="row border-top py-4"> 
-                                                    <div class="col-4 fs-6">
+                                                    <div class="col-xl-4 col-lg-6 fs-6 mb-4">
                                                         <span class="d-block icon-suport fs-24 mb-3"></span>
                                                         <span class="d-block text-primary fw-500 mb-3 fs-4">Nossa Opinião</span>
                                                         <p> El hotel Arpoador, es una opción excelente para quien desea conocer Rio de Janeiro y hospedarse en una de las mejores localizaciones de la ciudad. El barrio de Ipanema,
                                                         cuenta con bares, entretenimiento y una de las mejores vistas de la ciudad. Desde la
                                                         terraza es posible visualizar un imponente atardecer, con vista al “Morro dos Irmãos”</p>
                                                     </div>
-                                                    <div class="col-3 fs-6 offset-xl-1">
+                                                    <div class="col-xl-3 col-lg-5 offset-lg-1 fs-6 mb-4">
                                                         <span class="d-block icon-parking mb-3 fs-24"></span>
-                                                        <span class="d-block text-primary fs-4 fw-500 mb-3">Condições Gerias</span>
+                                                        <span class="d-block text-primary fs-4 fw-500 mb-3">Condições Gerais</span>
                                                         <p>Acepta 01 Chd free hasta 05 años en habitación doble con los padres solamente en la categoria Grande.</p>
                                                     </div>
-                                                    <div class="col-3 fs-6 offset-xl-1">
+                                                    <div class="col-xl-3 col-lg-5 offset-xl-1 fs-6">
                                                         <span class="d-block icon-calendar mb-3 fs-24"></span>
                                                         <span class="d-block text-primary fs-4 fw-500 mb-3">Check-In / Check-Out</span>
                                                         <p">14:00h / 12:00h</p>    
@@ -936,20 +939,22 @@
                                         
                                             <div class="multi-collapse collapse border-0" id="belmond-copacabana-palace-info">
                                                 <div class="row border-top py-4"> 
-                                                    <div class="col-lg-4 fs-6">
+                                                    <div class="col-xl-4 col-lg-6 fs-6 mb-4">
                                                         <span class="d-block icon-suport fs-24 mb-3"></span>
                                                         <span class="d-block text-primary fw-500 mb-3 fs-4">Nossa Opinião</span>
-                                                        <p>O Hotel é uma excelente opção para casais e familias.</p>
+                                                        <p> El hotel Arpoador, es una opción excelente para quien desea conocer Rio de Janeiro y hospedarse en una de las mejores localizaciones de la ciudad. El barrio de Ipanema,
+                                                        cuenta con bares, entretenimiento y una de las mejores vistas de la ciudad. Desde la
+                                                        terraza es posible visualizar un imponente atardecer, con vista al “Morro dos Irmãos”</p>
                                                     </div>
-                                                    <div class="col-lg-3 fs-6 offset-xl-1">
+                                                    <div class="col-xl-3 col-lg-5 offset-lg-1 fs-6 mb-4">
                                                         <span class="d-block icon-parking mb-3 fs-24"></span>
                                                         <span class="d-block text-primary fs-4 fw-500 mb-3">Condições Gerais</span>
-                                                        <p>Aceita 01 Chd grátis até 06 anos em quarto duplo com os pais.</p>
+                                                        <p>Acepta 01 Chd free hasta 05 años en habitación doble con los padres solamente en la categoria Grande.</p>
                                                     </div>
-                                                    <div class="col-lg-3 fs-6 offset-xl-1">
+                                                    <div class="col-xl-3 col-lg-5 offset-xl-1 fs-6">
                                                         <span class="d-block icon-calendar mb-3 fs-24"></span>
                                                         <span class="d-block text-primary fs-4 fw-500 mb-3">Check-In / Check-Out</span>
-                                                        <p">15:00h / 12:00h</p>    
+                                                        <p">14:00h / 12:00h</p>    
                                                     </div>
                                                 </div>
                                                 
@@ -1174,19 +1179,19 @@
                                                 
                                                     <div class="multi-collapse collapse border-0" id="belmond-copacabana-palace-info">
                                                         <div class="row border-top py-4"> 
-                                                            <div class="col-4 fs-6">
+                                                            <div class="col-xl-4 col-lg-6 fs-6 mb-4">
                                                                 <span class="d-block icon-suport fs-24 mb-3"></span>
                                                                 <span class="d-block text-primary fw-500 mb-3 fs-4">Nossa Opinião</span>
                                                                 <p> El hotel Arpoador, es una opción excelente para quien desea conocer Rio de Janeiro y hospedarse en una de las mejores localizaciones de la ciudad. El barrio de Ipanema,
                                                                 cuenta con bares, entretenimiento y una de las mejores vistas de la ciudad. Desde la
                                                                 terraza es posible visualizar un imponente atardecer, con vista al “Morro dos Irmãos”</p>
                                                             </div>
-                                                            <div class="col-3 fs-6 offset-xl-1">
+                                                            <div class="col-xl-3 col-lg-5 offset-lg-1 fs-6 mb-4">
                                                                 <span class="d-block icon-parking mb-3 fs-24"></span>
                                                                 <span class="d-block text-primary fs-4 fw-500 mb-3">Condições Gerais</span>
                                                                 <p>Acepta 01 Chd free hasta 05 años en habitación doble con los padres solamente en la categoria Grande.</p>
                                                             </div>
-                                                            <div class="col-3 fs-6 offset-xl-1">
+                                                            <div class="col-xl-3 col-lg-5 offset-xl-1 fs-6">
                                                                 <span class="d-block icon-calendar mb-3 fs-24"></span>
                                                                 <span class="d-block text-primary fs-4 fw-500 mb-3">Check-In / Check-Out</span>
                                                                 <p">14:00h / 12:00h</p>    
@@ -1452,25 +1457,28 @@
                                                 
                                                     <div class="multi-collapse collapse border-0" id="belmond-copacabana-palace-info">
                                                         <div class="row border-top py-4"> 
-                                                            <div class="col-xl-4 fs-6">
-                                                                <span class="d-block icon-parking fs-24 mb-3"></span>
-                                                                <span class="d-block text-primary fw-500 mb-3 fs-4">Política para Menores</span>
-                                                                    <div>
-                                                                        <span class="fw-bold">TOUR SUPERIOR - REGULAR:</span> Para cada 02 passageiros pagantes, as condicoes sao: 01 Chd free ate 02 anos ou 01 Chd de 03 a 11 anos pagam 50% da tarifa de adulto. 
-                                                                    A gratuidade da crianca nao implica o uso do assento.
-                                                                    </div>
-                                                                    <br>
-                                                                    <div>
-                                                                        <span class="fw-bold">TOUR BASIC - REGULAR:</span> Para cada 02 passageiros pagantes, as condicoes sao: 01 Chd free ate 04 anos no colo dos pais ou 01 Chd de 05 a 09 anos pagam 50% da tarifa de adulto. E necessario apresentar o documento de identificacao do Chd no momento do Tour.
-                                                                    </div>
-                                                                    <br>
-                                                                    <div>
-                                                                        <span class="fw-bold">TOUR PRIVADO:</span> Nao se aplica politica de gratuidade ou desconto.
-                                                                    </div>
+                                                            <div class="col-xl-4 col-lg-6 fs-6 mb-4">
+                                                                <span class="d-block icon-suport fs-24 mb-3"></span>
+                                                                <span class="d-block text-primary fw-500 mb-3 fs-4">Nossa Opinião</span>
+                                                                <p> El hotel Arpoador, es una opción excelente para quien desea conocer Rio de Janeiro y hospedarse en una de las mejores localizaciones de la ciudad. El barrio de Ipanema,
+                                                                cuenta con bares, entretenimiento y una de las mejores vistas de la ciudad. Desde la
+                                                                terraza es posible visualizar un imponente atardecer, con vista al “Morro dos Irmãos”</p>
+                                                            </div>
+                                                            <div class="col-xl-3 col-lg-5 offset-lg-1 fs-6 mb-4">
+                                                                <span class="d-block icon-parking mb-3 fs-24"></span>
+                                                                <span class="d-block text-primary fs-4 fw-500 mb-3">Condições Gerais</span>
+                                                                <p>Acepta 01 Chd free hasta 05 años en habitación doble con los padres solamente en la categoria Grande.</p>
+                                                            </div>
+                                                            <div class="col-xl-3 col-lg-5 offset-xl-1 fs-6">
+                                                                <span class="d-block icon-calendar mb-3 fs-24"></span>
+                                                                <span class="d-block text-primary fs-4 fw-500 mb-3">Check-In / Check-Out</span>
+                                                                <p">14:00h / 12:00h</p>    
                                                             </div>
                                                         </div>
                                                         
                                                     </div>
+
+                                                </div>
 
                                                 </div>
                                             </div>

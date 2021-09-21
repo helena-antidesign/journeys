@@ -1,0 +1,24 @@
+.c-condicoes{
+    padding: 0 0 10.31rem;
+    &__item{
+        &--1{
+            width: 226px;   
+            margin-bottom: 4rem;
+        }
+        &--2{
+            width: 254px;   
+        }
+        &--3{
+            width: 231px;   
+        }
+        &--4{
+            width: 210px;   
+        }
+        &--5{
+            width: 175px;   
+        }
+        &--6{
+            width: 132px;   
+        }
+    }
+}

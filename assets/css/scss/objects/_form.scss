@@ -46,6 +46,7 @@
         background: transparent;
         position: relative;
         z-index: 2;
+        padding-right: 42px;
         &:focus{
             background: transparent;
         }
@@ -71,10 +72,13 @@
         height: 2rem;
         width: 2rem;
         border-radius: 100%;
-        border: 1px solid #656565;
         cursor: pointer;
         background: transparent;
         color: #656565;
+        border: 1px solid #a2a2a2;
+        &:hover{
+            border: 1px solid #656565;
+        }
     }
     input[type="number"]{
         -webkit-appearance: none;
@@ -95,7 +99,6 @@
         margin: 0; 
     }
 }
-
 
 .input-search{
     .icon-search{
@@ -136,3 +139,155 @@
     }
 }
 
+
+.select2{
+    display: block;
+    width: 100%!important;
+}
+
+
+
+.select2-dropdown{
+    border-radius: 15px!important;
+    border: 0;
+    top: 5px;
+    padding: 19px 0 21px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, .07%);
+    border-radius: 15px;
+}
+
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable,
+.select2-container--default .select2-results__option--selected{
+    background: #fff;
+    color: rgba(14, 106, 122, .6);
+}
+
+.select2-container--default .select2-selection--single{
+    border-color: #D3D0D8;
+    border-radius: 15px;
+    padding: 1.458rem 1rem;
+    transition: border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out,-webkit-box-shadow 0.15s ease-in-out;
+    &:focus{
+        color: #656565;
+        background-color: #fff;
+        border-color: #87b5bd;
+        outline: 0;
+        -webkit-box-shadow: 0 0 0 0.25rem rgba(15, 107, 123, .25);
+        box-shadow: 0 0 0 0.25rem rgba(15, 107, 123, .25);
+    }
+}
+
+.select2-container--default.select2-container--open.select2-container--below .select2-selection--single, .select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple{
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow{
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%230F6B7B' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: 15px;
+    right: 17px;
+    height: 12px;
+    width: 16px;
+    b{
+        display: none;
+    }
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered{
+    line-height: 1;
+    padding: 1.2rem 2rem 1.02rem 1rem;
+    font-size: .75rem;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+}
+
+.select2-results{
+    padding: 0 19px;
+}
+
+.select2-results__option{
+    padding: 8px 0;
+    color: rgba(71, 65, 83, .6);
+    &:first-of-type{
+        padding-top: 0;
+    }
+    img{
+        margin-right: 11px;
+        width: 19px;
+    }
+}
+
+.select2-container--default .select2-results>.select2-results__options{
+    max-height: 240px;
+    font-size: .75rem;
+
+    /* width */
+    &::-webkit-scrollbar {
+        width: 4px;
+    }
+    
+    /* Track */
+    &::-webkit-scrollbar-track {
+        background: #F5F5F5; 
+        border-radius: 100px;
+    }
+    
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: $primary; 
+        border-radius: 100px;
+    }
+    
+    scrollbar-width: thin;
+    scrollbar-color: $primary #F5F5F5;
+}
+
+.select2-search--dropdown{
+    padding: 0 18px;
+    input{
+        display: block;
+        width: 100%;
+        padding: .8rem 1rem!important;
+        margin: 0 0 1rem;
+        outline: 0;
+        font-size: .75rem;
+        font-weight: 400;
+        line-height: 1;
+        color: #656565;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da!important;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border-radius: 13px;
+        transition: border-color 0.15s ease-in-out,-webkit-box-shadow 0.15s ease-in-out;
+        color: rgba(71,65,83,0.6);
+    }
+}
+
+
+.modal-open .select2-container--open{
+    z-index: 9999999999;
+}
+
+
+
+.btn {
+    position: relative;
+    .o-loader{
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        top: calc(50% - 30px / 2);
+        height: 30px;
+        width: 30px;
+        border-color: #fff;
+    }
+}

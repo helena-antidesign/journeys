@@ -1,4 +1,7 @@
     
+    
+    <?php include('includes/banner-lgpd.php') ?>
+    
     <footer class="o-footer text-secondary">
         <div class="container">
             <div class="row border-bottom o-footer__links justify-content-between">
@@ -137,19 +140,22 @@
         </div>
 
     </footer>
-
-    <?php include('includes/reserva.php');?>
     
     <!-- Scripts -->
     
     <script src="assets/js/plugins.js"></script>
+    
     <!-- Date Range -->    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.3/plugins/rangePlugin.js"></script>
+    
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://npmcdn.com/flatpickr/dist/flatpickr.min.js"></script>
     <script src="https://npmcdn.com/flatpickr/dist/l10n/pt.js"></script>
     
     <!-- Main Js -->
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    
     <script src="assets/js/main.js"></script>
 
 

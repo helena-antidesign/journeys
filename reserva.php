@@ -1,4 +1,3 @@
-
 <?php include('includes/header.php') ?>
 
 
@@ -11,7 +10,7 @@
             
             <div class="swiper-wrapper h-100">
 
-                <div class="c-banner__item swiper-slide h-100 d-flex align-items-end" style="background-image: url('assets/img/todas-reservas-banner.jpg');">
+                <div class="c-banner__item swiper-slide h-100 d-flex align-items-end" style="background-image: url('assets/img/banner-bali.jpg');">
                     <img src="assets/img/banner-bg.png" alt="background" class="c-banner__background">
                     <div class="container text-light">
                         <div class="row h-100 d-flex align-items-center">
@@ -48,7 +47,7 @@
 
     </section>
 
-    <section class="c-reservas__container">
+    <section class="pt-5 mt-4">
         <div class="container">
 
             <div class="row mb-4">
@@ -58,7 +57,7 @@
             </div>
 
             <div class="row">
-                <div class="d-flex border-bottom pb-4 flex-wrap">
+                <div class="d-flex border-bottom pb-4 flex-wrap c-reserva-modal__search">
                     <div class="me-5 mb-4">
                         <span class="fw-500 fs-12 d-block">Check-In</span>
                         <div class="fs-6">12 de Fevereiro</div>
@@ -95,36 +94,88 @@
             </div>
 
             <div class="row mb-4 pt-5">
-               <div class="d-flex flex-wrap">
-                    <div class="mb-4 me-3">
-                        <label for="reserva-referencia" class="form-label">Referência do Cliente</label>
-                        <input class="form-control" id="reserva-referencia" type="text" placeholder="Editar/Ref Cliente">
+               <div class="d-flex flex-wrap me-n5 c-reserva-modal__filtros px-0">
+                    <div class="mb-4 mx-3">
+                        <label for="Cart_ClienteReferencia" class="form-label">Referência do Cliente</label>
+                        <input class="form-control" id="Cart_ClienteReferencia" type="text" placeholder="Editar/Ref Cliente">
                     </div>
                     <div class="mb-4 mx-3">
-                        <label for="reserva-invoice" class="form-label">File/Invoice</label>
-                        <input class="form-control" type="text" id="reserva-invoice" placeholder="8383283" id="file">
+                        <label for="Cart_CodigoRaposa" class="form-label">File/Invoice</label>
+                        <input class="form-control" type="text" id="Cart_CodigoRaposa" placeholder="8383283" id="file">
                     </div>
-                    <div class="mb-4 mx-3">
-                        <label for="reserva-agrupamento" class="form-label">Agrupamento</label>
-                        <select class="form-select" id="reserva-agrupamento">
-                            <option value="">Journeys</option>
+                    <div class="mb-4 mx-3 c-reserva-modal__filtros__agrupamento">
+                        <label for="ShoppingCart_AgrupamentoReserva_Id" class="form-label">Agrupamento</label>
+                        <select class="form-select JS__select" id="ShoppingCart_AgrupamentoReserva_Id">
+                            <option value="1">Journeys AGT</option>
+                            <option selected="selected" value="2">Journeys</option>
+                            <option value="3">Journeys ALLOT</option>
+                            <option value="4">Journeys ESP</option>
+                            <option value="5">Journeys GRP</option>
+                            <option value="6">Journeys PARTNERS</option>
+                            <option value="7">Journeys NACIONAL</option>
+                        </select>
+                    </div>
+                    <div class="mb-4 mx-3 c-reserva-modal__filtros__nacionalidade">
+                        <label for="ShoppingCart_Pais_Id" class="form-label">Nacionalidade</label>
+                        <select class="form-select JS__select-country" id="ShoppingCart_Pais_Id">
+                            <option value="24">Africa do Sul </option>
+                            <option value="5">Alemanha</option>
+                            <option value="3">Argentina</option>
+                            <option value="38">Austria</option>
+                            <option value="40">Belgica</option>
+                            <option value="6">Bolivia</option>
+                            <option value="2">Brasil</option>
+                            <option value="26">Bulgaria</option>
+                            <option value="36">Canada</option>
+                            <option value="4">Chile</option>
+                            <option value="28">China</option>
+                            <option value="34">Chipre</option>
+                            <option value="13">Colômbia</option>
+                            <option value="37">Dinamarca</option>
+                            <option value="11">El Salvador</option>
+                            <option value="35">Emirados Arabes Unidos</option>
+                            <option value="10">Equador</option>
+                            <option value="12">Espanha</option>
+                            <option value="18">Estados Unidos</option>
+                            <option value="29">França</option>
+                            <option value="32">Honduras</option>
+                            <option value="27">Inglaterra</option>
+                            <option value="25">Israel </option>
+                            <option value="39">Marrocos</option>
+                            <option value="9">México</option>
+                            <option value="41">Noruega</option>
+                            <option value="23">Panamá</option>
+                            <option value="7">Paraguai</option>
+                            <option value="8">Peru</option>
+                            <option value="30">Porto Rico</option>
+                            <option value="16">Portugal</option>
+                            <option value="14">Rep. Dominicana</option>
+                            <option value="21">República Dominicana</option>
+                            <option value="22">Russia</option>
+                            <option value="31">Suiça </option>
+                            <option value="17">Turquia</option>
+                            <option value="33">Ucrânia</option>
+                            <option selected="selected" value="15">Uruguai</option>
+                            <option value="19">Venezuela</option>
+                        </select>
+                    </div>
+                    <div class="mb-4 mx-3 c-reserva-modal__filtros__idioma">
+                        <label for="ShoppingCart_Idioma_Id" class="form-label">Idioma</label>
+                        <select class="form-select JS__select" id="ShoppingCart_Idioma_Id">
+                            <option value="" selected="selected" >Selecione o idioma</option>
+                            <option value="7">Alemão</option>
+                            <option value="11">Dinamarquês</option>
+                            <option value="4">Espanhol</option>
+                            <option value="8">Francês</option>
+                            <option value="6">Inglês</option>
+                            <option value="9">Italiano</option>
+                            <option value="3">Português</option>
+                            <option value="5">Português.</option>
                         </select>
                     </div>
                     <div class="mb-4 mx-3">
-                        <label for="reserva-nacionalidade" class="form-label">Nacionalidade</label>
-                        <select class="form-select" id="reserva-nacionalidade">
-                            <option value="">Brasil</option>
-                        </select>
-                    </div>
-                    <div class="mb-4 mx-3">
-                        <label for="reserva-idioma" class="form-label">Idioma</label>
-                        <select class="form-select" id="reserva-idioma">
-                            <option value="">Selecione o idioma</option>
-                        </select>
-                    </div>
-                    <div class="mb-4 mx-3">
-                        <label for="reserva-tour" class="form-label">Tour Líder</label>
-                        <input class="form-control " type="text" placeholder="Juliana Pinheiros" id="reserva-tour">
+                        <label for="Cart_TourLider" class="form-label">Tour Líder</label>
+                        <input class="form-control " type="text" id="Cart_TourLider">
                     </div>
                     <div class="mb-4 mx-3">
                         <label for="reserva-due" class="form-label">Due Data</label>
@@ -135,15 +186,14 @@
                     <div class="mb-4 mx-3">
                         <label class="form-label">Visibilidade</label>
 
-                        <div class="c-reservas__" aria-label="Visibilidade">
-                            <div class="form-check form-switch mb-1">
-                                <label class="form-check-label mb-0" for="reserva-visibilidade">
+                        <label class="c-reserva-modal__filtros__visibilidade cursor-pointer" aria-label="Visibilidade" for="reserva-visibilidade">
+                            <div class="form-check form-switch px-0">
+                                <span class="form-check-label mb-0">
                                     Ativada
-                                </label>
+                                </span>
                                 <input class="form-check-input me-2" type="checkbox" id="reserva-visibilidade">
                             </div>
-                        </div>
-
+                        </label>
 
                     </div>
                </div>
@@ -151,61 +201,61 @@
 
 
             <div class="row">
-                <div class="col-xl-12 c-reservas__table">
+                <div class="col-xl-12 c-reserva-modal__table px-0">
                     <table class="table fs-6" id="table">
                         <thead style="background-color: #FBFBFB;" class="fs-12">
                             <tr class="text-secondary">
                                 <th scope="col">
                                     <div class="d-flex align-items-center">
-                                        <span class="text-primary icon-product fs-24 me-2"></span>
+                                        <span class="text-primary icon-product fs-22 me-2"></span>
                                         Produto
                                     </div>
                                 </th>
                                 <th scope="col">
                                     <div class="d-flex align-items-center">
-                                        <span class="text-primary icon-status fs-24 me-2"></span>
+                                        <span class="text-primary icon-status fs-22 me-2"></span>
                                         Status
                                     </div>
                                 </th>
                                 <th scope="col">
                                     <div class="d-flex align-items-center">
-                                        <span class="text-primary icon-category fs-24 me-2"></span>
+                                        <span class="text-primary icon-category fs-22 me-2"></span>
                                         Ítem
                                     </div>
                                 </th>
                                 <th scope="col">
                                     <div class="d-flex align-items-center">
-                                        <span class="text-primary icon-calendar fs-28 me-2"></span>
+                                        <span class="text-primary icon-calendar fs-22 me-2"></span>
                                         Check-In <span class="mx-3 text-primary fw-bold">|</span> Check Out
                                     </div>
                                 </th>
                                 <th scope="col">
                                     <div class="d-flex align-items-center">
-                                        <span class="text-primary icon-cost fs-24 me-2"></span>
+                                        <span class="text-primary icon-cost fs-22 me-2"></span>
                                         Custo
                                     </div>
                                 </th>
                                 <th scope="col">
                                     <div class="d-flex align-items-center">
-                                        <span class="text-primary icon-commission fs-24 me-2"></span>
+                                        <span class="text-primary icon-commission fs-22 me-2"></span>
                                         Comissão
                                     </div>
                                 </th>
                                 <th scope="col">
                                     <div class="d-flex align-items-center">
-                                        <span class="text-primary icon-exchange fs-24 me-2"></span>
+                                        <span class="text-primary icon-exchange fs-22 me-2"></span>
                                         Câmbio
                                     </div>
                                 </th>
                                 <th scope="col">
                                     <div class="d-flex align-items-center">
-                                        <span class="text-primary icon-markup fs-24 me-2"></span>
+                                        <span class="text-primary icon-markup fs-22 me-2"></span>
                                         Markup
                                     </div>
                                 </th>
                                 <th scope="col">
                                     <div class="d-flex align-items-center">
-                                        <span class="text-primary icon-calendar fs-24 me-2"></span>
+                                        <span class="text-primary icon-total fs-22 me-2"></span>
                                         Total
                                     </div>
                                 </th>
@@ -269,13 +319,13 @@
                                                 </label>
                                             </div>
                                         </div>
-                                        <div class="d-flex">
-                                            <span class="icon-comment text-primary fs-24 me-3 cursor-pointer JS__open-editar-reserva"></span>
-                                            <span class="icon-pickup text-primary fs-24 me-3 cursor-pointer JS__open-editar-reserva"></span>
-                                            <span class="icon-edit-values text-primary fs-24 me-3 cursor-pointer JS__open-editar-reserva"></span>
-                                            <span class="icon-change-log text-primary fs-24 me-3 cursor-pointer JS__open-editar-reserva"></span>
-                                            <span class="icon-privacy-policy text-primary fs-24 me-3 cursor-pointer JS__open-editar-reserva"></span>
-                                            <span class="icon-trash text-primary fs-24 me-3 cursor-pointer JS__open-editar-reserva"></span>
+                                        <div class="d-flex fs-22">
+                                            <span class="icon-comment text-primary me-4 cursor-pointer JS__open-editar-reserva" data-bs-toggle="tooltip" data-bs-placement="top" title="Comentários Internos"></span>
+                                            <span class="icon-pickup text-primary me-4 cursor-pointer JS__open-editar-reserva" data-bs-toggle="tooltip" data-bs-placement="top" title="Info. Pickup / Dropoff"></span>
+                                            <span class="icon-edit-values text-primary me-4 cursor-pointer JS__open-editar-reserva" data-bs-toggle="tooltip" data-bs-placement="top" title="Alteração de Valores"></span>
+                                            <span class="icon-change-log text-primary me-4 cursor-pointer JS__open-editar-reserva" data-bs-toggle="tooltip" data-bs-placement="top" title="Log de Alterações"></span>
+                                            <span class="icon-privacy-policy text-primary me-4 cursor-pointer JS__open-editar-reserva" data-bs-toggle="tooltip" data-bs-placement="top" title="Política/Privacidade"></span>
+                                            <span class="icon-trash text-primary cursor-pointer JS__open-editar-reserva" data-bs-toggle="tooltip" data-bs-placement="top" title="Excluir Item"></span>
                                         </div>
                                     </div>
                                 </td>
@@ -285,37 +335,35 @@
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row pt-5">
+                <div class="col d-flex justify-content-between flex-wrap align-items-center">
+                    <div class="d-flex flex-wrap mb-2">
 
-                <div class="col d-flex justify-content-between">
-
-                    <div class="d-flex">
-
-                        <div class="d-flex align-items-center me-4">
-                            <span class="icon-trash text-primary fs-28 me-2"></span>
+                        <div class="d-flex align-items-center me-4 mb-4">
+                            <span class="icon-trash text-primary fs-24 me-2"></span>
                             <span class="fs-12">Excluir Todas</span>
                         </div>
-                        <div class="d-flex align-items-center me-4 cursor-pointer JS__doc-toggle">
-                            <span class="icon-doc-digital text-primary fs-28 me-2"></span>
+                        <div class="d-flex align-items-center me-4 mb-4 cursor-pointer JS__doc-toggle">
+                            <span class="icon-doc-digital text-primary fs-24 me-2"></span>
                             <span class="fs-12">DOC Digital</span>
                         </div>
-                        <div class="d-flex align-items-center me-4 cursor-pointer JS__invoice-toggle">
-                            <span class="icon-invoice text-primary fs-28 me-2"></span>
+                        <div class="d-flex align-items-center me-4 mb-4 cursor-pointer JS__invoice-toggle">
+                            <span class="icon-invoice text-primary fs-24 me-2"></span>
                             <span class="fs-12">Invoice</span>
                         </div>
-                        <div class="d-flex align-items-center me-4">
-                            <span class="icon-printer text-primary fs-28 me-2"></span>
+                        <div class="d-flex align-items-center me-4 mb-4">
+                            <span class="icon-printer text-primary fs-24 me-2"></span>
                             <span class="fs-12">Imprimir</span>
                         </div>
-                        <div class="d-flex align-items-center me-4 cursor-pointer JS__voucher-toggle">
-                            <span class="icon-voucher text-primary fs-28 me-2"></span>
+                        <div class="d-flex align-items-center me-4 mb-4 cursor-pointer JS__voucher-toggle">
+                            <span class="icon-voucher text-primary fs-24 me-2"></span>
                             <span class="fs-12">Voucher</span>
                         </div>
                     </div>
 
-                    <div class="d-flex align-items-center">
-                        <span class="fs-4 text-primary fw-normal me-5"><span class="fw-bold">Total:</span> USD 150,00</span>
-                        <button class="btn btn-primary px-5 rounded-pill fw-500 me-3">Adicionar mais itens</button>
+                    <div class="d-flex align-items-center flex-wrap">
+                        <span class="fs-4 text-primary fw-normal me-5 mb-4"><span class="fw-bold">Total:</span> USD 150,00</span>
+                        <button class="btn btn-primary px-5 rounded-pill fw-500 me-3 mb-4">Adicionar mais itens</button>
                     </div>
 
                 </div>
@@ -329,188 +377,189 @@
 </main>
 
 
-<div class="c-reservas__menu JS__reserva-menu">
+<div class="c-reserva-modal__menu JS__reserva-menu">
 
-    <div class="c-reservas__menu__bg JS__open-editar-reserva"></div>
+    <div class="c-reserva-modal__menu__bg JS__open-editar-reserva"></div>
 
-    <div class="c-reservas__menu__content">
+    <div class="c-reserva-modal__menu__content">
 
-            <div class="c-reservas__menu__icons">
-                <span class="icon-close JS__open-editar-reserva fs-28 text-primary cursor-pointer fw-bold c-reservas__menu__close position-absolute"></span>
-                <div class="w-100 h-100 d-flex align-items-center">
-                    <ul class="nav nav-fill d-block w-100">
-                        <li class="nav-item">
-                            <button class="nav-link active" id="comentarios-tab" data-bs-toggle="tab" data-bs-target="#comentarios-tabContent" type="button" role="tab" aria-controls="comentarios-tabContent" aria-selected="true">
-                                <span class="icon-comment fs-24"></span>
-                            </button>
+        <div class="c-reserva-modal__menu__icons">
+            <span class="icon-close JS__open-editar-reserva fs-28 text-primary cursor-pointer fw-bold c-reserva-modal__menu__close position-absolute"></span>
+            <div class="w-100 h-100 d-flex align-items-center">
+                <ul class="nav nav-fill d-block w-100 fs-22">
+                    <li class="nav-item">
+                        <button class="nav-link active" id="comentarios-tab" data-bs-toggle="tab" data-bs-target="#comentarios-tabContent" type="button" role="tab" aria-controls="comentarios-tabContent" aria-selected="true">
+                            <span class="icon-comment"></span>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" id="pickup-tab" data-bs-toggle="tab" data-bs-target="#pickup-tabContent" type="button" role="tab" aria-controls="pickup-tabContent" aria-selected="true">
+                            <span class="icon-pickup"></span>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" id="valores-tab" data-bs-toggle="tab" data-bs-target="#valores-tabContent" type="button" role="tab" aria-controls="valores-tabContent" aria-selected="false">
+                            <span class="icon-edit-values"></span>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" id="log-tab" data-bs-toggle="tab" data-bs-target="#log-tabContent" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">
+                            <span class="icon-change-log"></span>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" id="politica-tab" data-bs-toggle="tab" data-bs-target="#politica-tabContent" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">
+                            <span class="icon-privacy-policy"></span>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" id="excluir-tab" data-bs-toggle="tab" data-bs-target="#excluir-tabContent" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">
+                            <span class="icon-trash"></span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tab-content" id="tabTarifados">
+            
+            <div class="tab-pane fade active show" id="comentarios-tabContent" role="tabpanel" aria-labelledby="comentarios-tab">
+                <div class="c-reserva-modal__menu__container fs-6">
+                    <span class="fs-24 text-primary mb-3 d-block fw-bold">Comentários Internos</span>
+
+                    <p class="fw-500 mb-5">TRF O.W. ARPT / HOTEL O V.V<br> 
+                    1 - Privado - Sólo chofer - IN</p>
+
+                    <ul class="comments fs-12">
+                        <li>
+                            <div><span class="text-primary fw-500 me-2">Kelly Silva</span> 11, Set, 2021</div>
+                            Está viagem necessita de hospedagem dupla
                         </li>
-                        <li class="nav-item">
-                            <button class="nav-link" id="pickup-tab" data-bs-toggle="tab" data-bs-target="#pickup-tabContent" type="button" role="tab" aria-controls="pickup-tabContent" aria-selected="true">
-                                <span class="icon-pickup fs-24"></span>
-                            </button>
+                        <li class="level-2">
+                            <div><span class="text-primary fw-500 me-2">Kelly Silva</span> 12, Set, 2021</div>
+                            Serão dois hóspedes
                         </li>
-                        <li class="nav-item">
-                            <button class="nav-link" id="valores-tab" data-bs-toggle="tab" data-bs-target="#valores-tabContent" type="button" role="tab" aria-controls="valores-tabContent" aria-selected="false">
-                                <span class="icon-edit-values fs-24"></span>
-                            </button>
-                        </li>
-                        <li class="nav-item">
-                            <button class="nav-link" id="log-tab" data-bs-toggle="tab" data-bs-target="#log-tabContent" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">
-                                <span class="icon-change-log fs-24"></span>
-                            </button>
-                        </li>
-                        <li class="nav-item">
-                            <button class="nav-link" id="politica-tab" data-bs-toggle="tab" data-bs-target="#politica-tabContent" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">
-                                <span class="icon-privacy-policy fs-24"></span>
-                            </button>
-                        </li>
-                        <li class="nav-item">
-                            <button class="nav-link" id="excluir-tab" data-bs-toggle="tab" data-bs-target="#excluir-tabContent" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">
-                                <span class="icon-trash fs-24"></span>
-                            </button>
+                        <li>
+                            <div><span class="text-primary fw-500 me-2">Erick Henrique</span> 14, Set, 2021</div>
+                            Viagem com alterações criadas
                         </li>
                     </ul>
+
+                    <div class="mt-5 w-100">
+                        <label for="add-comment" class="form-label">Adicionar Comentário</label>
+                        <label for="add-comment" class="add-comment">
+                            <span><svg xmlns="http://www.w3.org/2000/svg" width="23" height="23"><g data-name="Grupo 350" transform="translate(-2603.494 -740.837)" fill="none" stroke="#96929c" stroke-linecap="round"><circle data-name="Elipse 45" cx="11" cy="11" r="11" transform="translate(2603.994 741.337)" stroke-miterlimit="9" stroke-dasharray="4"/><path data-name="Linha 90" stroke-miterlimit="10" d="M2614.994 747.063v10.548"/><path data-name="Linha 91" stroke-miterlimit="10" d="M2620.268 752.337h-10.548"/></g></svg></span>
+                            <input class="form-control" id="add-comment" type="text" placeholder="Adicione algum detalhe sobre a viagem">
+                        </label>
+                    </div>
+
+                    <button class="btn btn-primary px-5 rounded-pill fw-500 mt-5">Salvar Alterações</button>
+
                 </div>
             </div>
 
-            <div class="tab-content" id="tabTarifados">
-                
-                <div class="tab-pane fade active show" id="comentarios-tabContent" role="tabpanel" aria-labelledby="comentarios-tab">
-                    <div class="c-reservas__menu__container fs-6">
-                        <span class="fs-24 text-primary mb-3 d-block fw-bold">Comentários Internos</span>
+            <div class="tab-pane fade" id="valores-tabContent" role="tabpanel" aria-labelledby="pickup-tab">
+                <div class="c-reserva-modal__menu__container fs-6">
+                    <span class="fs-24 text-primary mb-3 d-block fw-bold">Alteração de Valores</span>
 
-                        <p class="fw-500 mb-5">TRF O.W. ARPT / HOTEL O V.V<br> 
-                        1 - Privado - Sólo chofer - IN</p>
+                    <p class="my-5">TRF O.W. ARPT / HOTEL O V.V<br>1 Privado - Sólo chofer - IN</p>
 
-                        <ul class="comments fs-12">
-                            <li>
-                                <div><span class="text-primary fw-500 me-2">Kelly Silva</span> 11, Set, 2021</div>
-                                Está viagem necessita de hospedagem dupla
-                            </li>
-                            <li class="level-2">
-                                <div><span class="text-primary fw-500 me-2">Kelly Silva</span> 12, Set, 2021</div>
-                                Serão dois hóspedes
-                            </li>
-                            <li>
-                                <div><span class="text-primary fw-500 me-2">Erick Henrique</span> 14, Set, 2021</div>
-                                Viagem com alterações criadas
-                            </li>
-                        </ul>
-
-                        <div class="mt-5 w-100">
-                            <label for="add-comment" class="form-label">Adicionar Comentário</label>
-                            <label for="add-comment" class="add-comment">
-                                <span><svg xmlns="http://www.w3.org/2000/svg" width="23" height="23"><g data-name="Grupo 350" transform="translate(-2603.494 -740.837)" fill="none" stroke="#96929c" stroke-linecap="round"><circle data-name="Elipse 45" cx="11" cy="11" r="11" transform="translate(2603.994 741.337)" stroke-miterlimit="9" stroke-dasharray="4"/><path data-name="Linha 90" stroke-miterlimit="10" d="M2614.994 747.063v10.548"/><path data-name="Linha 91" stroke-miterlimit="10" d="M2620.268 752.337h-10.548"/></g></svg></span>
-                                <input class="form-control" id="add-comment" type="text" placeholder="Adicione algum detalhe sobre a viagem">
-                            </label>
-                        </div>
-
-                        <button class="btn btn-primary px-5 rounded-pill fw-500 mt-5">Salvar Alterações</button>
-
+                    <div class="mb-3 w-100 me-2">
+                        <label for="exampleInputEmail1" class="form-label">Valor de Venda (USD)</label>
+                        <input class="form-control " type="text" placeholder="USD 0,000">
                     </div>
+                    <div class="mb-5 w-100 me-2">
+                        <label for="exampleInputEmail1" class="form-label">Notas</label>
+                        <input class="form-control " type="text" placeholder="Digite algo sobre…">
+                    </div>
+                    <div class="mb-3 w-100 me-2">
+                        <label for="exampleInputEmail1" class="form-label">Valor de Venda (BRL)</label>
+                        <input class="form-control" type="text" placeholder="BRL 0,000">
+                    </div>
+                    <div class="mb-5 w-100 me-2">
+                        <label for="exampleInputEmail1" class="form-label">Notas</label>
+                        <input class="form-control" type="text" placeholder="Digite algo sobre…">
+                    </div>
+
+                    <button class="btn btn-primary px-5 rounded-pill fw-500 me-3">Salvar Alterações</button>
                 </div>
+            </div>
 
-                <div class="tab-pane fade" id="valores-tabContent" role="tabpanel" aria-labelledby="pickup-tab">
-                    <div class="c-reservas__menu__container fs-6">
-                        <span class="fs-24 text-primary mb-3 d-block fw-bold">Alteração de Valores</span>
+            <div class="tab-pane fade" id="pickup-tabContent" role="tabpanel" aria-labelledby="pickup-tab">
+                <div class="c-reserva-modal__menu__container fs-6">
+                    <span class="fs-24 text-primary mb-5 d-block fw-bold">Info. Pickup / Dropoff</span>
 
-                        <p class="my-5">TRF O.W. ARPT / HOTEL O V.V<br>1 Privado - Sólo chofer - IN</p>
 
+                    <div>
+                        <span class="fs-6 text-primary mb-3 d-block fw-bold">Pickup</span>
+                        
+                        <label for="exampleInputEmail1" class="form-label">Tipo</label>
+                        <div class="d-flex mb-3">
+                            <div class="form-check bg-white me-4">
+                                <input class="form-check-input" type="radio" name="pickup-tipo" value="1" id="pickup-hotel" checked>
+                                <label class="form-check-label d-flex align-items-center" for="pickup-hotel">
+                                    <span class="icon-bags fs-24 me-2"></span> Hotel
+                                </label>
+                            </div>
+                            <div class="form-check bg-white">
+                                <input class="form-check-input" type="radio" name="pickup-tipo" value="1" id="pickup-aeroporto">
+                                <label class="form-check-label d-flex align-items-center" for="pickup-aeroporto">
+                                    <span class="icon-airport fs-24 me-2"></span> Aeroporto
+                                </label>
+                            </div>
+                        </div>
                         <div class="mb-3 w-100 me-2">
-                            <label for="exampleInputEmail1" class="form-label">Valor de Venda (USD)</label>
-                            <input class="form-control " type="text" placeholder="USD 0,000">
-                        </div>
-                        <div class="mb-5 w-100 me-2">
-                            <label for="exampleInputEmail1" class="form-label">Notas</label>
-                            <input class="form-control " type="text" placeholder="Digite algo sobre…">
+                            <label for="exampleInputEmail1" class="form-label">Cidade</label>
+                            <input class="form-control " type="text" placeholder="Digite o nome da cidade desejada">
                         </div>
                         <div class="mb-3 w-100 me-2">
-                            <label for="exampleInputEmail1" class="form-label">Valor de Venda (BRL)</label>
-                            <input class="form-control" type="text" placeholder="BRL 0,000">
+                            <label for="exampleInputEmail1" class="form-label">Número do Voo</label>
+                            <input class="form-control " type="text" placeholder="0000000">
                         </div>
-                        <div class="mb-5 w-100 me-2">
-                            <label for="exampleInputEmail1" class="form-label">Notas</label>
-                            <input class="form-control" type="text" placeholder="Digite algo sobre…">
+                        <div class="mb-3 w-100 me-2">
+                            <label for="exampleInputEmail1" class="form-label">Localização do Aeroporto</label>
+                            <input class="form-control " type="text" placeholder="Digite o endereço">
                         </div>
-
-                        <button class="btn btn-primary px-5 rounded-pill fw-500 me-3">Salvar Alterações</button>
-                    </div>
-                </div>
-
-                <div class="tab-pane fade" id="pickup-tabContent" role="tabpanel" aria-labelledby="pickup-tab">
-                    <div class="c-reservas__menu__container fs-6">
-                        <span class="fs-24 text-primary mb-5 d-block fw-bold">Info. Pickup / Dropoff</span>
-
-
-                        <div>
-                            <span class="fs-6 text-primary mb-3 d-block fw-bold">Pickup</span>
-                            
-                            <label for="exampleInputEmail1" class="form-label">Tipo</label>
-                            <div class="d-flex mb-3">
-                                <div class="form-check bg-white me-4">
-                                    <input class="form-check-input" type="radio" name="pickup-tipo" value="1" id="pickup-hotel" checked>
-                                    <label class="form-check-label d-flex align-items-center" for="pickup-hotel">
-                                        <span class="icon-hotel-3 fs-24 me-2"></span> Hotel
-                                    </label>
-                                </div>
-                                <div class="form-check bg-white">
-                                    <input class="form-check-input" type="radio" name="pickup-tipo" value="1" id="pickup-aeroporto">
-                                    <label class="form-check-label d-flex align-items-center" for="pickup-aeroporto">
-                                        <span class="icon-airport fs-24 me-2"></span> Aeroporto
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="mb-3 w-100 me-2">
-                                <label for="exampleInputEmail1" class="form-label">Cidade</label>
-                                <input class="form-control " type="text" placeholder="Digite o nome da cidade desejada">
-                            </div>
-                            <div class="mb-3 w-100 me-2">
-                                <label for="exampleInputEmail1" class="form-label">Número do Voo</label>
-                                <input class="form-control " type="text" placeholder="0000000">
-                            </div>
-                            <div class="mb-3 w-100 me-2">
-                                <label for="exampleInputEmail1" class="form-label">Localização do Aeroporto</label>
-                                <input class="form-control " type="text" placeholder="Digite o endereço">
-                            </div>
-
-                        </div>
-                        <div>
-                            <span class="fs-6 text-primary mb-3 mt-4 d-block fw-bold">Dropoof</span>
-                            <label for="exampleInputEmail1" class="form-label">Tipo</label>
-                            <div class="d-flex mb-3">
-                                <div class="form-check bg-white me-4">
-                                    <input class="form-check-input" type="radio" name="dropoof-tipo" value="1" id="dropoof-hotel" checked>
-                                    <label class="form-check-label d-flex align-items-center" for="dropoof-hotel">
-                                        <span class="icon-hotel-3 fs-24 me-2"></span> Hotel
-                                    </label>
-                                </div>
-                                <div class="form-check bg-white">
-                                    <input class="form-check-input" type="radio" name="dropoof-tipo" value="1" id="dropoof-aeroporto">
-                                    <label class="form-check-label d-flex align-items-center" for="dropoof-aeroporto">
-                                        <span class="icon-airport fs-24 me-2"></span> Aeroporto
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="mb-3 w-100 me-2">
-                                <label for="exampleInputEmail1" class="form-label">Cidade</label>
-                                <input class="form-control" type="text" placeholder="Digite o nome da cidade desejada">
-                            </div>
-                            <div class="mb-3 w-100 me-2">
-                                <label for="exampleInputEmail1" class="form-label">Hotel</label>
-                                <input class="form-control " type="text" placeholder="0000000">
-                            </div>
-                        </div>
-
-                        <button class="btn btn-primary px-5 rounded-pill fw-500 mt-5">Salvar Alterações</button>
 
                     </div>
-                </div>
+                    <div>
+                        <span class="fs-6 text-primary mb-3 mt-4 d-block fw-bold">Dropoof</span>
+                        <label for="exampleInputEmail1" class="form-label">Tipo</label>
+                        <div class="d-flex mb-3">
+                            <div class="form-check bg-white me-4">
+                                <input class="form-check-input" type="radio" name="dropoof-tipo" value="1" id="dropoof-hotel" checked>
+                                <label class="form-check-label d-flex align-items-center" for="dropoof-hotel">
+                                    <span class="icon-bags fs-24 me-2"></span> Hotel
+                                </label>
+                            </div>
+                            <div class="form-check bg-white">
+                                <input class="form-check-input" type="radio" name="dropoof-tipo" value="1" id="dropoof-aeroporto">
+                                <label class="form-check-label d-flex align-items-center" for="dropoof-aeroporto">
+                                    <span class="icon-airport fs-24 me-2"></span> Aeroporto
+                                </label>
+                            </div>
+                        </div>
+                        <div class="mb-3 w-100 me-2">
+                            <label for="exampleInputEmail1" class="form-label">Cidade</label>
+                            <input class="form-control" type="text" placeholder="Digite o nome da cidade desejada">
+                        </div>
+                        <div class="mb-3 w-100 me-2">
+                            <label for="exampleInputEmail1" class="form-label">Hotel</label>
+                            <input class="form-control " type="text" placeholder="0000000">
+                        </div>
+                    </div>
 
-                <div class="tab-pane fade" id="log-tabContent" role="tabpanel" aria-labelledby="log-tab">
-                    <div class="c-reservas__menu__container fs-6">
-                        <span class="fs-24 text-primary mb-5 d-block fw-bold">Log de Alterações</span>
-                        <p class="fw-500 fs-6 mb-4">TRF O.W. ARPT / HOTEL O V.V - 1 - Privado - Sólo chofer - IN</p>
-                        <table class="table fs-12">
+                    <button class="btn btn-primary px-5 rounded-pill fw-500 mt-5">Salvar Alterações</button>
+
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="log-tabContent" role="tabpanel" aria-labelledby="log-tab">
+                <div class="c-reserva-modal__menu__container fs-6">
+                    <span class="fs-24 text-primary mb-5 d-block fw-bold">Log de Alterações</span>
+                    <p class="fw-500 fs-6 mb-4">TRF O.W. ARPT / HOTEL O V.V - 1 - Privado - Sólo chofer - IN</p>
+                    <div class="c-reserva-modal__table--log">
+                        <table class="table fs-12 JS__datatable">
                             <thead>
                                 <tr>
                                     <th>
@@ -541,7 +590,7 @@
                                     <td>26/01/2021 13:21:28</td>
                                     <td>Journeys | Uso Interno Operações</td>
                                     <td>Kelly</td>
-                                    <td>Insersção</td>
+                                    <td>Inserção</td>
                                     <td>Opcional</td>
                                     <td>Não</td>
                                     <td>Sim</td>
@@ -568,95 +617,96 @@
                         </table>
                     </div>
                 </div>
+            </div>
 
-                <div class="tab-pane fade" id="politica-tabContent" role="tabpanel" aria-labelledby="politica-tab">
-                    <div class="c-reservas__menu__container fs-6">
-                        <span class="fs-24 text-primary mb-5 d-block fw-bold">Política e Privacidade</span>
+            <div class="tab-pane fade" id="politica-tabContent" role="tabpanel" aria-labelledby="politica-tab">
+                <div class="c-reserva-modal__menu__container fs-6">
+                    <span class="fs-24 text-primary mb-5 d-block fw-bold">Política e Privacidade</span>
 
-                        <h3>Días normales</h3>
+                    <h3>Días normales</h3>
 
-                        <p>Hasta 48 horas antes de la fecha de llegada del huésped - no habrá cargo.</p>
+                    <p>Hasta 48 horas antes de la fecha de llegada del huésped - no habrá cargo.</p>
 
-                        <p>Menos de 48 horas antes de la fecha de llegada del huésped, se cobrará el mínimo de noches requeridas.</p>
-
-
-                        <h3>Vacaciones y paquetes</h3>
-
-                        <p>Para feriados, el plazo para cancelación sin cargo es hasta 14 días antes de la llegada del huésped, cancelaciones posteriores a esa fecha, se cobrará el período completo del paquete.</p>
-
-                        <h3>Dados</h3>
-                        <p>
-                            Banco Santander<br>
-                            Agencia: 3020<br>
-                            Cuenta de cadena 13001461-5<br>
-                            Vg brasil ativ.hoteleiras cnpj (09.467.429 / 0001-68)<br>
-                            Fecha límite hasta 2 días antes del checkin. el valor de cancelación es 100,00% del valor de la reserva.<br>
-                            Todo incluido<br>
-                            Refeições: desayuno, almuerzo, cena<br>
-                            Pago estándar
-                        </p>
-                    </div>
-                </div>
+                    <p>Menos de 48 horas antes de la fecha de llegada del huésped, se cobrará el mínimo de noches requeridas.</p>
 
 
-                <div class="tab-pane fade" id="excluir-tabContent" role="tabpanel" aria-labelledby="excluir-tab">
-                    <div class="c-reservas__menu__container fs-6">
-                        <span class="fs-24 text-primary mb-3 d-block"><span class="fw-bold">Reserva:</span> #36252</span>
-                        <p class="fw-500 mb-5">Você tem certeza que deseja efetuar a exclusão deste item? Está ação não poderá ser desfeita!</p>
+                    <h3>Vacaciones y paquetes</h3>
 
-                        <div>
+                    <p>Para feriados, el plazo para cancelación sin cargo es hasta 14 días antes de la llegada del huésped, cancelaciones posteriores a esa fecha, se cobrará el período completo del paquete.</p>
 
-                            <div class="mb-5">
-                                <span class="d-block text-primary fs-16 fw-500">Produto</span>
-                                Hotel 35080-1-HT
-                            </div>
-                            <div class="mb-5">
-                                <span class="d-block text-primary fs-16 fw-500">Item</span>
-                                    <div class="fw-500">Center Hotel Rio</div>
-                                    Rio de Janeiro<br>
-                                    Doble Estándar BB<br>
-                                    Júlio Cabral<br>
-                                    02 Adultos<br>
-                                    Cancelamento 15/01/2021<br>
-                            </div>
-                            <div class="mb-5 d-flex">
-                            <div class="me-5">
-                                    <span class="d-block text-primary fs-16 fw-500">Check-In</span>
-                                    12/03/2021
-                            </div>
-                            <div>
-                                    <span class="d-block text-primary fs-16 fw-500">Check-Out</span>
-                                    12/03/2021
-                            </div>
-                            </div>
-                            <div class="mb-5">
-                                <span class="d-block text-primary fs-16 fw-500">Preço</span>
-                                R$ 85,00
-                            </div>
-
-                        </div>
-
-                        <button class="btn btn-primary px-5 rounded-pill fw-500 me-3">Excluir Item</button>
-                    </div>
+                    <h3>Dados</h3>
+                    <p>
+                        Banco Santander<br>
+                        Agencia: 3020<br>
+                        Cuenta de cadena 13001461-5<br>
+                        Vg brasil ativ.hoteleiras cnpj (09.467.429 / 0001-68)<br>
+                        Fecha límite hasta 2 días antes del checkin. el valor de cancelación es 100,00% del valor de la reserva.<br>
+                        Todo incluido<br>
+                        Refeições: desayuno, almuerzo, cena<br>
+                        Pago estándar
+                    </p>
                 </div>
             </div>
+
+
+            <div class="tab-pane fade" id="excluir-tabContent" role="tabpanel" aria-labelledby="excluir-tab">
+                <div class="c-reserva-modal__menu__container fs-6">
+                    <span class="fs-24 text-primary mb-3 d-block"><span class="fw-bold">Reserva:</span> #36252</span>
+                    <p class="fw-500 mb-5">Você tem certeza que deseja efetuar a exclusão deste item? Está ação não poderá ser desfeita!</p>
+
+                    <div>
+
+                        <div class="mb-5">
+                            <span class="d-block text-primary fs-16 fw-500">Produto</span>
+                            Hotel 35080-1-HT
+                        </div>
+                        <div class="mb-5">
+                            <span class="d-block text-primary fs-16 fw-500">Item</span>
+                                <div class="fw-500">Center Hotel Rio</div>
+                                Rio de Janeiro<br>
+                                Doble Estándar BB<br>
+                                Júlio Cabral<br>
+                                02 Adultos<br>
+                                Cancelamento 15/01/2021<br>
+                        </div>
+                        <div class="mb-5 d-flex">
+                        <div class="me-5">
+                                <span class="d-block text-primary fs-16 fw-500">Check-In</span>
+                                12/03/2021
+                        </div>
+                        <div>
+                                <span class="d-block text-primary fs-16 fw-500">Check-Out</span>
+                                12/03/2021
+                        </div>
+                        </div>
+                        <div class="mb-5">
+                            <span class="d-block text-primary fs-16 fw-500">Preço</span>
+                            R$ 85,00
+                        </div>
+
+                    </div>
+
+                    <button class="btn btn-primary px-5 rounded-pill fw-500 me-3">Excluir Item</button>
+                </div>
+            </div>
+        </div>
 
     </div>
 
 </div>
 
 
-<div class="c-reserva-single c-reservas__doc JS__doc ">
+<div class="c-reserva-modal c-reserva-modal__doc JS__doc ">
 
-    <div class="c-reserva-single__bg cursor-pointer JS__doc-toggle"></div>
+    <div class="c-reserva-modal__bg cursor-pointer JS__doc-toggle"></div>
 
-    <div class="c-reserva-single__box container">
+    <div class="c-reserva-modal__box">
 
-        <div class="c-reserva-single__close JS__doc-toggle cursor-pointer">
+        <div class="c-reserva-modal__close JS__doc-toggle cursor-pointer">
             <span class="icon-close text-primary fs-28"></span>
         </div>
 
-        <div class="c-reserva-single__box__container--check c-reserva-single__step2 show">
+        <div class="c-reserva-modal__box__confirmation c-reserva-modal__step1 pb-5 show">
 
             <div class="border-bottom pb-3 ps-5 pt-2 mb-4">
                 <span class="fs-4 text-primary fw-bold mb-3 d-block">Doc Digital</span>
@@ -674,7 +724,7 @@
             
             <div class="d-flex">
 
-                <div class="c-reservas__doc__col1">
+                <div class="c-reserva-modal__doc__col1">
                     
                     <span class="text-primary fw-500 fs-6 mb-4 d-block">Entrada & Saída: <span class="text-black-50">Cliente/Fornecedor</span></span>
 
@@ -710,7 +760,7 @@
                     </div>
 
                     <span class="text-primary fw-500 fs-16 mt-5 mb-0 d-block d-block">Documentos Salvos</span>
-                    <table class="table fs-12 w-100" id="table">
+                    <table class="table fs-12 w-100 JS__datatable" id="table">
                         <tbody>
                             <tr class="border-bottom">
                                 <td>Nota Fiscal Journeys</td>
@@ -739,7 +789,7 @@
 
                 </div>
 
-                <div class="c-reservas__doc__table">
+                <div class="c-reserva-modal__doc__table">
                     <span class="text-primary fw-500 fs-6">Dados do Documento</span>
                     <table class="table table-striped fs-6 table-borderless table-hover w-100" id="table">
                         <thead class="fs-12">
@@ -807,24 +857,24 @@
 </div>
 
 
-<div class="c-reserva-single c-reservas__invoice JS__invoice">
+<div class="c-reserva-modal c-reserva-modal__invoice JS__invoice">
 
-    <div class="c-reserva-single__bg cursor-pointer JS__invoice-toggle"></div>
+    <div class="c-reserva-modal__bg cursor-pointer JS__invoice-toggle"></div>
 
-    <div class="c-reserva-single__box container">
+    <div class="c-reserva-modal__box">
 
-        <div class="c-reserva-single__close JS__invoice-toggle cursor-pointer">
+        <div class="c-reserva-modal__close JS__invoice-toggle cursor-pointer">
             <span class="icon-close text-primary fs-28"></span>
         </div>
 
-        <div class="c-reserva-single__box__container--check c-reserva-single__step2 show">
+        <div class="c-reserva-modal__box__confirmation c-reserva-modal__step1 pb-5 show">
 
             <div class="d-flex justify-content-between align-items-center border-bottom pb-3 pt-2 ps-5 mb-4">
                 <span class="fs-4 text-primary fw-normal"><span class="fw-bold">Invoice:</span> #35080</span>
             </div>
             
 
-            <div class="c-reserva-single__box__item d-flex justify-content-between">
+            <div class="c-reserva-modal__box__item d-flex justify-content-between">
 
                 <table class="table fs-6" id="table">
                     <thead>
@@ -870,15 +920,15 @@
 
             </div>
 
-            <div class="d-flex justify-content-between align-items-center pt-4 border-top">
-                <div class="d-flex">
-                    <div class="mb-4 me-3 c-reservas__invoice__input">
+            <div class="d-flex justify-content-between align-items-center pt-4 border-top flex-wrap flex-xl-nowrap">
+                <div class="d-flex flex-wrap flex-xl-nowrap">
+                    <div class="mb-4 me-3 c-reserva-modal__invoice__input">
                         <label for="invoice-preco" class="form-label">Selecione uma opção para o preço</label>
                         <select class="form-select" id="invoice-preco">
                             <option value="">Total</option>
                         </select>
                     </div>
-                    <div class="mb-4 me-3 c-reservas__invoice__input">
+                    <div class="mb-4 me-3 c-reserva-modal__invoice__input">
                         <label for="invoice-comentarios" class="form-label">Comentários</label>
                         <input class="form-control" id="invoice-comentarios" type="text" placeholder="Digite algo sobre">
                     </div>
@@ -890,7 +940,6 @@
                     </div>
                 </div>
                 <button class="btn btn-primary px-5 rounded-pill fw-500 me-3">Exportar Invoice</button>
-               
             </div>
 
         </div>
@@ -900,17 +949,17 @@
 </div>
 
 
-<div class="c-reserva-single c-reservas__voucher JS__voucher">
+<div class="c-reserva-modal c-reserva-modal__voucher JS__voucher">
 
-    <div class="c-reserva-single__bg cursor-pointer JS__voucher-toggle"></div>
+    <div class="c-reserva-modal__bg cursor-pointer JS__voucher-toggle"></div>
 
-    <div class="c-reserva-single__box container">
+    <div class="c-reserva-modal__box">
 
-        <div class="c-reserva-single__close JS__voucher-toggle cursor-pointer">
+        <div class="c-reserva-modal__close JS__voucher-toggle cursor-pointer">
             <span class="icon-close text-primary fs-28"></span>
         </div>
 
-        <div class="c-reserva-single__box__container--check c-reserva-single__step2 show">
+        <div class="c-reserva-modal__box__confirmation c-reserva-modal__step1 pb-5 show">
 
             <div class="d-flex justify-content-between align-items-center border-bottom pb-3 ps-5 mb-4 pt-2">
                 <span class="fs-4 text-primary fw-normal"><span class="fw-bold">Voucher:</span> 36547-1HT</span>
@@ -918,20 +967,20 @@
             
 
             <form action="">
-                <div class="d-flex">
-                    <div class="mb-4 w-100 me-3">
+                <div class="d-flex flex-wrap flex-xl-nowrap">
+                    <div class="mb-4 w-100 me-xl-3">
                         <label for="voucher-descricao" class="form-label mb-2">Descrição</label>
                         <input class="form-control" id="voucher-descricao" type="text" placeholder="Superior Executivo Double BB">
                     </div>
-                    <div class="mb-4 w-100 me-3">
+                    <div class="mb-4 w-100 me-xl-3">
                         <label for="voucher-fornecedor" class="form-label mb-2">Fornecedor</label>
                         <input class="form-control" id="voucher-fornecedor" type="text" placeholder="Windsor Barra Hotel E Congressos">
                     </div>
-                    <div class="mb-4 w-100 me-3">
+                    <div class="mb-4 w-100 me-xl-3">
                         <label for="voucher-checkin" class="form-label mb-2">Check-In</label>
                         <input class="form-control bg-white input-date" type="text" placeholder="Selecione" id="voucher-checkin">
                     </div>
-                    <div class="mb-4 w-100 me-3">
+                    <div class="mb-4 w-100 me-xl-3">
                         <label for="voucher-checkout" class="form-label mb-2">Check-Out</label>
                         <input class="form-control bg-white input-date" type="text" placeholder="Selecione" id="voucher-checkout">
                     </div>
@@ -943,7 +992,7 @@
                             <input type="button" class="button-plus" data-field="quantity" value="+">
                         </div>
                     </div>
-                    <div class="mb-4 qnty me-3 c-reserva__voucher__criancas">
+                    <div class="mb-4 qnty me-xl-3 c-reserva-modal__voucher__criancas">
                         <label for="criancas-input" class="form-label mb-3">Crianças</label>
                         <div class="input-number">
                             <input type="button" class="button-minus" data-field="quantity" value="-">
@@ -951,17 +1000,17 @@
                             <input type="button" class="button-plus" data-field="quantity" value="+">
                         </div>
                     </div>
-                    <div class="mb-4 w-100 me-3">
+                    <div class="mb-4 w-100 me-xl-3">
                         <label for="voucher-tour" class="form-label">Tour Líder</label>
                         <input class="form-control" type="text" placeholder="Editar/Ref Cliente" id="voucher-tour">
                     </div>
                 </div>
-                <div class="d-flex">
-                    <div class="mb-4 me-3 c-reservas__voucher__passageiro">
+                <div class="d-flex flex-wrap flex-md-nowrap">
+                    <div class="mb-4 me-3 c-reserva-modal__voucher__passageiro">
                         <label for="voucher-passageiro" class="form-label mb-2">Passageiro</label>
                         <input class="form-control" type="text" placeholder="Selma Walet" id="voucher-passageiro">
                     </div>
-                    <div class="mb-4 me-3 c-reservas__voucher__idioma">
+                    <div class="mb-4 me-3 c-reserva-modal__voucher__idioma">
                         <label for="voucher-idioma" class="form-label mb-2">Idioma da emissão</label>
                         <select class="form-select" id="voucher-idioma">
                             <option value="">Selecione o idioma</option>
@@ -974,11 +1023,11 @@
                 </div>
             </form>
 
-            <div class="d-flex justify-content-between align-items-center pt-4">
-                <span class="btn-link fs-6 fw-500 cursor-pointer JS__voucher-toggle">Selecionar Mais Reservas</span>
-                <div class="d-flex">
-                    <button class="btn btn-primary px-5 rounded-pill fw-500 me-3">Imprimir Voucher</button>
-                    <button class="btn btn-primary px-5 rounded-pill fw-500">Emitir Voucher</button>
+            <div class="d-flex justify-content-between align-items-center pt-4 flex-wrap flex-xl-nowrap">
+                <span class="btn-link fs-6 fw-500 mb-5 cursor-pointer JS__voucher-toggle">Selecionar Mais Reservas</span>
+                <div class="d-flex flex-wrap">
+                    <button class="btn btn-primary px-5 mb-4 rounded-pill fw-500 me-3">Imprimir Voucher</button>
+                    <button class="btn btn-primary px-5 mb-4 rounded-pill fw-500">Emitir Voucher</button>
                 </div>
             </div>
 

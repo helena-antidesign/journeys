@@ -51,33 +51,35 @@
                             <p class="text-black-50">Alguns exemplos das medidas que serão tomadas quando as atividades voltarem gradualmente</p>
                         </div>
                         
-                        <ul class="nav nav-tabs d-flex justify-content-between mt-5">
-                            <li class="nav-item">
-                                <button class="nav-link active" id="hospedagem-tab" data-bs-toggle="tab" data-bs-target="#hospedagem" type="button" role="tab" aria-controls="hospedagem" aria-selected="true">
-                                    <span class="icon icon-hotel1"></span>Hospedagem
-                                </button>
-                            </li>
-                            <li class="nav-item">
-                                <button class="nav-link" id="atracoes-tab" data-bs-toggle="tab" data-bs-target="#atracoes" type="button" role="tab" aria-controls="atracoes" aria-selected="false">
-                                    <span class="icon icon-atraction fs-4"></span>Atrações Turísticas
-                                </button>
-                            </li>
-                            <li class="nav-item">
-                                <button class="nav-link" id="transporte-tab" data-bs-toggle="tab" data-bs-target="#transporte" type="button" role="tab" aria-controls="transporte" aria-selected="false">
-                                    <span class="icon icon-transfer"></span>Transporte Turistico
-                                </button>
-                            </li>
-                            <li class="nav-item">
-                                <button class="nav-link" id="agencias-tab" data-bs-toggle="tab" data-bs-target="#agencias" type="button" role="tab" aria-controls="agencias" aria-selected="false">
-                                    <span class="icon icon-suport"></span>Agências e Operadoras
-                                </button>
-                            </li>
-                            <li class="nav-item">
-                                <button class="nav-link" id="gastronomia-tab" data-bs-toggle="tab" data-bs-target="#gastronomia" type="button" role="tab" aria-controls="gastronomia" aria-selected="false">
-                                    <span class="icon icon-food"></span>Gastronomia
-                                </button>
-                            </li>
-                        </ul>
+                        <div class="overflow-x">
+                            <ul class="nav nav-tabs d-flex justify-content-between mt-5 JS__tabsFlex">
+                                <li class="nav-item">
+                                    <button class="nav-link active" id="hospedagem-tab" data-bs-toggle="tab" data-bs-target="#hospedagem" type="button" role="tab" aria-controls="hospedagem" aria-selected="true">
+                                        <span class="icon icon-lock"></span>Hospedagem
+                                    </button>
+                                </li>
+                                <li class="nav-item">
+                                    <button class="nav-link" id="atracoes-tab" data-bs-toggle="tab" data-bs-target="#atracoes" type="button" role="tab" aria-controls="atracoes" aria-selected="false">
+                                        <span class="icon icon-atraction"></span>Atrações Turísticas
+                                    </button>
+                                </li>
+                                <li class="nav-item">
+                                    <button class="nav-link" id="transporte-tab" data-bs-toggle="tab" data-bs-target="#transporte" type="button" role="tab" aria-controls="transporte" aria-selected="false">
+                                        <span class="icon icon-transfer"></span>Transporte Turistico
+                                    </button>
+                                </li>
+                                <li class="nav-item">
+                                    <button class="nav-link" id="agencias-tab" data-bs-toggle="tab" data-bs-target="#agencias" type="button" role="tab" aria-controls="agencias" aria-selected="false">
+                                        <span class="icon icon-suport"></span>Agências e Operadoras
+                                    </button>
+                                </li>
+                                <li class="nav-item">
+                                    <button class="nav-link" id="gastronomia-tab" data-bs-toggle="tab" data-bs-target="#gastronomia" type="button" role="tab" aria-controls="gastronomia" aria-selected="false">
+                                        <span class="icon icon-food"></span>Gastronomia
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
                     
                     </div>
                 </div>

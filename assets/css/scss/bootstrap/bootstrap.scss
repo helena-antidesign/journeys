@@ -10,7 +10,7 @@
 $grid-breakpoints: (
     xs: 0,
     sm: 576px,
-    md: 768px,
+    md: 769px,
     lg: 992px,
     xl: 1201px,
     xxl: 1680px
@@ -60,10 +60,16 @@ $body-color: #656565!default;
 
 
 // Form
-$input-btn-padding-y:         1.02rem;
+$input-btn-padding-y:         1rem;
 $input-btn-padding-x:         1rem;
 $input-btn-font-size:         .75rem;
 $input-btn-line-height:       1;
+$input-placeholder-color:               #E0E0E0 !default;
+
+
+//tooltip
+$tooltip-bg:  #9B9B9B;
+$tooltip-font-size: 12px;
 
 
 // scss-docs-start border-radius-variables
@@ -96,6 +102,27 @@ $carousel-indicator-active-bg:       #fff;
 
 $form-select-indicator-color:       $primary;
 $form-select-bg-size:               16px 16px; // In pixels because image dimensions
+
+
+//Modal
+
+$modal-backdrop-opacity:            .2;
+$modal-content-border-color: #fff;
+$modal-content-border-radius: 2rem;
+
+$modal-inner-padding: 0 3rem 3.5rem;
+$modal-header-padding-y: 3rem;
+$modal-header-padding-x: 3rem;
+$modal-header-border-color:       #fff;
+$modal-fade-transform:              translate3d(0,20px,0);
+$modal-transition:                  transform 300ms ease-in-out;
+
+//Pagination
+$pagination-border-color: transparent;
+$pagination-hover-color: $body-color;
+$pagination-color: $body-color;
+$pagination-hover-bg: transparent;
+$pagination-hover-border-color: transparent;
 
 
 // scss-docs-start import-stack
@@ -150,6 +177,12 @@ $form-select-bg-size:               16px 16px; // In pixels because image dimens
 */
 
 
+.container{
+  @media screen and (max-width: 590px) {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
 
 .text-purple  { color: $purple!important;}
 .text-pink    { color:  $pink!important;}
@@ -168,21 +201,21 @@ $form-select-bg-size:               16px 16px; // In pixels because image dimens
 .bg-pink-dark    { background-color:  $pink-dark!important;}
 
 
-
-
 // scss-docs-end import-stack
 .btn-link {
-    color: #0F6B7B;
-    font-weight: 400;
-    text-decoration: none;
-    border-bottom: 1px solid #0F6B7B;
-    border-radius: 0;
-    padding: .375rem 0;
+  color: #0F6B7B;
+  font-weight: 400;
+  text-decoration: none;
+  border-radius: 0;
+  padding: .375rem 0;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #0F6B7B;
 }
 
 .form-label,
 .form-check-label{
-    color: #474153;
+    color: #656565;
     font-weight: 500;
     font-size: .75rem;
     margin-bottom: .87rem;
@@ -196,7 +229,7 @@ $form-select-bg-size:               16px 16px; // In pixels because image dimens
   -webkit-transition: 0.15s ease-in-out;
   transition: 0.15s ease-in-out;
   margin-left: .25rem;
-}
+}    
 
 .form-switch .form-check-input:checked + .form-check-label {
   font-weight: 500;
@@ -228,6 +261,7 @@ table.table{
   }
   tbody td{
     padding: .7rem .5rem;
+    vertical-align: middle;
     &:first-of-type{
       border-radius: .93rem 0 0 .93rem;
     }
@@ -246,10 +280,14 @@ table.table{
 
 
 .nav-tabs{
+  flex-wrap: nowrap;
+  @media (max-width: 768px){
+    border-bottom: 0;
+  }
   .nav-item{
     overflow: hidden;
-    @media screen and (max-width: 992px) {
-      width: 100%;
+    min-width: fit-content;
+    @media (max-width: 768px){
       border-bottom: 1px solid #dee2e6;
     }
   }
@@ -263,11 +301,8 @@ table.table{
     outline: none;
     border: 0;
     cursor: pointer;
-    @media screen and (max-width: 992px){
-      padding: 1rem 0;
-      width: 100%;
-      justify-content: center;
-    }
+    overflow: hidden;
+    min-width: fit-content;
     &:before{
       content: "";
       position: absolute;
@@ -361,4 +396,37 @@ table.table{
 table.table tbody td{
   padding: .7rem 1.07rem;
   transition: .15s ease-in-out;
+}
+
+
+
+.modal-header{
+  padding-bottom: 1.5rem;
+
+  .btn-close{
+    position: absolute;
+    top: 1.35rem;
+    right: 1.35rem;
+
+    &:focus{
+      box-shadow: none;
+    }
+
+  }
+
+}
+
+
+.modal-open{
+  overflow: initial!important;
+  padding-right: 0!important;
+  @media (max-width: 992px){
+    overflow: hidden!important;
+  }
+}
+
+
+.page-link{
+  border-radius: .62rem;
+  padding: .375rem .85rem;
 }

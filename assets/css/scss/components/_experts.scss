@@ -40,7 +40,14 @@
             }
             @include breakpoint(xl){
                 width: 100%;
-                padding: 5rem;
+                padding: 5rem 0;
+                max-width: 720px;
+                margin: 0 auto;
+            }
+            @include breakpoint(md){
+                max-width: 540px;
+                padding-left: 25px;
+                padding-right: 25px;
             }
             a {
                 svg{
@@ -75,17 +82,21 @@
         }
         nav{
             margin: 0 calc((100vw - 1640px) / 2);
-            
             @include breakpoint(xxl){
                 margin: 0;
-
                 .nav-tabs{
                     margin: 0 auto;
                     width: max-content;
                 }
-
             }
 
+            @media screen and (max-width: 992px){
+                .nav-tabs{
+                    width: 100%;
+                    padding-left: 25px;
+                    padding-right: 25px;
+                }
+            }
             .nav-tabs .nav-link::before{
                 background: #fff;
             }

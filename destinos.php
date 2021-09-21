@@ -9,40 +9,40 @@
                         <div class="col-xl-5 c-destinos__container__left">
 
                             <div class="row">
-                                <div class="col-xl-11 c-destinos__calendar">
+                                <div class="col-xl-11 c-destinos__calendar col">
                                     <input type="text" class="destino-date d-none">
                                 </div>
                             </div>
 
                             <div class="row mb-5 mt-3">
-                                <div class="col-xl-9">
+                                <div class="col-xl-10">
                                     <h2 class="d-inline-block fs-5 text-primary p-2 px-0 mb-0">Guia</h2>
                                     <h3 class="mb-4 fs-4 fw-bold text-secondary">Ícones & Referências</h3>
                                     <p class="text-black-50 mb-5">Abaixo você encontra todas as categorias de alterações que podem ocorrer diariamente, se quiser ver alguma especifica basta clicar e filtrar.</p>
 
                                     <div class="d-flex flex-wrap">
-                                        <button class="c-destinos__icon d-flex align-items-center border-0 fs-6 text-light bg-purple p-2 px-3 rounded mb-3 me-3">
+                                        <button class="c-destinos__icon d-flex align-items-center border-0 fs-6 text-light bg-purple p-2 px-3 rounded mb-3 me-2">
                                             <span class="icon-save text-light fs-24 me-2"></span> Lista Especial
                                         </button>
-                                        <button class="c-destinos__icon d-flex align-items-center border-0 fs-6 text-light bg-pink p-2 px-3 rounded mb-3 me-3">
+                                        <button class="c-destinos__icon d-flex align-items-center border-0 fs-6 text-light bg-pink p-2 px-3 rounded mb-3 me-2">
                                             <span class="icon-value text-light fs-24 me-2"></span> Inserção de Tarifa
                                         </button>
-                                        <button class="c-destinos__icon d-flex align-items-center border-0 fs-6 text-light bg-pink-dark p-2 px-3 rounded mb-3 me-3">
+                                        <button class="c-destinos__icon d-flex align-items-center border-0 fs-6 text-light bg-pink-dark p-2 px-3 rounded mb-3 me-2">
                                             <span class="icon-descont text-light fs-24 me-2"></span> Promoções
                                         </button>
-                                        <button class="c-destinos__icon d-flex align-items-center border-0 fs-6 text-light bg-red p-2 px-3 rounded mb-3 me-3">
+                                        <button class="c-destinos__icon d-flex align-items-center border-0 fs-6 text-light bg-red p-2 px-3 rounded mb-3 me-2">
                                             <span class="icon-tax-increace text-light fs-24 me-2"></span> Aumento de Tarifas
                                         </button>
-                                        <button class="c-destinos__icon d-flex align-items-center border-0 fs-6 text-light bg-warning p-2 px-3 rounded mb-3 me-3">
+                                        <button class="c-destinos__icon d-flex align-items-center border-0 fs-6 text-light bg-warning p-2 px-3 rounded mb-3 me-2">
                                             <span class="icon-info text-light fs-24 me-2"></span> Informações
                                         </button>
-                                        <button class="c-destinos__icon d-flex align-items-center border-0 fs-6 text-light bg-green p-2 px-3 rounded mb-3 me-3">
+                                        <button class="c-destinos__icon d-flex align-items-center border-0 fs-6 text-light bg-green p-2 px-3 rounded mb-3 me-2 me-xxl-0">
                                             <span class="icon-tax-decrese text-light fs-24 me-2"></span> Diminuição de Tarifas
                                         </button>
-                                        <button class="c-destinos__icon d-flex align-items-center border-0 fs-6 text-light bg-info p-2 px-3 rounded mb-3 me-3">
+                                        <button class="c-destinos__icon d-flex align-items-center border-0 fs-6 text-light bg-info p-2 px-3 rounded mb-3 me-2">
                                             <span class="icon-new-product text-light fs-24 me-2"></span> Novo Produto
                                         </button>
-                                        <button class="c-destinos__icon d-flex align-items-center border-0 fs-6 text-light bg-primary p-2 px-3 rounded mb-3 me-3">
+                                        <button class="c-destinos__icon d-flex align-items-center border-0 fs-6 text-light bg-primary p-2 px-3 rounded mb-3 me-2">
                                             <span class="icon-under-construction text-light fs-24 me-2"></span> Obras
                                         </button>
                                     </div>
@@ -52,9 +52,9 @@
 
                         <div class="col-xl-6 offset-xl-1 c-destinos__container__result">
                             <div class="col-12">
-                                <div class="row">
-                                    <h2 class="fs-28 fw-bold text-secondary col-xl-9 mb-4">Destinos e informações </h2>
-                                    <div class="col-xl-3 text-end">
+                                <div class="row mb-4">
+                                    <h2 class="fs-28 fw-bold text-secondary col-lg-9 mb-0">Destinos e informações </h2>
+                                    <div class="col-lg-3 text-end mt-2">
                                         <span class="text-black-50 fs-6">Atualizado as 9h</span>
                                     </div>
                                 </div>
@@ -79,59 +79,61 @@
                                         <tbody class="fs-6">
                                             <tr onclick="window.open('relatorio.pdf')">
                                                 <td>Bonito</td>
-                                                <td>
-                                                    <span class="icon-save text-purple fs-24 me-2"></span>
-                                                    <span class="icon-tax-increace text-danger fs-24 me-2"></span>
-                                                    <span class="icon-descont text-red fs-24 me-2"></span>
-                                                    <span class="icon-new-product text-info fs-24 me-2"></span>
+                                                <td class="fs-24">
+                                                    <span class="icon-save text-purple me-2"></span>
+                                                    <span class="icon-tax-increace text-danger me-2"></span>
+                                                    <span class="icon-descont text-red me-2"></span>
+                                                    <span class="icon-new-product text-info me-2"></span>
                                                 </td>
                                                 <td>Inserção de tarifa de 01 de Julho a 30 de Dezembro</td>
                                             </tr>
                                             <tr onclick="window.open('relatorio.pdf')">
                                                 <td>Bonito</td>
-                                                <td>
-                                                    <span class="icon-save text-purple fs-24 me-2"></span>
-                                                    <span class="icon-tax-increace text-danger fs-24 me-2"></span>
-                                                    <span class="icon-descont text-red fs-24 me-2"></span>
-                                                    <span class="icon-new-product text-info fs-24 me-2"></span>
+                                                <td class="fs-24">
+                                                    <span class="icon-save text-purple me-2"></span>
+                                                    <span class="icon-tax-increace text-danger me-2"></span>
+                                                    <span class="icon-descont text-red me-2"></span>
+                                                    <span class="icon-new-product text-info me-2"></span>
                                                 </td>
                                                 <td>Inserção de tarifa de 01 de Julho a 30 de Dezembro</td>
                                             </tr>
                                             <tr onclick="window.open('relatorio.pdf')">
                                                 <td>Bonito</td>
-                                                <td>
-                                                    <span class="icon-save text-purple fs-24 me-2"></span>
-                                                    <span class="icon-tax-increace text-danger fs-24 me-2"></span>
-                                                    <span class="icon-new-product text-info fs-24 me-2"></span>
+                                                <td class="fs-24">
+                                                    <span class="icon-save text-purple me-2"></span>
+                                                    <span class="icon-tax-increace text-danger me-2"></span>
+                                                    <span class="icon-descont text-red me-2"></span>
+                                                    <span class="icon-new-product text-info me-2"></span>
                                                 </td>
                                                 <td>Inserção de tarifa de 01 de Julho a 30 de Dezembro</td>
                                             </tr>
                                             <tr onclick="window.open('relatorio.pdf')">
                                                 <td>Bonito</td>
-                                                <td>
-                                                    <span class="icon-save text-purple fs-24 me-2"></span>
-                                                    <span class="icon-tax-increace text-danger fs-24 me-2"></span>
-                                                    <span class="icon-new-product text-info fs-24 me-2"></span>
+                                                <td class="fs-24">
+                                                    <span class="icon-save text-purple me-2"></span>
+                                                    <span class="icon-tax-increace text-danger me-2"></span>
+                                                    <span class="icon-descont text-red me-2"></span>
+                                                    <span class="icon-new-product text-info me-2"></span>
                                                 </td>
                                                 <td>Inserção de tarifa de 01 de Julho a 30 de Dezembro</td>
                                             </tr>
                                             <tr onclick="window.open('relatorio.pdf')">
                                                 <td>Bonito</td>
-                                                <td>
-                                                    <span class="icon-save text-purple fs-24 me-2"></span>
-                                                    <span class="icon-tax-increace text-danger fs-24 me-2"></span>
-                                                    <span class="icon-descont text-red fs-24 me-2"></span>
-                                                    <span class="icon-new-product text-info fs-24 me-2"></span>
+                                                <td class="fs-24">
+                                                    <span class="icon-save text-purple me-2"></span>
+                                                    <span class="icon-tax-increace text-danger me-2"></span>
+                                                    <span class="icon-descont text-red me-2"></span>
+                                                    <span class="icon-new-product text-info me-2"></span>
                                                 </td>
                                                 <td>Aumento de tarifa Single até 30 de Dezembro</td>
                                             </tr>
                                             <tr onclick="window.open('relatorio.pdf')">
                                                 <td>Bonito</td>
-                                                <td>
-                                                    <span class="icon-save text-purple fs-24 me-2"></span>
-                                                    <span class="icon-tax-increace text-danger fs-24 me-2"></span>
-                                                    <span class="icon-descont text-red fs-24 me-2"></span>
-                                                    <span class="icon-new-product text-info fs-24 me-2"></span>
+                                                <td class="fs-24">
+                                                    <span class="icon-save text-purple me-2"></span>
+                                                    <span class="icon-tax-increace text-danger me-2"></span>
+                                                    <span class="icon-descont text-red me-2"></span>
+                                                    <span class="icon-new-product text-info me-2"></span>
                                                 </td>
                                                 <td>Redução de tarifa para Julho de 2021</td>
                                             </tr>
@@ -220,33 +222,15 @@
                 <div class="row">
                     <div class="col">
                         <ul class="nav nav-pills nav-fill">
-                            <li>
+                            <li class="w-sm-100">
                                 <div class="me-5 position-relative input-search">
                                     <span class="icon-search position-absolute"></span>
-                                    <input type="text" placeholder="Busque por um ano ou data" class="form-control me-5">
-                                    <span class="text-black-50">|</span>
+                                    <input type="text" placeholder="Busque por um ano ou data" class="form-control me-5 ">
+                                    <span class="text-black-50 c-destinos__cambio__divisor">|</span>
                                 </div>
                             </li>
                             <li class="nav-item">
                                 <button class="nav-link active" id="2021-tab" data-bs-toggle="tab" data-bs-target="#tab2021" type="button" role="tab" aria-controls="2021" aria-selected="true">2021</button>
-                            </li>
-                            <li class="nav-item">
-                                <button class="nav-link" id="2020-tab" data-bs-toggle="tab" data-bs-target="#tab2020" type="button" role="tab" aria-controls="2020" aria-selected="false">2020</button>
-                            </li>
-                            <li class="nav-item">
-                                <button class="nav-link" id="2020-tab" data-bs-toggle="tab" data-bs-target="#tab2020" type="button" role="tab" aria-controls="2020" aria-selected="false">2020</button>
-                            </li>
-                            <li class="nav-item">
-                                <button class="nav-link" id="2020-tab" data-bs-toggle="tab" data-bs-target="#tab2020" type="button" role="tab" aria-controls="2020" aria-selected="false">2020</button>
-                            </li>
-                            <li class="nav-item">
-                                <button class="nav-link" id="2020-tab" data-bs-toggle="tab" data-bs-target="#tab2020" type="button" role="tab" aria-controls="2020" aria-selected="false">2020</button>
-                            </li>
-                            <li class="nav-item">
-                                <button class="nav-link" id="2020-tab" data-bs-toggle="tab" data-bs-target="#tab2020" type="button" role="tab" aria-controls="2020" aria-selected="false">2020</button>
-                            </li>
-                            <li class="nav-item">
-                                <button class="nav-link" id="2020-tab" data-bs-toggle="tab" data-bs-target="#tab2020" type="button" role="tab" aria-controls="2020" aria-selected="false">2020</button>
                             </li>
                             <li class="nav-item">
                                 <button class="nav-link" id="2020-tab" data-bs-toggle="tab" data-bs-target="#tab2020" type="button" role="tab" aria-controls="2020" aria-selected="false">2020</button>
@@ -260,105 +244,97 @@
 
                         <div class="d-flex flex-wrap">
 
-                            <div class="fs-12 d-flex p-3 bg-gray rounded me-4 mb-4 c-destinos__cambio__item">
-                                <div class="me-3 border-end border-secondary pe-3">14 de Maio de 2020</div>
+                            <a href="" class="fs-12 d-flex align-items-center p-3 bg-gray rounded me-sm-2 me-md-4 me-xl-2 me-xxl-4 mb-4 text-reset c-destinos__cambio__item">
+                                <div class="me-3 border-end border-secondary pe-3">14 de Maio de 2021</div>
                                 <div>
-                                    <a href="" target="_blank" class="text-reset">
-                                        <span class="text-primary fw-bold me-3">Conferir</span> 
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="22.453" height="12.797"><g data-name="Icon | Eye - Open" transform="translate(1.29 1)" fill="none" stroke="#0f6b7b" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><ellipse data-name="Elipse 18" cx="3.173" cy="3.629" rx="3.173" ry="3.629" transform="translate(7.041 3.538)"/><path data-name="Caminho 67" d="M.002 8.012S3.045.002 10.216.002c6.622 0 9.659 8.01 9.659 8.01"/></g></svg>
-                                    </a>
+                                    <span class="text-reset d-inline-flex align-items-center">
+                                        <span class="text-primary fw-500 me-3">Conferir</span> 
+                                        <span class="icon-pass-show text-primary fs-24"></span>
+                                    <span>
                                 </div>
-                            </div>
+                            </a>
 
-                            <div class="fs-12 d-flex p-3 bg-gray rounded me-4 mb-4 c-destinos__cambio__item">
-                                <div class="me-3 border-end border-secondary pe-3">15 de Maio de 2020</div>
+                            <a href="" class="fs-12 d-flex align-items-center p-3 bg-gray rounded me-sm-2 me-md-4 me-xl-2 me-xxl-4 mb-4 text-reset c-destinos__cambio__item">
+                                <div class="me-3 border-end border-secondary pe-3">15 de Maio de 2021</div>
                                 <div>
-                                    <a href="" target="_blank" class="text-reset">
-                                        <span class="text-primary fw-bold me-3">Conferir</span> 
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="22.453" height="12.797"><g data-name="Icon | Eye - Open" transform="translate(1.29 1)" fill="none" stroke="#0f6b7b" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><ellipse data-name="Elipse 18" cx="3.173" cy="3.629" rx="3.173" ry="3.629" transform="translate(7.041 3.538)"/><path data-name="Caminho 67" d="M.002 8.012S3.045.002 10.216.002c6.622 0 9.659 8.01 9.659 8.01"/></g></svg>
-                                    </a>
+                                    <span class="text-reset d-inline-flex align-items-center">
+                                        <span class="text-primary fw-500 me-3">Conferir</span> 
+                                        <span class="icon-pass-show text-primary fs-24"></span>
+                                    <span>
                                 </div>
-                            </div>
-
-                            <div class="fs-12 d-flex p-3 bg-gray rounded me-4 mb-4 c-destinos__cambio__item">
-                                <div class="me-3 border-end border-secondary pe-3">16 de Maio de 2020</div>
+                            </a>
+                            <a href="" class="fs-12 d-flex align-items-center p-3 bg-gray rounded me-sm-2 me-md-4 me-xl-2 me-xxl-4 mb-4 text-reset c-destinos__cambio__item">
+                                <div class="me-3 border-end border-secondary pe-3">16 de Maio de 2021</div>
                                 <div>
-                                    <a href="" target="_blank" class="text-reset">
-                                        <span class="text-primary fw-bold me-3">Conferir</span> 
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="22.453" height="12.797"><g data-name="Icon | Eye - Open" transform="translate(1.29 1)" fill="none" stroke="#0f6b7b" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><ellipse data-name="Elipse 18" cx="3.173" cy="3.629" rx="3.173" ry="3.629" transform="translate(7.041 3.538)"/><path data-name="Caminho 67" d="M.002 8.012S3.045.002 10.216.002c6.622 0 9.659 8.01 9.659 8.01"/></g></svg>
-                                    </a>
+                                    <span class="text-reset d-inline-flex align-items-center">
+                                        <span class="text-primary fw-500 me-3">Conferir</span> 
+                                        <span class="icon-pass-show text-primary fs-24"></span>
+                                    <span>
                                 </div>
-                            </div>
-
-                            <div class="fs-12 d-flex p-3 bg-gray rounded me-4 mb-4 c-destinos__cambio__item">
-                                <div class="me-3 border-end border-secondary pe-3">17 de Maio de 2020</div>
+                            </a>
+                            <a href="" class="fs-12 d-flex align-items-center p-3 bg-gray rounded me-sm-2 me-md-4 me-xl-2 me-xxl-4 mb-4 text-reset c-destinos__cambio__item">
+                                <div class="me-3 border-end border-secondary pe-3">17 de Maio de 2021</div>
                                 <div>
-                                    <a href="" target="_blank" class="text-reset">
-                                        <span class="text-primary fw-bold me-3">Conferir</span> 
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="22.453" height="12.797"><g data-name="Icon | Eye - Open" transform="translate(1.29 1)" fill="none" stroke="#0f6b7b" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><ellipse data-name="Elipse 18" cx="3.173" cy="3.629" rx="3.173" ry="3.629" transform="translate(7.041 3.538)"/><path data-name="Caminho 67" d="M.002 8.012S3.045.002 10.216.002c6.622 0 9.659 8.01 9.659 8.01"/></g></svg>
-                                    </a>
+                                    <span class="text-reset d-inline-flex align-items-center">
+                                        <span class="text-primary fw-500 me-3">Conferir</span> 
+                                        <span class="icon-pass-show text-primary fs-24"></span>
+                                    <span>
                                 </div>
-                            </div>
-
-                            <div class="fs-12 d-flex p-3 bg-gray rounded me-4 mb-4 c-destinos__cambio__item">
-                                <div class="me-3 border-end border-secondary pe-3">18 de Maio de 2020</div>
+                            </a>
+                            <a href="" class="fs-12 d-flex align-items-center p-3 bg-gray rounded me-sm-2 me-md-4 me-xl-2 me-xxl-4 mb-4 text-reset c-destinos__cambio__item">
+                                <div class="me-3 border-end border-secondary pe-3">18 de Maio de 2021</div>
                                 <div>
-                                    <a href="" target="_blank" class="text-reset">
-                                        <span class="text-primary fw-bold me-3">Conferir</span> 
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="22.453" height="12.797"><g data-name="Icon | Eye - Open" transform="translate(1.29 1)" fill="none" stroke="#0f6b7b" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><ellipse data-name="Elipse 18" cx="3.173" cy="3.629" rx="3.173" ry="3.629" transform="translate(7.041 3.538)"/><path data-name="Caminho 67" d="M.002 8.012S3.045.002 10.216.002c6.622 0 9.659 8.01 9.659 8.01"/></g></svg>
-                                    </a>
+                                    <span class="text-reset d-inline-flex align-items-center">
+                                        <span class="text-primary fw-500 me-3">Conferir</span> 
+                                        <span class="icon-pass-show text-primary fs-24"></span>
+                                    <span>
                                 </div>
-                            </div>
-
-                            <div class="fs-12 d-flex p-3 bg-gray rounded me-4 mb-4 c-destinos__cambio__item">
-                                <div class="me-3 border-end border-secondary pe-3">19 de Maio de 2020</div>
+                            </a>
+                            <a href="" class="fs-12 d-flex align-items-center p-3 bg-gray rounded me-sm-2 me-md-4 me-xl-2 me-xxl-4 mb-4 text-reset c-destinos__cambio__item">
+                                <div class="me-3 border-end border-secondary pe-3">19 de Maio de 2021</div>
                                 <div>
-                                    <a href="" target="_blank" class="text-reset">
-                                        <span class="text-primary fw-bold me-3">Conferir</span> 
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="22.453" height="12.797"><g data-name="Icon | Eye - Open" transform="translate(1.29 1)" fill="none" stroke="#0f6b7b" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><ellipse data-name="Elipse 18" cx="3.173" cy="3.629" rx="3.173" ry="3.629" transform="translate(7.041 3.538)"/><path data-name="Caminho 67" d="M.002 8.012S3.045.002 10.216.002c6.622 0 9.659 8.01 9.659 8.01"/></g></svg>
-                                    </a>
+                                    <span class="text-reset d-inline-flex align-items-center">
+                                        <span class="text-primary fw-500 me-3">Conferir</span> 
+                                        <span class="icon-pass-show text-primary fs-24"></span>
+                                    <span>
                                 </div>
-                            </div>
-
-                            <div class="fs-12 d-flex p-3 bg-gray rounded me-4 mb-4 c-destinos__cambio__item">
-                                <div class="me-3 border-end border-secondary pe-3">20 de Maio de 2020</div>
+                            </a>
+                            <a href="" class="fs-12 d-flex align-items-center p-3 bg-gray rounded me-sm-2 me-md-4 me-xl-2 me-xxl-4 mb-4 text-reset c-destinos__cambio__item">
+                                <div class="me-3 border-end border-secondary pe-3">20 de Maio de 2021</div>
                                 <div>
-                                    <a href="" target="_blank" class="text-reset">
-                                        <span class="text-primary fw-bold me-3">Conferir</span> 
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="22.453" height="12.797"><g data-name="Icon | Eye - Open" transform="translate(1.29 1)" fill="none" stroke="#0f6b7b" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><ellipse data-name="Elipse 18" cx="3.173" cy="3.629" rx="3.173" ry="3.629" transform="translate(7.041 3.538)"/><path data-name="Caminho 67" d="M.002 8.012S3.045.002 10.216.002c6.622 0 9.659 8.01 9.659 8.01"/></g></svg>
-                                    </a>
+                                    <span class="text-reset d-inline-flex align-items-center">
+                                        <span class="text-primary fw-500 me-3">Conferir</span> 
+                                        <span class="icon-pass-show text-primary fs-24"></span>
+                                    <span>
                                 </div>
-                            </div>
-
-                            <div class="fs-12 d-flex p-3 bg-gray rounded me-4 mb-4 c-destinos__cambio__item">
-                                <div class="me-3 border-end border-secondary pe-3">21 de Maio de 2020</div>
+                            </a>
+                            <a href="" class="fs-12 d-flex align-items-center p-3 bg-gray rounded me-sm-2 me-md-4 me-xl-2 me-xxl-4 mb-4 text-reset c-destinos__cambio__item">
+                                <div class="me-3 border-end border-secondary pe-3">21 de Maio de 2021</div>
                                 <div>
-                                    <a href="" target="_blank" class="text-reset">
-                                        <span class="text-primary fw-bold me-3">Conferir</span> 
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="22.453" height="12.797"><g data-name="Icon | Eye - Open" transform="translate(1.29 1)" fill="none" stroke="#0f6b7b" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><ellipse data-name="Elipse 18" cx="3.173" cy="3.629" rx="3.173" ry="3.629" transform="translate(7.041 3.538)"/><path data-name="Caminho 67" d="M.002 8.012S3.045.002 10.216.002c6.622 0 9.659 8.01 9.659 8.01"/></g></svg>
-                                    </a>
+                                    <span class="text-reset d-inline-flex align-items-center">
+                                        <span class="text-primary fw-500 me-3">Conferir</span> 
+                                        <span class="icon-pass-show text-primary fs-24"></span>
+                                    <span>
                                 </div>
-                            </div>
-
-                            <div class="fs-12 d-flex p-3 bg-gray rounded me-4 mb-4 c-destinos__cambio__item">
-                                <div class="me-3 border-end border-secondary pe-3">22 de Maio de 2020</div>
+                            </a>
+                            <a href="" class="fs-12 d-flex align-items-center p-3 bg-gray rounded me-sm-2 me-md-4 me-xl-2 me-xxl-4 mb-4 text-reset c-destinos__cambio__item">
+                                <div class="me-3 border-end border-secondary pe-3">22 de Maio de 2021</div>
                                 <div>
-                                    <a href="" target="_blank" class="text-reset">
-                                        <span class="text-primary fw-bold me-3">Conferir</span> 
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="22.453" height="12.797"><g data-name="Icon | Eye - Open" transform="translate(1.29 1)" fill="none" stroke="#0f6b7b" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><ellipse data-name="Elipse 18" cx="3.173" cy="3.629" rx="3.173" ry="3.629" transform="translate(7.041 3.538)"/><path data-name="Caminho 67" d="M.002 8.012S3.045.002 10.216.002c6.622 0 9.659 8.01 9.659 8.01"/></g></svg>
-                                    </a>
+                                    <span class="text-reset d-inline-flex align-items-center">
+                                        <span class="text-primary fw-500 me-3">Conferir</span> 
+                                        <span class="icon-pass-show text-primary fs-24"></span>
+                                    <span>
                                 </div>
-                            </div>
-
-                            <div class="fs-12 d-flex p-3 bg-gray rounded me-4 mb-4 c-destinos__cambio__item">
-                                <div class="me-3 border-end border-secondary pe-3">23 de Maio de 2020</div>
+                            </a>
+                            <a href="" class="fs-12 d-flex align-items-center p-3 bg-gray rounded me-sm-2 me-md-4 me-xl-2 me-xxl-4 mb-4 text-reset c-destinos__cambio__item">
+                                <div class="me-3 border-end border-secondary pe-3">23 de Maio de 2021</div>
                                 <div>
-                                    <a href="" target="_blank" class="text-reset">
-                                        <span class="text-primary fw-bold me-3">Conferir</span> 
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="22.453" height="12.797"><g data-name="Icon | Eye - Open" transform="translate(1.29 1)" fill="none" stroke="#0f6b7b" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><ellipse data-name="Elipse 18" cx="3.173" cy="3.629" rx="3.173" ry="3.629" transform="translate(7.041 3.538)"/><path data-name="Caminho 67" d="M.002 8.012S3.045.002 10.216.002c6.622 0 9.659 8.01 9.659 8.01"/></g></svg>
-                                    </a>
+                                    <span class="text-reset d-inline-flex align-items-center">
+                                        <span class="text-primary fw-500 me-3">Conferir</span> 
+                                        <span class="icon-pass-show text-primary fs-24"></span>
+                                    <span>
                                 </div>
-                            </div>
+                            </a>
 
                         </div>
 
@@ -367,82 +343,41 @@
     
                         <div class="d-flex flex-wrap">
 
-                            <div class="fs-12 d-flex p-3 bg-gray rounded me-4 mb-4">
+                        <a href="" class="fs-12 d-flex align-items-center p-3 bg-gray rounded me-sm-2 me-md-4 me-xl-2 me-xxl-4 mb-4 text-reset c-destinos__cambio__item">
                                 <div class="me-3 border-end border-secondary pe-3">14 de Maio de 2020</div>
                                 <div>
-                                    <a href="" target="_blank" class="text-reset">
-                                        <span class="text-primary fw-bold me-3">Conferir</span> 
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="22.453" height="12.797"><g data-name="Icon | Eye - Open" transform="translate(1.29 1)" fill="none" stroke="#0f6b7b" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><ellipse data-name="Elipse 18" cx="3.173" cy="3.629" rx="3.173" ry="3.629" transform="translate(7.041 3.538)"/><path data-name="Caminho 67" d="M.002 8.012S3.045.002 10.216.002c6.622 0 9.659 8.01 9.659 8.01"/></g></svg>
-                                    </a>
+                                    <span class="text-reset d-inline-flex align-items-center">
+                                        <span class="text-primary fw-500 me-3">Conferir</span> 
+                                        <span class="icon-pass-show text-primary fs-24"></span>
+                                    <span>
                                 </div>
-                            </div>
+                            </a>
 
-                            <div class="fs-12 d-flex p-3 bg-gray rounded me-4 mb-4">
+                            <a href="" class="fs-12 d-flex align-items-center p-3 bg-gray rounded me-sm-2 me-md-4 me-xl-2 me-xxl-4 mb-4 text-reset c-destinos__cambio__item">
                                 <div class="me-3 border-end border-secondary pe-3">15 de Maio de 2020</div>
                                 <div>
-                                    <a href="" target="_blank" class="text-reset">
-                                        <span class="text-primary fw-bold me-3">Conferir</span> 
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="22.453" height="12.797"><g data-name="Icon | Eye - Open" transform="translate(1.29 1)" fill="none" stroke="#0f6b7b" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><ellipse data-name="Elipse 18" cx="3.173" cy="3.629" rx="3.173" ry="3.629" transform="translate(7.041 3.538)"/><path data-name="Caminho 67" d="M.002 8.012S3.045.002 10.216.002c6.622 0 9.659 8.01 9.659 8.01"/></g></svg>
-                                    </a>
+                                    <span class="text-reset d-inline-flex align-items-center">
+                                        <span class="text-primary fw-500 me-3">Conferir</span> 
+                                        <span class="icon-pass-show text-primary fs-24"></span>
+                                    <span>
                                 </div>
-                            </div>
-
-                            <div class="fs-12 d-flex p-3 bg-gray rounded me-4 mb-4">
+                            </a>
+                            <a href="" class="fs-12 d-flex align-items-center p-3 bg-gray rounded me-sm-2 me-md-4 me-xl-2 me-xxl-4 mb-4 text-reset c-destinos__cambio__item">
                                 <div class="me-3 border-end border-secondary pe-3">16 de Maio de 2020</div>
                                 <div>
-                                    <a href="" target="_blank" class="text-reset">
-                                        <span class="text-primary fw-bold me-3">Conferir</span> 
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="22.453" height="12.797"><g data-name="Icon | Eye - Open" transform="translate(1.29 1)" fill="none" stroke="#0f6b7b" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><ellipse data-name="Elipse 18" cx="3.173" cy="3.629" rx="3.173" ry="3.629" transform="translate(7.041 3.538)"/><path data-name="Caminho 67" d="M.002 8.012S3.045.002 10.216.002c6.622 0 9.659 8.01 9.659 8.01"/></g></svg>
-                                    </a>
+                                    <span class="text-reset d-inline-flex align-items-center">
+                                        <span class="text-primary fw-500 me-3">Conferir</span> 
+                                        <span class="icon-pass-show text-primary fs-24"></span>
+                                    <span>
                                 </div>
-                            </div>
-
-                            <div class="fs-12 d-flex p-3 bg-gray rounded me-4 mb-4">
-                                <div class="me-3 border-end border-secondary pe-3">17 de Maio de 2020</div>
-                                <div>
-                                    <a href="" target="_blank" class="text-reset">
-                                        <span class="text-primary fw-bold me-3">Conferir</span> 
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="22.453" height="12.797"><g data-name="Icon | Eye - Open" transform="translate(1.29 1)" fill="none" stroke="#0f6b7b" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><ellipse data-name="Elipse 18" cx="3.173" cy="3.629" rx="3.173" ry="3.629" transform="translate(7.041 3.538)"/><path data-name="Caminho 67" d="M.002 8.012S3.045.002 10.216.002c6.622 0 9.659 8.01 9.659 8.01"/></g></svg>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="fs-12 d-flex p-3 bg-gray rounded me-4 mb-4">
-                                <div class="me-3 border-end border-secondary pe-3">18 de Maio de 2020</div>
-                                <div>
-                                    <a href="" target="_blank" class="text-reset">
-                                        <span class="text-primary fw-bold me-3">Conferir</span> 
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="22.453" height="12.797"><g data-name="Icon | Eye - Open" transform="translate(1.29 1)" fill="none" stroke="#0f6b7b" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><ellipse data-name="Elipse 18" cx="3.173" cy="3.629" rx="3.173" ry="3.629" transform="translate(7.041 3.538)"/><path data-name="Caminho 67" d="M.002 8.012S3.045.002 10.216.002c6.622 0 9.659 8.01 9.659 8.01"/></g></svg>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="fs-12 d-flex p-3 bg-gray rounded me-4 mb-4">
-                                <div class="me-3 border-end border-secondary pe-3">19 de Maio de 2020</div>
-                                <div>
-                                    <a href="" target="_blank" class="text-reset">
-                                        <span class="text-primary fw-bold me-3">Conferir</span> 
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="22.453" height="12.797"><g data-name="Icon | Eye - Open" transform="translate(1.29 1)" fill="none" stroke="#0f6b7b" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><ellipse data-name="Elipse 18" cx="3.173" cy="3.629" rx="3.173" ry="3.629" transform="translate(7.041 3.538)"/><path data-name="Caminho 67" d="M.002 8.012S3.045.002 10.216.002c6.622 0 9.659 8.01 9.659 8.01"/></g></svg>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="fs-12 d-flex p-3 bg-gray rounded me-4 mb-4">
-                                <div class="me-3 border-end border-secondary pe-3">20 de Maio de 2020</div>
-                                <div>
-                                    <a href="" target="_blank" class="text-reset">
-                                        <span class="text-primary fw-bold me-3">Conferir</span> 
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="22.453" height="12.797"><g data-name="Icon | Eye - Open" transform="translate(1.29 1)" fill="none" stroke="#0f6b7b" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><ellipse data-name="Elipse 18" cx="3.173" cy="3.629" rx="3.173" ry="3.629" transform="translate(7.041 3.538)"/><path data-name="Caminho 67" d="M.002 8.012S3.045.002 10.216.002c6.622 0 9.659 8.01 9.659 8.01"/></g></svg>
-                                    </a>
-                                </div>
-                            </div>
+                            </a>
 
                         </div>
 
                     </div>
                 </div>
 
-                <button class="bg-white border-0 text-primary fw-bold mt-5">
+                <button class="bg-white border-0 text-primary fw-500 mt-5">
                     Ver todas as datas
                 </button>
 
@@ -464,6 +399,7 @@
         locale: 'pt',
         dateFormat: 'd/m/Y',
         inline: true,
+        monthSelectorType: 'static',
         onDayCreate: function(dObj, dStr, fp, dayElem){
 
             // dummy logic

@@ -24,6 +24,9 @@
     &--reduced{
         height: 47.68rem;
         margin-bottom: 138px;
+        @include breakpoint(md){
+            height: 36rem;
+        }
         .container {
             padding: 0 4rem;
             @include breakpoint(md){

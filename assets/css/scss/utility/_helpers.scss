@@ -3,3 +3,31 @@
 
 
 .cursor-pointer { cursor:pointer; }
+
+.overflow-x{
+    overflow: hidden;
+    overflow-x: auto;
+    /* width */
+    // &::-webkit-scrollbar {
+    //     height: 4px;
+    // }
+    
+    // /* Track */
+    // &::-webkit-scrollbar-track {
+    //     background: #f1f0f0; 
+    // }
+    
+    // /* Handle */
+    // &::-webkit-scrollbar-thumb {
+    //     background: #dcdcdc; 
+    //     border-radius: 8px;
+    //     &:hover{
+    //         background-color: $primary;
+    //     }
+    // }   
+}
+
+
+.rotate-180{
+    transform: rotate(180deg);
+}

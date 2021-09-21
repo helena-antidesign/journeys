@@ -1,12 +1,22 @@
 .c-banner{
     height: 66.6vh;
     min-height: 45rem;
+    overflow: hidden;
+    @include breakpoint(md){
+        min-height: 100vh;
+    }
     &__item{
         background-size: cover;
         background-position: center;
         .container{
             height: calc(100% - 300px);
             z-index: 2;
+            @include breakpoint(lg){
+                height: calc(100% - 216px);
+            }
+            @include breakpoint(md){
+                height: calc(100% - 198px);
+            }
         }
         &.--video{
             .video-js{

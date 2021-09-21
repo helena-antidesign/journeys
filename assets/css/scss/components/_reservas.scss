@@ -1,18 +1,22 @@
 .c-reservas{
-    &__container{
-        padding: 3.75rem 0 6.18rem;
-        .icon-search{
-            font-size: 2rem;
-        }
-        .icon-ajust{
-            font-size: 1.75rem;
-        }
-    }
     &__filtros{
+        &__button{
+            svg{
+                transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+                transform: rotate(-180deg);
+            }
+            &.collapsed{
+                svg{
+                    transform: rotate(0deg);
+                }
+            }
+        }
         &__container{
             width: 63%;
+            margin-right: 4rem;
             @include breakpoint(xxl){
                 width: 100%;
+                margin-right: 0;
             }
             .form-label, .form-check-label{
                 margin-bottom: .5rem;
@@ -36,31 +40,7 @@
         margin-top: 1.5rem;
     }
     &__table{
-        max-width: 100%;
-        overflow-x: auto;
         
-        /* width */
-        &::-webkit-scrollbar {
-            height: 4px;
-        }
-        
-        /* Track */
-        &::-webkit-scrollbar-track {
-            background: #f1f1f1; 
-        }
-        
-        /* Handle */
-        &::-webkit-scrollbar-thumb {
-            background: #888; 
-            border-radius: 8px;
-        }
-        
-        /* Handle on hover */
-        &::-webkit-scrollbar-thumb:hover {
-            background: #555; 
-        }
-
-
         &__status{
             span{
                 display: block;
@@ -77,48 +57,9 @@
                 display: inline;
             }
         }
-        &__visibilidade{
-            display: block;
-            background-image: url(../img/eye-close.png);
-            background-size: contain;
-            background-repeat: no-repeat;
-            height: 1.18rem;
-            width: 1.37rem;
-            &.check{
-                background-image: url(../img/eye-open.png);
-            }
+
+        .icon-pass-show{
+            color: $primary!important;
         }
-        .dataTables_wrapper .dataTables_paginate .paginate_button,
-        .dataTables_wrapper .dataTables_paginate .paginate_button:hover{
-            border: 0;
-            border-radius: .62rem;
-            color: #656565!important;
-            background: transparent;
-        }
-        .dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover{
-            background: $primary;
-            color: #fff!important;
-            border: 0;
-        }
-        .dataTables_length{
-            color: #656565;
-            font-size: .87rem;
-            margin-bottom: 2rem;
-        }
-        .dataTables_filter{
-            display: none;
-        }
-        #table_info, #table_paginate{
-            margin-top: 2rem;
-            color: #656565;
-            font-size: .87rem;
-        }
-        .table tbody tr{
-            cursor: pointer;
-        }
-        // table.table tbody td{
-        //     padding: 0;
-        // }
     }
 }
-

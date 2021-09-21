@@ -11,7 +11,7 @@
             
             <div class="swiper-wrapper h-100">
 
-                <div class="c-banner__item swiper-slide h-100 d-flex align-items-end" style="background-image: url('assets/img/home-banner.jpg');">
+                <div class="c-banner__item swiper-slide h-100 d-flex align-items-end" style="background-image: url('assets/img/home/home-banner.jpg');">
                     
                     <img src="assets/img/banner-bg.png" alt="background" class="c-banner__background">
                     <div class="container text-light">
@@ -38,38 +38,40 @@
         <div class="c-home__tarifarios__box bg-white position-relative">
             <div class="container">
                 <div class="row mb-5">
-                    <h2 class="d-inline-block fs-5 text-primary p-2 px-0 mb-3">Tarifários</h2>
+                    <h2 class="d-inline-block fs-5 text-primary p-2 mb-3">Tarifários</h2>
                     <h3 class="mb-4 fs-2 fw-bold text-secondary col-xl-4 col-xxl-3">Hotéis, transfers, tours, pacotes.</h3>
                     <p class="text-gray-200 fs-4 mb-5">Confira as alterações de valores do que precisar!</p>
                 </div>
                 <div class="row">
-                    <ul class="nav nav-tabs d-flex justify-content-between">
-                        <li class="nav-item">
-                            <a class="nav-link" href="tarifarios.php">
-                                <span class="icon icon-hotel"></span>Hotelaria
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="tarifarios.php">
-                                <span class="icon icon-car"></span>Transfers
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="tarifarios.php"><span class="icon icon-tour"></span>Tour</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="tarifarios.php"><span class="icon icon-case"></span>Pacotes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="tarifarios.php"><span class="icon icon-transfer"></span>Autos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="tarifarios.php"><span class="icon icon-hotel"></span>Circuitos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="tarifarios.php"><span class="icon icon-bad"></span>Casas & Apartamentos</a>
-                        </li>
-                    </ul>
+                    <div class="overflow-x">
+                        <ul class="nav nav-tabs justify-content-between JS__tabsFlex">
+                            <li class="nav-item">
+                                <a class="nav-link" href="tarifarios.php">
+                                    <span class="icon icon-lock"></span>Hotelaria
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="tarifarios.php">
+                                    <span class="icon icon-car"></span>Transfers
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="tarifarios.php"><span class="icon icon-tour"></span>Tour</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="tarifarios.php"><span class="icon icon-case"></span>Pacotes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="tarifarios.php"><span class="icon icon-transfer"></span>Autos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="tarifarios.php"><span class="icon icon-brasil"></span>Circuitos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="tarifarios.php"><span class="icon icon-bad"></span>Casas & Apartamentos</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -78,7 +80,7 @@
     
     <?php include('includes/destaque.php') ?>
 
-    <section class="c-cards-carousel">
+    <section class="c-cards-carousel JS__cards-carousel">
         <div class="container-fluid h-100">
             <div class="row h-100 d-flex align-items-center">
 
@@ -89,13 +91,13 @@
                         <h3 class="mb-4 fs-3 fw-bold text-secondary">Escolha a experiência ideal para seus clientes!</h3>
                         <p>Guia de produtos por perfil de viagens</p>
                     </div>
-                    <div class="position-relative JS-cards__pagination c-cards-carousel__pagination">
+                    <div class="position-relative c-cards-carousel__pagination">
                         <!-- If we need navigation buttons -->
                         <div class="swiper-button-prev fs-4 shadow rounded-circle">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="8.397" height="14.73"><path data-name="Caminho 4" d="M8.396 7.365a1.029 1.029 0 01-.3.729l-6.337 6.337A1.032 1.032 0 01.3 12.972l5.6-5.6-5.6-5.6A1.036 1.036 0 111.759.302l6.336 6.329a1.029 1.029 0 01.301.734z" fill="#0e6a7a"/></svg>
+                            <span class="icon-arrow-left fw-bold text-primary"></span>
                         </div>
                         <div class="swiper-button-next fs-4 shadow rounded-circle">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="8.397" height="14.73"><path data-name="Caminho 4" d="M8.396 7.365a1.029 1.029 0 01-.3.729l-6.337 6.337A1.032 1.032 0 01.3 12.972l5.6-5.6-5.6-5.6A1.036 1.036 0 111.759.302l6.336 6.329a1.029 1.029 0 01.301.734z" fill="#0e6a7a"/></svg>
+                            <span class="icon-arrow-right fw-bold text-primary"></span>
                         </div>
                     </div>
 
@@ -103,7 +105,7 @@
 
                 <div class="c-cards-carousel__content">
                 
-                    <div class="swiper-container JS-cards">
+                    <div class="swiper-container">
                     <!-- Additional required wrapper -->
                         <div class="swiper-wrapper">
 
@@ -166,7 +168,7 @@
 
     <section class="c-home__info d-flex align-items-center">
 
-        <div class="c-home__info__bg position-absolute" style="background-image: url('assets/img/home-info.jpg');"></div>
+        <div class="c-home__info__bg position-absolute" style="background-image: url('assets/img/home/home-info.jpg');"></div>
 
         <div class="container d-flex justify-content-end">
             
@@ -214,7 +216,7 @@
                             <a href="sap.php" class="btn-link fs-6">Saber mais</a>
                         </div>      
                         <div class="col-xl-3 col-lg-4 col-md-6 mb-5 c-home__info__container__box__item">
-                            <span class="c-home__info__container__box__icon icon-save-1 d-block"></span>
+                            <span class="c-home__info__container__box__icon icon-pin d-block"></span>
                             <h3 class="mb-4 fs-5 fw-500 text-secondary">Datas Especiais</h3>
                             <p class="fs-6">Algumas tarifas podem sofrer alterações de acordo com algumas datar, fique a parte.</p>
                             <a href="eventos.php" class="btn-link fs-6">Saber mais</a>
@@ -226,7 +228,7 @@
                             <a href="vouchers.php" class="btn-link fs-6">Saber mais</a>
                         </div>      
                         <div class="col-xl-3 col-lg-4 col-md-6 mb-5 c-home__info__container__box__item">
-                            <span class="c-home__info__container__box__icon icon-commission d-block"></span>
+                            <span class="c-home__info__container__box__icon icon-download d-block"></span>
                             <h3 class="mb-4 fs-5 fw-500 text-secondary">Downloads & Kit De Mídia</h3>
                             <p class="fs-6">Pegue nossos recursos oficiais da marca e saiba mais sobre as diretrizes de uso.</p>
                             <a href="kit-de-midia.php" class="btn-link fs-6">Saber mais</a>

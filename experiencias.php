@@ -16,7 +16,7 @@
                     <div class="container text-light">
                         <div class="row h-100 d-flex align-items-center">
                             <div class="col-xxl-4 col-xl-6 col-lg-6 col-md-8 col-sm-8">
-                                <h2 class="fw-bold fs-93">Experiências</h2>
+                                <h2 class="fw-bold fs-1">Experiências</h2>
                                 <p>Existe momentos únicos, que podem ficar ainda melhores com novas experiências.</p>
                                 <a href="experiencias.php" class="c-banner__button d-flex align-items-center text-reset text-uppercase fw-bolder">
                                     Explorar <svg xmlns="http://www.w3.org/2000/svg" width="41.29" height="20"><path d="M40.817 8.858L32.389.471a1.613 1.613 0 00-2.276 2.286l5.658 5.631H1.613a1.613 1.613 0 000 3.226h34.158l-5.658 5.631a1.613 1.613 0 002.276 2.286l8.428-8.387a1.614 1.614 0 000-2.286z" fill="#fff"></path></svg>
@@ -68,9 +68,9 @@
                     </li>
                 </ul>
 
-                <div class="fs-6 d-flex align-items-center mt-4">
-                    Consulte as restrições com base no Covid-19 
-                    <a href="" class="ms-3 btn-link fs-12 text-secondary border-secondary py-0">Leia mais</a>
+                <div class="fs-6 d-flex align-items-center flex-wrap mt-4">
+                    <span class="me-3">Consulte as restrições com base no Covid-19</span>
+                    <a href="juntos-somos-mais-fortes.php" class="btn-link fs-12 text-secondary border-secondary py-0">Leia mais</a>
                 </div>
             </div>
 
@@ -85,7 +85,7 @@
                             <p class="fs-12 mb-2">Entreterimento para toda familia!</p>
                             <span class="c-experiencias__content__item__price fs-4"><span class="text-primary fw-500">R$89,90</span> Por Pessoa</span>
                             <span class="fw-500 mt-4 d-flex align-items-center text-primary">
-                                Reservar <span class="icon-arrow-right fs-4 fw-bold ms-2"></span> 
+                                Reservar <span class="icon-arrow-right fw-bold ms-2 fs-6"></span> 
                             </span>
                         </a>
                     </div>
@@ -98,7 +98,7 @@
                             <p class="fs-12 mb-2">Somente Motorista | Privado</p>
                             <span class="c-experiencias__content__item__price fs-4"><span class="text-primary fw-500">R$89,90</span> Por Pessoa</span>
                             <span class="fw-500 mt-4 d-flex align-items-center text-primary">
-                                Reservar <span class="icon-arrow-right fs-4 fw-bold ms-2"></span> 
+                                Reservar <span class="icon-arrow-right fw-bold ms-2 fs-6"></span> 
                             </span>
                         </a>
                     </div>
@@ -111,7 +111,7 @@
                             <p class="fs-12 mb-2">Entreterimento para toda familia!</p>
                             <span class="c-experiencias__content__item__price fs-4"><span class="text-primary fw-500">R$89,90</span> Por Pessoa</span>
                             <span class="fw-500 mt-4 d-flex align-items-center text-primary">
-                                Reservar <span class="icon-arrow-right fs-4 fw-bold ms-2"></span> 
+                                Reservar <span class="icon-arrow-right fw-bold ms-2 fs-6"></span> 
                             </span>
                         </a>
                     </div>
@@ -124,7 +124,7 @@
                             <p class="fs-12 mb-2">Entreterimento para toda familia!</p>
                             <span class="c-experiencias__content__item__price fs-4"><span class="text-primary fw-500">R$89,90</span> Por Pessoa</span>
                             <span class="fw-500 mt-4 d-flex align-items-center text-primary">
-                                Reservar <span class="icon-arrow-right fs-4 fw-bold ms-2"></span> 
+                                Reservar <span class="icon-arrow-right fw-bold ms-2 fs-6"></span> 
                             </span>
                         </a>
                     </div>
@@ -137,7 +137,7 @@
                             <p class="fs-12 mb-2">+ 1 hora de espera em centro comercial/ hotel </p>
                             <span class="c-experiencias__content__item__price fs-4"><span class="text-primary fw-500">R$89,90</span> Por Pessoa</span>
                             <span class="fw-500 mt-4 d-flex align-items-center text-primary">
-                                Reservar <span class="icon-arrow-right fs-4 fw-bold ms-2"></span> 
+                                Reservar <span class="icon-arrow-right fw-bold ms-2 fs-6"></span> 
                             </span>
                         </a>
                     </div>
@@ -148,9 +148,9 @@
                             <h2 class="d-inline-block fs-12 text-white bg-primary py-1 px-3 rounded-1 mb-3">Ticket</h2>
                             <h3 class="fs-4">Parque Nacional Brasileiro</h3>
                             <p class="fs-12 mb-2">Entreterimento para toda familia!</p>
-                            <span class="c-experiencias__content__item__price fs-4"><span class="text-primary fw-500">R$89,90</span> Por Pessoa</span>
+                            <span class="c-experiencias__content__item__price fs-4 fs-6"><span class="text-primary fw-500">R$89,90</span> Por Pessoa</span>
                             <span class="fw-500 mt-4 d-flex align-items-center text-primary">
-                                Reservar <span class="icon-arrow-right fs-4 fw-bold ms-2"></span> 
+                                Reservar <span class="icon-arrow-right fw-bold ms-2 fs-6"></span> 
                             </span>
                         </a>
                     </div>
@@ -162,7 +162,7 @@
                             <p class="fs-12 mb-2">Entreterimento para toda familia!</p>
                             <span class="c-experiencias__content__item__price fs-4"><span class="text-primary fw-500">R$89,90</span> Por Pessoa</span>
                             <span class="fw-500 mt-4 d-flex align-items-center text-primary">
-                                Reservar <span class="icon-arrow-right fs-4 fw-bold ms-2"></span> 
+                                Reservar <span class="icon-arrow-right fw-bold ms-2 fs-6"></span> 
                             </span>
                         </a>
                     </div>
@@ -174,7 +174,7 @@
                             <p class="fs-12 mb-2">+ 1 hora de espera em centro comercial/ hotel </p>
                             <span class="c-experiencias__content__item__price fs-4"><span class="text-primary fw-500">R$89,90</span> Por Pessoa</span>
                             <span class="fw-500 mt-4 d-flex align-items-center text-primary">
-                                Reservar <span class="icon-arrow-right fs-4 fw-bold ms-2"></span> 
+                                Reservar <span class="icon-arrow-right fw-bold ms-2 fs-6"></span> 
                             </span>
                         </a>
                     </div>
@@ -185,8 +185,8 @@
                             <h3 class="fs-4">Kayak</h3>
                             <p class="fs-12 mb-2">Passeio Privado</p>
                             <span class="c-experiencias__content__item__price fs-4"><span class="text-primary fw-500">R$89,90</span> Por Pessoa</span>
-                            <span class="fw-500 mt-4 d-flex align-items-center text-primary">
-                                Reservar <span class="icon-arrow-right fs-4 fw-bold ms-2"></span> 
+                            <span class="fw-500 mt-4 d-flex align-items-center text-primary fs-6">
+                                Reservar <span class="icon-arrow-right fw-bold ms-2"></span> 
                             </span>
                         </a>
                     </div>
@@ -198,7 +198,7 @@
                             <p class="fs-12 mb-2">Com Almoço | Privado</p>
                             <span class="c-experiencias__content__item__price fs-4"><span class="text-primary fw-500">R$89,90</span> Por Pessoa</span>
                             <span class="fw-500 mt-4 d-flex align-items-center text-primary">
-                                Reservar <span class="icon-arrow-right fs-4 fw-bold ms-2"></span> 
+                                Reservar <span class="icon-arrow-right fw-bold ms-2 fs-6"></span> 
                             </span>
                         </a>
                     </div>

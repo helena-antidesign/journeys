@@ -2,30 +2,15 @@
     border-radius: 1.25rem;
     overflow: hidden;
     position: relative;
-    max-height: 19.6rem;
     transition: .3s;
-    @include breakpoint(xxl){
-        .fs-6{
-            font-size: .75rem!important;
-        }
-    }
-    @include breakpoint(lg){
-        width: 100%;
-    }
     &.open{
         max-height: 100vh;
     }
-    &__more-button{
-        position: absolute;
-        z-index: 9999;
-        padding-right: .62rem;
-        right: 0;
-        .btn{
-            position: relative;
-            top: 259.4px;
-            width: auto !important;
-            padding-top: 14px;
-            height: 2.77rem;
+    &__itens{
+        @include breakpoint(lg){
+            & > div{
+                margin-bottom: 2rem;
+            }
         }
     }
     &__img{
@@ -46,21 +31,57 @@
         &__item{
             color: #656565;
             border-radius: 10px;
-            position: relative
+            position: relative;
+            height: 29px;
+            display: inline-flex;
+            align-items: center;
+            &__icons{
+                font-size: 1.2rem;
+                padding-left: 1rem;
+                max-width: 200px;
+                span{
+                    margin: 0 .5rem;
+                    &:first-of-type{
+                        margin-left: 0;
+                    }
+                    &:last-of-type{
+                        margin-right: 0;
+                    }
+                }
+                @include breakpoint(md){
+                    padding-left: 0;
+                }
+            }
         }
     }
-    &__content{
+    &__container{
+        padding: 0 .62rem 0 1rem;
+    }
+    &__header{
         background-color: #fff;
-        padding: .62rem .62rem .62rem 1rem;
-        &__header{
-            font-size: .62rem;
-            padding-bottom: .48rem;
+        font-size: .62rem;
+        &__content{
+            padding: 8px 0;
             @include breakpoint(md){
                 flex-wrap: wrap;
             }
             &__title{
                 border-right: 1px solid #E3E3E3;
                 padding-right: 2rem;
+                width: 31rem;
+                @include breakpoint(xxl){
+                    width: 18rem;
+                }
+                @include breakpoint(xl){
+                    width: 40rem;
+                }
+                @include breakpoint(lg){
+                    width: 25rem;
+                }
+                
+                @include breakpoint(md){
+                    width: 22rem;
+                }
                 @include breakpoint(md){
                     width: 100%;
                     border-right: 0;
@@ -68,53 +89,107 @@
                     margin-bottom: .5rem;   
                 }
             }
-            &__icons{
-                font-size: 1.5rem;
-                padding-left: 1rem;
-                span{
-                    margin: 0 .4rem;
-                    @include breakpoint(md){
-                        &:first-of-type{
-                            margin-left: 0;
-                        }
+        }
+        &__more{
+            display: flex;
+            align-items: center;
+            .btn{
+                height: 44px;
+                border-radius: 13px;
+                &.btn-outline-primary{
+                    border-color: #E0E0E0;
+                }
+                .icon-arrow-down{
+                    transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+                }
+            }
+        }
+    }
+    &__content{
+        padding: 1rem 0;
+        &__table{
+            border-bottom: 2px solid $primary;
+            border-radius: 0;
+            border-spacing: 0!important;
+            margin: 0;
+            tbody{
+                &:before{
+                    display: none;
+                }
+            }
+            &:last-of-type{
+                border-bottom: 0;
+            }
+            tr{
+                border-right: 0;
+                border-left: 0;
+                border-bottom: 1px solid #E3E3E3;;
+                &:first-of-type{
+                    border-top: 0;
+                }
+                &:last-of-type{
+                    border-bottom: 0;
+                }
+                td{
+                    border-radius: 0 !important;
+                    border-bottom: 1px solid #E3E3E3;
+                    padding: .5rem 0;
+                    transition: 0!important;
+                    &:first-of-type{
+                        padding-left: 0!important;
+                    }
+                    &:last-of-type{
+                        padding-right: 0!important;
                     }
                 }
-                @include breakpoint(md){
-                    padding-left: 0;
-                }
             }
-            .btn-close{
-                font-size: 15px;
-                position: absolute;
-                right: 21px;
+            &__header{
+                border-bottom: 0;
+                td{
+                    border-bottom: 0!important;
+                }
+
+            }
+            &__container{
+                display: none;
             }
         }
-        &__button{
-            display: flex;
-            justify-content: flex-end;
-            .btn{
-                width: 7.28rem;
-                height: 2.77rem;
-                border-radius: 12px;
-                padding-top: 14px;
-                @include breakpoint(md){
-                    width: 100%;
-                }
-            }
-        }
-        &__list{
-            @include breakpoint(md){
-                li > div{
-                    width: 100%;
-                }
-            }
-        }
-        &__option{
-            @include breakpoint(md){
-                display: none!important;
+        &___option{
+            input[type="radio"]{
+                height: 17px;
+                width: 17px;
             }
         }
     }
 }
 
+
+.o-hotel.active{
+
+    .JS__hotel-open{
+        .icon-arrow-down{
+            transform: rotate(180deg);
+            display: inline-block;
+            transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+        }
+    }    
+
+    .o-hotel__content__table__header{
+        td:not(:first-of-type){
+            visibility: hidden;
+            opacity: 0;
+        }
+    }
+
+    .o-hotel__content__table__container{
+        display: table-row;
+
+        &:last-of-type{
+            td{
+                border-bottom: 0;
+            }
+        }
+    }
+
+}
 
